@@ -1,0 +1,156 @@
+!doctype html -->html5 문법(실전에서는 사용X)
+사용한다는 뜼
+html lang = "ko"
+
+2.VS code
+-emmet 기능 : 단축기능!! ======> ex) h$(변수){heading(들어갈 문자) $} * 6(6개 만들것이다) 
++는 그 다음에 올 기능 나열할 때 사용
+
+파비콘 = 페이지 제목 옆 로고를 의미
+
+- tag =여는 태그 & 닫는 태그 (ex : h1) <=명확하게 입력해야함(대문자 소문자 구분 등)
+-홑태그(single tag) : ex) <a /> / 쌍테그(multi tag)
+-약 20개 정도 태그만 사용 
+*반드시 알아야할 tag
+-Text tag-
+1)h(n) =Heading : n(숫자) = 1~6 ==> 어떤 문자를 작성 때  대표 타이틀을 지칭하고자 할 때. 
+2)p : paragraph = 단락
+(*특별한 의미 부여하지 않은 문자를 삽입하는 경우 = 더미 문자열 = dummy text ===> Lorem)
+ex) lorem * 숫자 ==> 장문이 필요할 때 사용
+3)br : break -문장에 대한 단락을 떨어뜨리고 싶을때(행을 바꾸고 싶을때) ==>남발하면 안됨(급히 수정이 필요할 때만 사용)
+4)hr : horizontal ruler - 가로줄 긋고 싶을때, 단락간 구분을 지어주고 싶을때
+ex) <hr />  <== single tag 
+5) a : ancor - 특정 텍스트 및 이미지를 클릭했을 때 해당 페이지로 이동하게 만들고 싶을때
+-내부에서 내부로 이동(보통 Top으로 이동에 구현)
+-외부로 이동
+*landing page : 도착해야하는 페이지
+ex) <a href="도착 주소 URL"></a> 주소 옆에 target ="_blank" 입력하면 새로운 창에 landing page 생성
+*<img src="" alt=""> alr : 스크린 리더기를 활용해서 음성으로 이미지가 무엇인지 알려줌
+*B = Text를 두껍게 하고 싶을때 사용하는 태그
+*mark => 특정 텍스트를 돋보이게 하기위한 태그
+https://developer.mozilla.org/ko/docs/Web/HTML/Element/a  <==== MDN이라는 HTML 참고서(꼭 봐야한다)
+주석(영어로만) : <!-- --> 개발자 눈에만 보임.
+-property(속성) (ex : id)
+-valud (속성값) (ex : header)
+
+*명시성 = 얼마나 직관적으로 코드를 작성했는가.(훈련 필요) 
+===> clean code(논리정연하게 짜여진 코드)= html5 = code를 보고 있는데 한편의 글을 읽고 있는 느낌.
+
+ctrl + shift + J =F12 ==> 개발자 도구
+
+alt + shift + 아래방향 키 ==> 아래방향으로 복제
+
+# : a태그를 사용할 때 특정 위치로 이동을 시키고 싶다면 반드시 id값 활용해야하는데 그때 id값 앞에 붙이는 수식어
+
+*절대로 하나의 프로젝트 안에서는 동일한 이름의 id 속성값은 사용하지 않는다 절대로!!!!!!!!!!!!!!!!!!!!!!!
+
+
+-list Tag(목록 태그) = 3개
+1) ul : unorder list => 정렬되지 않은 리스트 (커버의 역할만)
+2) ol : order list  => 정렬된 리스트 (커버의 역할만)
+3) li : list
+*중첩된 목록태그 사용의 경우가 헷갈림(lo 안에 ul이 있는 경우 등등)
+
+-Table Tag=(테이블(행과 열)을 짠다)
+1) table :테이블 태그를 작성하기 위해서 가장 바깥 영역에 입력하는 태그
+2) tr : table row =>테이블의 행을 정의할 때 사용하는 태그
+2) th :  table header =>각 행 혹은 각 열의 대표성을 띄고 있는 셀을 지칭하고자 할 때
+3) td : table date => 각 행 혹은 각 열의 일반 보통의 셀을 지칭할 때
+(thead / tbody / tfoot : 각 table의 영역을 구분짓고 싶을 때 사용하는 태그) 
+ㄴ> 이렇게 구분 짓는 이유 : 색상이나 스타일 등을 다르게 넣어주고 싶기 때문이다. 
+(border 라는 속성을 줘서 두께로 표를 만들어줌) <= 잘 안씀 보통은 CSS로 스타일 지정하기 때문
+*caption =>테이블 태그를 사용할 때 해당 테이블의 타이틀을 지정하고자 할때
+*figure =>figcaption을 사용하기 위해서 사용하는 태그
+ㄴ>figcaption => 테이블 태그를 사용할 때 테리블 타이틀 입력할 수 있음(*좌측정렬)
+*colgroup => 열을 그룹핑하고자 할 때 사용하는 태그 (커버의 역할만)
+  ㄴ> col : 실제 그룹안에 있는 각각의 열을 지칭하고자 할때
+  ㄴ> clospan : 열을 병합하고 싶을때
+  ㄴ> rowspan : 행을 병합하고 싶을때
+
+********style 적용 우선순위(중요!!!!!)
+1. thead / tbody / tfoot
+2. colgroup / col
+
+*html5에 적용된 문법 (시멘틱 태그 = semantic tag = 의미를 부여하는 태그)
+(ex :thead, tfoot 지정을 안해줬을 때 자동문법으로 tbody로 적용되는 현상)
+
+span : 영역 공간
+
+인라인 스타일 시트 => HTML 문서 안에 직접 CSS 스타일 적용한 것을 의미 (실무에서는 이렇게 작성X)
+ex) 배운 예제에서 border
+실제로는
+1. 내부 스타일 시트
+2. 외부 스타일 시트
+
+tr > td : >는 자식을 불러온다는 뜻
+even :짝수
+
+태그 드래그한채 Alt 누른 채로 방향키 조작으로 하위 항목으로 넣어줄 수 있음
+
+web 반응형 /
+단위 : px /em / rem / % / vw(viewphoto width) / vh(viewphoto height)
+
+-image & video & audio 태그 (비디오랑 오디오 태그는 잘 안씀)
+
+1. img : src => 이미지에 대한 경로를 가져오는 속성 / alt => 이미지에 대한 정보를 정의할 수 있는 속성 / width =>이미지 너비 길이 조정 속성(단위 없음)
+                /height => 이미지 높이 조정 속성(단위 없음) 
+*image map =>map이라는 태그 : name 이라는 속성의 값= img태그의 usemap 속성 값
+*웹 좌표계 (왼쪽 상단이 시작점 0,0 우측 하단이 이미지의 끝점) / 데카르트 좌표계
+2. audio : src =>오디오에 대한 소스 경로 가져오는 속성 / controls => 오디오 재생도구 출력 / loop => 오디오 반복여부 컨트롤 
+                     /autoplay =>오디오 자동재생 컨트롤(구글에서 안좋아함 굳이 넣지 않는게 좋음)
+
+3. vedio : src =>비디오에 대한 소스 경로 가져오는 속성 / controls => 비디오 재생도구 출력 / loop => 비디오 반복여부 컨트롤 
+                     /autoplay =>비디오 자동재생 컨트롤
+
+*mockup image
+
+*input tag
+
+git & git-hub
+=> 어제, 오늘 작업 데이터 업로드
+=> 자료 참고해서 미션 해결
+
+*git :
+1) 현재 작업중인 데이터의 버전관리를 도와주는 프로그램
+2) 내가 현재 작업하고 있는 컴퓨터 안에 설치를 하는 프로그램
+3) 현재 로컬 컴퓨터에 설치된 작업관리 프로그램
+
+*git-hub :
+1) 로컬 컴퓨터에서 작업한 데이터를 클라우드 공간으로 호스팅 하게 도와주는 장소
+
+
+1. git을 사용하려면 반드시 설치해야하는 프로그램
+-git bash
+2. vs code > 터미널(ctrl +~) > git bash 모드 변경
+<웹에서 git-hub 계정 생성>
+(공간 =레파지토리)
+repository :EZEN UIUX CLASS
+id : Petitlune
+이메일 : kmf11230@gmail.com
+
+나의 로컬 컴퓨터의 git과 git-hub를 연동
+
+1.이미 공용컴퓨터에 누군가가 깃을 사용했던 이력이 존재할 수 있음 ===>reset하고 가야함
+2. 내 컴퓨터 > 좌측하단 검색 도구 >git bash > 관리자 도구 실행
+3.vs code > git bash > name & email 세팅
+               > git config --global user.name Petitlune
+               > git config --global user.email kmf11230@gmail.com
+=>확인 절차 > git config --list (내 아이디와 이메일로 바뀌어야함)
+
+4. 내 컴퓨터에 git이라는 공간 생성 
+> git init
+
+5. 나의 git과 나의 레파지토리 주소를 연동하는 방법
+ > git remote add origin https://github.com/Petitlune/EZEN-UIUX-CLASS.git
+
+6. 지금까지 작업해온 데이터를 git에 담는 방법
+ >git add .
+
+7. 내 루트 폴더에 있는 데이터가 정상적으로 담겼는지 확인
+ > git status
+
+8. git hub에 업로드하고자 하는 나의 데이터에 라벨을 붙이는 작업 (*커밋 메세지를 작성)
+ > git commit -m "240111"
+
+9. 웹 상에 있는 나의 git-hub 레파지토리로 데이터를 커밋하는 방법
+ > git push origin master 

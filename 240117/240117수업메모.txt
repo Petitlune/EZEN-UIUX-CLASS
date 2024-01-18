@@ -1,0 +1,12 @@
+html / css 기초 문법 마무리
+-새로운 문법 : flex & grid
+
+
+figma + design style guide + 웹앱 페이지 구현
+
+=>상세 기술서 (설계 도면 작성)
+
+gnb : global(전역) navigation bar/banner (메인 메뉴) 
+lnb : local(지역) navigation bar banner (서브메뉴)
+
+input id="a" / label for ="a"
