@@ -1,0 +1,65 @@
+@import url("./reset.css");
+
+/*header*/
+
+#main_header {
+  height: 45px;
+  /*no-repeat을 주지않았기 때문에 이미지가 반복되어서 나열된다 => 용량이 작아져서 서버 구동이 원활하다 */
+  background: url("./mobile/image/header_background.png");
+  position: relative;
+  text-align: center;
+  /*수직정렬*/
+  line-height: 45px;
+}
+#main_header .left,
+#main_header .right {
+  position: absolute;
+  height: 32px;
+  /*관습적으로 블락으로 처리해놓으면 나중에 수정이 편하기 때문에*/
+  display: block;
+  top: 7px;
+}
+#main_header .left {
+  left: 5px;
+  width: 62px;
+  /*CSS sprite generator*/
+  background: url("./mobile/css_sprites.png");
+  background-position: -32px -0;
+  /*text를 지우지 않고 멀리 보내버림 : 나중에 작업한는 사람이 알 수 있도록*/
+  text-indent: -99999px;
+}
+#main_header .right {
+  right: 5px;
+  width: 32px;
+  background: url("./mobile/css_sprites.png");
+  background-position: 0 0;
+  text-indent: -99999px;
+}
+#main_header h1 {
+  color: #fff;
+}
+/*gnb*/
+#toggle {
+  display: none;
+}
+/*바로 직후의 형제 연산자는 + 로 표시 */
+#toggle + #Wrap > #toggle_gnb_wrap {
+  display: none;
+}
+/*chedcked가 되었다는 조건을 걸어준 것 임*/
+#toggle:checked + #Wrap > #toggle_gnb_wrap {
+  display: block;
+}
+#toggle_gnb_wrap {
+  background: #363636;
+  padding: 15px;
+}
+#toggle_gnb {
+  background: #fff;
+  padding: 5px;
+  text-align: center;
+}
+#toggle_gnb ul {
+  display: flex;
+  justify-content: space-around;
+}
