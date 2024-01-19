@@ -1,0 +1,40 @@
+@import url("reset.css");
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 100px;
+}
+
+#main_bar {
+  display: flex;
+  justify-content: center;
+}
+#bar {
+  width: 40%;
+  height: 27px;
+  border: 1px solid #03c75a;
+  border-radius: 15px;
+  padding: 0 50px 0 25px;
+}
+#right_zzz {
+  width: 10px;
+  height: 27px;
+}
+img {
+  right: 5px;
+  top: 56px;
+  width: 5%;
+}
+#right_ZZZ > div:first-child {
+  font-weight: bold;
+}
+#right_ZZZ > div {
+  font-size: 12px;
+  display: inline;
+  float: right;
+  right: 90px;
+}
+ul {
+  display: flex;
+  text-align: center;
+}

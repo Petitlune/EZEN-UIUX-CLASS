@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <script
+      src="https://kit.fontawesome.com/b06e382e17.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="checkbox" id="menutop" />
+    <div id="Wrap">
+      <!--header-->
+      <header>
+        <nav>
+          <div class="nav_left">
+            <form action="https://localhost:3000/menu" method="post">
+              <select name="menu" id="menu">
+                <option value="home">우리집</option>
+                <option value="company">사무실</option>
+                <option value="school">학교</option>
+              </select>
+            </form>
+          </div>
+          <div class="nav_right">
+            <label for="menutop"><i class="fa-solid fa-sliders"></i></label>
+            <span><i class="fa-regular fa-bell"></i></span>
+            <span><i class="fa-regular fa-face-smile"></i></span>
+          </div>
+        </nav>
+        <div id="Search">
+          <form action="https://localhost:3000/menu" method="post">
+            <span><i class="fa-solid fa-magnifying-glass"></i></span>
+            <input type="text" placeholder="육회비빔밥? 쌀국수? 육개장?" />
+          </form>
+        </div>
+      </header>
+      <!--popup-->
+      <div id="popup"></div>
+      <!--Section-->
+      <section>
+        <article id="badges">
+          <div class="first"><span>#</span>재주문 많아요</div>
+          <div class="second"><span>#</span>알뜰배달 런칭</div>
+          <div class="third"><span>#</span>쿠폰</div>
+        </article>
+        <article id="contents">
+          <div class="inner content top">
+            <img src="./image/b_1.jpg" alt="b1" />
+            <img src="./image/b_2.jpg" alt="b2" />
+          </div>
+          <div class="inner content middletop">
+            <img src="./image/b_3.jpg" alt="b3" />
+          </div>
+          <div class="inner content middlebottom">
+            <img src="./image/b_4.jpg" alt="b4" />
+          </div>
+          <div class="inner content bottom">
+            <img src="./image/b_5.jpg" alt="b5" />
+            <img src="./image/b_6.jpg" alt="b6" />
+          </div>
+        </article>
+        <article id="banner">
+          <img src="./image/b_7.jpg" alt="b7" />
+        </article>
+      </section>
+    </div>
+  </body>
+</html>

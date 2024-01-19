@@ -1,0 +1,11 @@
+@import url("/reset.css");
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+i {
+  font-size: 20px;
+  color: gray;
+}
