@@ -1,0 +1,92 @@
+@import url("./reset.css");
+body {
+    background: #000;
+}
+#login {
+    margin: 20px;
+    text-align: right;
+}
+#icon box {
+    display: inline;
+    right: 5px;
+}
+
+a:first-child {
+    font-weight: bold;
+}
+a:nth-child(2) {
+    font-weight: bold;
+}
+a {
+    padding: 10px;
+    color: #fff;
+}
+#Google {
+    text-align: center;
+    padding: 10px 0 0 0;
+}
+h1{
+    color: #fff;
+    margin: 46px auto 20px ;
+    font-size: 100px;
+}
+#Search {
+    text-align: center;
+    height: 150px;
+}
+
+#main_bar {
+    position: relative;
+}
+
+#main {
+    border: none;
+    width: 45%;
+    height: 50px;
+  border-radius: 50px;
+padding: 0 80px 0 40px;
+}
+#Search .left {
+    color: gray;
+    left: 28px;
+}
+#right {
+    color: gray;
+}
+
+#Search .left {
+    position: absolute;
+    top: 3px;
+    left: 12px;
+}
+#right {
+    position: absolute;
+    top: 3px;
+    right: 12px;
+}
+#right {
+    display: flex;
+    gap: 15px;
+}
+.logo_first img {
+    width: 60px;
+    height: 50px;
+}
+.logo_second img {
+    width: 60px;
+    height: 50px;
+}
+.logo_third img {
+    width: 60px;
+    height: 50px;
+}
+.logo_fourth img {
+    width: 60px;
+    height: 50px;
+}
+ul {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
