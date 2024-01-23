@@ -1,4 +1,16 @@
 * {
+<<<<<<< HEAD
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+=======
     margin: 0px;
 padding: 0px;
 box-sizing: border-box;
@@ -9,3 +21,4 @@ li {
 a {
     text-decoration: none;
 }
+>>>>>>> c434d7a654dc1e709cecf6c6ed061f53139521c7

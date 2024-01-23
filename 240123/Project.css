@@ -1,0 +1,64 @@
+@import url("./reset.css");
+
+main {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+header {
+  height: 60px;
+  width: 490px;
+  margin-bottom: 10px;
+}
+nav {
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#left-icon span {
+  gap: 10px;
+}
+.icons {
+  font-size: 20px;
+  padding: 5px;
+}
+#body {
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+#bodytop ul {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+#bodytop ul li a {
+  color: gray;
+}
+#bodymiddle {
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+#inner-content {
+  position: absolute;
+  text-align: center;
+  top: 70%;
+  font-size: 20px;
+  color: #fff;
+}
+h3 {
+  margin-bottom: 15px;
+}
+#bodybottom {
+  display: flex;
+  align-items: center;
+  background-color: rgb(196, 140, 179);
+  height: 35px;
+  width: 490px;
+  margin: 0 auto;
+  padding-left: 10px;
+}
