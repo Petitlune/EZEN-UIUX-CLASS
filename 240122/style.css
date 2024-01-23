@@ -19,7 +19,7 @@ header > div {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid #f00;
+    
     
    
 }
@@ -40,8 +40,29 @@ nav {
     width: 76px;
 }
 #Main-banner {
+   
     background: url("./img/1.main/main_04.jpg") center/cover no-repeat;
     width: 100%;
     height: 529px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+   
+}
+#travel {
+    position: absolute;
+    bottom: -5px;
+   
+    
 }
 
+#Search-bar {
+
+    display: flex;
+    border: 1px solid #f00;
+    background-color: aliceblue;
+height: 100px;
+width: 100%;
+margin: 50px auto;
+}
