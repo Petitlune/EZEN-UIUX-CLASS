@@ -1,0 +1,52 @@
+@import url("./reset.css");
+/* .box {
+  width: 100px;
+  height: 100px;
+  background: orange;
+}
+.box:active {
+  background: red;
+  background와 같이 여러가지 속성값을 줄 수 있음 축약적으로 transition 이라고만 쓰는것임
+  transition: 2s;
+} */
+#graph {
+  width: 610px;
+  border: 3px solid #000;
+}
+.bar {
+  width: 10px;
+  height: 50px;
+  background: orange;
+  margin: 5px;
+  /* 본래 선택 된 태그에 트랜지션을 주어야함 */
+  /* transition-duration: 5s; */
+  transition-property: background, width;
+  transition-duration: 1s, 5s;
+}
+#graph:hover > .bar {
+  width: 500px;
+}
+#graph:hover > .bar:nth-child(1) {
+  width: 100px;
+  background: red;
+}
+
+#graph:hover > .bar:nth-child(2) {
+  width: 300px;
+  background: blue;
+}
+#graph:hover > .bar:nth-child(3) {
+  width: 411px;
+  background: green;
+}
+
+#graph:hover > .bar:nth-child(4) {
+  width: 200px;
+  background: yellow;
+  /* transition-delay: 3s;
+  transition-timing-function: ease-in-out; */
+}
+#graph:hover > .bar:nth-child(5) {
+  width: 400px;
+  background: pink;
+}

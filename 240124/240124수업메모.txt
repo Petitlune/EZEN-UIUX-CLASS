@@ -1,0 +1,67 @@
+-애니메이션
+> 변형 : transition (*시간의 제약을 가지고 무언가가 변화를 일으키는 것)
+1)transition-duration : 특정시간동안 변형효과를 적용하고자 할 때
+2)transition-delay : 특정시간의 지연효과를 적용하고자 할 때
+3)transition-timing-function : 가.감속 효과를 적용하고자 할 때
+    ㄴ>참고 사이트 : cubic-bezier.com
+> 변환 : transfrom (*시간의 제약과는 무관하게 무언가가 변화를 일으키는 것)
+4)transition-property : 특정 요소의 변형값만 상이하게 적용하고자 할 때
+
+ ==>네가지 요소를 한번에 사용하고 싶을 때 그냥 transition을 주면 됨
+순서 : transition : property duration timing function delay
+        transition : all(모든 속성에 적용한다는 의미) 0.3s
+
+> animation
+  animation-name: rint;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-out;
+  /* 계속해서 반복하겠다는 뜻 */
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+
+==>한번에 사용하고 싶을때는 그냥 animation주면 됨
+순서 : animation: name /  duration/ function / delay / count / direction
+ex)
+@keyframes rint {
+  0% {
+    left: 0;
+    transform: rotate(0deg);
+  }
+  100% {
+    left: 500px;
+    transform: rotate(180deg);
+  }
+
+==>from 과 to를 사용하면 처음부터 끝까지 하겠다는 뜻
+       0%     100%로 사용할 수 있음. 중간중간 효과 다르게 넣어주려면 퍼센테이지로 사용
+
+
+CSS / JS 
+퍼블리셔 / 프론트엔드 개발자
+> JS - 3D Animation (블루오션)
+
+css : @
+- @import
+- @font-face
+- @keyframes : 애니메이션 적용할때 사용(꼭 이름 지정해야함)
+
+>변환 :transform 
+- 어떤 요소의 회전값을 적용 : rotate
+- 어떤 요소의 위치값을 적용 : translate
+- 어떤 요소의 사이즈값을 적용 : scale
+- 어떤 요소의 기울기값을 적용 : skew
+
+
+==============>  위 세가지 요소가 같이 사용되는 경우 ( : 3D입체 도형을 만들고자 할 때)
+
+<배포>
+
+Js / google chrome v8 검색엔진 /WEB
+-npm node package manager
+
+순수한 메인페이지로 돌아갈 수 있는 파일은 숫자나, 한글, 특수문자 절대 사용 금지(index라는 값을 무조건 메인으로 삼기 때문이다.)
+
+firebase 로그인 - 프로젝트 만들기(이름 영어로 최대한 안겹치게) - node.js를 컴퓨터에 깐다 
+-cmd를 관리자 권한으로 실행한다 - firebase에서 가져온 값을 입력한다 - (cmd 꺼도됨) - 배포해야되는 html 파일이 들어있는 폴더에 들어가서 VS code로 연다 - ctrl + ~ 누르고 터미널을 command prompt 바꿔준다. - firebase login을 입력 - y입력 - 파이어베이스에 로그인된 이메일로 연동되는지 확인 - firebase init 입력 - y 입력 - Hosting: Configure files for Firebase Hosting and (optionally) set up GitHub Action deploys 선택(스페이스바)후 엔터 - Use an existing project(이미 작업된 작업물을 업로드하겠다는 뜻) - hereokay-petit-project (Hereokay-petit-project)(본인이 지정했던 프로젝트 이름이 뜨는지 확인) - public 입력 - N -
+N =====완료
