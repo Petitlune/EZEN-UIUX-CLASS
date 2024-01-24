@@ -1,0 +1,23 @@
+body {
+  display: flex;
+}
+table,
+th,
+td {
+  text-align: center;
+  border-collapse: collapse;
+}
+table {
+  width: 700px;
+}
+caption {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+table {
+  width: 700px;
+}
+th,
+td {
+  height: 30;
+}
