@@ -1,0 +1,88 @@
+1. 쇼핑몰 레이아웃(Coupang) - 예제
+
+
+2. Flex 개념설명
+3. Flex 예제사이트
+4. Flex 연습예제
+
+5. Grid 개념설명
+6. Grid 예제사이트
+7. Grid 연습예제 
+
+8. Bootstrap : 레이아웃 Framework
+
+9. SCSS
+=>CSS Variable
+
+10. Figma 앱페이지(*10개 페이지) 기획 + html & CSS & 간단한 JS
+
+-----------------2월 첫째주
+
+JS(*jQuery) / TS / React
+> vue or Node(?)
+
+global = 가장 바깥쪽 영역 = 모든 것을 포함할 수 있는 영역 = 전역 요소
+global Navigation bar/banner
+
+sprite generator(이미지 합치고 좌표 알려주는 사이트)
+
+
+*****Flex****** (이전에는 float, position, display로 사용했음)
+-아이템 요소들의 레이아웃 정렬을 진행토록 해주는 요소 
+
+1) 반드시 부모와 자녀가 함께 공존해야 사용 가능
+flex를 적용하고자 하는 해당자녀의 "부모에게 명령어 flex"
+
+2)flex에서는 반드시 중심축 / 교차축 존재
+-부모요소에 flex속성을 적용하는 순간, 무조건 기본 중심축 =가로(행= row)
+-교차축 : 중심축에 교차가 되는 반대의 측 = 세로(열 = column)
+
+3) 중심축을 기준으로 수평정렬(*부모요소에게 적용)
+-justify content / 별도의 너비값을 부여하지 않아도 적용됨!!
+ >flex-start / center / flex-end 
+ >자식요소에 height값을 따로 지정해주지 않으면 부모요소의 높이값을 상속받는다.
+ >만약 1개의 행에 여러개의 컨텐츠 아이템이 들어와있다면 양쪽 끝으로 컨텐츠 아이템 정렬 가능 
+1)space-between : 컨텐츠를 양쪽 끝으로 몰아넣고 간격 동일하게 정렬
+ 2)space-around : 컨텐츠 양쪽 끝에 동일한 간격 정해놓고 동일한 간격으로 정렬
+
+4) 교차축을 기준으로 수직정렬(*부모요소에게 적용)
+-align items / 별도의 너비/높이값을 적용해야 정렬됨!!
+1) stretch : 만약 자식요소의 height값이 존재하지 않는 경우 자동으로 부모 요소의 높이값을 가져가도록 하고싶을 때 사용
+
+5)그렇다면 flex를 사용할 때 중심축과 교차축을 직접 지정할 수 있을까?
+-flex를 부모에 적용하면 기본적으로는 flex-direction : row
+-flex-direction : row (기본적인 가로를 중심축으로 가져가겠다)
+-flex-direction : column (기본적인 세로를 중심축으로 가져가겠다)
+ >중심축 & 교차축이 달라질 수 있으며, 이에 따라서 justify-content & align-items의 역할이 달라질 수 있다.
+
+6)만약 자식요소의 너비값을 보장해주지 못한다면?
+-flex-wrap : 기본 값(no-wrap)을 wrap으로 적용하면 자식요소의 너비값을 보장해주지 못하는 경우, 자동으로 줄바꿈을 시켜준다.
+7) background / animation / transition 해당 3가지 속성의 특징!!!!
+=>개별 요소의 속성을 가지고 있지만, 한번에 속성을 사용할 수 있는 축약 표기법이 존재한다. 
+=>flex-flow : flex-direction & flex-wrap을 한번에 작성할 수 있도록 도와주는 속성
+
+8)align-items : 교차축의 정렬을 시켜주는 역할 요소
+ - align-content : 독립요소의 아이템들(items)을 하나의 그룹(content)으로 간주하고 위치정렬을 하고자 할 때 
+(when , flex-wrap으로 인해 원래 1개였던 그룹이 2개로 분리된 상황이 닥쳤을 때)
+
+9)flex의 세부적인 요소
+-flex-grow : flex의 자식요소들의 너비 비율을 설정할 수 있다.(넓히고자 할때)
+-flex-shrink : flex의 자식요소들의 너비 비율을 설정할 수 있다.(줄이고자 할때)
+(*단 flex의 자식요소들이 가지고 있는 본연의 너비값보다 줄어들 때부터 적용)
+-flex-basis : flex의 자식요소들의 너비 비율을 설정 
+
+10) >flex grow / shrink / basis 한번에 사용하고자 하는 경우
+ 축약 표기법 : flex 1 1 50px
+ 실무 사용법 : flex 1(grow) - grow 값만 써줌
+ >축약표기법은 grow는 필수기재 but shrink와 basis는 옵션
+
+11)flex의 자식요소들은 'order'속성을 통해 배열 순서를 쉽게 변경 가능
+
+12)align-self
+-align-items 는 부모요소에서 모든 자식요소의 수직정렬을 위해서 적용할 수 있는 속성
+-align-self 는 각 자식요소에서 독립적으로 수직정렬의 배열을 선택할 수 있도록 해주는 속성
+
+13)flex에서도 margin 사용 가능하다
+-but , gap을 주로 사용  보통 space-between . space-around의 사용빈도가 훨씬 많다
+
+*css에서 특정 수치값을 도출하기 위해서 직접 연산자를 활용해서 계산하는 방법 (cal

@@ -1,0 +1,109 @@
+@import url("./reset.css");
+
+body {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+#main {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+header {
+  background: tomato;
+  padding: 2.6%;
+  text-align: center;
+}
+article {
+  display: flex;
+  flex-direction: row;
+}
+footer {
+  background: aqua;
+  padding: 2.6%;
+  text-align: center;
+}
+.content1,
+.content2,
+.content3 {
+  border: 1px solid #000;
+  height: 500px;
+  /* 컨텐츠 안에 수평 수직 정렬하기 위한 flex */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content1 {
+  flex: 1;
+  background: yellow;
+}
+.content2 {
+  flex: 4;
+  background: gray;
+}
+.content3 {
+  flex: 1;
+  background: green;
+}
+@media screen and (max-width: 769px) {
+  .main {
+    width: 100%;
+  }
+  article {
+    flex-direction: column;
+  }
+  .content1 {
+    order: 2;
+  }
+  .content2 {
+    order: 1;
+  }
+  .content3 {
+    order: 3;
+  }
+}
+/* header {
+  background: red;
+  height: 100px;
+  line-height: 100px;
+  border: 1px solid #000;
+  text-align: center;
+}
+article {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.content1,
+.content2,
+.content3 {
+  height: calc(100vh - 200px);
+  border: 1px solid #000;
+}
+
+.content1 {
+  background: yellow;
+  flex: 2;
+  text-align: center;
+  line-height: calc(100vh - 200px);
+}
+.content2 {
+  background: grey;
+  flex: 8;
+  text-align: center;
+}
+.content3 {
+  background: green;
+  flex: 2;
+  text-align: center;
+  line-height: calc(100vh - 200px);
+}
+footer {
+  background: skyblue;
+  height: 100px;
+  line-height: 100px;
+  border: 1px solid #000;
+  text-align: center;
+} */

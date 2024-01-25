@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  height: 100vh;
+}
+/* 
+.header {
+  height: 100px;
+  line-height: 100px;
+  background: rgb(132, 202, 74);
+  text-align: center;
+  color: #fff;
+}
+#content {
+  display: flex;
+}
+
+.article,
+.aside1,
+.aside2 {
+  height: calc(100vh - 200px);
+}
+
+.article {
+  background: rgb(233, 228, 228);
+  flex-grow: 5;
+}
+.aside1 {
+  background: rgb(211, 208, 202);
+  flex-grow: 1;
+}
+.aside2 {
+  background: rgb(160, 158, 154);
+  flex-grow: 1;
+}
+.footer {
+  height: 100px;
+  line-height: 100px;
+  background: rgb(45, 46, 45);
+  text-align: center;
+  color: #fff;
+} */
+nav {
+  height: 100vh;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  background: grey;
+}
+#main {
+  display: flex;
+}
+nav {
+  background: rgb(221, 217, 217);
+  flex: 1;
+  color: #fff;
+}
+#right {
+  flex: 7;
+}
+.header {
+  height: 100px;
+  background: rgb(124, 123, 123);
+  color: #fff;
+}
+
+.article {
+  height: calc(100vh - 200px);
+}
+
+.article {
+  background: pink;
+  flex: 7;
+}
+.aside1 {
+  background: yellow;
+  flex: 3;
+}
+.footer {
+  height: 100px;
+  background: rgb(36, 34, 34);
+  color: #fff;
+}
+.middle {
+  display: flex;
+  flex-direction: column;
+}
+#content {
+  flex: 9;
+}
+#last {
+  display: flex;
+  flex: 1;
+}

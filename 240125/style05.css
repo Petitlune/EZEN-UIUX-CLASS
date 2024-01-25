@@ -1,0 +1,15 @@
+.parent {
+  border: 5px solid rgb(10, 187, 84);
+  display: flex;
+}
+.parent div {
+  width: 100px;
+  height: 50px;
+  background: crimson;
+  color: aliceblue;
+  text-align: center;
+}
+/* justify-content: space-between와 똑같이 나타남 */
+.child2 {
+  margin: auto;
+}

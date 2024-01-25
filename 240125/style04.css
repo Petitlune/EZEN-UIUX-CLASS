@@ -1,0 +1,40 @@
+.parent {
+  height: 500px;
+  border: 5px solid rebeccapurple;
+  display: flex;
+  align-items: flex-start;
+}
+.child1 {
+  width: 200px;
+  height: 200px;
+  margin: 5px;
+  text-align: center;
+  font-size: 25px;
+  background: darkcyan;
+  color: #fff;
+  flex: 1;
+  order: 2;
+}
+.child2 {
+  width: 200px;
+  height: 200px;
+  margin: 5px;
+  text-align: center;
+  font-size: 25px;
+  background: crimson;
+  color: #fff;
+  flex: 1;
+  order: 3;
+}
+.child3 {
+  width: 200px;
+  height: 200px;
+  margin: 5px;
+  text-align: center;
+  font-size: 25px;
+  background: tan;
+  color: #fff;
+  flex: 1;
+  order: 1;
+  align-self: flex-end;
+}
