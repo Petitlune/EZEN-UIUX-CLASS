@@ -1,0 +1,13 @@
+* Flex 기본예제 / 실전예제
+* Grid
+* SCSS
+
+min-height : 출력할 수 있는 높이가 줄더라도 최소한 80px만큼의 높이는 고정 
+max-height : 출력할 수 있는 높이가 늘더라도 최대 80px만큼의 높이까지만 출력                
+
+fallback기법!!! (픽셀과 rem 같이 사용하는 것)
+: 브라우저간 크로스오버 기능 가능!  
+--rem같은 최신문법 반영 안될시 픽셀 값으로 적용됨.        
+
+position: static(기본적용) / relative / absolute / fixed                        
+                    ㄴ>작성한 순서대로 위치를 잡아주겠다.       
