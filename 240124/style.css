@@ -23,12 +23,16 @@
   transition-property: background, width;
   transition-duration: 1s, 5s;
 }
+
 #graph:hover > .bar {
   width: 500px;
 }
 #graph:hover > .bar:nth-child(1) {
   width: 100px;
   background: red;
+}
+.bar:nth-child(1):hover {
+  transform: scale(2.5) translateZ(50px);
 }
 
 #graph:hover > .bar:nth-child(2) {

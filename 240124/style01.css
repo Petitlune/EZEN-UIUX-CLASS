@@ -12,19 +12,23 @@ body {
 
   animation-name: rint;
   animation-duration: 4s;
-  animation-iteration-count: infinite;
+animation-iteration-count: infinite;
   animation-timing-function: ease-out;
   /* 계속해서 반복하겠다는 뜻 */
   /* animation-iteration-count: infinite; */
-  animation-direction: alternate;
+  animation-direction:reverse;
 }
 @keyframes rint {
   0% {
     left: 0;
     transform: rotate(0deg);
   }
-  10% {
-    left: 500px;
+  30% {
+    left:300px;
+    transform: rotate(90deg);
+  }
+  100% {
+    left: 900px;
     transform: rotate(360deg);
   }
 }

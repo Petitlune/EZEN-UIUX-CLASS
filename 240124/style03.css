@@ -11,7 +11,7 @@ section {
   height: 200px;
 
   position: relative;
-  animation: rint 3s linear 0s infinite;
+  animation: rint 5s linear 0s infinite;
   /* 자식요소의 공간감을 보여주기 위해 부모요소에 preserve-3d를 넣어주어야함 */
   transform-style: preserve-3d;
 }
@@ -20,7 +20,7 @@ section {
     transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
   }
   to {
-    transform: rotateX(360deg) rotateY(0360deg) rotateZ(360deg);
+    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
   }
 }
 div {

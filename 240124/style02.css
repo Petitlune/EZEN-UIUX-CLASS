@@ -4,11 +4,19 @@ section {
   border: 5px solid #000;
   margin: 100px;
 }
-div {
+section:first-child div {
   width: 100px;
   height: 100px;
   background: #f00;
   /* 위로부터 50px 떨어진 지점에서 60deg 회전한 결과값을 도출 */
   transform: rotate(60deg);
   transform-origin: 100% 100%;
+}
+#second {
+  width: 100px;
+  height: 100px;
+  background: #00f;
+  /* transform: rotate(60deg); */
+ transform: rotate(60deg);
+ transform-origin: 100% 100%;
 }
