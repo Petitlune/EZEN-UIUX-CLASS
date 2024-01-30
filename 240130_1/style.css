@@ -1,119 +1,139 @@
-* { margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 li {
-list-style: none;
+  list-style: none;
 }
 a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
-  @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap");
 body {
-    font-family: 'Caveat', cursive;
-    font-style: italic;
-    background: #A7BBD3;
+  font-family: "Caveat", cursive;
+  font-style: italic;
+  background: #a7bbd3;
+  overflow: hidden;
 }
 #wrap {
-    width: 1440px;
-margin: 0 auto;
+  width: 1440px;
+  margin: 0 auto;
 }
 header {
-    display: flex;
-   justify-content: space-between;
-   align-items: center;
-    width: 100%;
-    height: 200px;
-  
-    margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+
+  margin: 0 auto;
 }
 h1 {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 h1 img {
-    margin-right: 10px;
-    width: 70px;
+  margin-right: 10px;
+  width: 70px;
 }
 h1 a {
-    font-size: 68px;
+  font-size: 30px;
 }
 .btn {
-    
-    display: flex;
-    justify-content: center;
-    padding: 10px 30px;
-    position: relative;
-    gap: 80px;
-
+  display: flex;
+  justify-content: center;
+  padding: 10px 30px;
+  position: relative;
+  gap: 80px;
 }
 
-
-   
 .btn .bar::after {
-    display: block;
- position: absolute;
- bottom: 1px;
-    content: "";
-    width:20%;
-    height: 5px;
-    background: #000;
-    opacity: 0;
+  display: block;
+  position: absolute;
+  bottom: 1px;
+  content: "";
+  width: 18%;
+  height: 1px;
+  background: #000;
+  opacity: 0;
+  transition: all 0.5s;
 }
-
-
-
-
+.btn .last::after {
+  display: block;
+  position: absolute;
+  bottom: 1px;
+  content: "";
+  width: 25%;
+  height: 1px;
+  background: #000;
+  opacity: 0;
+  transition: all 0.3s;
+}
 
 .btn span:hover::after {
-    opacity: 1;
-
+  opacity: 1;
 }
 .btn span:hover {
-    color: black;
+  color: black;
 }
 .btn a span {
-    margin-left: 10px;
-   
-    font-weight: bold;
-    font-size: 30px;
-    color: #fff;
+  margin-left: 10px;
+  font-weight: bold;
+  font-size: 20px;
+  color: #fff;
 }
 
 .container {
-    display: flex;
-    justify-content: right;
-    margin-top: 300px;
-
+  width: 100%;
+  height: 800px;
+  display: flex;
+  justify-content: right;
+  margin-top: 100px;
 }
 .content {
-    
-    position: relative;
-    display: flex;
+  position: relative;
+  display: flex;
   justify-content: right;
-    width: 80%;
-    
+  width: 80%;
+  height: 100%;
 }
-.container img {
-    width: inherit;
-}
-.container img:hover {
-    transform: scale(1.1);
-}
-.container h1{
-    position: absolute;
-    top: 28%;
-    left: 8.9%;
-    float: right;
-    display: flex;
-    flex-direction: column;
-}
-.container h1 span {
-    margin-bottom: 10%;
-    font-size: 80px;
+.container .content img {
+  width: 95%;
+  height: 100%;
+
+  position: absolute;
+  right: 0;
+  top: 0;
+  object-fit: cover;
+  transition: all 20s linear;
 }
 
-.content span:hover {
-   color: #fff;
+/* .container .content .kimimg:hover {
+  translate: 9990px;
+} */
+
+.container h1 {
+  position: absolute;
+  top: 25%;
+  left: -7%;
+  display: flex;
+  flex-direction: column;
+}
+.container h1 span {
+  margin-bottom: 10%;
+  font-size: 80px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.content h1 span:hover {
+  color: #fff;
+}
+.S {
+  opacity: 0;
+}
+.Y {
+  opacity: 0;
 }

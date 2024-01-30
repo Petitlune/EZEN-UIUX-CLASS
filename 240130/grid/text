@@ -1,0 +1,7 @@
+/* grid-template-columns: auto auto;
+grid-template-columns: 1fr 1fr;
+둘은 같은 결과값 fr = fraction = 파편,분모 */
+/* 
+축약 
+font / background / flex / flex-flow / animation / transfrom / transition / grid
+grid는 무조건 열 다음에 행이 온다. */
