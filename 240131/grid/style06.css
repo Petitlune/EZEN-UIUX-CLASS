@@ -1,0 +1,35 @@
+.parent {
+  border: 3px solid black;
+  background: khaki;
+  display: grid;
+  grid-template-areas: ". . . item item" ". . . item item";
+}
+.parent div {
+  border: 1px solid black;
+
+  padding: 10px;
+  text-align: center;
+  font-size: 30px;
+}
+.item {
+  background: crimson;
+  grid-area: item;
+}
+/* .parent div:nth-child(1) {
+  order: 6;
+}
+.parent div:nth-child(2) {
+  order: 5;
+}
+.parent div:nth-child(3) {
+  order: 4;
+}
+.parent div:nth-child(4) {
+  order: 3;
+}
+.parent div:nth-child(5) {
+  order: 2;
+}
+.parent div:nth-child(6) {
+  order: 1;
+} */

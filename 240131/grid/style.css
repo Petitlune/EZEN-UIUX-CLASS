@@ -1,0 +1,25 @@
+@import url("./reset.css");
+.parent {
+  border: 5px solid black;
+  width: 900px;
+  height: 300px;
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-items: center;
+  align-items: center;
+  /* justify-content: center;
+  align-content: space-between;
+  gap: 10px; */
+}
+.parent div:nth-child(2) {
+  justify-self: end;
+}
+.parent div {
+  background: skyblue;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  color: #fff;
+  line-height: 100px;
+  font-size: 30px;
+}

@@ -1,0 +1,36 @@
+.parent {
+  height: 100vh;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 300px 1fr 300px;
+  grid-template-rows: 100px 150px 1fr 150px 100px;
+}
+.parent div {
+  background: skyblue;
+  color: black;
+  display: grid;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.header {
+  grid-column: 1 / 5;
+}
+.menu {
+  grid-area: 2/1 / 5/2;
+}
+.main {
+  grid-area: 2/2 / 5/3;
+}
+.top {
+  grid-area: 2/3 / 3/4;
+}
+.aside {
+  grid-area: 3/3 / 4/4;
+}
+.bottom {
+  grid-area: 4/3 / 5/4;
+}
+.footer {
+  grid-column: 1 / 5;
+}

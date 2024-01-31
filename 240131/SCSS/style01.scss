@@ -1,0 +1,99 @@
+// * {
+//   margin: 0;
+//   padding: 0;
+//   box-sizing: border-box;
+// }
+// li {
+//   list-style: none;
+// }
+// a {
+//   text-decoration: none;
+//   color: inherit;
+// }
+
+// body {
+//   background: #000;
+//   a {
+//     color: #fff;
+//   }
+//   display: flex;
+//   justify-content: center;
+//   height: 100vh;
+//   align-items: center;
+// }
+// .btn-outer {
+//   border: 1px solid #fff;
+//   width: 300px;
+//   height: 50px;
+
+//   .btn {
+//     display: block;
+//     text-transform: uppercase;
+//     text-align: center;
+//     line-height: 50px;
+//      부모요소를 불러올때는 &(앤퍼센드)를 적어준다
+//     &:hover {
+//       color: crimson;
+//     }
+//   }
+// }
+
+// .heading {
+//   background: crimson;
+//   width: 500px;
+//   padding: 10px;
+//   text-align: center;
+// }
+// h1 {
+//   color: #fff;
+//   font-weight: 500;
+//   & span {
+//     display: block;
+//     color: black;
+//     font-weight: bold;
+//   }
+// }
+
+// $primary: royalblue;
+// $confirm: yellowgreen;
+// $danger: crimson;
+// $btn-padding: 10px 30px;
+
+// .btns {
+//   text-align: center;
+//   .btn {
+//     border: none;
+//     border-radius: 5px;
+//     padding: $btn-padding;
+//     text-transform: uppercase;
+//     color: #fff;
+//   }
+//   .primary {
+//     background: $primary;
+//   }
+//   .secondary {
+//     background: $danger;
+//   }
+//   .accent {
+//     background: $confirm;
+//   }
+// }
+
+.heading {
+  text-align: center;
+  position: relative;
+  padding-bottom: 15px;
+  span {
+    color: royalblue;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 4px;
+    background: crimson;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+  }
+}
