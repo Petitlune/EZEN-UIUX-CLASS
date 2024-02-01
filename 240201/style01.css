@@ -1,0 +1,45 @@
+body {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.figma h1 {
+  font-weight: normal;
+}
+.figma .logo {
+  display: grid;
+  grid-template-columns: repeat(2 1fr);
+  grid-template-rows: auto;
+  grid-template-areas: "one two" "thr fo" "fiv fiv";
+}
+.figma .logo-1 {
+  background-color: #f00;
+  border-radius: 50% 0 0 50%;
+  grid-row: one;
+}
+.figma .logo-2 {
+  background-color: orangered;
+  border-radius: 0 50% 50% 0;
+  grid-row: two;
+}
+.figma .logo-3 {
+  background-color: purple;
+  border-radius: 50% 0 0 50%;
+  grid-row: thr;
+}
+.figma .logo-4 {
+  background-color: skyblue;
+  border-radius: 50% 50% 50% 50%;
+  grid-row: fo;
+}
+.figma .logo-5 {
+  background-color: green;
+  border-radius: 50% 0 50% 50%;
+  grid-row: fiv;
+}
+.figma .logo div {
+  width: 50px;
+  height: 50px;
+}/*# sourceMappingURL=style01.css.map */

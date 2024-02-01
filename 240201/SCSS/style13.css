@@ -1,0 +1,31 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.btn, .checkout, .add, .order {
+  width: 200px;
+  padding: 7px;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  font-size: 18px;
+  border: 1px solid black;
+  box-shadow: 0 0 30pxpx crimson;
+  cursor: pointer;
+}
+
+.order {
+  background: purple;
+}
+
+.add {
+  background: yellowgreen;
+}
+
+.checkout {
+  border: 1px solid #000;
+  color: black;
+}/*# sourceMappingURL=style13.css.map */
