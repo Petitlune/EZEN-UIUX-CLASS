@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.wrap {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.wrap::before {
+  position: absolute;
+  content: "";
+  background: url("./img/background.jpg") center/cover no-repeat;
+  width: 100%;
+  height: 100vh;
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+header {
+  width: 100%;
+  height: 80px;
+}
+header .logo {
+  display: flex;
+  justify-content: space-between;
+  height: 100px;
+  align-items: center;
+}
+header img {
+  display: block;
+  width: 80px;
+}/*# sourceMappingURL=style.css.map */
