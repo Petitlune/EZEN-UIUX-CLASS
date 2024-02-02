@@ -22,26 +22,64 @@ a {
 .wrap::before {
   position: absolute;
   content: "";
-  background: url("./img/background.jpg") center/cover no-repeat;
+  background: url("./img/backg.png") center/cover no-repeat;
   width: 100%;
   height: 100vh;
   opacity: 0.3;
   top: 0;
   left: 0;
+  transform: translateY(-2%);
   z-index: -1;
 }
 
-header {
+.head {
+  margin: 0 0 0 20px;
   width: 100%;
-  height: 80px;
-}
-header .logo {
+  height: 100px;
   display: flex;
   justify-content: space-between;
-  height: 100px;
   align-items: center;
 }
-header img {
-  display: block;
+.head .logo {
+  display: flex;
+  width: 350px;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.head .logo img {
   width: 80px;
+}
+.head .logo h1 {
+  font-size: 50px;
+}
+.head .gnb {
+  position: relative;
+}
+.head .gnb a {
+  font-size: 1.5em;
+  margin: 0 50px 0 0;
+}
+.head .gnb a::before {
+  content: "";
+  width: 80px;
+  height: 2px;
+  background: palevioletred;
+  position: absolute;
+  bottom: -10px;
+  opacity: 1;
+}
+.head .gnb a:hover {
+  color: palevioletred;
+}
+.head .name {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+}
+.head .name span {
+  font-size: 100px;
 }/*# sourceMappingURL=style.css.map */
