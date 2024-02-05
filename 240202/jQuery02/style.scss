@@ -38,7 +38,7 @@ body {
           width: 100%;
           height: 400px;
           box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
-          border-radius: 15px;
+          border-radius: 30px;
           img {
             width: inherit;
             height: inherit;
@@ -133,11 +133,11 @@ body {
   .portfolio {
     height: auto;
     padding: 20px;
-    .headline-share {
-      h1 {
-        // font-size: map-get($font-size, small-heading);
-      }
-    }
+    // .headline-share {
+    //   h1 {
+    //     font-size: map-get($font-size, small-heading);
+    //   }
+    // }
     .items {
       width: 100%;
       grid-template-columns: repeat(1, 1fr);

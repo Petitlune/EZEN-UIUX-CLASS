@@ -1,0 +1,42 @@
+첫번째 페이지 
+1. 기능구현 
+- mouse :hover (change color)
+- input[type="checkbox"]:checked + div[id="agree"] { height: 0px; } : 클릭시 숨겨지는 기능 / 클릭시 펼쳐지는 기능
+ ㄴ> label과 함께 이용
+-  background: linear-gradient( to bottom #f85032 50%, #f16f5c 60%, #f6290c 70%, #e73827 100%);
+   ㄴ> 그라디언트 효과
+- #toggle + #Wrap > #toggle_gnb_wrap {display: none;}
+/*chedcked가 되었다는 조건을 걸어준 것 임*/ #toggle:checked + #Wrap > #toggle_gnb_wrap {display: block;} - 누르면 gnb바 나타남
+- trasform rotate 제자리에서 360 도 돌아가게 만들기
+- 토글바 클릭시 삼단바에서 X로 변하게 transform: rotate 이용 / position: absolute; 이용
+- 전후문자 선택자로 이미지에 마우스 오버시 이미지 전체를 색상으로 덮는 효과(opacity 조절)
+  ㄴ>x-index로 이미지보다 앞쪽으로 위치하게 설정 / 글자도 같은 방식으로 적용
+위에서 위로 슬라이드가 올라오는 방식(평소에는  overflow hidden적용) 
+
+-animation 효과 적용해서 메인페이지 뒷편에 도넛이 계속해서 흘러가게 적용
+
+-div 태그 안에 img 소스 이용해 height가 긴 페이지 삽입. div height 조절해주고 
+object fit : cover 이용해 맞춰줌. object position: top이용해서 고정시켜준 뒤 div:hover img 에서 
+object position을 bottom으로 입력해 위로 스스륵 올라가게 만듦
+
+<js로 해야할 것>
+-모바일 반응형 시 -toggle 버튼 생성 후 클릭
+-위로 올라가기 버튼 scrollTo
+- 스크롤 내렸을 때도 헤더 고정 scroll
+check box 
+<!-- jQuery가 featherlight보다 우선적으로 와야함 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <!-- featherlight css & js -->
+    <link rel="stylesheet" href="./featherlight.css" />
+    <script src="./featherlight.js"></script>
+JQuery에서 다운 featherlight 입력 후 도서관에서 자바 빌려다가 씀. 
+ ㄴ> 페이지 내 이미지 클릭시 모달창이용해서 다른페이지 띄움
+
+
+--scss사용 
+@import "reset";
+@import "mixin";  / @include btn-base; 
+@import "variables"; / font-family: map-get($font-family, kor);
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap"); - 영문 폰트 적용
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap"); - 한글 폰트 적용
+ 
