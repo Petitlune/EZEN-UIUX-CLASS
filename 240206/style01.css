@@ -1,0 +1,53 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.loading {
+  width: 100px;
+  height: 100px;
+
+  position: relative;
+}
+.loading span {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  animation: load 1.5s linear infinite;
+}
+span:nth-child(1) {
+  background: blue;
+}
+span:nth-child(2) {
+  animation-delay: 0.8s;
+  background: gray;
+}
+@keyframes load {
+  0% {
+    top: 0;
+    left: 0;
+  }
+  25% {
+    top: 0;
+    left: 80px;
+    background: darkblue;
+  }
+  50% {
+    top: calc(100% - 20px);
+    left: calc(100% - 20px);
+    background: powderblue;
+  }
+  75% {
+    top: calc(100% - 20px);
+    left: 0;
+    background: rgb(198, 198, 226);
+  }
+  100% {
+    top: 0;
+    left: 0;
+  }
+}

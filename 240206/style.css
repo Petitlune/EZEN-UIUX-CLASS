@@ -1,0 +1,36 @@
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.loading span {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  animation: loading 1s linear infinite;
+}
+span:nth-child(1) {
+  animation-delay: 0.2s;
+  background: crimson;
+}
+span:nth-child(2) {
+  animation-delay: 0.2s;
+  background: royalblue;
+}
+span:nth-child(3) {
+  animation-delay: 0.4s;
+  background: skyblue;
+}
+@keyframes loading {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
