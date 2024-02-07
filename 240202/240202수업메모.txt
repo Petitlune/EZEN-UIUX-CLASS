@@ -1,0 +1,10 @@
+jQuery 파일 설치 - uncompresed 링크주소복사 -  html에 <script src="https://code.jquery.com/jquery-3.7.1.js"></script> 입력 or 파일 저장후 불러오기로 입력 ->  plug-in (종류 여러가지!! / featherlight css & 넣어주고 앵커태그 안에 <a href="#" data-featherlight="iframe"> 입력
+
+Js 코드 입력해서 UI => 하드코팅
+jQuery 외부 플러그인 활용해서 UI  ==> 소프트코딩 / 가코딩 (이번 프로젝트에서만 사용)
+
+*부트스트랩 -> 실전예제 (퍼블리셔라면 무조건 알아야하는 예제 - 제이쿼리) -> figma + html & css + jQuery : 다음주까지(8일)
+
+*JS(15) > TS(10) > React(20)
+
+실제 포트폴리오 만들때 직접페이지로 이동하게 하면 감점요인!!! ==> 모달창으로 띄우는게 좋다

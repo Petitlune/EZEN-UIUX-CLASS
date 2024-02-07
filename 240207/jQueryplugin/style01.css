@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 800px;
+  margin: 0 auto;
+}
+.parent {
+  border: 1px solid #000;
+  width: 800px;
+  padding: 20px;
+  overflow: hidden;
+  display: flex;
+}
+.parent div {
+  width: 50%;
+  height: 200px;
+  text-align: center;
+  line-height: 200px;
+  font-size: 3rem;
+  border: 3px solid royalblue;
+}
+.left {
+  opacity: 0;
+  animation: ltr 0.5s linear;
+  animation-fill-mode: both;
+}
+.right {
+  opacity: 0;
+  animation: rtl 0.5s linear;
+  animation-fill-mode: both;
+}
+@keyframes ltr {
+  0% {
+    opacity: 0;
+    transform: translateX(-150px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes rtl {
+  0% {
+    opacity: 0;
+    transform: translateX(150px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
