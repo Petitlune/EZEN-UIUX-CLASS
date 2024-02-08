@@ -22,18 +22,17 @@ a {
 #wrap {
   width: 100%;
   height: 100%;
-  position: relative;
   background: url("./img/bg_main.jpg");
-  z-index: -1;
 }
 
 header {
-  width: 100%;
-  height: 120px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  padding-top: 50px;
+  width: 100%;
+  height: 100px;
   gap: 55%;
 }
 header h1 {
@@ -45,7 +44,6 @@ header h1 {
 }
 header h1 span {
   display: inline-block;
-  margin-left: 10px;
   padding-bottom: 5px;
 }
 header h1 span i {
@@ -74,13 +72,13 @@ header .btn {
 header .btn a span {
   color: #222;
   font-family: "BRBA_B";
-  font-size: 35px;
+  font-size: 30px;
   font-weight: 100;
 }
 
 .container {
   width: 100%;
-  height: 800px;
+  height: 960px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -89,7 +87,7 @@ header .btn a span {
   display: flex;
   align-items: center;
   justify-content: right;
-  height: 80%;
+  height: 60%;
   width: 80%;
   margin: 0 20%;
   position: relative;
@@ -104,7 +102,6 @@ header .btn a span {
   height: 100%;
   background: url("./img/pen.jpg") center/cover;
   opacity: 0.8;
-  z-index: -5;
   border-radius: 190px;
 }
 .container .frame .content {
@@ -134,20 +131,20 @@ header .btn a span {
   cursor: pointer;
   transition: all 0.3s;
   opacity: 0;
-  animation: name 1s linear;
+  animation: name 1.5s linear;
   animation-fill-mode: both;
 }
 .container .frame .content .name span:hover {
   color: #fff;
 }
 .container .frame .content .name span:nth-child(1) {
-  animation-delay: 0.2s;
+  animation-delay: 0.1s;
 }
 .container .frame .content .name span:nth-child(2) {
   animation-delay: 0.5s;
 }
 .container .frame .content .name span:nth-child(3) {
-  animation-delay: 0.8s;
+  animation-delay: 0.9s;
 }
 @keyframes name {
   0% {
@@ -176,15 +173,14 @@ header .btn a span {
   height: 100%;
 }
 .container .frame .content .slide ul li a {
-  border: 1px solid red;
-  position: relative;
   display: block;
   width: 100%;
   height: 100%;
+  position: relative;
   overflow: hidden;
 }
 .container .frame .content .slide ul li a::before {
-  content: "";
+  content: "1";
   width: 100%;
   height: 100%;
   position: absolute;
@@ -207,11 +203,12 @@ header .btn a span {
   font-size: 45px;
   font-weight: 100;
   color: #fff;
-  opacity: 1;
+  opacity: 0;
+  transition: all 0.3s;
 }
 .container .frame .content .slide ul li a:hover h1 {
+  top: 50%;
   opacity: 1;
-  top: -100%;
 }
 .container .frame .content .slide ul li a img {
   width: 100%;
