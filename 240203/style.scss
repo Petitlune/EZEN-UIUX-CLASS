@@ -1,39 +1,37 @@
 @import "reset";
 @import "variable";
-@font-face {
-  font-family: "BRBA_B";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.2/BRBA_B.woff")
-    format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;300;400;500&display=swap");
 
+#body {
+  width: 100%;
+  height: 100%;
+}
 #wrap {
   width: 100%;
   height: 100%;
-  background: url("./img/bg_main.jpg");
+  margin: 0 auto;
 }
-
 header {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding-top: 50px;
-  width: 100%;
-  height: 100px;
+  width: 1920px;
+  height: 120px;
+  margin: 0 auto;
   gap: 55%;
 
   h1 {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     width: 300px;
     height: auto;
 
     span {
       display: inline-block;
-      padding-bottom: 5px;
+      padding-top: 8px;
 
       i {
         color: #d35583;
@@ -46,8 +44,7 @@ header {
     }
 
     a {
-      color: #222;
-      font-size: map-get($font-size, medium-heading);
+      font-size: 50px;
       font-family: map-get($font-family, main);
       font-weight: bold;
       display: block;
@@ -58,13 +55,12 @@ header {
     align-items: center;
     justify-content: center;
     height: 100%;
-    gap: 30px;
+    gap: 50px;
     position: relative;
     a {
       span {
-        color: #222;
         font-family: map-get($font-family, main);
-        font-size: 30px;
+        font-size: 22px;
         font-weight: 100;
       }
     }
@@ -72,22 +68,23 @@ header {
 }
 
 .container {
+  background: url("./img/bg_main.jpg");
   width: 100%;
-  height: 960px;
+  height: 820px;
   display: flex;
   align-items: center;
   justify-content: center;
   .frame {
     display: flex;
     align-items: center;
-    justify-content: right;
-    height: 60%;
-    width: 80%;
-    margin: 0 20%;
+    justify-content: left;
+    height: 90%;
+    width: 1500px;
     position: relative;
     border: 10px solid #d35583;
     box-shadow: 0 0 10px #a92f51;
     border-radius: 200px;
+    overflow: hidden;
     &::before {
       content: "";
       position: absolute;
@@ -100,7 +97,7 @@ header {
     .content {
       display: flex;
       float: left;
-      width: 1200px;
+      width: 75%;
       height: 420px;
       padding-right: 70px;
       justify-content: center;
@@ -122,7 +119,7 @@ header {
           cursor: pointer;
           transition: all 0.3s;
           opacity: 0;
-          animation: name 1.5s linear;
+          animation: name 1s linear;
           animation-fill-mode: both;
           &:hover {
             color: #fff;
@@ -168,7 +165,7 @@ header {
               position: relative;
               overflow: hidden;
               &::before {
-                content: "1";
+                content: "";
                 width: 100%;
                 height: 100%;
                 position: absolute;
@@ -183,13 +180,15 @@ header {
                 opacity: 0.6;
               }
               h1 {
+                width: 100%;
                 position: absolute;
                 left: 50%;
                 top: 150%;
                 transform: translate(-50%, -50%);
-                font-family: map-get($font-family, main);
+                text-align: center;
+                font-family: map-get($font-family, sub);
                 font-size: map-get($font-size, medium-heading);
-                font-weight: 100;
+                font-weight: 400;
                 color: #fff;
                 opacity: 0;
                 transition: all 0.3s;
@@ -205,9 +204,270 @@ header {
                 object-fit: cover;
                 object-position: 50% 60%;
               }
+              #hang {
+                object-fit: cover;
+                object-position: 50% 28%;
+              }
             }
           }
         }
+      }
+    }
+    .about {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 25%;
+      height: 100%;
+      display: flex;
+      flex-flow: column nowrap;
+      gap: 10px;
+      div {
+        width: 100%;
+        animation: side 0.5s linear;
+        animation-fill-mode: both;
+        opacity: 0;
+
+        &:nth-child(1) {
+          height: 40%;
+          background: #be502b;
+          border-radius: 5% 0 5% 5%;
+          animation-delay: 0.3s;
+        }
+        &:nth-child(2) {
+          height: 30%;
+          background: #e4953e;
+          border-radius: 5% 5% 5% 5%;
+          animation-delay: 0.5s;
+        }
+        &:nth-child(3) {
+          height: 30%;
+          background: #508023;
+          border-radius: 5% 0 0 5%;
+          animation-delay: 0.7s;
+        }
+        @keyframes side {
+          0% {
+            opacity: 0;
+            transform: translateX(100px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateX(20px);
+          }
+        }
+      }
+    }
+  }
+}
+.section01 {
+  background: white;
+  width: 100%;
+  height: 840px;
+  input {
+    display: none;
+    &[id="tab1"]:checked ~ .section-menu .first-menu {
+      left: 0;
+    }
+    &[id="tab2"]:checked ~ .section-menu .first-menu {
+      left: -1830px;
+    }
+  }
+  .kim {
+    margin: 100px 0 50px 0;
+    text-align: center;
+    h1 {
+      color: #ff5484;
+      font-size: map-get($font-size, large-heading);
+      font-family: map-get($font-family, main);
+      font-weight: 900;
+      font-style: italic;
+    }
+  }
+  .section-menu {
+    width: 1800px;
+    height: 520px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+
+    .first-menu {
+      position: absolute;
+      left: 0;
+      top: 10%;
+      width: 5000px;
+      transition: all 0.5s ease-in;
+      .birth {
+        background: #be502b;
+      }
+      .personal {
+        background: #eb9598;
+      }
+      .style {
+        background: #dc9c5e;
+      }
+      .a {
+        background: url("https://img.freepik.com/premium-vector/constellation-scorpio-on-starry-night-background_158677-338.jpg")
+          center/cover no-repeat;
+      }
+      .b {
+        background: url("./img/board.jpg") 50% 60% / cover no-repeat;
+      }
+      .c {
+        background: url("./img/rachel-moenning-zjxYwd4HOu0-unsplash.jpg") 50%
+          70% / cover no-repeat;
+      }
+      div {
+        display: inline-block;
+        width: 400px;
+        height: 400px;
+        border-radius: 50% 50% 0 0;
+        margin: 0 100px;
+        position: relative;
+        h1 {
+          position: absolute;
+          top: 30%;
+          left: 50%;
+          transform: translateX(-50%);
+          font-family: map-get($font-family, main);
+          font-size: map-get($font-size, medium-heading);
+          color: #fff;
+          font-style: italic;
+        }
+        p {
+          display: inline-block;
+          width: 400px;
+          margin-top: 10px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translateX(-50%);
+          font-family: map-get($font-family, sub);
+          font-size: map-get($font-size, small-heading);
+          text-align: center;
+          span {
+            font-family: map-get($font-family, sub);
+            font-size: 35px;
+          }
+          .daytext {
+            position: absolute;
+            left: 28%;
+            top: -20%;
+            animation: daytext 3s ease-out infinite;
+            animation-delay: 0.1s;
+          }
+          @keyframes daytext {
+            0% {
+              transform: scale(1);
+            }
+            100% {
+              transform: scale(1.3);
+            }
+          }
+          .personaltext {
+            position: absolute;
+            left: 35%;
+            top: -20%;
+            animation: personaltext 3s linear infinite;
+            animation-delay: 0.2s;
+          }
+          @keyframes personaltext {
+            0% {
+              transform: scale(1);
+            }
+            100% {
+              transform: scale(1.3);
+            }
+          }
+          .styletext {
+            position: absolute;
+            left: 35%;
+            top: -20%;
+            animation: daytext 3s linear infinite;
+            animation-delay: 0.3s;
+          }
+          @keyframes daytext {
+            0% {
+              transform: scale(1);
+            }
+            100% {
+              transform: scale(1.3);
+            }
+          }
+        }
+      }
+    }
+  }
+  .buttons {
+    width: 500px;
+    height: 200px;
+    text-align: center;
+    line-height: 200px;
+    margin: 0 auto;
+    label {
+      margin: 0 5px;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border-radius: 100%;
+      background: #ff5484;
+      cursor: pointer;
+    }
+  }
+}
+.section02 {
+  background: #ffe4ea;
+  width: 100%;
+  height: 1000px;
+  .yi {
+    padding: 100px 0 50px 0;
+    text-align: center;
+    h1 {
+      color: #ff5484;
+      font-size: map-get($font-size, large-heading);
+      font-family: map-get($font-family, main);
+      font-weight: 900;
+      font-style: italic;
+    }
+  }
+  .section-inner {
+    border: 1px solid red;
+    width: 1500px;
+    height: 60%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .hobby {
+      width: 300px;
+      height: 460px;
+      background: #f8d77a;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      img {
+        width: 200px;
+        float: right;
+        position: absolute;
+        bottom: 10%;
+        right: 5%;
+      }
+    }
+    .hobby-inner {
+      border: 1px solid red;
+      width: 800px;
+      height: 500px;
+
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      div {
+        width: 300px;
+        height: 200px;
+        background: #fff;
+        border-radius: 10px;
       }
     }
   }
