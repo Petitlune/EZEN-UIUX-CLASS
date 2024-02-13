@@ -27,20 +27,27 @@ a {
 }
 
 header {
+  position: fixed;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: 1920px;
-  height: 120px;
+  width: 100%;
+  height: 80px;
   margin: 0 auto;
-  gap: 55%;
+  gap: 30%;
+  z-index: 100;
+  background: #fff;
+}
+header.active {
+  background: #ff5484;
+  color: #fff;
 }
 header h1 {
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: start;
   align-items: center;
-  width: 300px;
+  width: 800px;
   height: auto;
 }
 header h1 span {
@@ -54,6 +61,9 @@ header h1 span i {
   display: inline-block;
   width: 50px;
   height: 50px;
+}
+header h1 span i.active {
+  color: #fff;
 }
 header h1 a {
   font-size: 50px;
@@ -72,13 +82,14 @@ header .btn {
 header .btn a span {
   font-family: "Roboto_head";
   font-size: 22px;
-  font-weight: 100;
+  font-weight: 500;
 }
 
 .container {
   background: url("./img/bg_main.jpg");
   width: 100%;
-  height: 820px;
+  height: 920px;
+  padding: 100px 0 0 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -312,13 +323,13 @@ header .btn a span {
   transition: all 0.5s ease-in;
 }
 .section01 .section-menu .first-menu .birth {
-  background: #be502b;
+  background: #ffbe6f;
 }
 .section01 .section-menu .first-menu .personal {
   background: #eb9598;
 }
 .section01 .section-menu .first-menu .style {
-  background: #dc9c5e;
+  background: #7cc1eb;
 }
 .section01 .section-menu .first-menu .a {
   background: url("https://img.freepik.com/premium-vector/constellation-scorpio-on-starry-night-background_158677-338.jpg") center/cover no-repeat;
@@ -418,11 +429,24 @@ header .btn a span {
 .section01 .buttons label {
   margin: 0 5px;
   display: inline-block;
-  width: 20px;
-  height: 20px;
+  width: 1em;
+  height: 1em;
   border-radius: 100%;
   background: #ff5484;
   cursor: pointer;
+  transition: all 0.3s;
+}
+.section01 .buttons label:nth-child(1):hover {
+  transform: scale(1.5);
+  background: #ffbe6f;
+}
+.section01 .buttons label:nth-child(2):hover {
+  transform: scale(1.5);
+  background: #eb9598;
+}
+.section01 .buttons label:nth-child(3):hover {
+  transform: scale(1.5);
+  background: #7cc1eb;
 }
 
 .section02 {
@@ -442,7 +466,6 @@ header .btn a span {
   font-style: italic;
 }
 .section02 .section-inner {
-  border: 1px solid red;
   width: 1500px;
   height: 60%;
   margin: 0 auto;
@@ -451,33 +474,126 @@ header .btn a span {
   align-items: center;
 }
 .section02 .section-inner .hobby {
-  width: 300px;
-  height: 460px;
+  width: 350px;
+  height: 550px;
   background: #f8d77a;
   border-radius: 10px;
   overflow: hidden;
   position: relative;
 }
 .section02 .section-inner .hobby img {
-  width: 200px;
+  width: 280px;
   float: right;
   position: absolute;
-  bottom: 10%;
-  right: 5%;
+  bottom: 3%;
+  right: 4%;
+  border-radius: 10%;
+}
+.section02 .section-inner .hobby .title {
+  font-family: "Roboto";
+  color: #b7751e;
+  font-size: 30px;
+  font-weight: 500;
+  margin: 20px;
+}
+.section02 .section-inner .hobby .des {
+  font-family: "Roboto_head";
+  font-size: 45px;
+  font-weight: 600;
+  margin: 5px;
+  color: #f2c158;
+  text-align: center;
 }
 .section02 .section-inner .hobby-inner {
-  border: 1px solid red;
-  width: 800px;
-  height: 500px;
+  width: 880px;
+  height: 600px;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
   gap: 30px;
 }
-.section02 .section-inner .hobby-inner div {
-  width: 300px;
-  height: 200px;
+.section02 .section-inner .hobby-inner .box {
+  width: 400px;
+  height: 250px;
   background: #fff;
   border-radius: 10px;
+  position: relative;
+}
+.section02 .section-inner .hobby-inner .box .skate {
+  background: #bdbb54;
+  width: 180px;
+  height: inherit;
+  border-radius: 10px;
+  text-align: center;
+  padding-top: 8px;
+}
+.section02 .section-inner .hobby-inner .box .skate img {
+  width: 110px;
+}
+.section02 .section-inner .hobby-inner .box .soccer {
+  background: #4e77b3;
+  width: 180px;
+  height: inherit;
+  border-radius: 10px;
+  text-align: center;
+  padding-top: 8px;
+}
+.section02 .section-inner .hobby-inner .box .soccer img {
+  margin-top: 22px;
+  width: 150px;
+}
+.section02 .section-inner .hobby-inner .box .dog {
+  background: #fcdebc;
+  width: 180px;
+  height: inherit;
+  border-radius: 10px;
+  text-align: center;
+  padding-top: 8px;
+}
+.section02 .section-inner .hobby-inner .box .dog img {
+  margin-top: 50px;
+  width: 160px;
+}
+.section02 .section-inner .hobby-inner .box .music {
+  background: #db7760;
+  width: 180px;
+  height: inherit;
+  border-radius: 10px;
+  text-align: center;
+  padding-top: 8px;
+}
+.section02 .section-inner .hobby-inner .box .music img {
+  margin-top: 50px;
+  width: 180px;
+}
+.section02 .section-inner .hobby-inner .box span {
+  color: #b7751e;
+  font-size: 25px;
+  font-weight: 600;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+}
+.section02 .section-inner .hobby-inner .box .viewmore {
+  background: #f8d77a;
+  width: 3em;
+  height: 3em;
+  border-radius: 100%;
+  position: absolute;
+  bottom: 7%;
+  right: 5%;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.section02 .section-inner .hobby-inner .box .viewmore:hover {
+  transform: scale(1.2);
+}
+.section02 .section-inner .hobby-inner .box .viewmore i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2em;
+  color: #fff;
 }/*# sourceMappingURL=style.css.map */

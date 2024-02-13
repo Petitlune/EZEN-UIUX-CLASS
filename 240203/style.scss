@@ -13,33 +13,41 @@
   margin: 0 auto;
 }
 header {
+  position: fixed;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: 1920px;
-  height: 120px;
+  width: 100%;
+  height: 80px;
   margin: 0 auto;
-  gap: 55%;
-
+  gap: 30%;
+  z-index: 100;
+  background: #fff;
+  &.active {
+    background: #ff5484;
+    color: #fff;
+  }
   h1 {
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: start;
     align-items: center;
-    width: 300px;
+    width: 800px;
     height: auto;
-
     span {
       display: inline-block;
       padding-top: 8px;
-
       i {
         color: #d35583;
+        // color: #fff;
         font-size: 50px;
         text-align: center;
         display: inline-block;
         width: 50px;
         height: 50px;
+        &.active {
+          color: #fff;
+        }
       }
     }
 
@@ -61,7 +69,7 @@ header {
       span {
         font-family: map-get($font-family, main);
         font-size: 22px;
-        font-weight: 100;
+        font-weight: 500;
       }
     }
   }
@@ -70,7 +78,8 @@ header {
 .container {
   background: url("./img/bg_main.jpg");
   width: 100%;
-  height: 820px;
+  height: 920px;
+  padding: 100px 0 0 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -298,13 +307,13 @@ header {
       width: 5000px;
       transition: all 0.5s ease-in;
       .birth {
-        background: #be502b;
+        background: #ffbe6f;
       }
       .personal {
         background: #eb9598;
       }
       .style {
-        background: #dc9c5e;
+        background: #7cc1eb;
       }
       .a {
         background: url("https://img.freepik.com/premium-vector/constellation-scorpio-on-starry-night-background_158677-338.jpg")
@@ -353,8 +362,8 @@ header {
             position: absolute;
             left: 28%;
             top: -20%;
-            animation: daytext 3s ease-out infinite;
-            animation-delay: 0.1s;
+            animation: daytext 3s 0.1s ease-out infinite;
+            // animation-fill-mode: both;
           }
           @keyframes daytext {
             0% {
@@ -407,11 +416,24 @@ header {
     label {
       margin: 0 5px;
       display: inline-block;
-      width: 20px;
-      height: 20px;
+      width: 1em;
+      height: 1em;
       border-radius: 100%;
       background: #ff5484;
       cursor: pointer;
+      transition: all 0.3s;
+      &:nth-child(1):hover {
+        transform: scale(1.5);
+        background: #ffbe6f;
+      }
+      &:nth-child(2):hover {
+        transform: scale(1.5);
+        background: #eb9598;
+      }
+      &:nth-child(3):hover {
+        transform: scale(1.5);
+        background: #7cc1eb;
+      }
     }
   }
 }
@@ -431,7 +453,6 @@ header {
     }
   }
   .section-inner {
-    border: 1px solid red;
     width: 1500px;
     height: 60%;
     margin: 0 auto;
@@ -439,35 +460,127 @@ header {
     justify-content: center;
     align-items: center;
     .hobby {
-      width: 300px;
-      height: 460px;
+      width: 350px;
+      height: 550px;
       background: #f8d77a;
       border-radius: 10px;
       overflow: hidden;
       position: relative;
       img {
-        width: 200px;
+        width: 280px;
         float: right;
         position: absolute;
-        bottom: 10%;
-        right: 5%;
+        bottom: 3%;
+        right: 4%;
+        border-radius: 10%;
+      }
+      .title {
+        font-family: map-get($font-family, sub);
+        color: #b7751e;
+        font-size: 30px;
+        font-weight: 500;
+        margin: 20px;
+      }
+      .des {
+        font-family: map-get($font-family, main);
+        font-size: 45px;
+        font-weight: 600;
+        margin: 5px;
+        color: #f2c158;
+        text-align: center;
       }
     }
     .hobby-inner {
-      border: 1px solid red;
-      width: 800px;
-      height: 500px;
-
+      width: 880px;
+      height: 600px;
       display: flex;
       flex-flow: row wrap;
       justify-content: center;
       align-items: center;
       gap: 30px;
-      div {
-        width: 300px;
-        height: 200px;
+      .box {
+        width: 400px;
+        height: 250px;
         background: #fff;
         border-radius: 10px;
+        position: relative;
+        .skate {
+          background: #bdbb54;
+          width: 180px;
+          height: inherit;
+          border-radius: 10px;
+          text-align: center;
+          padding-top: 8px;
+          img {
+            width: 110px;
+          }
+        }
+        .soccer {
+          background: #4e77b3;
+          width: 180px;
+          height: inherit;
+          border-radius: 10px;
+          text-align: center;
+          padding-top: 8px;
+          img {
+            margin-top: 22px;
+            width: 150px;
+          }
+        }
+        .dog {
+          background: #fcdebc;
+          width: 180px;
+          height: inherit;
+          border-radius: 10px;
+          text-align: center;
+          padding-top: 8px;
+          img {
+            margin-top: 50px;
+            width: 160px;
+          }
+        }
+        .music {
+          background: #db7760;
+          width: 180px;
+          height: inherit;
+          border-radius: 10px;
+          text-align: center;
+          padding-top: 8px;
+          img {
+            margin-top: 50px;
+            width: 180px;
+          }
+        }
+        span {
+          color: #b7751e;
+          font-size: map-get($font-size, small-heading);
+          font-weight: 600;
+          position: absolute;
+          top: 10%;
+          left: 50%;
+        }
+        .viewmore {
+          background: #f8d77a;
+          width: 3em;
+          height: 3em;
+          border-radius: 100%;
+          position: absolute;
+          bottom: 7%;
+          right: 5%;
+          cursor: pointer;
+          transition: all 0.3s;
+          &:hover {
+            transform: scale(1.2);
+          }
+          i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2em;
+            color: #fff;
+          }
+        }
       }
     }
   }
