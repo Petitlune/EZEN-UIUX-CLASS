@@ -1,6 +1,7 @@
 const header = document.querySelector("header");
 const famoon = document.querySelector("i");
-console.log(famoon);
+const btn = document.querySelector(".btn");
+const button = document.querySelector(".trigger");
 
 window.addEventListener("scroll", () => {
   if (window.scrollY > 100) {
@@ -15,4 +16,7 @@ window.addEventListener("scroll", () => {
   } else {
     famoon.classList.remove("active");
   }
+});
+button.addEventListener("click", () => {
+  btn.classList.toggle("active");
 });
