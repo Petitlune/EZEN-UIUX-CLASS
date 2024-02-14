@@ -44,6 +44,36 @@ body {
   height: calc(100% - 80px);
   overflow: hidden;
 }
+/* ##### Section : Header ##### */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.gnb-inner {
+  width: calc(100% - 40px);
+  margin: auto;
+  height: 60px;
+  line-height: 60px;
+  overflow: hidden;
+}
+.logo {
+  float: left;
+}
+.logo img {
+  padding-top: 17px;
+}
+.gnb {
+  float: right;
+}
+.menu {
+  display: none;
+}
+.slogan {
+  font: italic 16px/6rem "Montserrat";
+}
+
 /* ##### Section : Home ##### */
 .home-inner {
   background: #fff;
