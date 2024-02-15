@@ -3,22 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      property="First-Project"
+      content="내가 만든 첫번째 반응형 웹앱사이트"
+    />
+    <title>LunePetit</title>
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
+    <!-- custom -->
     <script defer src="./script.js"></script>
     <script
       src="https://kit.fontawesome.com/b06e382e17.js"
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="./style.css" />
-    <title>Document</title>
   </head>
   <body>
     <div id="wrap">
       <header>
         <h1>
           <span><i class="fa-solid fa-moon"></i></span>
-          <a href="#">Lune Petit</a>
+          <a href="./index.html">Lune Petit</a>
         </h1>
-        <span class="btn">
+        <span class="gnb">
           <a href="#">
             <span class="bar"> Home</span>
           </a>
@@ -26,7 +32,7 @@
             <span class="bar">Menu</span>
           </a>
           <a href="#">
-            <span class="last">Contact</span>
+            <span class="bar">Contact</span>
           </a>
         </span>
         <div class="trigger">
@@ -35,15 +41,15 @@
           <span></span>
         </div>
       </header>
-      <div class="container">
+      <div class="main-section">
         <div class="frame">
-          <div class="content">
+          <div class="slide">
             <div class="name">
               <span>KIM</span>
               <span>YI</span>
               <span>SEUL</span>
             </div>
-            <div class="slide">
+            <div class="slide-shadow">
               <ul>
                 <li>
                   <a href="#">
@@ -66,14 +72,9 @@
               </ul>
             </div>
           </div>
-          <div class="about">
-            <div class="page1"></div>
-            <div class="page2"></div>
-            <div class="page3"></div>
-          </div>
         </div>
       </div>
-      <div class="section01">
+      <div class="content-first">
         <input id="tab1" name="button" type="radio" checked />
         <input id="tab2" name="button" type="radio" />
         <input id="tab3" name="button" type="radio" />
@@ -82,20 +83,20 @@
         </div>
         <div class="section-menu">
           <div class="first-menu">
-            <div class="birth">
+            <div class="birth first-inner">
               <h1>Birth</h1>
               <p>
                 <span class="daytext">1996.11.19</span> <br />A형 / 전갈자리
               </p>
             </div>
-            <div class="personal">
+            <div class="personal first-inner">
               <h1>Personality</h1>
               <p>
                 <span class="personaltext">ACTIVE</span> <br />Positive /
                 Friendly
               </p>
             </div>
-            <div class="style">
+            <div class="style first-inner">
               <h1>Style</h1>
               <p><span class="styletext">SIMPLE</span><br />Morden</p>
             </div>
@@ -112,7 +113,7 @@
           <label for="tab3"></label>
         </div>
       </div>
-      <div class="section02">
+      <div class="content-second">
         <div class="yi">
           <h1>Details</h1>
         </div>
