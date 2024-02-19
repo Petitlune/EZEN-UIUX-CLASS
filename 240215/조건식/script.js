@@ -38,10 +38,10 @@
 // sneak 표기법 : user_input
 // 헝가리언표기법 : Userinput
 
-// const num = prompt("숫자를 입력해주세요");
-// // const even = Number(prompt("짝수"));
-// // const odd = Number(prompt("홀수"));
-// let result = num / 2;
+const num = prompt("숫자를 입력해주세요");
+const even = Number(prompt("짝수"));
+const odd = Number(prompt("홀수"));
+let result = num / 2;
 
 // if (num != null) {
 //   const reset = Number(num);
@@ -54,11 +54,11 @@
 //   alert("취소하셨습니다.");
 // }
 // //삼항조건 연산자
-// if (userNum != null) {
-//   const reset % 2 === ? alert("짝수입니다.") : alert("홀수입니다.");
-// } else {
-//   alert("취소하셨습니다.")
-// }
+if (userNum != null) {
+  const reset % 2 === 0 ? alert("짝수입니다.") : alert("홀수입니다.");
+} else {
+  alert("취소하셨습니다.")
+}
 
 // const season = Number(prompt("'월'을 입력해주세요"));
 

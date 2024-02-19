@@ -4,7 +4,7 @@
 //   // confirm("오늘도 화이팅 하시겠습니까?");
 //   window.prompt("당신의 이름을 입력해주세요!");
 // });
-// const name = "김이슬";
+// // const name = "김이슬";
 // window.document.write("제 이름은 " + name + "입니다");
 
 // var num;

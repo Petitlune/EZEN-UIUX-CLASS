@@ -1,0 +1,12 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+#galleryZone {
+  text-align: center;
+}
+p:nth-child(2) {
+  margin-top: 100px;
+}
