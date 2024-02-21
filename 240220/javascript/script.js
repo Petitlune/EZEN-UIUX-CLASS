@@ -21,13 +21,13 @@
 //선택해온 부분의 값을 바꾸어보기
 
 // const desc = document.querySelector("#desc");
-//객체로 사용하기 위함. DOM에서 찾아온 요소에 text값을 넣을때 innerText사용
+// 객체로 사용하기 위함. DOM에서 찾아온 요소에 text값을 넣을때 innerText사용
 // desc.innerText = "이름 : 홍길동";
 // const descName = desc.innerText;
 // console.log(descName);
 // const descHtml = desc.innerHTML;
 // console.log(descHtml);
-//해당요소가 담고있는 모든 텍스트를 갖고 온다.(display:none이어도 갖고온다.)
+// 해당요소가 담고있는 모든 텍스트를 갖고 온다.(display:none이어도 갖고온다.)
 // const descContext = desc.textContent;
 // console.log(descContext);
 
@@ -47,16 +47,24 @@
 // const pfImg = document.querySelector("#profile img");
 // pfImg.onclick = () => (pfImg.src = "./images/pf2.png");
 
-const title = document.querySelector("h1");
-title.onclick = () => {
-  title.style.backgroundColor = "#000";
-  title.style.color = "#fff";
-};
-const userName = document.querySelectorAll(".user")[0];
+// const title = document.querySelector("h1");
+// title.onclick = () => {
+//   title.style.backgroundColor = "#000";
+//   title.style.color = "#fff";
+// };
+// const users = document.querySelectorAll(".user");
+// console.log(users);
+// const name = users[0];
+// console.log(name);
+// users[1].onclick = () => {
+//   users[1].style.background = "#f00";
+// };
+
+// const userName = document.querySelectorAll(".user")[0];
 
 //classList는 앞에 붙은 객체에 해당 class가 있는지 확인하는 역할
-const classGroup = userName.classList;
-console.log(classGroup);
+// const classGroup = userName.classList;
+// console.log(classGroup);
 
 // userName.onclick = () => {
 //   userName.classList.add("clicked");
@@ -74,8 +82,22 @@ console.log(classGroup);
 //     userName.classList.remove("clicked");
 //   }
 // };
+const users = document.querySelectorAll(".user");
+const userAddress = users[1];
+
+// userAddress.onclick = () => {
+//   if (!userAddress.classList.contains("clicked")) {
+//     userAddress.classList.add("clicked");
+//   } else {
+//     userAddress.classList.remove("clicked");
+//   }
+// };
+
+userAddress.onclick = () => {
+  userAddress.classList.toggle("dark");
+};
 
 //토글함수로 간편화되었다.
-userName.onclick = () => {
-  userName.classList.toggle("clicked");
-};
+// userName.onclick = () => {
+//   userName.classList.toggle("clicked");
+// };
