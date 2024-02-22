@@ -11,13 +11,14 @@ a {
   text-decoration: none;
   color: inherit;
 }
-header {
+body {
   overflow: hidden;
+}
+header {
   /* display: flex; 로 바꿔줌 */
-  display: none;
+  display: flex;
   width: 100%;
   height: 100px;
-  /* display: flex; */
   justify-content: center;
   background: lightgray;
 }
@@ -95,7 +96,6 @@ header {
   bottom: 14px;
 }
 .search-click {
-  overflow: hidden;
   width: 100%;
   height: 395px;
   background: lightgray;
@@ -113,7 +113,6 @@ header {
   display: inline-block;
   width: 44px;
   height: 44px;
-
   text-align: center;
 }
 .search-click-icon i {
@@ -122,4 +121,113 @@ header {
   font-weight: lighter;
   color: #333;
   margin-top: 10px;
+}
+.search-click-section {
+  height: 295px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+.search-for {
+  margin-top: 50px;
+  font-size: 29px;
+  font-weight: bold;
+  letter-spacing: 0.1px;
+}
+.search-box {
+  display: flex;
+  align-items: center;
+  width: 1000px;
+  height: 41px;
+  border-radius: 10px;
+  background: #e7e8ea;
+}
+.search-box-inner {
+  width: 944px;
+  height: 21px;
+  margin-left: 16px;
+  font-size: 15px;
+  color: #777;
+}
+.search-box-icon i {
+  display: inline-block;
+  font-size: 24px;
+}
+.search-tag span {
+  display: inline-block;
+  height: 32px;
+  font-size: 25px;
+  font-weight: lighter;
+  letter-spacing: 0px;
+  margin-right: 16px;
+}
+.search-tag a {
+  border: 1px solid #777;
+  border-radius: 50px;
+  padding: 5px 15px;
+  margin-right: 22px;
+  font-size: 14px;
+}
+.toggle-btn-click {
+  display: flex;
+  width: 100%;
+  height: 953px;
+  background: #f2c6cf;
+}
+.btn-list {
+  width: 341px;
+  height: 953px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  transform: translate(-50%, 15%);
+  gap: 18px;
+  position: relative;
+}
+
+.toggle-menu span {
+  display: block;
+  font-size: 30px;
+  letter-spacing: -1px;
+  font-weight: 900;
+}
+.toggle-menu {
+  font-size: 23px;
+}
+.toggle-menu-inside {
+  display: none;
+  /* display: flex; 나중에 주어야함*/
+  flex-direction: column;
+  width: 195px;
+  position: absolute;
+  right: -240px;
+  top: 4px;
+  gap: 10px;
+}
+.menu05 {
+  top: 238px;
+}
+.menu06 {
+  top: 294px;
+}
+.menu07 {
+  top: 356px;
+}
+.menu08 {
+  top: 414px;
+}
+.menu09 {
+  top: 470px;
+}
+.toggle-menu-inner {
+  display: flex;
+  justify-content: space-between;
+}
+.toggle-menu-inner span {
+  font-size: 23px;
+}
+.toggle-menu-inner span i {
+  font-size: 22px;
 }
