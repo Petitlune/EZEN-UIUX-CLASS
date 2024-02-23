@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+#cart {
+  width: 600px;
+  margin: 50px auto;
+  padding: 10px 20px;
+}
+h1 {
+  margin-bottom: 20px;
+}
+p {
+  font-size: 1.2rem;
+  line-height: 3;
+}
+span {
+  color: #ccc;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+p span:hover {
+  color: crimson;
+  cursor: pointer;
+}
