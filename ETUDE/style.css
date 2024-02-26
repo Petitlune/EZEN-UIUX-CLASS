@@ -474,7 +474,7 @@ header {
   top: 454px;
 }
 .menu09 {
-  top: 510px;
+  top: 516px;
 }
 .toggle-menu-inner {
   display: flex;
@@ -656,6 +656,33 @@ header {
 }
 .store-list div:hover {
   background: #f3f3f3;
+}
+#gototop {
+  display: block;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 20px;
+  right: -100px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.17);
+  transition: all 0.3s;
+  cursor: pointer;
+}
+#gototop i {
+  font-size: 18px;
+  text-align: center;
+  color: #333;
+  transition: all 0.3s;
+}
+#gototop.active {
+  right: 20px;
+}
+#gototop:hover i {
+  color: #777;
 }
 .ex {
   height: 1000px;

@@ -69,3 +69,19 @@ brandStore.addEventListener("click", () => {
   brandStoreMenu.classList.toggle("active-store-list");
   brandStoreIcon.classList.toggle("active-store-list");
 });
+//gototop
+
+const gototopBtn = document.querySelector("#gototop");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 200) {
+    gototopBtn.classList.add("active");
+  } else {
+    gototopBtn.classList.remove("active");
+  }
+});
+
+gototopBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  window.scrollTo({ top: header, behavior: "smooth" });
+});
