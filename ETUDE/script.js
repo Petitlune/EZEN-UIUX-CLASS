@@ -1,23 +1,36 @@
 //MainPage Product Click Event
 const mainProduct = document.querySelector(".product-hover");
 const productList = document.querySelector(".product-hover-menu");
-
-mainProduct.addEventListener("mouseenter", () => {
-  productList.classList.add("active-product");
-});
-productList.addEventListener("mouseleave", () => {
-  productList.classList.remove("active-product");
-});
+const header = document.querySelector("header");
 //MainPage Brand Click Event
 const mainbrand = document.querySelector(".brand-hover");
 const brandList = document.querySelector(".brand-hover-menu");
-console.log(mainbrand);
+
+mainProduct.addEventListener("mouseenter", () => {
+  productList.classList.add("active-product");
+  header.style.height = "464px";
+  brandList.style.display = "none";
+  productList.style.display = "flex";
+});
+productList.addEventListener("mouseleave", () => {
+  productList.classList.remove("active-product");
+  header.style.height = "100px";
+});
+
+// //MainPage Brand Click Event
+// const mainbrand = document.querySelector(".brand-hover");
+// const brandList = document.querySelector(".brand-hover-menu");
 
 mainbrand.addEventListener("mouseenter", () => {
   brandList.classList.add("active-brand");
+  brandList.style.display = "flex";
+  header.style.height = "464px";
+  productList.style.display = "none";
 });
 brandList.addEventListener("mouseleave", () => {
   brandList.classList.remove("active-brand");
+  header.style.height = "100px";
+  // brandList.style.display = "none";
 });
 //MainPage Search Click Event
 const searchClickClose = document.querySelector(".search-click-icon i");

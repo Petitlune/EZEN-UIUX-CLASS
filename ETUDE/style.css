@@ -34,8 +34,8 @@ header {
   height: 100px;
   background: rgba(0, 0, 0, 0);
   position: fixed;
-  z-index: 99999;
   overflow: hidden;
+  z-index: 999;
 }
 .header-wrap {
   width: 100%;
@@ -145,6 +145,10 @@ header {
 .header-menu a:hover span {
   color: #111;
 }
+.product-hover {
+  width: auto;
+  height: auto;
+}
 .product-hover:hover,
 .brand-hover:hover {
   border-bottom: 1px solid #111;
@@ -156,21 +160,24 @@ header {
 }
 
 .product-hover-menu {
-  overflow: hidden;
-  background: rgba(255, 255, 255, 0.8);
+  display: none;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(5px);
   width: 1920px;
-  height: 434px;
+  height: 464px;
   position: absolute;
-  left: 0;
-  top: 0;
+  top: -60px;
+  left: -250px;
   opacity: 0;
   display: flex;
-  z-index: 0;
   justify-content: center;
   transition: all 0.3s;
+  z-index: -1;
+  pointer-events: auto;
 }
 
 .active-product {
+  display: flex;
   opacity: 1;
 }
 
@@ -221,13 +228,17 @@ header {
   flex-direction: column;
   gap: 10px;
   font-size: 14px;
+  font-weight: 400;
 }
 .brand-hover-menu {
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.8);
+  z-index: -2;
+  background: rgba(255, 255, 255, 0.7);
   width: 1920px;
   height: 156px;
   position: absolute;
+  left: -250px;
+  top: -60px;
   opacity: 0;
   display: flex;
   align-items: end;
@@ -259,7 +270,7 @@ header {
   overflow: hidden;
   display: flex;
   position: fixed;
-  z-index: 999999;
+  z-index: 9999;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -376,6 +387,7 @@ header {
   overflow: hidden;
   display: none;
   position: sticky;
+  z-index: 888;
   top: 0;
   left: 0;
   width: 100%;
@@ -385,7 +397,6 @@ header {
   backdrop-filter: blur(12px);
   font-family: "Noto Sans KR";
   opacity: 1;
-  z-index: 888;
 }
 
 .btn-list {
@@ -646,7 +657,14 @@ header {
 .store-list div:hover {
   background: #f3f3f3;
 }
-.example {
+.ex {
   height: 1000px;
-  overflow: hidden;
+}
+.ex {
+  color: red;
+}
+.exa {
+  height: 1000px;
+  background: #a6a6a6;
+  opacity: 0;
 }

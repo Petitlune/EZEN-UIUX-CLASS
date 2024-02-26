@@ -1,0 +1,32 @@
+*단위 
+1) 절대(고정) 단위
+-사용자가 활용하는 디바이스 높, 낮이와 무관하게 작동하는 단위
+ - px
+ - p
+
+
+2) 상대 단위
+
+- em :em단위를 사용하는 해당 태그안에 fz의 영향을 받는다.  => 바로 위에 직계 부모가 가지고 있는 fz의 영향을 받는다. 
+
+- rem : 전체 프로젝트의 fz를 일괄적으로 관리하고 싶은 경우 reset css : html :fz 14px
+
+- % : 반응형 웹앱페이지 
+> 문서 전체 너비 및 높이 비율
+> 박스 크룹 안에 margin || padding 세부적인 요소들의 단위
+
+- vw / vh : %와 많이 비슷한 개념 
+ > 현재 사용자가 보고있는 디바이스 출력장치 너비 & 높이 기본 기준값으로 가져감!!!!
+
+DOM심화
+-createElement( )
+-createTextNode( )
+-appendChild( )
+-createAttribute( )
+-setAttributeNode( )
+-remove( )
+-parentNod ( )
+-removeChild( )
+
+
+-this
