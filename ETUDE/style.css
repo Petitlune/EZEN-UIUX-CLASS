@@ -23,8 +23,11 @@ a {
 body {
   overflow-x: hidden;
   overflow-y: auto;
-  background: url("./Header_image/mbteye_Main_PC_1920x950.jpg") top/ 1920px
-    no-repeat;
+  background: url("https://www.etude.com/wp-content/uploads/2023/10/about_etude3_img1.jpg")
+    top / 100% no-repeat;
+  /* background: url("./Header_image/mbteye_Main_PC_1920x950.jpg") top/100%
+    no-repeat; */
+  background-color: #a6a6a6;
 }
 
 header {
@@ -36,13 +39,21 @@ header {
   position: fixed;
   overflow: hidden;
   z-index: 999;
+  transition: all 0.3s;
 }
-.header-wrap {
+header.active {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+header.common-toggle-active {
+  background-color: rgba(242, 198, 207, 0);
+}
+.common-header-wrap {
   width: 100%;
   height: 100px;
   font-family: "sofia";
 }
-.header-main {
+.common-header-main {
   height: 67px;
   margin: 0 74px 0 74px;
   padding-top: 33px;
@@ -50,38 +61,77 @@ header {
   align-items: end;
   justify-content: space-between;
   gap: 61px;
+  z-index: 99999;
 }
-.logo-img {
+.common-logo-img {
   display: inline-block;
   padding-bottom: 15px;
 }
-.logo {
+.common-logo {
   display: inline-block;
   width: 108px;
   height: 46px;
 }
-.header-icon {
+.common-search-box-header {
+  display: block;
+  /*Main메뉴 제외하고 모두 display block*/
+  position: fixed;
+  right: 120px;
+  top: 48px;
+  align-items: center;
+  width: 21%;
+  height: 44px;
+  border-radius: 10px;
+  /* margin-right: 60px; */
+  background: rgba(231, 232, 234, 0.5);
+}
+#common-search-box-header-inner {
+  width: 90%;
+  height: 44px;
+  margin-left: 16px;
+  font-size: 15px;
+  color: #777;
+  border: none;
+  background: none;
+}
+#common-search-box-header-inner:focus {
+  outline: none;
+}
+#common-search-box-header-inner::placeholder {
+  font-size: 14px;
+}
+.common-search-box-header-icon i {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 22px;
+  padding: 10px;
+  color: #333;
+  cursor: pointer;
+}
+.common-header-icon {
   display: flex;
   align-items: center;
   height: 40px;
-
   padding-bottom: 12px;
 }
-.search-btn,
-.toggle-btn {
+.common-search-btn,
+.common-toggle-btn {
   display: inline-block;
   width: 40px;
   height: 20px;
 }
-.search-btn i {
-  display: block;
+.common-search-btn i {
+  /*Main제외하고 display none*/
+  border: 1px solid red;
+  display: none;
   text-align: center;
   font-size: 25px;
   /* margin-top: 8px; */
   color: #333;
   cursor: pointer;
 }
-.toggle-btn {
+.common-toggle-btn {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -89,7 +139,7 @@ header {
   cursor: pointer;
 }
 
-.toggle-btn span {
+.common-toggle-btn span {
   position: absolute;
   top: 0%;
   left: 8px;
@@ -100,41 +150,41 @@ header {
   background: #333;
   transition: all 0.5s;
 }
-.toggle-btn span:nth-child(1) {
+.common-toggle-btn span:nth-child(1) {
   top: 0;
 }
-.toggle-btn span:nth-child(2) {
+.common-toggle-btn span:nth-child(2) {
   top: 50%;
 }
-.toggle-btn span:nth-child(3) {
+.common-toggle-btn span:nth-child(3) {
   top: 100%;
 }
-.toggle-btn.active span:nth-child(2) {
+.common-toggle-btn.active span:nth-child(2) {
   opacity: 0;
 }
-.toggle-btn.active span:nth-child(1) {
+.common-toggle-btn.active span:nth-child(1) {
   top: 50%;
   transform: rotate(45deg);
 }
-.toggle-btn.active span:nth-child(3) {
+.common-toggle-btn.active span:nth-child(3) {
   top: 50%;
   transform: rotate(-45deg);
 }
-.header-menu {
+.common-header-menu {
   position: relative;
   width: 1454px;
   display: flex;
   margin-bottom: 10px;
   gap: 53px;
 }
-.header-menu span {
+.common-header-menu span {
   display: inline-block;
   font-size: 16px;
   font-weight: bold;
   color: #333;
   padding: 4px;
 }
-.header-menu .new {
+.common-header-menu .common-new {
   font-size: 8px;
   color: #ef426f;
   position: absolute;
@@ -142,24 +192,24 @@ header {
   bottom: 16px;
   pointer-events: none;
 }
-.header-menu a:hover span {
+.common-header-menu a:hover span {
   color: #111;
 }
-.product-hover {
+.common-product-hover {
   width: auto;
   height: auto;
 }
-.product-hover:hover,
-.brand-hover:hover {
+.common-product-hover:hover,
+.common-brand-hover:hover {
   border-bottom: 1px solid #111;
   cursor: pointer;
 }
-.product-hover,
-.brand-hover {
+.common-product-hover,
+.common-brand-hover {
   border: 1px solid transparent;
 }
 
-.product-hover-menu {
+.common-product-hover-menu {
   display: none;
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(5px);
@@ -171,30 +221,30 @@ header {
   opacity: 0;
   display: flex;
   justify-content: center;
-  transition: all 0.3s;
   z-index: -1;
-  pointer-events: auto;
+
+  transition: all 0.3s;
 }
 
-.active-product {
+.common-active-product {
   display: flex;
   opacity: 1;
 }
 
-.product-hover-menu-content {
+.common-product-hover-menu-content {
   width: 1420px;
   height: 300px;
   margin-top: 120px;
   display: flex;
   gap: 38px;
 }
-.product-hover-menu-title {
+.common-product-hover-menu-title {
   display: flex;
   flex-direction: column;
   gap: 16px;
   width: 100px;
 }
-.product-hover-menu-title span {
+.common-product-hover-menu-title span {
   letter-spacing: -0.02em;
   color: #222;
   font-family: "Noto Sans KR";
@@ -202,35 +252,35 @@ header {
   font-weight: 600;
   transition: all 0.3s;
 }
-.product-hover-menu-title span:hover {
+.common-product-hover-menu-title span:hover {
   color: #777;
 }
-.product-hover-menu-title i {
+.common-product-hover-menu-title i {
   font-size: 12px;
 }
-.product-hover-menu-title div {
+.common-product-hover-menu-title div {
   display: flex;
   justify-content: space-between;
 }
-.product-hover-menu-list-inner {
+.common-product-hover-menu-list-inner {
   height: 100%;
   display: flex;
   flex-direction: column;
   font-family: "Noto Sans KR";
 }
-.product-hover-menu-list-inner > a {
+.common-product-hover-menu-list-inner > a {
   display: inline-block;
   margin-bottom: 20px;
   font-weight: 600;
 }
-.product-hover-menu-list-inner-list {
+.common-product-hover-menu-list-inner-list {
   display: flex;
   flex-direction: column;
   gap: 10px;
   font-size: 14px;
   font-weight: 400;
 }
-.brand-hover-menu {
+.common-brand-hover-menu {
   overflow: hidden;
   z-index: -2;
   background: rgba(255, 255, 255, 0.7);
@@ -245,18 +295,18 @@ header {
   justify-content: center;
   transition: all 0.3s;
 }
-.active-brand {
+.common-active-brand {
   opacity: 1;
 }
 
-.brand-hover-menu-content {
+.common-brand-hover-menu-content {
   width: 1164px;
   height: 88px;
   display: flex;
   align-items: center;
   gap: 40px;
 }
-.brand-hover-menu-content span {
+.common-brand-hover-menu-content span {
   display: inline-block;
   margin-top: 10px;
   font-family: "Noto Sans KR";
@@ -264,8 +314,11 @@ header {
   font-weight: 400;
   color: #111;
 }
+.common-makeup-hover.common-makeup-active {
+  background: rgba(0, 0, 0, 0);
+}
 
-.search-click {
+.common-search-click {
   /* display: flex;로 바꿔주기 */
   overflow: hidden;
   display: flex;
@@ -276,18 +329,18 @@ header {
   align-items: center;
   width: 100%;
   height: 395px;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.65);
   backdrop-filter: blur(12px);
   top: -400px;
   transition: all 0.5s;
 }
-.search-click.active-searchContent {
+.common-search-click.common-active-searchContent {
   top: 0;
 }
-.search-click.active-searchContent-close {
+.common-search-click.common-active-searchContent-close {
   top: -400px;
 }
-.search-click-header {
+.common-search-click-header {
   width: 100%;
   height: 100px;
   display: flex;
@@ -296,30 +349,30 @@ header {
   /* gap: 1550px; */
   gap: 85%;
 }
-.search-click-header .logo-img {
+.common-search-click-header .common-logo-img {
   display: inline-block;
   margin-top: 12px;
 }
-.search-click-icon {
+.common-search-click-icon {
   display: inline-block;
   width: 44px;
   height: 44px;
   text-align: center;
   margin-top: 50px;
 }
-.search-click-icon i {
+.common-search-click-icon i {
   display: block;
   font-size: 25px;
   font-weight: lighter;
   color: #333;
   cursor: pointer;
 }
-.search-click-section {
+.common-search-click-section {
   width: 100%;
   display: flex;
   justify-content: center;
 }
-.search-click-section-inner {
+.common-search-click-section-inner {
   width: 1920px;
   height: 295px;
   display: flex;
@@ -327,47 +380,52 @@ header {
   align-items: center;
   gap: 28px;
 }
-.search-for {
+.common-search-for {
   color: #111;
   margin-top: 50px;
   font-family: "sofia";
   font-size: 29px;
   font-weight: 600;
 }
-.search-box {
+.common-search-box {
   display: flex;
   align-items: center;
   width: 1000px;
   height: 41px;
   border-radius: 10px;
-  background: #e7e8ea;
+  background: rgba(231, 232, 234, 0.5);
 }
-#search-box-inner {
+#common-search-box-inner {
   width: 944px;
-  height: 21px;
+  height: 41px;
   margin-left: 16px;
   font-size: 15px;
   color: #777;
   outline: none;
   border: none;
-  background: #e7e8ea;
+  background: rgba(231, 232, 234, 0.5);
 }
-#search-box-inner:focus {
+#common-search-box-inner::placeholder {
+  color: #777;
+  font-size: 15px;
+  font-weight: 400;
+}
+#common-search-box-inner:focus {
   outline: none;
 }
-.search-box-icon i {
+.common-search-box-icon i {
   display: inline-block;
-  font-size: 24px;
+  font-size: 20px;
   padding: 10px;
-  color: #333;
+  color: #666;
   cursor: pointer;
 }
-.search-tag {
+.common-search-tag {
   color: #111;
   display: flex;
   flex-wrap: wrap;
 }
-.search-tag span {
+.common-search-tag span {
   display: inline-block;
   height: 32px;
   font-size: 25px;
@@ -376,30 +434,35 @@ header {
   color: #111;
   margin-right: 16px;
 }
-.search-tag a {
+.common-search-tag a {
   border: 1px solid #777;
   border-radius: 50px;
   padding: 5px 15px;
   margin-right: 22px;
   font-size: 14px;
 }
-.toggle-btn-click {
+
+.common-toggle-btn-click {
   overflow: hidden;
   display: none;
-  position: sticky;
+  position: fixed;
   z-index: 888;
   top: 0;
   left: 0;
   width: 100%;
-  height: 853px;
+  height: 100vh;
   padding-top: 100px;
-  background: rgba(242, 198, 207, 0.65);
+  background: linear-gradient(
+    180deg,
+    rgba(245, 226, 226, 0.65) 0%,
+    rgba(242, 198, 207, 0.65) 127.47%
+  );
   backdrop-filter: blur(12px);
   font-family: "Noto Sans KR";
   opacity: 1;
 }
 
-.btn-list {
+.common-btn-list {
   width: 341px;
   height: 600px;
   margin: 20px auto 0;
@@ -411,25 +474,25 @@ header {
   position: relative;
 }
 
-.toggle-menu span {
+.common-toggle-menu span {
   display: block;
   font-size: 30px;
   font-weight: 600;
   color: #111;
   letter-spacing: -0.02em;
 }
-.toggle-menu {
+.common-toggle-menu {
   font-family: "sofia";
   font-size: 23px;
   border: 1px solid transparent;
 }
-.toggle-menu .ppoohyan {
+.common-toggle-menu .ppoohyan {
   font-family: "Noto Sans KR";
 }
-.toggle-menu:hover {
+.common-toggle-menu:hover {
   border-bottom: 1px solid #111;
 }
-.toggle-menu-inside {
+.common-toggle-menu-inside {
   width: 220px;
   position: absolute;
   right: -260px;
@@ -437,74 +500,74 @@ header {
   opacity: 0;
   transition: all 0.5s;
 }
-.toggle-menu-inside a:hover span {
+.common-toggle-menu-inside a:hover span {
   color: #777;
 }
 
-.toggle-menu-inside span {
+.common-toggle-menu-inside span {
   height: 40px;
   font-size: 23px;
   font-weight: 500;
   letter-spacing: 0;
 }
-.toggle-menu:hover .menu01,
-.toggle-menu:hover .menu02,
-.toggle-menu:hover .menu05,
-.toggle-menu:hover .menu06,
-.toggle-menu:hover .menu07,
-.toggle-menu:hover .menu08,
-.toggle-menu:hover .menu09 {
+.common-toggle-menu:hover .common-menu01,
+.common-toggle-menu:hover .common-menu02,
+.common-toggle-menu:hover .common-menu05,
+.common-toggle-menu:hover .common-menu06,
+.common-toggle-menu:hover .common-menu07,
+.common-toggle-menu:hover .common-menu08,
+.common-toggle-menu:hover .common-menu09 {
   opacity: 1;
   transform: translateY(-16px);
 }
 
-.menu02 {
+.common-menu02 {
   top: 84px;
 }
-.menu05 {
+.common-menu05 {
   top: 268px;
 }
-.menu06 {
+.common-menu06 {
   top: 330px;
 }
-.menu07 {
+.common-menu07 {
   top: 390px;
 }
-.menu08 {
+.common-menu08 {
   top: 454px;
 }
-.menu09 {
+.common-menu09 {
   top: 516px;
 }
-.toggle-menu-inner {
+.common-toggle-menu-inner {
   display: flex;
   justify-content: space-between;
 }
 
-.toggle-menu-inner span {
+.common-toggle-menu-inner span {
   font-size: 23px;
   font-weight: lighter;
 }
-.category-title span {
+.common-category-title span {
   font-size: 23px;
   font-weight: lighter;
 }
 
-.toggle-menu-inner span i {
+.common-toggle-menu-inner span i {
   font-size: 22px;
 }
-.category-title {
+.common-category-title {
   font-size: 23px;
 }
 /* .toggle-menu-inner-category {
   display: inline-block;
 } */
-.category-wrap {
+.common-category-wrap {
   width: 300px;
   height: auto;
   position: relative;
 }
-.category {
+.common-category {
   display: flex;
   padding-bottom: 5px;
   flex-direction: column;
@@ -513,10 +576,10 @@ header {
   color: #777;
   transition: all 0.3s;
 }
-.category:hover {
+.common-category:hover {
   font-weight: bold;
 }
-.category-wrap .category-inner-list {
+.common-category-wrap .common-category-inner-list {
   display: flex;
   font-size: 17px;
   font-weight: 400;
@@ -529,67 +592,67 @@ header {
   transition: all 0.3s;
 }
 
-.category-inner-list a:hover {
+.common-category-inner-list a:hover {
   font-weight: bold;
 }
-.eye:hover .eye-menu,
-.lip:hover .lip-menu,
-.face:hover .face-menu,
-.nail:hover .nail-menu,
-.skin:hover .skin-menu,
-.mask:hover .mask-menu,
-.clean:hover .clean-menu,
-.body:hover .body-menu,
-.hair:hover .hair-menu,
-.tool:hover .tool-menu {
+.common-eye:hover .common-eye-menu,
+.common-lip:hover .common-lip-menu,
+.common-face:hover .common-face-menu,
+.common-nail:hover .common-nail-menu,
+.common-skin:hover .common-skin-menu,
+.common-mask:hover .common-mask-menu,
+.common-clean:hover .common-clean-menu,
+.common-body:hover .common-body-menu,
+.common-hair:hover .common-hair-menu,
+.common-tool:hover .common-tool-menu {
   opacity: 1;
   transform: translateY(-16px);
 }
-.eye-menu {
+.common-eye-menu {
   top: 44px;
 }
-.lip-menu {
+.common-lip-menu {
   top: 78px;
 }
-.face-menu {
+.common-face-menu {
   top: 108px;
 }
-.nail-menu {
+.common-nail-menu {
   top: 136px;
 }
-.skin-menu {
+.common-skin-menu {
   top: 166px;
 }
-.mask-menu {
+.common-mask-menu {
   top: 194px;
 }
-.clean-menu {
+.common-clean-menu {
   top: 228px;
 }
-.body-menu {
+.common-body-menu {
   top: 258px;
 }
-.hair-menu {
+.common-hair-menu {
   top: 288px;
 }
-.tool-menu {
+.common-tool-menu {
   top: 320px;
 }
-.shopping-at {
+.common-shopping-at {
   border: 1px solid #a6a6a6;
   position: absolute;
   left: 326px;
-  bottom: 116px;
+  bottom: 220px;
   background: #fff;
   border-radius: 10px;
   height: auto;
 }
-#brand-store {
+#common-brand-store {
   width: 343px;
   height: 38px;
 }
 
-.brand-store-select {
+.common-brand-store-select {
   display: flex;
   justify-content: first;
   align-items: center;
@@ -597,39 +660,39 @@ header {
   color: #333;
   cursor: pointer;
 }
-.brand-store-select span {
+.common-brand-store-select span {
   display: inline-block;
   margin: 0 15px 5px 20px;
   font-size: 12px;
   font-style: italic;
   transition: all 0.3s;
 }
-.brand-store-select p {
+.common-brand-store-select p {
   display: inline-block;
   height: 40px;
   line-height: 36px;
 }
-.brand-store-select i {
+.common-brand-store-select i {
   font-size: 12px;
   display: inline-block;
   margin: 0 15px 0 70px;
   transition: all 0.3s;
 }
-.brand-store-select.active-store-list {
+.common-brand-store-select.common-active-store-list {
   background: #f3f3f3;
   border-radius: 10px;
   border-bottom: 1px solid #a6a6a6;
 }
-.brand-store-select i.active-store-list {
+.common-brand-store-select i.common-active-store-list {
   transform: rotate(180deg);
 }
-.brand-store-select p.active-store-list {
+.common-brand-store-select p.common-active-store-list {
   opacity: 0;
 }
-.store-list.active-store-list {
+.common-store-list.common-active-store-list {
   opacity: 1;
 }
-.store-list {
+.common-store-list {
   position: absolute;
   left: -1px;
   bottom: 85%;
@@ -642,22 +705,22 @@ header {
   opacity: 0;
   transition: all 0.3s;
 }
-.store-list a {
+.common-store-list a {
   display: inline-block;
   margin-left: 100px;
 }
 
-.store-list div {
+.common-store-list div {
   width: 100%;
   height: 40px;
   line-height: 40px;
   border-radius: 10px;
   transition: all 0.3s;
 }
-.store-list div:hover {
+.common-store-list div:hover {
   background: #f3f3f3;
 }
-#gototop {
+#common-gototop {
   display: block;
   width: 50px;
   height: 50px;
@@ -672,16 +735,16 @@ header {
   transition: all 0.3s;
   cursor: pointer;
 }
-#gototop i {
+#common-gototop i {
   font-size: 18px;
   text-align: center;
   color: #333;
   transition: all 0.3s;
 }
-#gototop.active {
+#common-gototop.active {
   right: 20px;
 }
-#gototop:hover i {
+#common-gototop:hover i {
   color: #777;
 }
 .ex {
