@@ -23,10 +23,8 @@ a {
 body {
   overflow-x: hidden;
   overflow-y: auto;
-  background: url("https://www.etude.com/wp-content/uploads/2023/10/about_etude3_img1.jpg")
-    top / 100% no-repeat;
-  /* background: url("./Header_image/mbteye_Main_PC_1920x950.jpg") top/100%
-    no-repeat; */
+  background: url("./Header_image/mbteye_Main_PC_1920x950.jpg") top/auto
+    no-repeat;
   background-color: #a6a6a6;
 }
 
@@ -73,7 +71,7 @@ header.common-toggle-active {
   height: 46px;
 }
 .common-search-box-header {
-  display: block;
+  display: none;
   /*Main메뉴 제외하고 모두 display block*/
   position: fixed;
   right: 120px;
@@ -123,8 +121,8 @@ header.common-toggle-active {
 }
 .common-search-btn i {
   /*Main제외하고 display none*/
-  border: 1px solid red;
-  display: none;
+
+  display: flex;
   text-align: center;
   font-size: 25px;
   /* margin-top: 8px; */
@@ -464,7 +462,8 @@ header.common-toggle-active {
 
 .common-btn-list {
   width: 341px;
-  height: 600px;
+  /* height: 550px; */
+  height: 55%;
   margin: 20px auto 0;
   display: flex;
   flex-direction: column;
@@ -640,9 +639,12 @@ header.common-toggle-active {
 }
 .common-shopping-at {
   border: 1px solid #a6a6a6;
-  position: absolute;
-  left: 326px;
-  bottom: 220px;
+  position: fixed;
+  /* left: 326px; */
+  /* left: 18%; */
+  right: 64%;
+  /* bottom: 220px; */
+  bottom: 20%;
   background: #fff;
   border-radius: 10px;
   height: auto;
@@ -747,14 +749,253 @@ header.common-toggle-active {
 #common-gototop:hover i {
   color: #777;
 }
+.common-responsibility-toggle-menu {
+  /*포지션값 다시주어야함*/
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  background: #fff;
+  z-index: 999999;
+}
+.common-responsibility-toggle-menu-header {
+  display: flex;
+  width: 100%;
+}
+.common-responsibility-search-box {
+  /* width: 99%; */
+  padding-left: 10px;
+  width: 94%;
+  height: 41px;
+  margin: 10px 2% 0;
+  font-size: 15px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  background: rgba(231, 232, 234, 0.5);
+  position: relative;
+}
+#common-responsibility-search-box-inner {
+  padding-left: 10px;
+  width: 100%;
+  height: 41px;
+  font-size: 15px;
+  color: #777;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  background: rgba(231, 232, 234, 0);
+}
+.common-responsibility-search-box-icon {
+  position: absolute;
+  right: 5px;
+  top: 2px;
+  font-size: 23px;
+}
+.common-responsibility-search-box-icon-x {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin: 14px auto;
+}
+.common-responsibility-search-box-icon-x i {
+  position: absolute;
+  top: 4px;
+  font-size: 25px;
+  color: #000;
+}
+.common-responsibility-toggle-menu-inner-title {
+  display: flex;
+  margin: 0 10px;
+}
+.common-responsibility-toggle-menu-inner-title-menu,
+.common-responsibility-toggle-menu-inner-title-cate {
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  /* background: #ddd; */
+  color: #777;
+  border-bottom: 2px solid #777;
+  font-family: "sofia";
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.common-responsibility-toggle-menu-inner-title-menu {
+  display: block;
+  /* menu 다시 활성화 */
+}
+.common-responsibility-toggle-menu-inner-title-cate {
+  display: block;
+  /* menu 다시 활성화 */
+}
+.common-responsibility-toggle-menu-inner-title-list-menu {
+  display: none;
+}
+.common-responsibility-toggle-menu-inner-title-list-cate {
+  width: 100%;
+  display: block;
+  position: relative;
+}
+
+.common-responsibility-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #111;
+  padding: 0 40px 0 20px;
+  height: 45px;
+  font-family: "sofia";
+  font-weight: 500;
+}
+.common-responsibility-menu-plus span {
+  border: 1px solid black;
+  width: 12px;
+  position: absolute;
+}
+.common-responsibility-menu-plus span:nth-child(2) {
+  transform: rotate(90deg);
+}
+
+.common-responsibility-menu-list {
+  width: 100%;
+  height: 68px;
+  background: #f1f1f1;
+  font-size: 13px;
+  padding-top: 8px;
+  /* display: none; */
+  /*display none 없애주기 */
+}
+.common-ppo,
+.common-mem,
+.common-sto,
+.common-etu,
+.common-pro {
+  height: 34px;
+}
+
+.common-responsibility-menu-list a {
+  display: inline-block;
+  width: 28%;
+  margin: 6px 40px;
+  color: #777;
+}
+.common-responsibility-menu-list a:first-child {
+  margin-right: 15%;
+  font-family: "sofia";
+}
+.common-responsibility-menu-list a:last-child {
+  display: block;
+}
+.common-cate-wrap {
+  display: flex;
+}
+.common-responsibility-menu-cate {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 44%;
+  margin: 8px 30px;
+  font-size: 15px;
+  position: relative;
+}
+
+.common-responsibility-menu-plus-cate span {
+  border: 1px solid #777;
+  width: 8px;
+  position: absolute;
+  right: 0;
+}
+.common-responsibility-menu-plus-cate span:nth-child(2) {
+  transform: rotate(90deg);
+}
+.common-responsibility-menu-list-cate {
+  /* display: block;으로 바꿔주기 */
+  display: none;
+  width: 100%;
+  height: 100px;
+  background: #f1f1f1;
+  font-size: 13px;
+  padding-top: 8px;
+  border: 1px solid red;
+}
+.common-responsibility-menu-list-cate a {
+  display: inline-block;
+  width: 20%;
+  margin: 6px 22% 6px 20px;
+  color: #777;
+}
+.common-responsibility-menu-list-cate-lip {
+  /* display: block;으로 바꿔주기 */
+  display: none;
+  width: 100%;
+  height: 100px;
+  background: #f1f1f1;
+  font-size: 13px;
+  padding-top: 8px;
+  position: absolute;
+  left: 0;
+  /*밑에 아이 요소가 깔려있음*/
+  top: 37px;
+}
+.common-responsibility-menu-list-cate-lip a {
+  display: inline-block;
+  width: 20%;
+  margin: 6px 22% 6px 20px;
+  color: #777;
+}
+
 .ex {
   height: 1000px;
-}
-.ex {
   color: red;
 }
 .exa {
   height: 1000px;
   background: #a6a6a6;
   opacity: 0;
+}
+/*-------- 1024px -------- */
+@media screen and (max-width: 1024px) {
+  .common-header-menu {
+    display: none;
+  }
+  .common-header-main {
+    height: 40px;
+    margin: auto 20px;
+  }
+  header.active {
+    background: none;
+  }
+  .common-search-click-header {
+    width: 86%;
+  }
+  .common-search-click-header .common-logo-img {
+    margin-left: 50px;
+  }
+  .common-search-click-icon {
+    margin-top: -20px;
+    margin-left: 8%;
+  }
+  .common-search-box {
+    width: 92%;
+    background: rgba(255, 255, 255, 0.9);
+  }
+  #common-search-box-inner {
+    width: 94%;
+    background: rgba(255, 255, 255, 0.9);
+  }
+  .common-search-tag {
+    width: 90%;
+  }
+  .common-search-tag span {
+    width: 98%;
+    height: 50px;
+    font-size: 23px;
+  }
+  .common-search-tag a {
+    margin-right: 10px;
+  }
 }
