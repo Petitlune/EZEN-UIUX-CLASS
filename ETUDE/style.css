@@ -23,7 +23,7 @@ a {
 body {
   overflow-x: hidden;
   overflow-y: auto;
-  background: url("./Header_image/mbteye_Main_PC_1920x950.jpg") top/auto
+  background: url("./Header_image/mbteye_Main_PC_1920x950.jpg") top/ auto 100vh
     no-repeat;
   background-color: #a6a6a6;
 }
@@ -749,15 +749,21 @@ header.common-toggle-active {
 #common-gototop:hover i {
   color: #777;
 }
+
+/*-------반응형 메뉴버튼 -----------*/
 .common-responsibility-toggle-menu {
-  /*포지션값 다시주어야함*/
+  /*포지션값 sticky로 다시주어야함*/
+  /* display: none; */
   position: absolute;
   width: 100%;
   left: 0;
-  top: 0;
+  top: -100vh;
   height: 100vh;
   background: #fff;
   z-index: 999999;
+}
+.common-responsibility-toggle-menu.active {
+  top: 0;
 }
 .common-responsibility-toggle-menu-header {
   display: flex;
@@ -799,6 +805,7 @@ header.common-toggle-active {
   width: 30px;
   height: 30px;
   margin: 14px auto;
+  cursor: pointer;
 }
 .common-responsibility-search-box-icon-x i {
   position: absolute;
@@ -817,11 +824,15 @@ header.common-toggle-active {
   line-height: 45px;
   text-align: center;
   /* background: #ddd; */
-  color: #777;
-  border-bottom: 2px solid #777;
+  border-bottom: 2px solid#111;
+  color: #111;
   font-family: "sofia";
   font-weight: 500;
   cursor: pointer;
+}
+.common-responsibility-toggle-menu-inner-title-cate {
+  border-bottom: 2px solid#777;
+  color: #777;
 }
 
 .common-responsibility-toggle-menu-inner-title-menu {
@@ -832,13 +843,27 @@ header.common-toggle-active {
   display: block;
   /* menu 다시 활성화 */
 }
+.common-responsibility-toggle-menu-inner-title-cate.active {
+  border-bottom: 2px solid#111;
+  color: #111;
+}
 .common-responsibility-toggle-menu-inner-title-list-menu {
-  display: none;
+  display: block;
+}
+.common-responsibility-toggle-menu-inner-title-menu.active {
+  border-bottom: 2px solid#111;
+  color: #111;
+}
+.common-responsibility-toggle-menu-inner-title-list-menu.active {
+  display: block;
 }
 .common-responsibility-toggle-menu-inner-title-list-cate {
   width: 100%;
-  display: block;
+  display: none;
   position: relative;
+}
+.common-responsibility-toggle-menu-inner-title-list-cate.active {
+  display: block;
 }
 
 .common-responsibility-menu {
@@ -866,7 +891,7 @@ header.common-toggle-active {
   background: #f1f1f1;
   font-size: 13px;
   padding-top: 8px;
-  /* display: none; */
+  display: none;
   /*display none 없애주기 */
 }
 .common-ppo,
@@ -997,5 +1022,8 @@ header.common-toggle-active {
   }
   .common-search-tag a {
     margin-right: 10px;
+  }
+  .common-responsibility-toggle-menu.active {
+    top: 0;
   }
 }
