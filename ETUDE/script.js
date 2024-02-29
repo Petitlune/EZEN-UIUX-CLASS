@@ -59,18 +59,19 @@ searchClickClose.onclick = () => {
 
 //MainPage tigger Click Event
 const mainTrigger = document.querySelector(".common-toggle-btn");
+console.log(mainTrigger);
 const mainGnb = document.querySelector(".common-toggle-btn-click");
 
-mainTrigger.addEventListener("click", () => {
-  mainTrigger.classList.toggle("active");
-  if (mainGnb.style.display === "none" || mainGnb.style.display === "") {
-    mainGnb.style.display = "block";
-    window.removeEventListener("scroll", scrollHead);
-  } else {
-    mainGnb.style.display = "none";
-    window.addEventListener("scroll", scrollHead);
-  }
-});
+// mainTrigger.addEventListener("click", () => {
+//   mainTrigger.classList.toggle("active");
+//   if (mainGnb.style.display === "none" || mainGnb.style.display === "") {
+//     mainGnb.style.display = "block";
+//     window.removeEventListener("scroll", scrollHead);
+//   } else {
+//     mainGnb.style.display = "none";
+//     window.addEventListener("scroll", scrollHead);
+//   }
+// });
 //MainPage Store Brand
 const brandStore = document.querySelector(".common-brand-store-select");
 const brandStoreMenu = document.querySelector(".common-brand-store-select p");
@@ -108,6 +109,7 @@ gototopBtn.addEventListener("click", (e) => {
   e.preventDefault();
   window.scrollTo({ top: header, behavior: "smooth" });
 });
+
 //responsibility
 const commonMenu = document.querySelector(
   ".common-responsibility-toggle-menu-inner-title-menu"
@@ -123,6 +125,9 @@ const commonCateList = document.querySelector(
 );
 const commonReToggleBtn = document.querySelector(
   ".common-responsibility-toggle-menu"
+);
+const commonReXbtn = document.querySelector(
+  ".common-responsibility-search-box-icon-x"
 );
 console.log(commonReToggleBtn);
 
@@ -142,12 +147,87 @@ commonCate.addEventListener("click", () => {
   commonMenu.removeEventListener("click");
 });
 
-// const mediaViewContnent = window.matchMedia(`(max-width: 1024px)`);
+// let size = document.getElementById("size");
 
-// const viewChangeHandler = (mediaViewContnent) => {
-//   mainTrigger.addEventListener("click", () => {
-//     commonReToggleBtn.classList.toggle("active");
-//   });
+// window.onresize = function () {
+//   innerWidth <= "1024"
+//     ? (mainGnb.style.opacity = "0")
+//     : (mainGnb.style.opacity = "1");
 // };
 
-// mediaViewContnent.addEventListener("change", viewChangeHandler);
+// mainTrigger.addEventListener("click", () => {
+//   mainTrigger.classList.toggle("active");
+//   if (mainGnb.style.display === "none" || mainGnb.style.display === "") {
+//     mainGnb.style.display = "block";
+//     window.removeEventListener("scroll", scrollHead);
+//   } else {
+//     mainGnb.style.display = "none";
+//     window.addEventListener("scroll", scrollHead);
+//   }
+// });
+
+window.addEventListener("resize", () => {
+  let width = window.innerWidth;
+  // width = window.innerWidth;
+  console.log(width);
+  if (width < 1024) {
+    mainTrigger.addEventListener("click", () => {
+      console.log("click");
+      mainTrigger.onclick = () => {
+        commonReToggleBtn.classList.add("active");
+      };
+    });
+  } else if (width > 1024) {
+    commonReToggleBtn.classList.remove("active");
+    commonReToggleBtn.style.display = "none";
+  }
+});
+
+// let innerWidth = window.innerWidth;
+// console.log(innerWidth);
+
+// if (innerWidth <= 1024) {
+//   mainTrigger.onclick = () => {
+//     commonReToggleBtn.classList.add("active");
+//   };
+// } else {
+//   commonReToggleBtn.classList.remove("active");
+//   commonReToggleBtn.style.display = "none";
+// }
+
+commonReXbtn.onclick = () => {
+  commonReToggleBtn.classList.remove("active");
+  commonReToggleBtn.style.display = "block";
+};
+
+//responsibility-Store Brand
+const RebrandStore = document.querySelector(
+  ".common-responsibility-brand-store-select"
+);
+const RebrandStoreMenu = document.querySelector(
+  ".common-responsibility-brand-store-select p"
+);
+const RebrandStoreIcon = document.querySelector(
+  ".common-responsibility-brand-store-select i"
+);
+const RebrandStoreList = document.querySelector(
+  ".common-responsibility-store-list"
+);
+console.log(RebrandStoreList);
+
+RebrandStore.addEventListener("click", () => {
+  RebrandStore.classList.toggle("active");
+  RebrandStoreList.classList.toggle("active");
+  RebrandStoreMenu.classList.toggle("active");
+  RebrandStoreIcon.classList.toggle("active");
+});
+
+const addtocart = document.querySelector("#common-addtocart");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 0) {
+    addtocart.style.bottom = "80px";
+  } else {
+    addtocart.style.bottom = "10px";
+  }
+});

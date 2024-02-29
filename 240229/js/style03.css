@@ -1,0 +1,25 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+form input:first-child {
+  width: 300px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  padding: 15px;
+}
+form input:first-child:focus {
+  outline: none;
+}
+form input:last-child {
+  padding: 15px;
+  border: none;
+  margin-left: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+form input:last-child:hover {
+  border: 1px solid #ccc;
+}

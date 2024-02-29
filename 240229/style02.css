@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.icon {
+  width: 125px;
+  height: 125px;
+  margin: 10px;
+  position: relative;
+}
+.icon span {
+  width: 300px;
+  position: absolute;
+  left: 50%;
+  top: -80px;
+  transform: translateX(-50%);
+  background: #000;
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  opacity: 0;
+  transition: all, 0.5s;
+}
+.icon:hover span {
+  opacity: 1;
+}
+.icon: span::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  background: #000;
+  width: 10px;
+  height: 10px;
+  transform: rotate(45deg);
+}

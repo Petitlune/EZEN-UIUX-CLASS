@@ -23,7 +23,7 @@ a {
 body {
   overflow-x: hidden;
   overflow-y: auto;
-  background: url("./Header_image/mbteye_Main_PC_1920x950.jpg") top/ auto 100vh
+  background: url("./Header_image/mbteye_Main_PC_1920x950.jpg") top/ auto
     no-repeat;
   background-color: #a6a6a6;
 }
@@ -60,6 +60,7 @@ header.common-toggle-active {
   justify-content: space-between;
   gap: 61px;
   z-index: 99999;
+  position: relative;
 }
 .common-logo-img {
   display: inline-block;
@@ -69,6 +70,24 @@ header.common-toggle-active {
   display: inline-block;
   width: 108px;
   height: 46px;
+}
+.common-responsibility-left-icon {
+  /*Main메뉴 제외하고 모두 display flex*/
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 14%;
+  justify-content: space-between;
+  width: 56px;
+}
+.common-responsibility-back-icon {
+  font-size: 23px;
+  color: #333;
+}
+.common-responsibility-home-icon img {
+  width: 23px;
+  margin-top: 4px;
+  color: #333;
 }
 .common-search-box-header {
   display: none;
@@ -316,6 +335,20 @@ header.common-toggle-active {
   background: rgba(0, 0, 0, 0);
 }
 
+.common-responsibility-center-menu {
+  /*Main말고 다른 페이지에서 display:flex*/
+  display: none;
+  gap: 8px;
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+}
+.common-responsibility-menu-title span {
+  font-size: 16px;
+  font-weight: bold;
+  color: #222;
+}
 .common-search-click {
   /* display: flex;로 바꿔주기 */
   overflow: hidden;
@@ -749,21 +782,51 @@ header.common-toggle-active {
 #common-gototop:hover i {
   color: #777;
 }
+#common-addtocart {
+  /*모바일에서 display block 주기*/
+  display: none;
+  width: 50px;
+  line-height: 64px;
+  height: 50px;
+  text-align: center;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  text-align: center;
+  /* background: rgba(255, 255, 255, 0.7); */
+  background: #ef426f;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.17);
+  transition: all 0.3s;
+  cursor: pointer;
+}
+#common-addtocart i {
+  font-size: 36px;
+  font-weight: lighter;
+  height: 36px;
+  color: #fff;
+  transition: all 0.3s;
+}
+#common-addtocart.active {
+  right: 20px;
+}
 
 /*-------반응형 메뉴버튼 -----------*/
 .common-responsibility-toggle-menu {
-  /*포지션값 sticky로 다시주어야함*/
-  /* display: none; */
-  position: absolute;
+  display: block;
+  position: fixed;
   width: 100%;
   left: 0;
   top: -100vh;
   height: 100vh;
   background: #fff;
   z-index: 999999;
+  transition: all 1s;
+  opacity: 0;
 }
 .common-responsibility-toggle-menu.active {
   top: 0;
+  opacity: 1;
 }
 .common-responsibility-toggle-menu-header {
   display: flex;
@@ -807,6 +870,7 @@ header.common-toggle-active {
   margin: 14px auto;
   cursor: pointer;
 }
+
 .common-responsibility-search-box-icon-x i {
   position: absolute;
   top: 4px;
@@ -923,7 +987,7 @@ header.common-toggle-active {
   align-items: center;
   justify-content: space-between;
   width: 44%;
-  margin: 8px 30px;
+  margin: 12px 30px;
   font-size: 15px;
   position: relative;
 }
@@ -972,7 +1036,103 @@ header.common-toggle-active {
   margin: 6px 22% 6px 20px;
   color: #777;
 }
+.common-responsibility-toggle-menu-footer {
+  position: absolute;
+  left: 0;
+  bottom: 4%;
 
+  height: 50px;
+  width: 100%;
+}
+.common-responsibility-shopping-at {
+  border: 1px solid #a6a6a6;
+  position: absolute;
+  /* left: 326px; */
+  /* left: 18%; */
+
+  /* bottom: 220px; */
+  left: 5%;
+  bottom: 5%;
+  background: #fff;
+  border-radius: 10px;
+  height: auto;
+  width: 90%;
+}
+#common-responsibility-brand-store {
+  width: 100%;
+  height: 38px;
+}
+.common-responsibility-brand-store-select {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  height: 40px;
+  color: #333;
+  cursor: pointer;
+}
+.common-responsibility-brand-store-select span {
+  display: inline-block;
+  margin: 0 20px;
+  font-size: 12px;
+  font-style: italic;
+  transition: all 0.3s;
+}
+.common-responsibility-brand-store-select p {
+  display: inline-block;
+  height: 40px;
+  line-height: 36px;
+}
+.common-responsibility-brand-store-select i {
+  font-size: 12px;
+  display: inline-block;
+  margin-left: 40%;
+  transition: all 0.3s;
+  position: absolute;
+  right: 20px;
+}
+.common-responsibility-brand-store-select.active {
+  background: #f3f3f3;
+  border-radius: 10px;
+  border-bottom: 1px solid #a6a6a6;
+}
+.common-responsibility-brand-store-select i.active {
+  transform: rotate(180deg);
+}
+.common-responsibility-brand-store-select p.active {
+  opacity: 0;
+}
+.common-responsibility-store-list {
+  position: absolute;
+  left: -1px;
+  bottom: 85%;
+  width: 100%;
+  height: 160px;
+  border-radius: 10px 10px 0 0;
+  border: 1px solid #a6a6a6;
+  border-bottom: none;
+  background: #fff;
+  opacity: 0;
+  transition: all 0.3s;
+}
+.common-responsibility-store-list.active {
+  opacity: 1;
+}
+.common-responsibility-store-list a {
+  display: inline-block;
+  margin-left: 100px;
+}
+
+.common-responsibility-store-list div {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+.common-responsibility-store-list div:hover {
+  background: #f3f3f3;
+}
 .ex {
   height: 1000px;
   color: red;
@@ -984,6 +1144,9 @@ header.common-toggle-active {
 }
 /*-------- 1024px -------- */
 @media screen and (max-width: 1024px) {
+  .common-header-wrap {
+    height: 50px;
+  }
   .common-header-menu {
     display: none;
   }
@@ -994,11 +1157,25 @@ header.common-toggle-active {
   header.active {
     background: none;
   }
+  .common-header-icon {
+    align-items: start;
+    margin-bottom: 5px;
+  }
   .common-search-click-header {
     width: 86%;
   }
   .common-search-click-header .common-logo-img {
     margin-left: 50px;
+  }
+  .common-logo-img img {
+    display: none;
+    /*main page 말고 메뉴 페이지에서는 display none*/
+  }
+  .common-responsibility-left-icon {
+    display: flex;
+  }
+  .common-responsibility-center-menu {
+    display: flex;
   }
   .common-search-click-icon {
     margin-top: -20px;
