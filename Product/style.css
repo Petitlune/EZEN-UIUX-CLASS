@@ -25,7 +25,7 @@ body {
   overflow-y: auto;
   /*background: url("./Header_image/mbteye_Main_PC_1920x950.jpg") top/ auto
     no-repeat;*/
-  background-color: #a6a6a6;
+  /* background-color: #a6a6a6; */
 }
 
 header {
@@ -1347,4 +1347,187 @@ header.common-toggle-active {
   .common-responsibility-toggle-menu.active {
     top: 0;
   }
+}
+/*---------product --------*/
+
+.pro-silder-img img {
+  position: fixed;
+  width: 30%;
+  height: 1080px;
+  overflow: hidden;
+}
+.pro-silder-img img:nth-child(1) {
+  opacity: 1;
+  animation: pro-slider-tint 5s linear;
+  animation-delay: 5s;
+}
+.pro-silder-img img:nth-child(2) {
+  opacity: 0;
+  animation: pro-slider 5s linear;
+}
+.pro-silder-img img:nth-child(3) {
+  opacity: 0;
+  animation: pro-slider-tool 8s linear;
+  animation-delay: 8s;
+  animation-fill-mode: backwards;
+}
+@keyframes pro-slider {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes pro-slider-tint {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes pro-slider-tool {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.pro-section {
+  position: absolute;
+
+  top: 120px;
+  left: 30%;
+  width: 100%;
+  height: 1100px;
+}
+.new-product {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  font-size: 28px;
+  font-weight: 700;
+  font-family: "Noto Sans KR";
+  width: 180px;
+  height: 63px;
+  cursor: pointer;
+}
+.new-product i {
+  font-size: 14px;
+  font-weight: 600;
+}
+.new-product-wrap {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin-left: 20px;
+}
+.pro-menu-desc {
+  position: absolute;
+  left: 200px;
+  top: 20px;
+  float: left;
+  font-size: 14px;
+  font-family: "Noto Sans KR";
+}
+.new-product-hidden-menu {
+  /*display: flex;로 바꾸기 */
+  display: none;
+  flex-direction: column;
+  color: #333;
+  border: 1px solid #777;
+  border-radius: 5px;
+  width: 160px;
+  height: 80px;
+  justify-content: center;
+  align-items: center;
+}
+.new-product-hidden-menu a {
+  text-align: center;
+  line-height: 40px;
+  border-radius: 5px;
+  width: 100%;
+  height: 80px;
+  font-family: "Noto Sans KR";
+}
+.pro-array-menu {
+  display: flex;
+  align-items: center;
+  gap: 49%;
+  margin-top: 50px;
+}
+.pro-total {
+  font-size: 15px;
+  font-weight: 600;
+  font-family: "Noto Sans KR";
+  margin-left: 10px;
+}
+.pro-array-select {
+  display: flex;
+  gap: 20px;
+  font-size: 24px;
+  color: #a6a6a6;
+}
+.pro-array-select a:first-child,
+.pro-array-select a:nth-child(3) {
+  font-size: 28px;
+}
+
+.pro-icon-make {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+}
+.pro-icon-bar {
+  display: inline-block;
+  width: 23px;
+  height: 2px;
+  background: #a6a6a6;
+}
+.pro-icon-shin {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+  color: #444;
+}
+.pro-icon-shin span {
+  font-size: 16px;
+  font-weight: 600;
+  margin-left: 15px;
+}
+.pro-icon-shin i {
+  font-size: 12px;
 }
