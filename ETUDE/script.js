@@ -144,15 +144,7 @@ commonCate.addEventListener("click", () => {
   commonCate.style.color = "#111";
 });
 
-// let size = document.getElementById("size");
-
-// window.onresize = function () {
-//   innerWidth <= "1024"
-//     ? (mainGnb.style.opacity = "0")
-//     : (mainGnb.style.opacity = "1");
-// };
-
-mainTrigger.addEventListener("click", () => {
+const desktopToggle = () => {
   mainTrigger.classList.toggle("active");
   if (mainGnb.style.display === "none" || mainGnb.style.display === "") {
     mainGnb.style.display = "block";
@@ -161,56 +153,37 @@ mainTrigger.addEventListener("click", () => {
     mainGnb.style.display = "none";
     window.addEventListener("scroll", scrollHead);
   }
-});
+};
 
-// window.addEventListener("resize", () => {
-//   let width = window.innerWidth;
-//   // width = window.innerWidth;
-//   console.log(width);
-//   if (width < 1024) {
-//     mainTrigger.addEventListener("click", () => {
-//       console.log("click");
-//       mainTrigger.onclick = () => {
-//         commonReToggleBtn.classList.add("active");
-//       };
-//     });
-//   } else if (width > 1024) {
-//     commonReToggleBtn.classList.remove("active");
-//     commonReToggleBtn.style.display = "none";
-//   }
-// });
-let width = window.innerWidth;
-window.addEventListener("resize", () => {
-  // width = window.innerWidth;
-  console.log(width);
-  if (width < 1024) {
+mainTrigger.addEventListener("click", desktopToggle);
+// console.log("click");
+
+let Width = window.innerWidth;
+window.addEventListener("resize", function () {
+  if (innerWidth <= 1024) {
+    mainTrigger.removeEventListener("click", desktopToggle);
     mainTrigger.onclick = () => {
-      mainGnb.style.display = "none";
       commonReToggleBtn.classList.add("active");
     };
   } else {
-    mainTrigger.removeAttribute;
-    mainGnb.style.display = "blocks";
     commonReToggleBtn.classList.remove("active");
   }
 });
 
-// let innerWidth = window.innerWidth;
-// console.log(innerWidth);
-
-// if (innerWidth <= 1024) {
-//   mainTrigger.onclick = () => {
-//     commonReToggleBtn.classList.add("active");
-//   };
-// } else {
-//   commonReToggleBtn.classList.remove("active");
-//   commonReToggleBtn.style.display = "none";
-// }
-
 commonReXbtn.onclick = () => {
   commonReToggleBtn.classList.remove("active");
-  commonReToggleBtn.style.display = "block";
 };
+
+window.addEventListener("resize", function () {
+  if (innerWidth > 1024) {
+    mainTrigger.addEventListener("click", desktopToggle);
+    mainTrigger.onclick = () => {
+      commonReToggleBtn.classList.remove("active");
+    };
+  } else {
+    commonReToggleBtn.classList.remove("active");
+  }
+});
 
 //responsibility-Store Brand
 const RebrandStore = document.querySelector(
@@ -251,9 +224,9 @@ const CommonReList = document.querySelectorAll(
 const CommonMinusBtn = document.querySelectorAll(
   ".common-responsibility-menu-plus span:nth-child(2)"
 );
-CommonReTitle.addEventListener("click", () => {
-  for (let i = 0; i < 9; i++) {
-    CommonReList.classList.toggle("active");
-    CommonMinusBtn.classList.toggle("active");
-  }
-});
+// CommonReTitle.addEventListener("click", () => {
+//   for (let i = 0; i < 9; i++) {
+//     CommonReList.classList.toggle("active");
+//     CommonMinusBtn.classList.toggle("active");
+//   }
+// });

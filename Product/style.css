@@ -1353,7 +1353,7 @@ header.common-toggle-active {
 .pro-silder-img img {
   position: fixed;
   width: 30%;
-  height: 1080px;
+  height: 100%;
   overflow: hidden;
 }
 .pro-silder-img img:nth-child(1) {
@@ -1424,7 +1424,6 @@ header.common-toggle-active {
 }
 .pro-section {
   position: absolute;
-
   top: 120px;
   left: 30%;
   width: 100%;
