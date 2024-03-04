@@ -7,6 +7,7 @@ const newlisting = document.querySelector(".newlisting");
 const asceButton = document.querySelector(".ascending");
 const descButton = document.querySelector(".descending");
 
+//최신 출시순 정렬
 const removeItems = () => {
   const items = document.querySelectorAll("li");
   items.forEach((item) => {
@@ -26,6 +27,7 @@ const sortNew = () => {
   });
 };
 
+//오름차순정렬
 const sortAsce = () => {
   const myProducts = products.data.sort((a, b) => {
     return a.price - b.price;
@@ -37,7 +39,7 @@ const sortAsce = () => {
     createItem(product);
   });
 };
-
+//내림차순 정렬
 const sortDesc = () => {
   const myProducts = products.data.sort((a, b) => {
     return b.price - a.price;
@@ -66,7 +68,7 @@ const createItem = function (product) {
 
   h3.className = "name";
   h3.innerText = product.name;
-
+  //원화로 만들어주는 방법
   const price = new Intl.NumberFormat("ko-kr", {
     style: "currency",
     currency: "KRW",

@@ -8,9 +8,9 @@ const meatBurger = meat.concat(vegitable, "빵");
 console.log(meatBurger);
 
 const cheese = ["모짜렐라", "슈레드"];
-const cheeseBurger = [vegitable, cheese];
+// const cheeseBurger = [vegitable, cheese];
 //아래와 같이 사용하면 배열안에 배열을 만드는 것이 아닌 하나의 배열로 만들어줄 수 있음.
-// const cheeseBurger = [...vegitable, ...cheese];
+const cheeseBurger = [...vegitable, ...cheese];
 console.log(cheeseBurger);
 
 // 배열 정렬!

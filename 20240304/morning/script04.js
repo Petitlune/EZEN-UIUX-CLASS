@@ -9,11 +9,11 @@ const newNumbers = numbers.map((number) => {
 console.log(newNumbers);
 console.log(numbers);
 
-// const newNumbers02 = numbers.map((number, index) => {
-//   return index + number * 3;
-// });
+const newNumbers02 = numbers.map((number, index) => {
+  return index + number * 3;
+});
 // 실행문 && 표현식문 따라서 아래와같이(실행문) 쓸 수 있다.
-const newNumbers02 = numbers.map((number, index) => index + number * 3);
+// const newNumbers02 = numbers.map((number, index) => index + number * 3);
 console.log(newNumbers02);
 console.log(numbers);
 
