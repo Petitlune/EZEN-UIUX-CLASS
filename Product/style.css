@@ -1434,7 +1434,6 @@ header.common-toggle-active {
   top: 120px;
   left: 30%;
   width: 100%;
-  height: 1100px;
 }
 .new-product {
   display: flex;
@@ -1547,6 +1546,7 @@ header.common-toggle-active {
   flex-direction: column;
   border: 1px solid #777;
   border-radius: 5px;
+  background: #fff;
   text-align: center;
   justify-content: center;
   position: absolute;
@@ -1570,7 +1570,7 @@ header.common-toggle-active {
   background: #f3f3f3;
 }
 .pro-product-list {
-  width: 66%;
+  width: 65%;
   height: auto;
   display: flex;
   margin: 0 0 15px 25px;
@@ -1579,14 +1579,57 @@ header.common-toggle-active {
   gap: 10px;
 }
 .pro-product-list li {
-  /* border: 1px solid red; */
+  width: 32%;
   height: auto;
-  width: 33%;
+  border-radius: 5px;
+  background: #eee;
+  margin-bottom: 20px;
 }
-.pro-product-list a {
+.pro-product-list li > a {
   display: inline-block;
 }
 .pro-product-list li a img {
   width: 100%;
-  height: auto;
+  border-radius: 5px 5px 0 0;
+}
+.product-detail {
+  font-family: "sofia";
+  display: flex;
+  flex-direction: column;
+  width: 88%;
+  height: 120px;
+  padding: 10px 15px;
+  position: relative;
+}
+
+.product-detail span:nth-child(1) {
+  display: inline-block;
+  margin-bottom: 4px;
+  font-size: 0.8rem;
+  color: #333;
+}
+.product-detail a {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #111;
+}
+.items-type {
+  width: 50%;
+  display: flex;
+  gap: 5px;
+  margin-top: 5px;
+}
+.items-type span {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background: skyblue;
+}
+
+.pro-items-price {
+  margin-top: 16px;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
 }
