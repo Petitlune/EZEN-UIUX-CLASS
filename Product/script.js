@@ -224,9 +224,5 @@ const CommonReList = document.querySelectorAll(
 const CommonMinusBtn = document.querySelectorAll(
   ".common-responsibility-menu-plus span:nth-child(2)"
 );
-// CommonReTitle.addEventListener("click", () => {
-//   for (let i = 0; i < 9; i++) {
-//     CommonReList.classList.toggle("active");
-//     CommonMinusBtn.classList.toggle("active");
-//   }
-// });
+
+//=====================product js==========================

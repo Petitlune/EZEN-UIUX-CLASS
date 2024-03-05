@@ -1348,24 +1348,31 @@ header.common-toggle-active {
     top: 0;
   }
 }
-/*---------product --------*/
-
-.pro-silder-img img {
+/*==================================================product ============================================================================*/
+.pro-silder-img {
   position: fixed;
   width: 30%;
-  height: 100%;
-  overflow: hidden;
 }
-.pro-silder-img img:nth-child(1) {
+.pro-silder-img span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+}
+.pro-silder-img span:nth-child(1) {
+  background: url("./product_img/img-categoty-new1.jpg") center/cover no-repeat;
   opacity: 1;
   animation: pro-slider-tint 5s linear;
   animation-delay: 5s;
 }
-.pro-silder-img img:nth-child(2) {
+.pro-silder-img span:nth-child(2) {
+  background: url("./product_img/img-categoty-new2.jpg") center/cover no-repeat;
   opacity: 0;
   animation: pro-slider 5s linear;
 }
-.pro-silder-img img:nth-child(3) {
+.pro-silder-img span:nth-child(3) {
+  background: url("./product_img/img-categoty-new3.jpg") center/cover no-repeat;
   opacity: 0;
   animation: pro-slider-tool 8s linear;
   animation-delay: 8s;
@@ -1448,7 +1455,6 @@ header.common-toggle-active {
 .new-product-wrap {
   display: flex;
   flex-direction: column;
-  overflow: hidden;
   margin-left: 20px;
 }
 .pro-menu-desc {
@@ -1478,11 +1484,15 @@ header.common-toggle-active {
   width: 100%;
   height: 80px;
   font-family: "Noto Sans KR";
+  transition: all 0.3s;
+}
+.new-product-hidden-menu a:hover {
+  background: #f3f3f3;
 }
 .pro-array-menu {
   display: flex;
   align-items: center;
-  gap: 49%;
+  gap: 52%;
   margin-top: 50px;
 }
 .pro-total {
@@ -1521,6 +1531,7 @@ header.common-toggle-active {
   gap: 20px;
   cursor: pointer;
   color: #444;
+  position: relative;
 }
 .pro-icon-shin span {
   font-size: 16px;
@@ -1529,4 +1540,53 @@ header.common-toggle-active {
 }
 .pro-icon-shin i {
   font-size: 12px;
+}
+.pro-list-select {
+  /* flex로 바꿔주기 */
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #777;
+  border-radius: 5px;
+  text-align: center;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  bottom: -120px;
+  width: 150px;
+  height: 120px;
+}
+.pro-list-select li {
+  text-align: center;
+  color: #333;
+  font-size: 16px;
+  font-family: "Noto Sans KR";
+  width: 150px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+.pro-list-select li:hover {
+  background: #f3f3f3;
+}
+.pro-product-list {
+  width: 66%;
+  height: auto;
+  display: flex;
+  margin: 0 0 15px 25px;
+  /* align-items: center; */
+  /* border: 1px solid red; */
+  gap: 10px;
+}
+.pro-product-list li {
+  /* border: 1px solid red; */
+  height: auto;
+  width: 33%;
+}
+.pro-product-list a {
+  display: inline-block;
+}
+.pro-product-list li a img {
+  width: 100%;
+  height: auto;
 }
