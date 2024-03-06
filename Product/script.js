@@ -215,17 +215,49 @@ const CommonMinusBtn = document.querySelectorAll(
 );
 
 //=====================product js==========================
+import products from "./product_list.js";
 
-const ul = document.querySelector(".pro-product-list");
-console.log(ul);
-const li = document.createElement("li");
-const a = document.createElement("a");
-const img = document.createElement("img");
-const div = document.createElement("div");
-const span = document.createElement("span");
+const createList = function (product) {
+  const ul = document.querySelector(".pro-product-list");
+  console.log(ul);
+  const li = document.createElement("li");
+  const spanNew = document.createElement("span");
+  const a = document.createElement("a");
+  const img = document.createElement("img");
+  const imgHover = document.createElement("img");
+  const div = document.createElement("div");
+  const span = document.createElement("span");
 
-div.className = "product-detail";
-li.append(a, div);
-ul.appendChild(li);
+  li.id = product.id;
 
-console.log(div);
+  const attr = document.createAttribute("src");
+  img.setAttributeNode(attr);
+  attr.value = product.img;
+  imgHover.className = "product-imgHover";
+
+  img.addEventListener("mouseenter", () => {
+    attr.value = product.imgHover;
+  });
+  img.addEventListener("mouseleave", () => {
+    attr.value = product.img;
+  });
+
+  div.className = "product-detail";
+  spanNew.className = "product-new";
+  spanNew.innerText = product.newItem;
+  div.append(span, a);
+  a.append(img);
+  li.append(a, spanNew, div);
+  ul.appendChild(li);
+  console.log(img);
+};
+
+const importData = () => {
+  products.data.map((product) => {
+    if (!document.getElementById(product.id)) {
+      createList(product);
+    }
+  });
+};
+
+importData();

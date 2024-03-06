@@ -81,7 +81,6 @@ const createItem = function (product) {
   li.append(div, img);
   ul.appendChild(li);
 };
-
 const importData = () => {
   products.data.map((product) => {
     if (!document.getElementById(product.id)) {
@@ -89,6 +88,7 @@ const importData = () => {
     }
   });
 };
+
 importData();
 // button.addEventListener("click", importData);
 // newlisting.addEventListener("click", sortNew);
