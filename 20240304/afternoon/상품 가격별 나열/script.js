@@ -2,55 +2,55 @@ import products from "./product.js";
 //모듈 => 레고의 완성품을 조립하고자 할 때 개별요소를 블록
 //자바스크립트 언어를 만들고 관리하고 있는 ES 기관에서는 모듈을 표준화하지 않았다.
 
-const button = document.querySelector(".container > button");
-const newlisting = document.querySelector(".newlisting");
-const asceButton = document.querySelector(".ascending");
-const descButton = document.querySelector(".descending");
+// const button = document.querySelector(".container > button");
+// const newlisting = document.querySelector(".newlisting");
+// const asceButton = document.querySelector(".ascending");
+// const descButton = document.querySelector(".descending");
 
-//최신 출시순 정렬
-const removeItems = () => {
-  const items = document.querySelectorAll("li");
-  items.forEach((item) => {
-    item.remove();
-  });
-};
+// // 최신 출시순 정렬
+// const removeItems = () => {
+//   const items = document.querySelectorAll("li");
+//   items.forEach((item) => {
+//     item.remove();
+//   });
+// };
 
-const sortNew = () => {
-  const myProducts = products.data.sort((a, b) => {
-    return a.id - b.id;
-  });
+// const sortNew = () => {
+//   const myProducts = products.data.sort((a, b) => {
+//     return a.id - b.id;
+//   });
 
-  removeItems();
+//   removeItems();
 
-  myProducts.forEach((product) => {
-    createItem(product);
-  });
-};
+//   myProducts.forEach((product) => {
+//     createItem(product);
+//   });
+// };
 
-//오름차순정렬
-const sortAsce = () => {
-  const myProducts = products.data.sort((a, b) => {
-    return a.price - b.price;
-  });
+// //오름차순정렬
+// const sortAsce = () => {
+//   const myProducts = products.data.sort((a, b) => {
+//     return a.price - b.price;
+//   });
 
-  removeItems();
+//   removeItems();
 
-  myProducts.forEach((product) => {
-    createItem(product);
-  });
-};
-//내림차순 정렬
-const sortDesc = () => {
-  const myProducts = products.data.sort((a, b) => {
-    return b.price - a.price;
-  });
+//   myProducts.forEach((product) => {
+//     createItem(product);
+//   });
+// };
+// //내림차순 정렬
+// const sortDesc = () => {
+//   const myProducts = products.data.sort((a, b) => {
+//     return b.price - a.price;
+//   });
 
-  removeItems();
+//   removeItems();
 
-  myProducts.forEach((product) => {
-    createItem(product);
-  });
-};
+//   myProducts.forEach((product) => {
+//     createItem(product);
+//   });
+// };
 
 const createItem = function (product) {
   const ul = document.querySelector("ul");
@@ -89,8 +89,8 @@ const importData = () => {
     }
   });
 };
-
-button.addEventListener("click", importData);
-newlisting.addEventListener("click", sortNew);
-asceButton.addEventListener("click", sortAsce);
-descButton.addEventListener("click", sortDesc);
+importData();
+// button.addEventListener("click", importData);
+// newlisting.addEventListener("click", sortNew);
+// asceButton.addEventListener("click", sortAsce);
+// descButton.addEventListener("click", sortDesc);
