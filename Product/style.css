@@ -776,6 +776,7 @@ header.common-toggle-active {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.17);
   transition: all 0.3s;
   cursor: pointer;
+  z-index: 100;
 }
 #common-gototop i {
   font-size: 18px;
@@ -1367,18 +1368,18 @@ header.common-toggle-active {
 .pro-silder-img span:nth-child(1) {
   background: url("./product_img/img-categoty-new1.jpg") center/cover no-repeat;
   opacity: 1;
-  animation: pro-slider-tint 5s linear;
+  animation: pro-slider-tint 5s infinite linear;
   animation-delay: 5s;
 }
 .pro-silder-img span:nth-child(2) {
   background: url("./product_img/img-categoty-new2.jpg") center/cover no-repeat;
   opacity: 0;
-  animation: pro-slider 5s linear;
+  animation: pro-slider 5s infinite linear;
 }
 .pro-silder-img span:nth-child(3) {
   background: url("./product_img/img-categoty-new3.jpg") center/cover no-repeat;
   opacity: 0;
-  animation: pro-slider-tool 8s linear;
+  animation: pro-slider-tool 8s infinite linear;
   animation-delay: 8s;
   animation-fill-mode: backwards;
 }
@@ -1437,7 +1438,7 @@ header.common-toggle-active {
   position: absolute;
   top: 120px;
   left: 30%;
-  width: 100%;
+  width: 70%;
 }
 .new-product {
   display: flex;
@@ -1456,14 +1457,15 @@ header.common-toggle-active {
   font-weight: 600;
 }
 .new-product-wrap {
+  width: 92%;
   display: flex;
   flex-direction: column;
-  margin-left: 20px;
+  margin: 10px 0 0 20px;
 }
 .pro-menu-desc {
   position: absolute;
   left: 200px;
-  top: 20px;
+  top: 30px;
   float: left;
   font-size: 14px;
   font-family: "Noto Sans KR";
@@ -1495,24 +1497,24 @@ header.common-toggle-active {
 .pro-array-menu {
   display: flex;
   align-items: center;
-  gap: 52%;
+  justify-content: space-between;
   margin-top: 50px;
 }
 .pro-total {
   font-size: 15px;
   font-weight: 600;
   font-family: "Noto Sans KR";
-  margin-left: 10px;
+  margin-left: 22px;
 }
 .pro-array-select {
   display: flex;
+  align-items: center;
   gap: 20px;
   font-size: 24px;
   color: #a6a6a6;
 }
-.pro-array-select a:first-child,
-.pro-array-select a:nth-child(3) {
-  font-size: 28px;
+.fa-square {
+  font-size: 22px;
 }
 
 .pro-icon-make {
@@ -1520,11 +1522,12 @@ header.common-toggle-active {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 40px;
+  height: 36px;
+  margin-top: 4px;
 }
 .pro-icon-bar {
   display: inline-block;
-  width: 23px;
+  width: 22px;
   height: 2px;
   background: #a6a6a6;
 }
@@ -1537,7 +1540,7 @@ header.common-toggle-active {
   position: relative;
 }
 .pro-icon-shin span {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   margin-left: 15px;
 }
@@ -1558,11 +1561,12 @@ header.common-toggle-active {
   bottom: -120px;
   width: 150px;
   height: 120px;
+  z-index: 10;
 }
 .pro-list-select li {
   text-align: center;
   color: #333;
-  font-size: 16px;
+  font-size: 15px;
   font-family: "Noto Sans KR";
   width: 150px;
   height: 40px;
@@ -1574,24 +1578,35 @@ header.common-toggle-active {
   background: #f3f3f3;
 }
 .pro-product-list {
-  width: 65%;
-  height: 100px;
+  width: 100%;
+  height: auto;
   display: flex;
+  flex-wrap: wrap;
   margin: 0 0 15px 25px;
-  gap: 10px;
+  gap: 12px;
 }
 
 .pro-product-list li {
   position: relative;
-  width: 25%;
+  width: 22%;
   min-width: 250px;
-  height: 480px;
+  height: 460px;
   max-height: 480px;
   border-radius: 5px;
-  background: #eee;
-  margin-bottom: 20px;
+  background: #fafafa;
+  margin: 20px 0;
+  overflow: hidden;
 }
-
+.pro-product-list li.active {
+  position: relative;
+  width: 48%;
+  min-width: 480px;
+  height: auto;
+  max-height: 480px;
+  border-radius: 5px;
+  background: #fafafa;
+  margin: 20px 0;
+}
 /* .pro-product-list li > a {
   display: inline-block;
 } */
@@ -1609,19 +1624,25 @@ header.common-toggle-active {
   background: #222;
   color: #fff;
 }
-.pro-product-list li a img {
+.pro-product-list li > a {
+  display: inline-block;
+  overflow: hidden;
+  height: 65%;
+}
+/* .pro-product-list li > a.active {
+  height: ;
+} */
+.pro-product-list li > a img {
   width: 100%;
+  height: 100%;
   min-width: 250px;
   border-radius: 5px 5px 0 0;
-  transition: opacity 0.5s;
+  transition: all 1s;
 }
-/* .product-imgHover {
+
+.product-imgHover {
   opacity: 0;
-  transition: opacity 0.5s;
-} */
-/* .pro-product-list li a img:hover .product-imgHover {
-  opacity: 1;
-} */
+}
 .product-detail {
   font-family: "sofia";
   display: flex;
@@ -1632,7 +1653,6 @@ header.common-toggle-active {
   position: absolute;
   top: 65%;
   left: 0;
-  border: 1px solid red;
 }
 
 /*.product-detail span:nth-child(1) {

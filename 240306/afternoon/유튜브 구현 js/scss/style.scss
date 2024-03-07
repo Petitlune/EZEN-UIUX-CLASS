@@ -9,7 +9,7 @@ body {
   height: 100%;
   font-family: "youtube";
   #container {
-    width: 390px;
+    width: 100%;
     height: 100%;
     background: #fff;
     position: relative;
@@ -58,7 +58,7 @@ body {
     main {
       position: absolute;
       left: 0;
-      top: 282px;
+      top: 270px;
       padding: 0 10px;
       width: inherit;
       .title {
@@ -108,6 +108,152 @@ body {
                 color: #fff;
                 margin-right: 6px;
               }
+            }
+          }
+        }
+        .subinfo {
+          display: flex;
+          justify-content: space-between;
+          span {
+            @include btnType;
+            display: flex;
+            align-items: center;
+            font-size: 12px;
+            gap: 4px;
+          }
+        }
+        .review {
+          background: $btnColor;
+          border-radius: 10px;
+          padding: 10px;
+          font-size: 14px;
+          .review_title {
+            margin-bottom: 10px;
+            span:first-child {
+              font-weight: bold;
+              font-size: 15px;
+            }
+            span:last-child {
+              color: $subColor;
+            }
+          }
+          .review_content {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            img {
+              width: 30px;
+              border-radius: 100%;
+              margin: 0 8px;
+            }
+            p {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+      .hashlist {
+        background: #fff;
+        width: 390px;
+        overflow: hidden;
+        padding: 10px 0;
+        position: sticky;
+        top: 275px;
+        // display: none;이어야함
+        opacity: 0;
+        transition: all 1.2s;
+        &.active {
+          display: block;
+          opacity: 1;
+        }
+        .hashcontent {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          background: #fff;
+          // background: #fff;
+          // width: 나중에 about으로 586px교체;
+          width: 652px;
+          height: 40px;
+          line-height: 10px;
+
+          li {
+            a {
+              white-space: nowrap;
+              width: auto;
+              text-align: center;
+              background: $btnColor;
+              padding: 8px 10px;
+              border-radius: 8px;
+            }
+            &:nth-child(1) a {
+              color: #fff;
+              background: $black;
+            }
+          }
+        }
+      }
+      .ad01 {
+        margin-top: -50px;
+        width: inherit;
+        height: auto;
+        background: #fff;
+        .adimg {
+          width: 100%;
+          height: 379px;
+          background: url("../img/ad01.jpg") center/cover no-repeat;
+        }
+        .adtitle {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          padding: 14px 10px;
+          background: $adtitleColor;
+          color: $adtextColor;
+        }
+        .adinfo {
+          display: flex;
+          gap: 16px;
+          padding: 14px 10px;
+          .fa-facebook {
+            font-size: 40px;
+            color: $adtextColor;
+          }
+          .addesc {
+            width: 100%;
+            span {
+              display: block;
+              &:first-child {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-weight: bold;
+              }
+              &:nth-child(2) {
+                margin: 6px 0;
+                color: $subColor;
+                font-size: 16px;
+              }
+              &:last-child {
+                font-size: 14px;
+                color: $subColor;
+                b {
+                  color: $black;
+                }
+              }
+            }
+          }
+        }
+      }
+      .contents {
+        background: #fff;
+        .content {
+          width: 100%;
+          background: #fff;
+          img {
+            margin: 0 auto;
+            &:first-child {
+              margin-bottom: 20px;
             }
           }
         }

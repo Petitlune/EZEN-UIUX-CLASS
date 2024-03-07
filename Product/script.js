@@ -220,36 +220,50 @@ import products from "./product_list.js";
 const createList = function (product) {
   const ul = document.querySelector(".pro-product-list");
   console.log(ul);
-  const li = document.createElement("li");
+  const proLi = document.createElement("li");
   const spanNew = document.createElement("span");
   const a = document.createElement("a");
+  const innerName = document.createElement("a");
   const img = document.createElement("img");
   const imgHover = document.createElement("img");
   const div = document.createElement("div");
   const span = document.createElement("span");
 
-  li.id = product.id;
+  proLi.id = product.id;
 
   const attr = document.createAttribute("src");
   img.setAttributeNode(attr);
   attr.value = product.img;
   imgHover.className = "product-imgHover";
 
-  img.addEventListener("mouseenter", () => {
+  img.addEventListener("mouseenter", (e) => {
     attr.value = product.imgHover;
+    e.target.style.transform = "scale(1.1)";
+    e.target.style.opacity = "1";
   });
-  img.addEventListener("mouseleave", () => {
+  img.addEventListener("mouseleave", (e) => {
     attr.value = product.img;
+    e.target.style.transform;
   });
 
   div.className = "product-detail";
   spanNew.className = "product-new";
   spanNew.innerText = product.newItem;
-  div.append(span, a);
-  a.append(img);
-  li.append(a, spanNew, div);
-  ul.appendChild(li);
+  span.innerText = product.desc;
+  innerName.innerText = product.name;
+  div.append(span, innerName);
+  a.append(img, imgHover);
+  proLi.append(a, spanNew, div);
+  ul.appendChild(proLi);
   console.log(img);
+
+  const firstArray = document.querySelector(".fa-list");
+  console.log(firstArray);
+  firstArray.addEventListener("click", () => {
+    proLi.classList.add("active");
+    img.classList.add("active");
+    console.log("click");
+  });
 };
 
 const importData = () => {
