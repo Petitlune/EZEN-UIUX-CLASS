@@ -147,7 +147,6 @@ const desktopToggle = () => {
 
 mainTrigger.addEventListener("click", desktopToggle);
 
-let Width = window.innerWidth;
 window.addEventListener("resize", function () {
   if (innerWidth <= 1024) {
     mainTrigger.removeEventListener("click", desktopToggle);
@@ -206,15 +205,35 @@ window.addEventListener("scroll", () => {
   }
 });
 //반응형 삼단바 리스트 마우스 오버
-const CommonReTitle = document.querySelectorAll(".common-responsibility-menu");
-const CommonReList = document.querySelectorAll(
-  ".common-responsibility-menu-list "
-);
-const CommonMinusBtn = document.querySelectorAll(
-  ".common-responsibility-menu-plus span:nth-child(2)"
-);
+// const CommonReTitle = document.querySelectorAll(".common-responsibility-menu");
+// const CommonReList = document.querySelectorAll(
+//   ".common-responsibility-menu-list "
+// );
+// const CommonMinusBtn = document.querySelectorAll(
+//   ".common-responsibility-menu-plus span:nth-child(2)"
+// );
 
 //=====================product js==========================
+const newMenu = document.querySelector(".new-product-hidden-menu");
+const newMenuBtn = document.querySelector(".new-product");
+newMenuBtn.addEventListener("click", () => {
+  newMenu.classList.toggle("active");
+});
+
+const arrayMenu = document.querySelector(".pro-list-select");
+const arrayMenuBtn = document.querySelector(".pro-icon-shin");
+
+// arrayMenuBtn.addEventListener("click", () => {
+//   arrayMenu.style.display = "flex";
+// });
+arrayMenuBtn.addEventListener("click", () => {
+  if (arrayMenu.style.display === "none") {
+    arrayMenu.style.display = "flex";
+  } else {
+    arrayMenu.style.display = "none";
+  }
+});
+
 import products from "./product_list.js";
 
 const createList = function (product) {
@@ -236,14 +255,15 @@ const createList = function (product) {
   attr.value = product.img;
   imgHover.className = "product-imgHover";
 
-  img.addEventListener("mouseenter", (e) => {
+  const imgScale = (e) => {
     attr.value = product.imgHover;
     e.target.style.transform = "scale(1.1)";
-    e.target.style.opacity = "1";
-  });
+  };
+  img.addEventListener("mouseenter", imgScale);
+
   img.addEventListener("mouseleave", (e) => {
+    e.target.style.transform = "scale(1)";
     attr.value = product.img;
-    e.target.style.transform;
   });
 
   div.className = "product-detail";

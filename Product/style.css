@@ -1457,7 +1457,7 @@ header.common-toggle-active {
   font-weight: 600;
 }
 .new-product-wrap {
-  width: 92%;
+  width: 93%;
   display: flex;
   flex-direction: column;
   margin: 10px 0 0 20px;
@@ -1471,8 +1471,7 @@ header.common-toggle-active {
   font-family: "Noto Sans KR";
 }
 .new-product-hidden-menu {
-  /*display: flex;로 바꾸기 */
-  display: none;
+  display: flex;
   flex-direction: column;
   color: #333;
   border: 1px solid #777;
@@ -1481,6 +1480,11 @@ header.common-toggle-active {
   height: 80px;
   justify-content: center;
   align-items: center;
+  opacity: 0;
+  transition: all 0.3s;
+}
+.new-product-hidden-menu.active {
+  opacity: 1;
 }
 .new-product-hidden-menu a {
   text-align: center;
@@ -1498,13 +1502,13 @@ header.common-toggle-active {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 50px;
+  margin-top: -10px;
 }
 .pro-total {
   font-size: 15px;
   font-weight: 600;
   font-family: "Noto Sans KR";
-  margin-left: 22px;
+  margin-left: 20px;
 }
 .pro-array-select {
   display: flex;
@@ -1538,6 +1542,7 @@ header.common-toggle-active {
   cursor: pointer;
   color: #444;
   position: relative;
+  height: 40px;
 }
 .pro-icon-shin span {
   font-size: 15px;
@@ -1549,7 +1554,7 @@ header.common-toggle-active {
 }
 .pro-list-select {
   /* flex로 바꿔주기 */
-  display: flex;
+  display: none;
   flex-direction: column;
   border: 1px solid #777;
   border-radius: 5px;
@@ -1558,10 +1563,19 @@ header.common-toggle-active {
   justify-content: center;
   position: absolute;
   right: 0;
-  bottom: -120px;
+  top: 40px;
   width: 150px;
   height: 120px;
   z-index: 10;
+  animation: arrayList 0.3s linear;
+}
+@keyframes arrayList {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 .pro-list-select li {
   text-align: center;
@@ -1578,19 +1592,19 @@ header.common-toggle-active {
   background: #f3f3f3;
 }
 .pro-product-list {
-  width: 100%;
+  width: 95%;
   height: auto;
   display: flex;
   flex-wrap: wrap;
-  margin: 0 0 15px 25px;
-  gap: 12px;
+  margin: 0 0 15px 30px;
+  gap: 10px;
 }
 
 .pro-product-list li {
   position: relative;
-  width: 22%;
+  width: 24%;
   min-width: 250px;
-  height: 460px;
+  height: 480px;
   max-height: 480px;
   border-radius: 5px;
   background: #fafafa;
@@ -1601,7 +1615,7 @@ header.common-toggle-active {
   position: relative;
   width: 48%;
   min-width: 480px;
-  height: auto;
+  height: 480px;
   max-height: 480px;
   border-radius: 5px;
   background: #fafafa;
@@ -1627,7 +1641,7 @@ header.common-toggle-active {
 .pro-product-list li > a {
   display: inline-block;
   overflow: hidden;
-  height: 65%;
+  height: 62%;
 }
 /* .pro-product-list li > a.active {
   height: ;
@@ -1635,13 +1649,28 @@ header.common-toggle-active {
 .pro-product-list li > a img {
   width: 100%;
   height: 100%;
-  min-width: 250px;
+  object-fit: cover;
   border-radius: 5px 5px 0 0;
   transition: all 1s;
+  overflow: hidden;
 }
 
-.product-imgHover {
-  opacity: 0;
+.pro-product-list li > a img:hover {
+  animation: imgHover 0.3s linear;
+}
+@keyframes imgHover {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.3;
+  }
+  75% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 .product-detail {
   font-family: "sofia";
