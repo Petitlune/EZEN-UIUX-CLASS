@@ -223,9 +223,6 @@ newMenuBtn.addEventListener("click", () => {
 const arrayMenu = document.querySelector(".pro-list-select");
 const arrayMenuBtn = document.querySelector(".pro-icon-shin");
 
-// arrayMenuBtn.addEventListener("click", () => {
-//   arrayMenu.style.display = "flex";
-// });
 arrayMenuBtn.addEventListener("click", () => {
   if (arrayMenu.style.display === "none") {
     arrayMenu.style.display = "flex";
@@ -235,10 +232,11 @@ arrayMenuBtn.addEventListener("click", () => {
 });
 
 import products from "./product_list.js";
+import products2 from "./product_list02.js";
+import products3 from "./product_list03.js";
 
+const ul = document.querySelector(".pro-product-list");
 const createList = function (product) {
-  const ul = document.querySelector(".pro-product-list");
-  console.log(ul);
   const proLi = document.createElement("li");
   const spanNew = document.createElement("span");
   const a = document.createElement("a");
@@ -247,6 +245,7 @@ const createList = function (product) {
   const imgHover = document.createElement("img");
   const div = document.createElement("div");
   const span = document.createElement("span");
+  const proPrice = document.createElement("span");
 
   proLi.id = product.id;
 
@@ -268,21 +267,51 @@ const createList = function (product) {
 
   div.className = "product-detail";
   spanNew.className = "product-new";
+  span.className = "product-desc";
+  innerName.className = "product-innerName";
+
+  const price = new Intl.NumberFormat("us", {
+    currency: "KRW",
+  }).format(product.price);
+
+  proPrice.className = "product-price";
   spanNew.innerText = product.newItem;
   span.innerText = product.desc;
   innerName.innerText = product.name;
+  proPrice.innerHTML = `<b>${price}</b>원`;
+
   div.append(span, innerName);
   a.append(img, imgHover);
-  proLi.append(a, spanNew, div);
+  a.onclick = function () {
+    a.target = "_blank";
+    a.href =
+      "https://www.etude.com/shop/category/lip/%ea%b8%80%eb%a0%88%ec%9d%b4%ec%a6%88-%ed%94%8c%eb%9f%bc%ed%94%84-%ea%b8%80%eb%a1%9c%ec%8a%a4-4g/";
+  };
+  proLi.append(a, spanNew, div, proPrice);
   ul.appendChild(proLi);
-  console.log(img);
+  let colorG = document.createElement("div");
+  colorG.className = "product-color-group";
+  div.append(colorG);
+  let colorList = product.color;
+  for (let i = 0; i < colorList.length; i++) {
+    let selectColor = document.createElement("img");
+    selectColor.classList = "product-select-color";
+    const attrs = document.createAttribute("src");
+    selectColor.setAttributeNode(attrs);
+    attrs.value = colorList[i];
+    colorG.append(selectColor);
+  }
 
   const firstArray = document.querySelector(".fa-list");
-  console.log(firstArray);
-  firstArray.addEventListener("click", () => {
+
+  firstArray.addEventListener("click", (e) => {
+    e.preventDefault();
+    console.log("click");
     proLi.classList.add("active");
     img.classList.add("active");
-    console.log("click");
+    div.classList.add("active");
+    a.classList.add("active");
+    proPrice.classList.add("active");
   });
 };
 
@@ -294,4 +323,49 @@ const importData = () => {
   });
 };
 
-importData();
+const importData2 = () => {
+  products2.data2.map((product) => {
+    if (!document.getElementById(product.id)) {
+      createList(product);
+    }
+  });
+};
+
+const importData3 = () => {
+  products3.data3.map((product) => {
+    if (!document.getElementById(product.id)) {
+      createList(product);
+    }
+  });
+};
+
+const nextPageBtns = document.querySelectorAll(".inner-num li");
+
+const proPages = [importData, importData2, importData3];
+
+const reset = () => {
+  nextPageBtns.forEach((pageBtn, idx) => {
+    nextPageBtns[idx].classList.remove("active");
+  });
+};
+const resetPage = () => {
+  nextPageBtns.forEach((pageBtn, idx) => {
+    nextPageBtns[idx].classList.remove("active");
+  });
+};
+
+const pageChange = (e) => {
+  const target = e.target.dataset.index;
+  reset();
+  for (let i = 0; i < nextPageBtns.length; i++) {
+    if (target == i) {
+      nextPageBtns[i].classList.add("active");
+      ul = `${proPages[i]()}`;
+    }
+  }
+};
+
+nextPageBtns.forEach((pageBtn) => {
+  importData();
+  pageBtn.addEventListener("click", pageChange);
+});
