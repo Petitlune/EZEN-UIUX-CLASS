@@ -1,6 +1,7 @@
 const products = {
   data: [
     {
+      num: 1,
       id: Date.now(),
       newItem: "NEW",
       name: "글레이즈 플럼퍼 글로스 4g",
@@ -16,6 +17,7 @@ const products = {
       ],
     },
     {
+      num: 2,
       id: Date.now() + 1,
       newItem: "NEW",
       name: "마이 베스트 톤 아이 팔레트 7g~",
@@ -31,6 +33,7 @@ const products = {
       ],
     },
     {
+      num: 3,
       id: Date.now() + 2,
       newItem: "NEW",
       name: "미씽유 핸드크림 #매력덩어리 판다 30ml",
@@ -42,6 +45,7 @@ const products = {
       color: [],
     },
     {
+      num: 4,
       id: Date.now() + 3,
       newItem: "NEW",
       name: "디어 달링 오일 틴트 4.2g",
@@ -60,6 +64,7 @@ const products = {
       ],
     },
     {
+      num: 5,
       id: Date.now() + 4,
       newItem: "NEW",
       name: "시럽 글로시밤 #리플레이 2.5g",
@@ -75,6 +80,7 @@ const products = {
       ],
     },
     {
+      num: 6,
       id: Date.now() + 5,
       newItem: "NEW",
       name: "룩 앳 마이 아이즈 #리플레이 1.9g~",
@@ -95,6 +101,7 @@ const products = {
       ],
     },
     {
+      num: 7,
       id: Date.now() + 6,
       newItem: "NEW",
       name: "플레이 컬러 아이즈 #리플레이 3.8g~",
@@ -110,6 +117,7 @@ const products = {
       ],
     },
     {
+      num: 8,
       id: Date.now() + 7,
       newItem: "NEW",
       name: "베이스 앤 오버 립 펜슬 #핑크베이지 1g",
@@ -121,6 +129,7 @@ const products = {
       color: [],
     },
     {
+      num: 9,
       id: Date.now() + 8,
       newItem: "NEW",
       name: "더블 래스팅 비건 커버 파운데이션 SPF32 PA++ 30g",
@@ -137,6 +146,7 @@ const products = {
       ],
     },
     {
+      num: 10,
       id: Date.now() + 9,
       newItem: "NEW",
       name: "래쉬업 콤브 마스카라 8g",
@@ -151,6 +161,7 @@ const products = {
       ],
     },
     {
+      num: 11,
       id: Date.now() + 10,
       newItem: "NEW",
       name: "하트 플러터 블러셔 #핑카이브 4g",
@@ -162,6 +173,7 @@ const products = {
       color: [],
     },
     {
+      num: 12,
       id: Date.now() + 11,
       newItem: "NEW",
       name: "픽싱 틴트 벨벳 #핑카이브 3.8g",
@@ -174,6 +186,7 @@ const products = {
     },
 
     {
+      num: 13,
       id: Date.now() + 12,
       newItem: "NEW",
       name: "플레이 컬러 아이즈 #핑카이브 8.3g",
@@ -185,6 +198,7 @@ const products = {
       color: [],
     },
     {
+      num: 14,
       id: Date.now() + 13,
       newItem: "NEW",
       name: "재창조 메이커 1g",
@@ -199,6 +213,7 @@ const products = {
       ],
     },
     {
+      num: 15,
       id: Date.now() + 14,
       newItem: "NEW",
       name: "진저슈가 멜팅 밤 2.3g",
@@ -216,6 +231,7 @@ const products = {
       ],
     },
     {
+      num: 16,
       id: Date.now() + 15,
       newItem: "NEW",
       name: "글로우 픽싱 틴트 3.8g",
@@ -236,6 +252,7 @@ const products = {
       ],
     },
     {
+      num: 17,
       id: Date.now() + 16,
       newItem: "NEW",
       name: "하트 팝 블러셔 #셀러뷰리티 4g",
@@ -253,6 +270,7 @@ const products = {
       ],
     },
     {
+      num: 18,
       id: Date.now() + 17,
       newItem: "NEW",
       name: "플레이 컬러 아이즈 #셀러뷰리티 6.5g~",
@@ -269,6 +287,7 @@ const products = {
       ],
     },
     {
+      num: 19,
       id: Date.now() + 18,
       newItem: "NEW",
       name: "플레이 컬러 아이즈 #베어꾸 콜라보 8.9g",
@@ -280,6 +299,7 @@ const products = {
       color: [],
     },
     {
+      num: 20,
       id: Date.now() + 19,
       newItem: "NEW",
       name: "플레이 컬러 아이즈 #시티 에디션 5.6g",
@@ -295,6 +315,7 @@ const products = {
       ],
     },
     {
+      num: 21,
       id: Date.now() + 20,
       newItem: "NEW",
       name: "글로우 픽싱 틴트 #시티 에디션 3.8g",
@@ -310,6 +331,7 @@ const products = {
       ],
     },
     {
+      num: 22,
       id: Date.now() + 21,
       newItem: "NEW",
       name: "프루티 듀이 틴트 4.5g",
@@ -325,6 +347,7 @@ const products = {
       ],
     },
     {
+      num: 23,
       id: Date.now() + 22,
       newItem: "NEW",
       name: "파워 래쉬 속눈썹 영양제 6g",
@@ -336,6 +359,7 @@ const products = {
       color: [],
     },
     {
+      num: 24,
       id: Date.now() + 23,
       newItem: "NEW",
       name: "라인 픽스 브러쉬 라이너 0.5g",
@@ -347,6 +371,7 @@ const products = {
       color: [],
     },
     {
+      num: 25,
       id: Date.now() + 24,
       newItem: "NEW",
       name: "순정 시카 카밍 앰플 에센스 50ml",
@@ -359,6 +384,7 @@ const products = {
       color: [],
     },
     {
+      num: 26,
       id: Date.now() + 25,
       newItem: "NEW",
       name: "님프 광채 볼류머 24g",

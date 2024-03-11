@@ -1594,6 +1594,7 @@ header.common-toggle-active {
   width: 95%;
   display: flex;
   height: auto;
+  border: 1px solid red;
   flex-wrap: wrap;
   margin: 0 0 15px 30px;
   gap: 10px;

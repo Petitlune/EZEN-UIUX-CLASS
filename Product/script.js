@@ -16,7 +16,6 @@ mainProduct.addEventListener("mouseenter", () => {
 mainProduct.addEventListener("mouseleave", () => {
   productList.classList.remove("active");
   header.style.height = "100px";
-  he;
 });
 
 //MainPage Brand Click Event
@@ -312,41 +311,35 @@ const createList = function (product) {
     proPrice.classList.add("active");
   });
 };
-const importData = () => {
-  products.data.map((product) => {
-    if (!document.getElementById(product.id)) {
-      createList(product);
-    }
-  });
-};
-
-importData();
-
-const page = Object.keys(products);
-console.log(page);
-
-const arr = [];
-for (let ele of page) {
-  arr.push(ele);
-}
-console.log(arr.price);
-
+// const importData = () => {
+//   products.data.map((product) => {
+//     if (!document.getElementById(product.id)) {
+//       createList(product);
+//     }
+//   });
+// };
 // importData();
+
 // const importData2 = () => {
-//   products.data2.map((product) => {
-//     if (!document.getElementById(product.id)) {
+//   products.data.map((product) => {
+//     if (product.num > 12 && product.num <= 24) {
+//       createList(product);
+//     }
+//   });
+// };
+// const importData3 = () => {
+//   products.data.map((product) => {
+//     if (product.num > 24 && product.num <= 36) {
 //       createList(product);
 //     }
 //   });
 // };
 
-// const importData3 = () => {
-//   products.data3.map((product) => {
-//     if (!document.getElementById(product.id)) {
-//       createList(product);
-//     }
-//   });
-// };
+// const arr = [];
+// for (let ele of page) {
+//   arr.push(ele);
+// }
+// console.log(arr.price);
 
 const nextPageBtns = document.querySelectorAll(".inner-num li");
 
@@ -358,12 +351,46 @@ const reset = () => {
   });
 };
 
+const importData0 = () => {
+  products.data.map((product) => {
+    if (product.num <= 12) {
+      createList(product);
+    }
+  });
+};
+importData0();
+
+const importData2 = () => {
+  products.data.map((product) => {
+    if (product.num > 12 && product.num <= 24) {
+      createList(product);
+    }
+  });
+};
+const importData3 = () => {
+  products.data.map((product) => {
+    if (product.num > 24 && product.num <= 36) {
+      createList(product);
+    }
+  });
+};
+
+const proPages = [importData0, importData2, importData3];
+
+const rePage = (idx) => {
+  if (proPages[idx] === `importDate${idx - 1}`) {
+    remove.proPages[`${idx - 1}`];
+    // delete proPages[0];
+  }
+};
 const pageChange = (e) => {
   const target = e.target.dataset.index;
+  rePage();
   reset();
   for (let i = 0; i < nextPageBtns.length; i++) {
     if (target == i) {
       nextPageBtns[i].classList.add("active");
+      proPages[i]();
     }
   }
 };
