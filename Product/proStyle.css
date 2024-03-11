@@ -1592,8 +1592,8 @@ header.common-toggle-active {
 }
 .pro-product-list {
   width: 95%;
-  height: auto;
   display: flex;
+  height: auto;
   flex-wrap: wrap;
   margin: 0 0 15px 30px;
   gap: 10px;
@@ -1683,8 +1683,6 @@ header.common-toggle-active {
   width: 90%;
   height: 150px;
   padding: 10px 15px;
-  position: relative;
-
   position: relative;
 }
 .product-detail.active {

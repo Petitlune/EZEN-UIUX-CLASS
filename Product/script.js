@@ -232,8 +232,6 @@ arrayMenuBtn.addEventListener("click", () => {
 });
 
 import products from "./product_list.js";
-import products2 from "./product_list02.js";
-import products3 from "./product_list03.js";
 
 const ul = document.querySelector(".pro-product-list");
 const createList = function (product) {
@@ -314,7 +312,6 @@ const createList = function (product) {
     proPrice.classList.add("active");
   });
 };
-
 const importData = () => {
   products.data.map((product) => {
     if (!document.getElementById(product.id)) {
@@ -323,32 +320,39 @@ const importData = () => {
   });
 };
 
-const importData2 = () => {
-  products2.data2.map((product) => {
-    if (!document.getElementById(product.id)) {
-      createList(product);
-    }
-  });
-};
+importData();
 
-const importData3 = () => {
-  products3.data3.map((product) => {
-    if (!document.getElementById(product.id)) {
-      createList(product);
-    }
-  });
-};
+const page = Object.keys(products);
+console.log(page);
+
+const arr = [];
+for (let ele of page) {
+  arr.push(ele);
+}
+console.log(arr.price);
+
+// importData();
+// const importData2 = () => {
+//   products.data2.map((product) => {
+//     if (!document.getElementById(product.id)) {
+//       createList(product);
+//     }
+//   });
+// };
+
+// const importData3 = () => {
+//   products.data3.map((product) => {
+//     if (!document.getElementById(product.id)) {
+//       createList(product);
+//     }
+//   });
+// };
 
 const nextPageBtns = document.querySelectorAll(".inner-num li");
 
-const proPages = [importData, importData2, importData3];
+// const proPages = [importData, importData2, importData3];
 
 const reset = () => {
-  nextPageBtns.forEach((pageBtn, idx) => {
-    nextPageBtns[idx].classList.remove("active");
-  });
-};
-const resetPage = () => {
   nextPageBtns.forEach((pageBtn, idx) => {
     nextPageBtns[idx].classList.remove("active");
   });
@@ -360,12 +364,10 @@ const pageChange = (e) => {
   for (let i = 0; i < nextPageBtns.length; i++) {
     if (target == i) {
       nextPageBtns[i].classList.add("active");
-      ul = `${proPages[i]()}`;
     }
   }
 };
 
 nextPageBtns.forEach((pageBtn) => {
-  importData();
   pageBtn.addEventListener("click", pageChange);
 });

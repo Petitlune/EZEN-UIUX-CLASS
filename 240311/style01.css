@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+#container {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.done {
+  color: #999;
+  font-style: italic;
+  text-decoration: line-through;
+}
+.active {
+  background: #222;
+  color: #fff;
+  padding: 10px 20px;
+}
