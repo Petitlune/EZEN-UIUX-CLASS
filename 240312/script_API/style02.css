@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+table {
+  display: inline-block;
+  width: 300px;
+  margin: 10px;
+  margin-left: 250px;
+}
+table,
+th,
+td {
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+}
+th {
+  width: 80px;
+}
+td {
+  width: 230px;
+  height: 50px;
+}

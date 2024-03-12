@@ -66,11 +66,31 @@ const moveSlide = (num) => {
   console.log(currentIdx, slideCount);
 };
 
-// prevBtn.addEventListener("click"),
-//   () => {
-//     moveSlide(currentIdx - 1);
-//   };
+prevBtn.addEventListener("click", () => {
+  moveSlide(currentIdx - 1);
+});
 
 nextBtn.addEventListener("click", () => {
   moveSlide(currentIdx + 1);
+});
+
+//auto slide
+
+const autoSlide = () => {
+  timer = setInterval(() => {
+    moveSlide(currentIdx + 1);
+  }, 2000);
+};
+
+autoSlide();
+
+const stopSlide = () => {
+  clearInterval(timer);
+};
+slides.addEventListener("mouseenter", () => {
+  stopSlide();
+});
+
+slides.addEventListener("mouseleave", () => {
+  autoSlide();
 });
