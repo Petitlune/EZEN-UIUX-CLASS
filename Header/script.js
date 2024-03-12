@@ -1,7 +1,6 @@
 const mainProduct = document.querySelector(".common-product-hover");
 const productList = document.querySelector(".common-product-hover-menu");
 const header = document.querySelector("header");
-
 const mainbrand = document.querySelector(".common-brand-hover");
 const brandList = document.querySelector(".common-brand-hover-menu");
 const mainMake = document.querySelector(".common-makeup-hover");
@@ -51,7 +50,8 @@ searchClickClose.onclick = () => {
 };
 
 //MainPage tigger Click Event
-const mainTrigger = document.querySelector(".common-toggle-btn");
+const mainTrigger = document.querySelector(".common-trigger-btn");
+const reTriggerBtn = document.querySelector(".common-repon-toggle-btn ");
 console.log(mainTrigger);
 const mainGnb = document.querySelector(".common-toggle-btn-click");
 
@@ -150,10 +150,12 @@ mainTrigger.addEventListener("click", desktopToggle);
 let Width = window.innerWidth;
 window.addEventListener("resize", function () {
   if (innerWidth <= 1024) {
-    mainTrigger.removeEventListener("click", desktopToggle);
-    mainTrigger.onclick = () => {
-      commonReToggleBtn.classList.add("active");
-    };
+    // mainTrigger.removeEventListener("click", desktopToggle);
+    // mainTrigger.onclick = () => {
+    //   commonReToggleBtn.classList.add("active");
+    // };
+    mainTrigger.style.display = "none";
+    reTriggerBtn.style.display = "block";
   } else {
     commonReToggleBtn.classList.remove("active");
   }
