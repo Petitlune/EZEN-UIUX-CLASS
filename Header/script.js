@@ -52,7 +52,6 @@ searchClickClose.onclick = () => {
 //MainPage tigger Click Event
 const mainTrigger = document.querySelector(".common-trigger-btn");
 const reTriggerBtn = document.querySelector(".common-repon-toggle-btn ");
-console.log(mainTrigger);
 const mainGnb = document.querySelector(".common-toggle-btn-click");
 
 //MainPage Store Brand
@@ -62,10 +61,10 @@ const brandStoreIcon = document.querySelector(".common-brand-store-select i");
 const brandStoreList = document.querySelector(".common-store-list");
 
 brandStore.addEventListener("click", () => {
-  brandStore.classList.toggle("common-active-store-list");
-  brandStoreList.classList.toggle("common-active-store-list");
-  brandStoreMenu.classList.toggle("common-active-store-list");
-  brandStoreIcon.classList.toggle("common-active-store-list");
+  brandStore.classList.toggle("active");
+  brandStoreList.classList.toggle("active");
+  brandStoreMenu.classList.toggle("active");
+  brandStoreIcon.classList.toggle("active");
 });
 
 //gototop
@@ -110,13 +109,13 @@ const commonCate = document.querySelector(
 const commonCateList = document.querySelector(
   ".common-responsibility-toggle-menu-inner-title-list-cate "
 );
-const commonReToggleBtn = document.querySelector(
+const commonReToggleMenu = document.querySelector(
   ".common-responsibility-toggle-menu"
 );
 const commonReXbtn = document.querySelector(
   ".common-responsibility-search-box-icon-x"
 );
-console.log(commonReToggleBtn);
+
 //반응형 menu, category
 commonMenu.addEventListener("click", () => {
   commonMenu.classList.toggle("active");
@@ -138,43 +137,41 @@ const desktopToggle = () => {
   mainTrigger.classList.toggle("active");
   if (mainGnb.style.display === "none" || mainGnb.style.display === "") {
     mainGnb.style.display = "block";
+    header.style.backgroundColor = "transparent";
     window.removeEventListener("scroll", scrollHead);
   } else {
     mainGnb.style.display = "none";
     window.addEventListener("scroll", scrollHead);
+    header.style.backgroundColor = " background: rgba(255, 255, 255, 0);";
   }
 };
 
 mainTrigger.addEventListener("click", desktopToggle);
 
 let Width = window.innerWidth;
+
 window.addEventListener("resize", function () {
+  re();
+});
+
+const re = () => {
   if (innerWidth <= 1024) {
-    // mainTrigger.removeEventListener("click", desktopToggle);
-    // mainTrigger.onclick = () => {
-    //   commonReToggleBtn.classList.add("active");
-    // };
     mainTrigger.style.display = "none";
     reTriggerBtn.style.display = "block";
+    mainGnb.style.display = "none";
+    reTriggerBtn.addEventListener("click", () => {
+      commonReToggleMenu.classList.add("active");
+    });
   } else {
-    commonReToggleBtn.classList.remove("active");
+    mainTrigger.style.display = "block";
+    reTriggerBtn.style.display = "none";
   }
-});
+};
+re();
 
 commonReXbtn.onclick = () => {
-  commonReToggleBtn.classList.remove("active");
+  commonReToggleMenu.classList.remove("active");
 };
-
-window.addEventListener("resize", function () {
-  if (innerWidth > 1024) {
-    mainTrigger.addEventListener("click", desktopToggle);
-    mainTrigger.onclick = () => {
-      commonReToggleBtn.classList.remove("active");
-    };
-  } else {
-    commonReToggleBtn.classList.remove("active");
-  }
-});
 
 //responsibility-Store Brand
 const RebrandStore = document.querySelector(
@@ -215,9 +212,111 @@ const CommonReList = document.querySelectorAll(
 const CommonMinusBtn = document.querySelectorAll(
   ".common-responsibility-menu-plus span:nth-child(2)"
 );
-// CommonReTitle.addEventListener("click", () => {
-//   for (let i = 0; i < 9; i++) {
-//     CommonReList.classList.toggle("active");
-//     CommonMinusBtn.classList.toggle("active");
-//   }
-// });
+
+const pinkAddtocart = document.querySelector("#common-addtocart");
+console.log(pinkAddtocart);
+
+const reAddtocart = () => {
+  if (window.innerWidth <= 768) {
+    pinkAddtocart.classList.add("active");
+  } else {
+    pinkAddtocart.classList.remove("active");
+  }
+};
+
+window.addEventListener("resize", function () {
+  reAddtocart();
+});
+
+reAddtocart();
+
+const commonCateBtn = document.querySelector(
+  ".common-responsibility-toggle-menu-inner-title-cate"
+);
+const commonCateMenu = document.querySelector(
+  ".common-responsibility-toggle-menu-inner-title-list-cate"
+);
+
+commonCateBtn.addEventListener("click", () => {
+  commonCateMenu.classList.toggle("active");
+});
+
+const commonMenuBtn = document.querySelectorAll(".common-responsibility-menu");
+const commonMenuBtnA = document.querySelectorAll(
+  ".common-responsibility-menu a"
+);
+const commonMenuInner = document.querySelectorAll(
+  ".common-responsibility-menu-list"
+);
+const commonBtnPlus = document.querySelectorAll(
+  ".common-responsibility-menu-plus span:nth-child(2)"
+);
+const commonReMenuCate = document.querySelectorAll(
+  ".common-responsibility-menu-cate-left"
+);
+const commonReMenuCateR = document.querySelectorAll(
+  ".common-responsibility-menu-cate"
+);
+const commonReMenuCateLi = document.querySelectorAll(
+  ".common-responsibility-menu-list-cate"
+);
+const commonReMenuCateLiR = document.querySelectorAll(
+  ".common-responsibility-menu-list-cate-lip"
+);
+const commonBtnPlusCate = document.querySelectorAll(
+  ".common-responsibility-menu-plus-cate span:nth-child(2)"
+);
+
+console.log(commonReMenuCateLiR);
+
+const commonMenuBtnIdx = (i) => {
+  for (let i = 0; i < commonMenuBtn.length; i++) {
+    commonMenuBtn[i].addEventListener("click", () => {
+      commonMenuInner[i].classList.toggle("active");
+      commonBtnPlus[i].classList.toggle("active");
+    });
+  }
+};
+commonMenuBtnIdx();
+
+const commonMenuCateBtnIdx = (i) => {
+  for (let i = 0; i < commonReMenuCate.length; i++) {
+    commonReMenuCate[i].addEventListener("click", () => {
+      console.log("click");
+      commonReMenuCateLi[i].classList.toggle("active");
+      commonBtnPlusCate[i].classList.toggle("active");
+    });
+  }
+};
+commonMenuCateBtnIdx();
+// ==================footter=================
+const commonFamily = document.querySelector(".common-footer-family");
+const commonFamilyHidden = document.querySelector(
+  ".common-footer-family-hidden"
+);
+const commonFootIcon = document.querySelector(".common-footer-family > a i");
+const commonMap = document.querySelector(".common-footer-Map");
+const commonMapHidden = document.querySelector(".common-footer-Map-hidden");
+const commonFootIconR = document.querySelector(".common-footer-Map > a i");
+
+commonFamily.addEventListener("click", (e) => {
+  e.preventDefault();
+  if (commonFamilyHidden.style.display === "none") {
+    commonFamilyHidden.style.display = "flex";
+    commonFootIcon.classList.add("active");
+  } else {
+    commonFamilyHidden.style.display = "none";
+    commonFootIcon.classList.remove("active");
+  }
+});
+
+commonMap.addEventListener("click", (e) => {
+  e.preventDefault();
+  if (commonMapHidden.style.display === "none") {
+    commonMapHidden.style.display = "flex";
+    commonFootIconR.classList.add("active");
+  } else {
+    commonMapHidden.style.display = "none";
+    commonFootIconR.classList.remove("active");
+  }
+});
