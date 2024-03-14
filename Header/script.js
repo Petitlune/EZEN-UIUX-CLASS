@@ -15,7 +15,6 @@ mainProduct.addEventListener("mouseenter", () => {
 mainProduct.addEventListener("mouseleave", () => {
   productList.classList.remove("active");
   header.style.height = "100px";
-  he;
 });
 
 //MainPage Brand Click Event
@@ -269,7 +268,26 @@ const commonBtnPlusCate = document.querySelectorAll(
 
 console.log(commonReMenuCateLiR);
 
+// const commonMenuInnerReset = (i) => {
+//   for (let i = 0; i < commonMenuBtn.length; i++) {
+//     commonMenuBtn[i].removeEventListener("click", () => {
+//       commonMenuInner[i].classList.remove("active");
+//       commonBtnPlus[i].classList.remove("active");
+//     });
+//   }
+// };
+// commonBtnPlus.classList.remove("active")
+
+
+const reset = () => {
+  nextPageBtns.forEach((btn) => {
+    btn.classList.remove("active");
+  });
+};
+
+
 const commonMenuBtnIdx = (i) => {
+  // commonMenuInnerReset(i);
   for (let i = 0; i < commonMenuBtn.length; i++) {
     commonMenuBtn[i].addEventListener("click", () => {
       commonMenuInner[i].classList.toggle("active");
@@ -289,6 +307,7 @@ const commonMenuCateBtnIdx = (i) => {
   }
 };
 commonMenuCateBtnIdx();
+
 // ==================footter=================
 const commonFamily = document.querySelector(".common-footer-family");
 const commonFamilyHidden = document.querySelector(
@@ -320,3 +339,31 @@ commonMap.addEventListener("click", (e) => {
     commonFootIconR.classList.remove("active");
   }
 });
+//상단 검색메뉴 페이지별로 연동하기
+const commonSearchInput = document.querySelector(".common-search-box-header");
+const commonHeaderMenuClickPro = document.querySelector(
+  ".common-product-hover-menu "
+);
+const commonHeaderMenuClickBran = document.querySelector(
+  ".common-brand-hover-menu "
+);
+const commonHeaderMenuClick = document.querySelectorAll(
+  ".common-header-menu > a"
+);
+
+// commonHeaderMenuClickBran.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   if (commonSearchInput.style.display === "none") {
+//     commonSearchInput.style.display = "block";
+//   } else {
+//     commonSearchInput.style.display = "none";
+//   }
+// });
+// commonHeaderMenuClickPro.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   if (commonSearchInput.style.display === "none") {
+//     commonSearchInput.style.display = "block";
+//   } else {
+//     commonSearchInput.style.display = "none";
+//   }
+// });

@@ -89,7 +89,7 @@ header.common-toggle-active {
   color: #333;
 }
 .common-search-box-header {
-  display: block;
+  display: none;
   /*Main메뉴 제외하고 모두 display block*/
   position: fixed;
   right: 110px;
@@ -102,6 +102,9 @@ header.common-toggle-active {
   background: rgba(231, 232, 234, 0.5);
   z-index: -2;
 }
+/* .common-search-box-header.active {
+  display: block;
+} */
 #common-search-box-header-inner {
   width: 90%;
   height: 44px;

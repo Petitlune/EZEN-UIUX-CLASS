@@ -311,45 +311,166 @@ const createList = function (product) {
     proPrice.classList.add("active");
   });
 };
-// const importData = () => {
-//   products.data.map((product) => {
-//     if (!document.getElementById(product.id)) {
-//       createList(product);
-//     }
-//   });
-// };
-// importData();
+const createListTwo = function (product) {
+  const ul = document.querySelector(".pro-product-list-two");
+  const proLi = document.createElement("li");
+  const spanNew = document.createElement("span");
+  const a = document.createElement("a");
+  const innerName = document.createElement("a");
+  const img = document.createElement("img");
+  const imgHover = document.createElement("img");
+  const div = document.createElement("div");
+  const span = document.createElement("span");
+  const proPrice = document.createElement("span");
 
-// const importData2 = () => {
-//   products.data.map((product) => {
-//     if (product.num > 12 && product.num <= 24) {
-//       createList(product);
-//     }
-//   });
-// };
-// const importData3 = () => {
-//   products.data.map((product) => {
-//     if (product.num > 24 && product.num <= 36) {
-//       createList(product);
-//     }
-//   });
-// };
+  proLi.id = product.id;
 
-// const arr = [];
-// for (let ele of page) {
-//   arr.push(ele);
-// }
-// console.log(arr.price);
+  const attr = document.createAttribute("src");
+  img.setAttributeNode(attr);
+  attr.value = product.img;
+  imgHover.className = "product-imgHover";
 
-const nextPageBtns = document.querySelectorAll(".inner-num li");
+  const imgScale = (e) => {
+    attr.value = product.imgHover;
+    e.target.style.transform = "scale(1.1)";
+  };
+  img.addEventListener("mouseenter", imgScale);
 
-// const proPages = [importData, importData2, importData3];
+  img.addEventListener("mouseleave", (e) => {
+    e.target.style.transform = "scale(1)";
+    attr.value = product.img;
+  });
 
-const reset = () => {
-  nextPageBtns.forEach((pageBtn, idx) => {
-    nextPageBtns[idx].classList.remove("active");
+  div.className = "product-detail";
+  spanNew.className = "product-new";
+  span.className = "product-desc";
+  innerName.className = "product-innerName";
+
+  const price = new Intl.NumberFormat("us", {
+    currency: "KRW",
+  }).format(product.price);
+
+  proPrice.className = "product-price";
+  spanNew.innerText = product.newItem;
+  span.innerText = product.desc;
+  innerName.innerText = product.name;
+  proPrice.innerHTML = `<b>${price}</b>원`;
+
+  div.append(span, innerName);
+  a.append(img, imgHover);
+  a.onclick = function () {
+    a.target = "_blank";
+    a.href =
+      "https://www.etude.com/shop/category/lip/%ea%b8%80%eb%a0%88%ec%9d%b4%ec%a6%88-%ed%94%8c%eb%9f%bc%ed%94%84-%ea%b8%80%eb%a1%9c%ec%8a%a4-4g/";
+  };
+  proLi.append(a, spanNew, div, proPrice);
+  ul.appendChild(proLi);
+  let colorG = document.createElement("div");
+  colorG.className = "product-color-group";
+  div.append(colorG);
+  let colorList = product.color;
+  for (let i = 0; i < colorList.length; i++) {
+    let selectColor = document.createElement("img");
+    selectColor.classList = "product-select-color";
+    const attrs = document.createAttribute("src");
+    selectColor.setAttributeNode(attrs);
+    attrs.value = colorList[i];
+    colorG.append(selectColor);
+  }
+
+  const firstArray = document.querySelector(".fa-list");
+
+  firstArray.addEventListener("click", (e) => {
+    e.preventDefault();
+    console.log("click");
+    proLi.classList.add("active");
+    img.classList.add("active");
+    div.classList.add("active");
+    a.classList.add("active");
+    proPrice.classList.add("active");
   });
 };
+const createListThree = function (product) {
+  const ul = document.querySelector(".pro-product-list-three");
+  const proLi = document.createElement("li");
+  const spanNew = document.createElement("span");
+  const a = document.createElement("a");
+  const innerName = document.createElement("a");
+  const img = document.createElement("img");
+  const imgHover = document.createElement("img");
+  const div = document.createElement("div");
+  const span = document.createElement("span");
+  const proPrice = document.createElement("span");
+
+  proLi.id = product.id;
+
+  const attr = document.createAttribute("src");
+  img.setAttributeNode(attr);
+  attr.value = product.img;
+  imgHover.className = "product-imgHover";
+
+  const imgScale = (e) => {
+    attr.value = product.imgHover;
+    e.target.style.transform = "scale(1.1)";
+  };
+  img.addEventListener("mouseenter", imgScale);
+
+  img.addEventListener("mouseleave", (e) => {
+    e.target.style.transform = "scale(1)";
+    attr.value = product.img;
+  });
+
+  div.className = "product-detail";
+  spanNew.className = "product-new";
+  span.className = "product-desc";
+  innerName.className = "product-innerName";
+
+  const price = new Intl.NumberFormat("us", {
+    currency: "KRW",
+  }).format(product.price);
+
+  proPrice.className = "product-price";
+  spanNew.innerText = product.newItem;
+  span.innerText = product.desc;
+  innerName.innerText = product.name;
+  proPrice.innerHTML = `<b>${price}</b>원`;
+
+  div.append(span, innerName);
+  a.append(img, imgHover);
+  a.onclick = function () {
+    a.target = "_blank";
+    a.href =
+      "https://www.etude.com/shop/category/lip/%ea%b8%80%eb%a0%88%ec%9d%b4%ec%a6%88-%ed%94%8c%eb%9f%bc%ed%94%84-%ea%b8%80%eb%a1%9c%ec%8a%a4-4g/";
+  };
+  proLi.append(a, spanNew, div, proPrice);
+  ul.appendChild(proLi);
+  let colorG = document.createElement("div");
+  colorG.className = "product-color-group";
+  div.append(colorG);
+  let colorList = product.color;
+  for (let i = 0; i < colorList.length; i++) {
+    let selectColor = document.createElement("img");
+    selectColor.classList = "product-select-color";
+    const attrs = document.createAttribute("src");
+    selectColor.setAttributeNode(attrs);
+    attrs.value = colorList[i];
+    colorG.append(selectColor);
+  }
+
+  const firstArray = document.querySelector(".fa-list");
+
+  firstArray.addEventListener("click", (e) => {
+    e.preventDefault();
+    console.log("click");
+    proLi.classList.add("active");
+    img.classList.add("active");
+    div.classList.add("active");
+    a.classList.add("active");
+    proPrice.classList.add("active");
+  });
+};
+
+const nextPageBtns = document.querySelectorAll(".inner-num li");
 
 const importData0 = () => {
   products.data.map((product) => {
@@ -363,38 +484,47 @@ importData0();
 const importData2 = () => {
   products.data.map((product) => {
     if (product.num > 12 && product.num <= 24) {
-      createList(product);
+      createListTwo(product);
     }
   });
 };
+importData2();
 const importData3 = () => {
   products.data.map((product) => {
     if (product.num > 24 && product.num <= 36) {
-      createList(product);
+      createListThree(product);
     }
   });
 };
+importData3();
 
-const proPages = [importData0, importData2, importData3];
+const proTwo = document.querySelector(".pro-product-list-two");
+const proThree = document.querySelector(".pro-product-list-three");
+console.log(proThree);
 
-const rePage = (idx) => {
-  if (proPages[idx] === `importDate${idx - 1}`) {
-    remove.proPages[`${idx - 1}`];
-    // delete proPages[0];
-  }
+const PageList = [ul, proTwo, proThree];
+
+nextPageBtns[1].onclick = () => {
+  proTwo.classList.add("active");
 };
+nextPageBtns[2].onclick = () => {
+  proThree.classList.add("active");
+  proTwo.style.display = "none";
+  ul.style.display = "none";
+};
+
+const reset = () => {
+  nextPageBtns.forEach((btn) => {
+    btn.classList.remove("active");
+  });
+};
+
 const pageChange = (e) => {
   const target = e.target.dataset.index;
-  rePage();
   reset();
   for (let i = 0; i < nextPageBtns.length; i++) {
     if (target == i) {
       nextPageBtns[i].classList.add("active");
-      proPages[i]();
     }
   }
 };
-
-nextPageBtns.forEach((pageBtn) => {
-  pageBtn.addEventListener("click", pageChange);
-});

@@ -1354,6 +1354,7 @@ header.common-toggle-active {
   }
 }
 /*==================================================product ============================================================================*/
+
 .pro-silder-img {
   position: fixed;
   width: 30%;
@@ -1438,14 +1439,17 @@ header.common-toggle-active {
   position: absolute;
   top: 120px;
   left: 30%;
-  width: 70%;
+  width: 1320px;
+  height: 2000px;
+  /* overflow: hidden; */
+  /* border: 3px solid orange; */
 }
 .new-product {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 30px;
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 700;
   font-family: "Noto Sans KR";
   width: 180px;
@@ -1503,6 +1507,7 @@ header.common-toggle-active {
   align-items: center;
   justify-content: space-between;
   margin-top: -10px;
+  width: 100%;
 }
 .pro-total {
   font-size: 15px;
@@ -1590,18 +1595,33 @@ header.common-toggle-active {
 .pro-list-select li:hover {
   background: #f3f3f3;
 }
-.pro-product-list {
-  width: 95%;
+
+.pro-product-list,
+.pro-product-list-two,
+.pro-product-list-three {
+  flex-wrap: wrap;
+  width: 1280px;
   display: flex;
   height: auto;
-  border: 1px solid red;
+  /* border: 2px solid red; */
   flex-wrap: wrap;
   margin: 0 0 15px 30px;
   gap: 10px;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
-
-.pro-product-list li {
+.pro-product-list-two.active {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.pro-product-list-three.active {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.pro-product-list li,
+.pro-product-list-two li,
+.pro-product-list-three li {
   position: relative;
   width: 24%;
   min-width: 250px;
@@ -1612,7 +1632,9 @@ header.common-toggle-active {
   margin: 20px 0;
   overflow: hidden;
 }
-.pro-product-list li.active {
+.pro-product-list li.active,
+.pro-product-list-two li.active,
+.pro-product-list-three li.active {
   position: relative;
   width: 624px;
   height: 270px;
@@ -1633,24 +1655,32 @@ header.common-toggle-active {
   background: #222;
   color: #fff;
 }
-.pro-product-list li > a {
+.pro-product-list li > a,
+.pro-product-list-two li > a,
+.pro-product-list-three li > a {
   display: inline-block;
   overflow: hidden;
   height: 62%;
   width: 100%;
 }
-.pro-product-list li > a.active {
+.pro-product-list li > a.active,
+.pro-product-list-two li > a.active,
+.pro-product-list-three li > a.active {
   width: 0;
   height: 100%;
 }
-.pro-product-list li > a img {
+.pro-product-list li > a img,
+.pro-product-list-two li > a img,
+.pro-product-list-three li > a img {
   width: 100%;
   height: 100%;
   border-radius: 5px 5px 0 0;
   transition: all 1s;
   cursor: pointer;
 }
-.pro-product-list li > a img.active {
+.pro-product-list li > a img.active,
+.pro-product-list-two li > a img.active,
+.pro-product-list-three li > a img.active {
   position: absolute;
   left: 0px;
   top: 0;
@@ -1660,7 +1690,9 @@ header.common-toggle-active {
   overflow: hidden;
 }
 
-.pro-product-list li > a img:hover {
+.pro-product-list li > a img:hover,
+.pro-product-list-two li > a img:hover,
+.pro-product-list-three li > a img:hover {
   animation: imgHover 0.5s linear;
   left: -13px;
 }
@@ -1750,7 +1782,9 @@ header.common-toggle-active {
   width: 46%;
 }
 .next-page {
-  position: relative;
+  /* border: 1px solid red; */
+  position: absolute;
+  bottom: 0;
   width: 100%;
   height: 160px;
 }
@@ -1780,6 +1814,17 @@ header.common-toggle-active {
 .inner-num li.active {
   color: #222;
 }
-.proMain.active {
+/* .proMain.active {
   border: 3px solid red;
+} */
+.proMenuArray {
+  position: absolute;
+  left: 0;
+  top: 180px;
+  /* border: 5px solid teal; */
+  width: 15000px;
+  height: auto;
+  display: flex;
+  /* overflow: hidden; */
+  /* flex-wrap: wrap; */
 }
