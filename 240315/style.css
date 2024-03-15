@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  background: url("./다운로드.jfif") top no-repeat;
+  padding-top: 160px;
+}
+header {
+  font-size: 1.5rem;
+  color: aqua;
+}
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin: 20px 0;
+}
+input[type="text"] {
+  border: none;
+  border-bottom: 1px solid gray;
+  padding: 0 0 5px 5px;
+  font-size: 20px;
+  height: 50px;
+  width: 360px;
+  border-radius: 8px;
+}
+input[type="text"]:focus {
+  outline: none;
+}
+input[type="text"]:focus::placeholder {
+  opacity: 0;
+}
+input[type="submit"] {
+  font-size: 20px;
+  border: none;
+  border-radius: 8px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.todo {
+  display: flex;
+  gap: 5px;
+}
+ul li {
+  text-align: center;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  background: #555;
+  color: #fff;
+  width: 300px;
+  height: 50px;
+  margin-right: 20px;
+  align-items: center;
+  gap: 5px;
+  padding-top: 10px;
+}
+button {
+  height: 50px;
+  width: 50px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+button:nth-child(1):hover {
+  background: gray;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+button:nth-child(2):hover {
+  background: gray;
+  border: 1px solid #fff;
+  color: #fff;
+}
+.complete {
+  color: crimson;
+  opacity: 0.5;
+  font-style: italic;
+  text-decoration: line-through;
+}

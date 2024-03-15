@@ -635,7 +635,7 @@ nextPageBtns[0].onclick = () => {
 
 nextPageBtns[1].onclick = () => {
   proTwo.classList.add("active");
-
+  proOne.style.display = "none";
   proTwo.style.display = "flex";
   proOne.classList.remove("active");
   proThree.classList.remove("active");

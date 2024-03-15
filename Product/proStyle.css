@@ -1276,7 +1276,7 @@ footer {
   font-weight: 500;
   color: #111;
   border-radius: 5px 5px 0 0;
-  z-index: 10;
+  /* z-index: 10; */
   box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
 }
 .common-footer-family-hidden a {
@@ -1570,7 +1570,7 @@ footer {
   position: absolute;
   top: 120px;
   left: 30%;
-  width: 1320px;
+  width: 70%;
   height: 2000px;
   /* overflow: hidden; */
 }
@@ -1596,6 +1596,7 @@ footer {
   flex-direction: column;
   margin: 10px 0 0 20px;
 }
+
 .pro-menu-desc {
   position: absolute;
   left: 200px;
@@ -1618,6 +1619,7 @@ footer {
   transition: all 0.3s;
 }
 .new-product-hidden-menu.active {
+  display: flex;
   opacity: 1;
 }
 .new-product-hidden-menu a {
@@ -1638,7 +1640,7 @@ footer {
   align-items: center;
   justify-content: space-between;
   margin-top: 70px;
-  width: 102%;
+  /* width: 102%; */
 }
 .pro-total {
   font-size: 15px;
@@ -1712,6 +1714,15 @@ footer {
     opacity: 1;
   }
 }
+
+.proMenuArray {
+  position: absolute;
+  left: 0;
+  top: 180px;
+  width: 9000px;
+  height: auto;
+  display: flex;
+}
 .pro-list-select li {
   text-align: center;
   color: #333;
@@ -1728,7 +1739,7 @@ footer {
 }
 
 .pro-product-list {
-  width: 1280px;
+  width: 14%;
   display: flex;
   height: auto;
   flex-wrap: wrap;
@@ -1768,9 +1779,9 @@ footer {
 .pro-product-list-three li {
   position: relative;
   width: 24%;
-  min-width: 250px;
-  height: 480px;
-  max-height: 480px;
+  /* min-width: 250px; */
+  height: auto;
+  /* max-height: auto; */
   border-radius: 5px;
   background: #fafafa;
   margin: 20px 0;
@@ -1874,13 +1885,14 @@ footer {
 .product-desc {
   font-size: 13px;
   color: #777;
+  letter-spacing: -1px;
 }
 
 .product-innerName {
   display: block;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
-  color: #333;
+  color: #111;
   font-family: "Noto Sans KR";
 }
 .product-color-group {
@@ -1888,7 +1900,7 @@ footer {
   width: 100%;
   height: auto;
   left: 18px;
-  bottom: 32px;
+  bottom: 34px;
 }
 .product-select-color {
   width: 24px;
@@ -1958,26 +1970,12 @@ footer {
 .inner-num li.active {
   color: #222;
 }
-/* .proMain.active {
-  border: 3px solid red;
-} */
-.proMenuArray {
-  position: absolute;
-  left: 0;
-  top: 180px;
-  /* border: 5px solid teal; */
-  width: 15000px;
-  height: auto;
-  display: flex;
-  /* overflow: hidden; */
-  /* flex-wrap: wrap; */
-}
 
 /*-------- 1024px -------- */
 @media screen and (max-width: 1024px) {
   /*----------Header-----------*/
   header {
-    height: 328px;
+    height: 50px;
   }
   .common-header-wrap {
     /*brand, foundation factory에서는 활성화 시켜줌
@@ -2172,6 +2170,102 @@ footer {
     top: 0;
   }
 
+  /*===========prodcut==========*/
+  .product-wrap {
+    width: 100%;
+    height: 1800px;
+  }
+  .pro-silder-img {
+    display: none;
+  }
+
+  .new-product-wrap {
+    width: 100%;
+    display: flex;
+    margin: 0;
+    flex-direction: row;
+    position: relative;
+  }
+  .new-product {
+    display: none;
+  }
+  .pro-menu-desc {
+    display: none;
+  }
+  .pro-array-menu {
+    position: absolute;
+    width: 142%;
+    top: 20px;
+    margin: 0;
+  }
+  .proMenuArray {
+    top: 60px;
+  }
+  .pro-section {
+    height: 1800px;
+    left: 0;
+    top: 40px;
+  }
+  .pro-product-list {
+    margin: 0;
+    width: 1024px;
+    height: auto;
+    flex-wrap: wrap;
+  }
+  .pro-product-list-two,
+  .pro-product-list-three {
+    margin: 0;
+    width: 1024px;
+    height: auto;
+    flex-wrap: wrap;
+  }
+  .pro-product-list li,
+  .pro-product-list-two li,
+  .pro-product-list-three li {
+    width: 24%;
+    height: 440px;
+    /* height: 480px; */
+  }
+  .pro-product-list li > a img,
+  .pro-product-list-two li > a img,
+  .pro-product-list-three li > a img {
+    width: 100%;
+    height: auto;
+  }
+
+  .pro-product-list li > a {
+    height: 240px;
+  }
+  .pro-product-list li.active,
+  .pro-product-list-two li.active,
+  .pro-product-list-three li.active {
+    position: relative;
+    width: 48%;
+    height: 240px;
+    margin: 2px 0;
+  }
+  .product-detail {
+    width: 96%;
+
+    bottom: 40px;
+    left: 0;
+    position: absolute;
+    /* border: 1px solid red; */
+    /* height: 150px; */
+  }
+  .product-color-group {
+    bottom: 16px;
+  }
+  .product-select-color {
+    width: 20px;
+    height: 20px;
+  }
+  .next-page {
+    border: 1px solid red;
+    left: 20%;
+    bottom: 80px;
+  }
+
   /*----------footer-----------*/
   .common-footer-wrap {
     width: 96%;
@@ -2200,6 +2294,24 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
+  /*=========product=========*/
+
+  .pro-product-list {
+    margin: 0;
+    width: 7%;
+    /* flex-wrap: wrap; */
+  }
+  .pro-product-list-two,
+  .pro-product-list-three {
+    width: 768px;
+  }
+  .pro-product-list li,
+  .pro-product-list-two li,
+  .pro-product-list-three li {
+    width: 23%;
+    height: auto;
+  }
+
   .common-footer-wrap {
     width: 100%;
     padding: 5px;

@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Single+Day&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font: normal 1rem/ 1 "Single Day";
+  overflow-y: hidden;
+}
+.wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding: 30px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.wrapper_header {
+  display: flex;
+  flex-direction: column;
+}
+.content_title {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.contents_title {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  height: 20px;
+}
+.title {
+  color: #55b2d2;
+}
+.subtitle {
+  font-size: 14px;
+  padding-bottom: 2px;
+}
+.divideLine {
+  width: 100%;
+  border-top: 1px solid gray;
+  margin: 6px 0;
+}
+.album_wrapper {
+  width: 98%;
+  display: flex;
+
+  justify-content: space-between;
+}
+.album_wrapper_item {
+  width: 110px;
+  height: 110px;
+  margin-top: 10px;
+  text-align: center;
+}
+.album_title {
+  font-size: 12px;
+  color: #333;
+}
+.album_s .album_artist {
+  font-weight: bold;
+}
+.contnet_title {
+  display: flex;
+  gap: 20px;
+}
+
+.wrapper_body {
+  width: 100%;
+}
+.albumTable {
+  width: 100%;
+  padding: 2px;
+  border-spacing: 0;
+}
+.albumTable th {
+  background: #eee;
+  color: gray;
+  font-weight: bold;
+  border-top: 1px solid gray;
+  border-bottom: 1px dashed gray;
+}
+.albumTable td {
+  color: #0f465e;
+  border-bottom: 1px dashed gray;
+}
+.albumTable_checkbox {
+  width: 5%;
+  text-align: center;
+}
+.albumTable_num {
+  width: 10%;
+  text-align: center;
+}
+.albumTable_song {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2px 0 2px 70px;
+  text-align: center;
+}
+.fas {
+  width: 12px;
+  height: 12px;
+  color: crimson;
+  font-size: 10px;
+  display: flex;
+  border: 1px solid gray;
+  border-radius: 3px;
+  text-align: center;
+  padding-bottom: 1px;
+  margin-right: 3px;
+  cursor: pointer;
+}
+
+.albumTable_artist {
+  width: 30%;
+  text-align: center;
+}
+.albumTable_footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+.albumTable_footer_M {
+  color: crimson;
+}
+button {
+  background: #777;
+  border: none;
+  border-radius: 5px;
+  padding: 3px;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 2px;
+}
