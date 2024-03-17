@@ -9,9 +9,8 @@
       crossorigin="anonymous"
     ></script>
     <!-- custom -->
-    <link rel="stylesheet" href="./proStyle.css" />
-    <script type="module" defer src="./script.js"></script>
-
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="./script.js"></script>
     <title>메인페이지 헤더</title>
   </head>
   <body>
@@ -28,11 +27,25 @@
             </a>
             <div class="common-responsibility-left-icon">
               <a class="common-responsibility-back-icon" href=""
-                ><i class="fa-solid fa-chevron-left"></i
-              ></a>
-              <a class="common-responsibility-home-icon" href=""
-                ><img src="./Header_image/header-home-icon.png" alt=""
+                ><img src="./Header_image/arrow-back.svg" alt=""
               /></a>
+              <a class="common-responsibility-home-icon" href=""
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                >
+                  <path
+                    d="M11.884 12.6806V18.6621H17.1623C18.2716 18.6792 18.8348 18.105 19 17.0999V8.61903L10.3291 1.47706C10.2876 1.43312 10.2368 1.39797 10.18 1.37391C10.1231 1.34984 10.0616 1.3374 9.99936 1.3374C9.93712 1.3374 9.87558 1.34984 9.81875 1.37391C9.76193 1.39797 9.71111 1.43312 9.6696 1.47706L1 8.61903V17.1003C1.01512 18.0661 1.6277 18.5869 2.83775 18.6626H8.11475V12.6806H11.884Z"
+                    stroke="#333333"
+                    stroke-width="1.2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </a>
             </div>
             <div class="common-header-menu">
               <span class="common-product-hover">
@@ -238,12 +251,34 @@
               <a href=""><span>STORE</span></a>
               <a href=""><span>FOUNDATION FACTORY</span></a>
             </div>
-            <div class="common-responsibility-center-menu">
+            <div class="common-responsibility-center-menu common-B">
+              <a class="common-responsibility-menu-title" href=""
+                ><span>BRAND</span></a
+              >
+            </div>
+            <div class="common-responsibility-center-menu common-P">
               <a class="common-responsibility-menu-title" href=""
                 ><span>신제품</span></a
               >
-              <a href=""><i class="fa-solid fa-chevron-down"></i></a>
+              <i class="fa-solid fa-chevron-down"></i>
             </div>
+            <div class="common-responsibility-center-menu common-M">
+              <a class="common-responsibility-menu-title" href=""
+                ><span>메이크업 룩</span></a
+              >
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="common-responsibility-center-menu common-S">
+              <a class="common-responsibility-menu-title" href=""
+                ><span>STORE</span></a
+              >
+            </div>
+            <div class="common-responsibility-center-menu common-F">
+              <a class="common-responsibility-menu-title" href=""
+                ><span>FOUNDATION FACTORY</span></a
+              >
+            </div>
+
             <form class="common-search-box-header" action="">
               <input
                 id="common-search-box-header-inner"
@@ -256,7 +291,7 @@
             </form>
             <div class="common-header-icon">
               <span class="common-search-btn">
-                <i class="fa-solid fa-magnifying-glass"></i>
+                <img src="./Header_image/icon-gnb-search.svg" alt="" />
               </span>
               <span class="common-toggle-btn" href="">
                 <div class="common-trigger-btn">
@@ -299,6 +334,10 @@
               <a href=""><span>예약하기</span></a>
             </div>
           </div>
+          <div class="common-responsibility-store-top-menu">
+            <a href=""><span>온라인</span></a>
+            <a href=""><span>오프라인</span></a>
+          </div>
           <div class="common-responsibility-foundation-top-menu">
             <a href=""><span>서비스 안내</span></a>
             <a href=""><span>예약하기</span></a>
@@ -324,8 +363,8 @@
                 placeholder="#립케어 강자! 진저슈가"
               />
               <span class="common-search-box-icon"
-                ><i class="fa-solid fa-magnifying-glass"></i
-              ></span>
+                ><img src="./Header_image/icon-gnb-search.svg" alt=""
+              /></span>
             </form>
 
             <div class="common-search-tag">
@@ -580,6 +619,7 @@
           </ul>
         </div>
       </div>
+
       <div class="common-responsibility-toggle-menu">
         <div class="common-responsibility-toggle-menu-header">
           <form class="common-responsibility-search-box" action="">
@@ -589,8 +629,8 @@
               placeholder="#립케어 강자! 진저슈가"
             />
             <span class="common-responsibility-search-box-icon"
-              ><i class="fa-solid fa-magnifying-glass"></i
-            ></span>
+              ><img src="./Header_image/icon-gnb-search.svg" alt=""
+            /></span>
           </form>
           <span class="common-responsibility-search-box-icon-x">
             <i class="fa-solid fa-x"></i>
@@ -598,7 +638,9 @@
         </div>
         <div class="common-responsibility-toggle-menu-inner">
           <div class="common-responsibility-toggle-menu-inner-title">
-            <div class="common-responsibility-toggle-menu-inner-title-menu">
+            <div
+              class="common-responsibility-toggle-menu-inner-title-menu active"
+            >
               MENU
             </div>
             <div class="common-responsibility-toggle-menu-inner-title-cate">
@@ -950,68 +992,53 @@
       </div>
       <a id="common-gototop" schref=""><i class="fa-solid fa-angle-up"></i></a>
       <a id="common-addtocart" schref=""><i class="fa-solid fa-plus"></i></a>
-    </div>
-    <div class="product-wrap">
-      <div class="pro-silder-img">
-        <span></span>
-        <span></span>
-        <span></span>
+      <div class="common-addtocart-click">
+        <div class="common-addtocart-wrap">
+          <a href=""
+            >HOME
+            <span><img src="./Header_image/mo-menu-home.svg" alt="" /></span
+          ></a>
+          <a href=""
+            >파운데이션 팩토리<span class="add-fa"
+              ><img src="./Header_image/mo-menu-factory.svg" alt="" /></span
+          ></a>
+          <a href=""
+            >스토어<span
+              ><img src="./Header_image/mo-menu-store.svg" alt=""
+            /></span>
+          </a>
+          <a class="add-qa" href=""
+            ><p>고객문의</p>
+            <span><img src="./Header_image/mo-menu-qa.svg" alt="" /></span
+          ></a>
+        </div>
       </div>
-      <div class="pro-section">
-        <span class="new-product-wrap">
-          <span class="new-product"
-            ><span>신제품</span> <i class="fa-solid fa-chevron-down"></i>
-          </span>
-          <span class="pro-menu-desc"
-            >주목! 신상이 궁금해? 설레는 신상으로 채워지는 작은 행복</span
-          >
-          <span class="new-product-hidden-menu">
-            <a href="">신제품</a>
-            <a href="">카테고리</a>
-          </span>
-          <div class="pro-array-menu">
-            <span class="pro-total">총 26개</span>
-            <span class="pro-array-select">
-              <a href="">
-                <i class="fa-solid fa-list"></i>
-              </a>
-              <a class="pro-icon-make" href="">
-                <span class="pro-icon-bar"></span>
-                <i class="fa-regular fa-square"></i>
-                <span class="pro-icon-bar"></span>
-              </a>
-              <a href="">
-                <i class="fa-brands fa-buromobelexperte"></i>
-              </a>
-              <span class="pro-icon-shin">
-                <span>신상품순</span>
-                <i class="fa-solid fa-chevron-down"></i>
-
-                <ul class="pro-list-select">
-                  <li>신상품순</li>
-                  <li>높은가격순</li>
-                  <li>낮은가격순</li>
-                </ul>
-              </span>
-            </span>
-          </div>
-        </span>
-
-        <div class="proMenuArray">
-          <ul class="pro-product-list"></ul>
-          <ul class="pro-product-list-two"></ul>
-          <ul class="pro-product-list-three"></ul>
-        </div>
-        <div class="next-page">
-          <ul class="inner-num">
-            <li class="active" data-index="0">1</li>
-            <li data-index="1">2</li>
-            <li data-index="2">3</li>
-            <li data-index="3">
-              <img src="./product_img/icon-menu-arrow.svg" alt="" />
-            </li>
-          </ul>
-        </div>
+    </div>
+    <div class="ex-wrap">
+      <div class="exa">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, repellat
+        quis. Mollitia, impedit. Maxime fuga ullam dolor enim a! Saepe quidem
+        quaerat sint voluptatibus? Sed quod id optio provident rerum!
+      </div>
+      <div class="ex">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, repellat
+        quis. Mollitia, impedit. Maxime fuga ullam dolor enim a! Saepe quidem
+        quaerat sint voluptatibus? Sed quod id optio provident rerum!
+      </div>
+      <div class="ex">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, repellat
+        quis. Mollitia, impedit. Maxime fuga ullam dolor enim a! Saepe quidem
+        quaerat sint voluptatibus? Sed quod id optio provident rerum!
+      </div>
+      <div class="ex">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, repellat
+        quis. Mollitia, impedit. Maxime fuga ullam dolor enim a! Saepe quidem
+        quaerat sint voluptatibus? Sed quod id optio provident rerum!
+      </div>
+      <div class="ex">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, repellat
+        quis. Mollitia, impedit. Maxime fuga ullam dolor enim a! Saepe quidem
+        quaerat sint voluptatibus? Sed quod id optio provident rerum!
       </div>
     </div>
     <footer>

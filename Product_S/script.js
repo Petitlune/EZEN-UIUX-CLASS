@@ -290,7 +290,7 @@ const commonMenuCateBtnIdx = (i) => {
 };
 commonMenuCateBtnIdx();
 
-// ==================footter=================
+// ==================footer=================
 const commonFamily = document.querySelector(".common-footer-family");
 const commonFamilyHidden = document.querySelector(
   ".common-footer-family-hidden"
@@ -421,6 +421,7 @@ const createList = function (product) {
   }
 
   const firstArray = document.querySelector(".fa-list");
+  const proColor = document.querySelector(".product-select-color");
 
   firstArray.addEventListener("click", (e) => {
     e.preventDefault();
@@ -430,6 +431,8 @@ const createList = function (product) {
     div.classList.add("active");
     a.classList.add("active");
     proPrice.classList.add("active");
+    proColor.classList.add("active");
+    color.classList.add("active");
   });
 };
 const createListTwo = function (product) {
@@ -500,6 +503,7 @@ const createListTwo = function (product) {
   }
 
   const firstArray = document.querySelector(".fa-list");
+  const proColors = document.querySelectorAll(".product-select-color");
 
   firstArray.addEventListener("click", (e) => {
     e.preventDefault();
@@ -509,6 +513,9 @@ const createListTwo = function (product) {
     div.classList.add("active");
     a.classList.add("active");
     proPrice.classList.add("active");
+    proColors.forEach((color) => {
+      color.classList.add("active");
+    });
   });
 };
 const createListThree = function (product) {
@@ -591,9 +598,6 @@ const createListThree = function (product) {
   });
 };
 
-const nextPageBtns = document.querySelectorAll(".inner-num li");
-console.log(nextPageBtns);
-
 const importData0 = () => {
   products.data.map((product) => {
     if (product.num <= 12) {
@@ -601,7 +605,6 @@ const importData0 = () => {
     }
   });
 };
-importData0();
 
 const importData1 = () => {
   products.data.map((product) => {
@@ -610,7 +613,6 @@ const importData1 = () => {
     }
   });
 };
-importData1();
 
 const importData2 = () => {
   products.data.map((product) => {
@@ -619,11 +621,15 @@ const importData2 = () => {
     }
   });
 };
+importData0();
+importData1();
 importData2();
 
+const liBox = document.querySelector(".proMenuArray ");
 const proOne = document.querySelector(".pro-product-list");
 const proTwo = document.querySelector(".pro-product-list-two");
 const proThree = document.querySelector(".pro-product-list-three");
+const nextPageBtns = document.querySelectorAll(".inner-num li");
 
 nextPageBtns[0].onclick = () => {
   proOne.classList.add("active");

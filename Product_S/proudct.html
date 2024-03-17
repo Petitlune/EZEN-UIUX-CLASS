@@ -9,8 +9,9 @@
       crossorigin="anonymous"
     ></script>
     <!-- custom -->
-    <link rel="stylesheet" href="./style.css" />
-    <script defer src="./script.js"></script>
+    <link rel="stylesheet" href="./proStyle.css" />
+    <script type="module" defer src="./script.js"></script>
+
     <title>메인페이지 헤더</title>
   </head>
   <body>
@@ -950,31 +951,67 @@
       <a id="common-gototop" schref=""><i class="fa-solid fa-angle-up"></i></a>
       <a id="common-addtocart" schref=""><i class="fa-solid fa-plus"></i></a>
     </div>
-    <div class="ex-wrap">
-      <div class="exa">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, repellat
-        quis. Mollitia, impedit. Maxime fuga ullam dolor enim a! Saepe quidem
-        quaerat sint voluptatibus? Sed quod id optio provident rerum!
+    <div class="product-wrap">
+      <div class="pro-silder-img">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
-      <div class="ex">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, repellat
-        quis. Mollitia, impedit. Maxime fuga ullam dolor enim a! Saepe quidem
-        quaerat sint voluptatibus? Sed quod id optio provident rerum!
-      </div>
-      <div class="ex">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, repellat
-        quis. Mollitia, impedit. Maxime fuga ullam dolor enim a! Saepe quidem
-        quaerat sint voluptatibus? Sed quod id optio provident rerum!
-      </div>
-      <div class="ex">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, repellat
-        quis. Mollitia, impedit. Maxime fuga ullam dolor enim a! Saepe quidem
-        quaerat sint voluptatibus? Sed quod id optio provident rerum!
-      </div>
-      <div class="ex">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, repellat
-        quis. Mollitia, impedit. Maxime fuga ullam dolor enim a! Saepe quidem
-        quaerat sint voluptatibus? Sed quod id optio provident rerum!
+      <div class="pro-section">
+        <span class="new-product-wrap">
+          <span class="new-product"
+            ><span>신제품</span> <i class="fa-solid fa-chevron-down"></i>
+          </span>
+          <span class="pro-menu-desc"
+            >주목! 신상이 궁금해? 설레는 신상으로 채워지는 작은 행복</span
+          >
+          <span class="new-product-hidden-menu">
+            <a href="">신제품</a>
+            <a href="">카테고리</a>
+          </span>
+          <div class="pro-array-menu">
+            <span class="pro-total">총 30개</span>
+            <span class="pro-array-select">
+              <a href="">
+                <i class="fa-solid fa-list"></i>
+              </a>
+              <a class="pro-icon-make" href="">
+                <span class="pro-icon-bar"></span>
+                <i class="fa-regular fa-square"></i>
+                <span class="pro-icon-bar"></span>
+              </a>
+              <a href="">
+                <i class="fa-brands fa-buromobelexperte"></i>
+              </a>
+              <span class="pro-icon-shin">
+                <span>신상품순</span>
+                <i class="fa-solid fa-chevron-down"></i>
+
+                <ul class="pro-list-select">
+                  <li>신상품순</li>
+                  <li>높은가격순</li>
+                  <li>낮은가격순</li>
+                </ul>
+              </span>
+            </span>
+          </div>
+        </span>
+
+        <div class="proMenuArray">
+          <ul class="pro-product-list"></ul>
+          <ul class="pro-product-list-two"></ul>
+          <ul class="pro-product-list-three"></ul>
+        </div>
+        <div class="next-page">
+          <ul class="inner-num">
+            <li class="active" data-index="0">1</li>
+            <li data-index="1">2</li>
+            <li data-index="2">3</li>
+            <li data-index="3">
+              <img src="./product_img/icon-menu-arrow.svg" alt="" />
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
     <footer>

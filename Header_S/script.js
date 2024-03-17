@@ -39,7 +39,7 @@ mainMake.addEventListener("mouseleave", () => {
 //MainPage Search Click Event
 const searchClickClose = document.querySelector(".common-search-click-icon i");
 const searchContent = document.querySelector(".common-search-click");
-const searchClickOpen = document.querySelector(".common-search-btn i ");
+const searchClickOpen = document.querySelector(".common-search-btn img ");
 console.log(searchContent);
 searchClickOpen.onclick = () => {
   searchContent.classList.add("common-active-searchContent");
@@ -84,7 +84,7 @@ const scrollHead = () => {
   }
 };
 
-if ((mainGnb.style.display = "none")) {
+if (mainGnb.style.display === "none" || mainGnb.style.display === "") {
   window.addEventListener("scroll", scrollHead);
 } else {
   window.removeEventListener("scroll", scrollHead);
@@ -117,15 +117,16 @@ const commonReXbtn = document.querySelector(
 
 //반응형 menu, category
 commonMenu.addEventListener("click", () => {
-  commonMenu.classList.toggle("active");
-  commonMenuList.classList.toggle("active");
+  commonMenu.classList.add("active");
+  commonMenuList.classList.add("active");
   commonMenuList.style.display = "block";
   commonCateList.style.display = "none";
   commonCate.style.borderBottom = "2px solid #777";
   commonCate.style.color = "#777";
 });
 commonCate.addEventListener("click", () => {
-  commonCate.classList.toggle("active");
+  commonCate.classList.add("active");
+  commonMenu.classList.remove("active");
   commonMenuList.style.display = "none";
   commonCateList.style.display = "block";
   commonCate.style.borderBottom = "2px solid #111";
@@ -212,8 +213,10 @@ const CommonMinusBtn = document.querySelectorAll(
   ".common-responsibility-menu-plus span:nth-child(2)"
 );
 
+// addtocart 클릭이벤트
+
 const pinkAddtocart = document.querySelector("#common-addtocart");
-console.log(pinkAddtocart);
+const addToCartMenu = document.querySelector(".common-addtocart-click");
 
 const reAddtocart = () => {
   if (window.innerWidth <= 768) {
@@ -228,6 +231,19 @@ window.addEventListener("resize", function () {
 });
 
 reAddtocart();
+
+pinkAddtocart.addEventListener("click", () => {
+  if (
+    addToCartMenu.style.display === "none" ||
+    addToCartMenu.style.display === ""
+  ) {
+    addToCartMenu.style.display = "flex";
+    pinkAddtocart.style.transform = "rotate(45deg)";
+  } else {
+    addToCartMenu.style.display = "none";
+    pinkAddtocart.style.transform = "rotate(0)";
+  }
+});
 
 const commonCateBtn = document.querySelector(
   ".common-responsibility-toggle-menu-inner-title-cate"
@@ -266,25 +282,11 @@ const commonBtnPlusCate = document.querySelectorAll(
   ".common-responsibility-menu-plus-cate span:nth-child(2)"
 );
 
-console.log(commonReMenuCateLiR);
-
-// const commonMenuInnerReset = (i) => {
-//   for (let i = 0; i < commonMenuBtn.length; i++) {
-//     commonMenuBtn[i].removeEventListener("click", () => {
-//       commonMenuInner[i].classList.remove("active");
-//       commonBtnPlus[i].classList.remove("active");
-//     });
-//   }
-// };
-// commonBtnPlus.classList.remove("active")
-
-
 const reset = () => {
   nextPageBtns.forEach((btn) => {
     btn.classList.remove("active");
   });
 };
-
 
 const commonMenuBtnIdx = (i) => {
   // commonMenuInnerReset(i);
@@ -320,7 +322,10 @@ const commonFootIconR = document.querySelector(".common-footer-Map > a i");
 
 commonFamily.addEventListener("click", (e) => {
   e.preventDefault();
-  if (commonFamilyHidden.style.display === "none") {
+  if (
+    commonFamilyHidden.style.display === "none" ||
+    commonFamilyHidden.style.display === ""
+  ) {
     commonFamilyHidden.style.display = "flex";
     commonFootIcon.classList.add("active");
   } else {
@@ -331,7 +336,10 @@ commonFamily.addEventListener("click", (e) => {
 
 commonMap.addEventListener("click", (e) => {
   e.preventDefault();
-  if (commonMapHidden.style.display === "none") {
+  if (
+    commonMapHidden.style.display === "none" ||
+    commonMapHidden.style.display === ""
+  ) {
     commonMapHidden.style.display = "flex";
     commonFootIconR.classList.add("active");
   } else {
@@ -350,20 +358,3 @@ const commonHeaderMenuClickBran = document.querySelector(
 const commonHeaderMenuClick = document.querySelectorAll(
   ".common-header-menu > a"
 );
-
-// commonHeaderMenuClickBran.addEventListener("click", (e) => {
-//   e.preventDefault();
-//   if (commonSearchInput.style.display === "none") {
-//     commonSearchInput.style.display = "block";
-//   } else {
-//     commonSearchInput.style.display = "none";
-//   }
-// });
-// commonHeaderMenuClickPro.addEventListener("click", (e) => {
-//   e.preventDefault();
-//   if (commonSearchInput.style.display === "none") {
-//     commonSearchInput.style.display = "block";
-//   } else {
-//     commonSearchInput.style.display = "none";
-//   }
-// });
