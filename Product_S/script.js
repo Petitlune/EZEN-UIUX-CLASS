@@ -306,7 +306,7 @@ const commonMenuCateBtnIdx = (i) => {
 };
 commonMenuCateBtnIdx();
 
-// ==================footter=================
+// ==================footer=================
 const commonFamily = document.querySelector(".common-footer-family");
 const commonFamilyHidden = document.querySelector(
   ".common-footer-family-hidden"
@@ -356,6 +356,21 @@ const commonHeaderMenuClick = document.querySelectorAll(
 );
 
 //=====================product js==========================
+
+const proSlide = document.querySelector(".pro-slider-img");
+const proSlideImgs = document.querySelectorAll(".pro-slider-img li");
+
+let proCurrentIndex = 0;
+let proSlideCount = proSlideImgs.length;
+let proSlideInterval = 6000;
+
+setInterval(() => {
+  let proNextIndex = (proCurrentIndex + 1) % proSlideCount;
+  proSlideImgs[proCurrentIndex].style.opacity = "0";
+  proSlideImgs[proNextIndex].style.opacity = "1";
+  proCurrentIndex = proNextIndex;
+}, proSlideInterval);
+
 const newMenu = document.querySelector(".new-product-hidden-menu");
 const newMenuBtn = document.querySelector(".new-product");
 newMenuBtn.addEventListener("click", () => {
