@@ -39,7 +39,7 @@ mainMake.addEventListener("mouseleave", () => {
 //MainPage Search Click Event
 const searchClickClose = document.querySelector(".common-search-click-icon i");
 const searchContent = document.querySelector(".common-search-click");
-const searchClickOpen = document.querySelector(".common-search-btn i ");
+const searchClickOpen = document.querySelector(".common-search-btn img ");
 console.log(searchContent);
 searchClickOpen.onclick = () => {
   searchContent.classList.add("common-active-searchContent");
@@ -79,12 +79,12 @@ const scrollHead = () => {
   } else {
     gototopBtn.classList.remove("active");
     header.classList.remove("active");
-    brandList.style.background = "rgba(255, 255, 255, 0)";
-    productList.style.background = "rgba(255, 255, 255, 0)";
+    brandList.style.background = "rgba(255, 255, 255, 0.7)";
+    productList.style.background = "rgba(255, 255, 255, 0.7)";
   }
 };
 
-if ((mainGnb.style.display = "none")) {
+if (mainGnb.style.display === "none" || mainGnb.style.display === "") {
   window.addEventListener("scroll", scrollHead);
 } else {
   window.removeEventListener("scroll", scrollHead);
@@ -117,15 +117,16 @@ const commonReXbtn = document.querySelector(
 
 //반응형 menu, category
 commonMenu.addEventListener("click", () => {
-  commonMenu.classList.toggle("active");
-  commonMenuList.classList.toggle("active");
+  commonMenu.classList.add("active");
+  commonMenuList.classList.add("active");
   commonMenuList.style.display = "block";
   commonCateList.style.display = "none";
   commonCate.style.borderBottom = "2px solid #777";
   commonCate.style.color = "#777";
 });
 commonCate.addEventListener("click", () => {
-  commonCate.classList.toggle("active");
+  commonCate.classList.add("active");
+  commonMenu.classList.remove("active");
   commonMenuList.style.display = "none";
   commonCateList.style.display = "block";
   commonCate.style.borderBottom = "2px solid #111";
@@ -141,7 +142,7 @@ const desktopToggle = () => {
   } else {
     mainGnb.style.display = "none";
     window.addEventListener("scroll", scrollHead);
-    header.style.backgroundColor = " background: rgba(255, 255, 255, 0);";
+    header.style.backgroundColor = " background: rgba(255, 255, 255, 7);";
   }
 };
 
@@ -158,12 +159,14 @@ const re = () => {
     mainTrigger.style.display = "none";
     reTriggerBtn.style.display = "block";
     mainGnb.style.display = "none";
+    header.style.height = "50px";
     reTriggerBtn.addEventListener("click", () => {
       commonReToggleMenu.classList.add("active");
     });
   } else {
     mainTrigger.style.display = "block";
     reTriggerBtn.style.display = "none";
+    header.style.height = "100px";
   }
 };
 re();
@@ -212,8 +215,10 @@ const CommonMinusBtn = document.querySelectorAll(
   ".common-responsibility-menu-plus span:nth-child(2)"
 );
 
+// addtocart 클릭이벤트
+
 const pinkAddtocart = document.querySelector("#common-addtocart");
-console.log(pinkAddtocart);
+const addToCartMenu = document.querySelector(".common-addtocart-click");
 
 const reAddtocart = () => {
   if (window.innerWidth <= 768) {
@@ -228,6 +233,19 @@ window.addEventListener("resize", function () {
 });
 
 reAddtocart();
+
+pinkAddtocart.addEventListener("click", () => {
+  if (
+    addToCartMenu.style.display === "none" ||
+    addToCartMenu.style.display === ""
+  ) {
+    addToCartMenu.style.display = "flex";
+    pinkAddtocart.style.transform = "rotate(45deg)";
+  } else {
+    addToCartMenu.style.display = "none";
+    pinkAddtocart.style.transform = "rotate(0)";
+  }
+});
 
 const commonCateBtn = document.querySelector(
   ".common-responsibility-toggle-menu-inner-title-cate"
@@ -266,8 +284,6 @@ const commonBtnPlusCate = document.querySelectorAll(
   ".common-responsibility-menu-plus-cate span:nth-child(2)"
 );
 
-console.log(commonReMenuCateLiR);
-
 const commonMenuBtnIdx = (i) => {
   // commonMenuInnerReset(i);
   for (let i = 0; i < commonMenuBtn.length; i++) {
@@ -290,7 +306,7 @@ const commonMenuCateBtnIdx = (i) => {
 };
 commonMenuCateBtnIdx();
 
-// ==================footer=================
+// ==================footter=================
 const commonFamily = document.querySelector(".common-footer-family");
 const commonFamilyHidden = document.querySelector(
   ".common-footer-family-hidden"
@@ -302,7 +318,10 @@ const commonFootIconR = document.querySelector(".common-footer-Map > a i");
 
 commonFamily.addEventListener("click", (e) => {
   e.preventDefault();
-  if (commonFamilyHidden.style.display === "none") {
+  if (
+    commonFamilyHidden.style.display === "none" ||
+    commonFamilyHidden.style.display === ""
+  ) {
     commonFamilyHidden.style.display = "flex";
     commonFootIcon.classList.add("active");
   } else {
@@ -313,7 +332,10 @@ commonFamily.addEventListener("click", (e) => {
 
 commonMap.addEventListener("click", (e) => {
   e.preventDefault();
-  if (commonMapHidden.style.display === "none") {
+  if (
+    commonMapHidden.style.display === "none" ||
+    commonMapHidden.style.display === ""
+  ) {
     commonMapHidden.style.display = "flex";
     commonFootIconR.classList.add("active");
   } else {
@@ -338,13 +360,14 @@ const newMenu = document.querySelector(".new-product-hidden-menu");
 const newMenuBtn = document.querySelector(".new-product");
 newMenuBtn.addEventListener("click", () => {
   newMenu.classList.toggle("active");
+  newMenu.style.zIndex = "50";
 });
 
 const arrayMenu = document.querySelector(".pro-list-select");
 const arrayMenuBtn = document.querySelector(".pro-icon-shin");
 
 arrayMenuBtn.addEventListener("click", () => {
-  if (arrayMenu.style.display === "none") {
+  if (arrayMenu.style.display === "none" || arrayMenu.style.display === "") {
     arrayMenu.style.display = "flex";
   } else {
     arrayMenu.style.display = "none";

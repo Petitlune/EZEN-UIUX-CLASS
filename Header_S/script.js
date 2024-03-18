@@ -79,8 +79,8 @@ const scrollHead = () => {
   } else {
     gototopBtn.classList.remove("active");
     header.classList.remove("active");
-    brandList.style.background = "rgba(255, 255, 255, 0)";
-    productList.style.background = "rgba(255, 255, 255, 0)";
+    brandList.style.background = "rgba(255, 255, 255, 0.7)";
+    productList.style.background = "rgba(255, 255, 255, 0.7)";
   }
 };
 
@@ -142,7 +142,6 @@ const desktopToggle = () => {
   } else {
     mainGnb.style.display = "none";
     window.addEventListener("scroll", scrollHead);
-    header.style.backgroundColor = " background: rgba(255, 255, 255, 0);";
   }
 };
 
@@ -159,12 +158,14 @@ const re = () => {
     mainTrigger.style.display = "none";
     reTriggerBtn.style.display = "block";
     mainGnb.style.display = "none";
+    header.style.height = "50px";
     reTriggerBtn.addEventListener("click", () => {
       commonReToggleMenu.classList.add("active");
     });
   } else {
     mainTrigger.style.display = "block";
     reTriggerBtn.style.display = "none";
+    header.style.height = "100px";
   }
 };
 re();
