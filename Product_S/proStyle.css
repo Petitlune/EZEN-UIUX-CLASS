@@ -1618,11 +1618,10 @@ footer {
   height: 100%;
   object-fit: cover;
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> 2660bf36bd03f0632906968ba030ad66e77ebb08
-.pro-section {
+<<<<<<<
+  HEAD
+  =======>>>>>>>2660bf36bd03f0632906968ba030ad66e77ebb08
+  .pro-section {
   position: relative;
   display: flex;
   flex-direction: column;
