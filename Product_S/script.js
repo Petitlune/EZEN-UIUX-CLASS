@@ -142,7 +142,7 @@ const desktopToggle = () => {
   } else {
     mainGnb.style.display = "none";
     window.addEventListener("scroll", scrollHead);
-    header.style.backgroundColor = " background: rgba(255, 255, 255, 7);";
+    header.style.backgroundColor = " background: rgba(255, 255, 255, 0.7);";
   }
 };
 
@@ -356,11 +356,24 @@ const commonHeaderMenuClick = document.querySelectorAll(
 );
 
 //=====================product js==========================
+
+const proSlideImgs = document.querySelectorAll(".pro-slider-img li");
+
+let proCurrentIndex = 0;
+let proSlideCount = proSlideImgs.length;
+let proSlideInterval = 6000;
+
+setInterval(() => {
+  let proNextIndex = (proCurrentIndex + 1) % proSlideCount;
+  proSlideImgs[proCurrentIndex].style.opacity = "0";
+  proSlideImgs[proNextIndex].style.opacity = "1";
+  proCurrentIndex = proNextIndex;
+}, proSlideInterval);
+
 const newMenu = document.querySelector(".new-product-hidden-menu");
 const newMenuBtn = document.querySelector(".new-product");
 newMenuBtn.addEventListener("click", () => {
   newMenu.classList.toggle("active");
-  newMenu.style.zIndex = "50";
 });
 
 const arrayMenu = document.querySelector(".pro-list-select");
@@ -387,6 +400,15 @@ const createList = function (product) {
   const div = document.createElement("div");
   const span = document.createElement("span");
   const proPrice = document.createElement("span");
+  const totalNum = document.querySelector(".pro-total");
+
+  const productTotal = products.data.length;
+  totalNum.innerText = `총 ${productTotal}개`;
+
+  const proPricelow = product.price;
+  const priceArr = [""];
+  console.log(priceArr);
+  console.log(product.price);
 
   proLi.id = product.id;
 

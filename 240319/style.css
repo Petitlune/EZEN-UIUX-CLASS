@@ -1,0 +1,68 @@
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+body {
+  background: #3c7364;
+  overflow: hidden;
+}
+.gateBox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  font-size: 20px;
+  color: #fff;
+}
+.top {
+  text-align: center;
+  padding: 20px 30px;
+  border: 2px solid #fff;
+}
+.bottom {
+  text-align: center;
+  border: 2px solid #fff;
+  border-top: none;
+  display: flex;
+  justify-content: space-around;
+}
+.bottom a {
+  padding: 20px 0;
+  width: 50%;
+  transition: all 0.3s;
+  font-weight: 600;
+}
+.line {
+  border: 1px solid #fff;
+}
+.bottom a:hover {
+  background: #fff;
+  color: #3c7364;
+}
+.cursorItem {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 100;
+}
+.circle {
+  position: fixed;
+  width: 120px;
+  height: 120px;
+  border-radius: 100%;
+  /*마우스 중앙으로 위치시키기 */
+  margin: -60px -60px;
+  background: yellowgreen;
+  opacity: 0.5;
+  transition: all 0.2s;
+}
