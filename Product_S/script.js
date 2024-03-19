@@ -357,10 +357,8 @@ const commonHeaderMenuClick = document.querySelectorAll(
 
 //=====================product js==========================
 
-<<<<<<< HEAD
-=======
 const proSlide = document.querySelector(".pro-slider-img");
->>>>>>> 2660bf36bd03f0632906968ba030ad66e77ebb08
+
 const proSlideImgs = document.querySelectorAll(".pro-slider-img li");
 
 let proCurrentIndex = 0;
@@ -447,7 +445,6 @@ const createList = function (product) {
   innerName.innerText = product.name;
   proPrice.innerHTML = `<b>${price}</b>원`;
 
-  div.append(span, innerName);
   a.append(img, imgHover);
   a.onclick = function () {
     a.target = "_blank";
@@ -458,7 +455,8 @@ const createList = function (product) {
   ul.appendChild(proLi);
   let colorG = document.createElement("div");
   colorG.className = "product-color-group";
-  div.append(colorG);
+
+  div.append(span, innerName, colorG, proPrice);
   let colorList = product.color;
   for (let i = 0; i < colorList.length; i++) {
     let selectColor = document.createElement("img");
@@ -481,7 +479,7 @@ const createList = function (product) {
     a.classList.add("active");
     proPrice.classList.add("active");
     proColor.classList.add("active");
-    color.classList.add("active");
+    // color.classList.add("active");
   });
 };
 const createListTwo = function (product) {
@@ -529,7 +527,6 @@ const createListTwo = function (product) {
   innerName.innerText = product.name;
   proPrice.innerHTML = `<b>${price}</b>원`;
 
-  div.append(span, innerName);
   a.append(img, imgHover);
   a.onclick = function () {
     a.target = "_blank";
@@ -540,7 +537,8 @@ const createListTwo = function (product) {
   ul.appendChild(proLi);
   let colorG = document.createElement("div");
   colorG.className = "product-color-group";
-  div.append(colorG);
+
+  div.append(span, innerName, colorG, proPrice);
   let colorList = product.color;
   for (let i = 0; i < colorList.length; i++) {
     let selectColor = document.createElement("img");
@@ -612,7 +610,6 @@ const createListThree = function (product) {
   innerName.innerText = product.name;
   proPrice.innerHTML = `<b>${price}</b>원`;
 
-  div.append(span, innerName);
   a.append(img, imgHover);
   a.onclick = function () {
     a.target = "_blank";
@@ -623,7 +620,8 @@ const createListThree = function (product) {
   ul.appendChild(proLi);
   let colorG = document.createElement("div");
   colorG.className = "product-color-group";
-  div.append(colorG);
+
+  div.append(span, innerName, colorG, proPrice);
   let colorList = product.color;
   for (let i = 0; i < colorList.length; i++) {
     let selectColor = document.createElement("img");
