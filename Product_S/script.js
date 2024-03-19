@@ -306,7 +306,7 @@ const commonMenuCateBtnIdx = (i) => {
 };
 commonMenuCateBtnIdx();
 
-// ==================footter=================
+// ==================footer=================
 const commonFamily = document.querySelector(".common-footer-family");
 const commonFamilyHidden = document.querySelector(
   ".common-footer-family-hidden"
@@ -357,6 +357,10 @@ const commonHeaderMenuClick = document.querySelectorAll(
 
 //=====================product js==========================
 
+<<<<<<< HEAD
+=======
+const proSlide = document.querySelector(".pro-slider-img");
+>>>>>>> 2660bf36bd03f0632906968ba030ad66e77ebb08
 const proSlideImgs = document.querySelectorAll(".pro-slider-img li");
 
 let proCurrentIndex = 0;

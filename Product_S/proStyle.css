@@ -559,7 +559,7 @@ header.common-toggle-active {
   font-family: "Noto Sans KR";
 }
 .common-toggle-menu:hover {
-  border-bottom: 1px solid #111;
+  border-bottom: 0.5px solid #000;
 }
 .common-toggle-menu-inside {
   width: 220px;
@@ -591,7 +591,7 @@ header.common-toggle-active {
 }
 
 .common-menu02 {
-  top: 84px;
+  top: 86px;
 }
 .common-menu05 {
   top: 268px;
@@ -606,7 +606,7 @@ header.common-toggle-active {
   top: 454px;
 }
 .common-menu09 {
-  top: 516px;
+  top: 512px;
 }
 .common-toggle-menu-inner {
   display: flex;
@@ -1618,6 +1618,10 @@ footer {
   height: 100%;
   object-fit: cover;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2660bf36bd03f0632906968ba030ad66e77ebb08
 .pro-section {
   position: relative;
   display: flex;
