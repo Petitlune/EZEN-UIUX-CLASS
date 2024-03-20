@@ -392,6 +392,7 @@ arrayMenuBtn.addEventListener("click", () => {
 import products from "./product_list.js";
 
 const createList = function (product) {
+  const proBox = document.querySelector(".proMenuArray");
   const ul = document.querySelector(".pro-product-list");
   const proLi = document.createElement("li");
   const spanNew = document.createElement("span");
@@ -407,10 +408,7 @@ const createList = function (product) {
   const productTotal = products.data.length;
   totalNum.innerText = `총 ${productTotal}개`;
 
-  const proPricelow = product.price;
-  const priceArr = [""];
-  console.log(priceArr);
-  console.log(product.price);
+  // const proPricelow = product.price;
 
   proLi.id = product.id;
 
@@ -457,6 +455,7 @@ const createList = function (product) {
   colorG.className = "product-color-group";
 
   div.append(span, innerName, colorG, proPrice);
+
   let colorList = product.color;
   for (let i = 0; i < colorList.length; i++) {
     let selectColor = document.createElement("img");
@@ -479,7 +478,6 @@ const createList = function (product) {
     a.classList.add("active");
     proPrice.classList.add("active");
     proColor.classList.add("active");
-    // color.classList.add("active");
   });
 };
 const createListTwo = function (product) {

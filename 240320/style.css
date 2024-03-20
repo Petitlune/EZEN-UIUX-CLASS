@@ -1,0 +1,99 @@
+/*-----reset-----*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/*-----header-----*/
+.mainHeader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+.mainHeader.fixed {
+  position: fixed;
+  background: rgba(255, 255, 255, 0.8);
+}
+.mainHeader.fixed .progressWrap {
+  display: block;
+}
+.mainHeader.fixed .headerWrap h1 {
+  color: #000;
+}
+.headerWrap {
+  position: relative;
+  padding: 10px 20px;
+}
+.headerWrap h1 {
+  font-size: 15px;
+  color: #fff;
+}
+.progressWrap {
+  position: relative;
+  width: 100%;
+  height: 2px;
+  background: #d0d0d0;
+  display: none;
+}
+.bar {
+  position: absolute;
+  width: 0;
+  height: 100%;
+  background: royalblue;
+  transition: width 0.4s;
+}
+/*-----cover-----*/
+.coverWrap {
+  background: url("./bg.jpg") center/cover no-repeat;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dimd {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+.coverTitle {
+  position: relative;
+  text-align: center;
+  z-index: 10;
+}
+.coverTitle h1 {
+  color: #fff;
+}
+.coverTitle p {
+  color: #cecece;
+}
+/*-----content-----*/
+.contentWrap {
+  position: relative;
+  background: #fff;
+  z-index: 10;
+}
+.contentInnerWrap {
+  padding: 30px;
+  margin: 0 auto;
+  width: 700px;
+}
+h4 {
+  font-size: 20px;
+  font-style: italic;
+  margin: 20px 0 10px 0;
+}
