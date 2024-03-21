@@ -1,0 +1,305 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Noto+Sans+KR:wght@100..900&display=swap");
+@font-face {
+  font-family: "sofia";
+  src: url("./Sofiafont/Sofia\ Pro\ Regular.ttf") format("truetype");
+}
+/* font-family: "Noto Sans KR", sans-serif; */
+/* font-family: "Inter", sans-serif;  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.proD-wrap {
+  /* width: 100%;
+  position: relative;
+  top: 0; */
+  font-family: "Noto Sans KR";
+}
+
+.proD-top-section {
+  /* position: relative; */
+  display: flex;
+  height: 300vh;
+}
+
+/*----left----*/
+.proD-left-section {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  bottom: 500px;
+  overflow: hidden;
+
+  width: 50%;
+  height: 100vh;
+}
+.proDSlide {
+  width: 100%;
+  /* height: 100%; */
+}
+.proDSlideBox {
+  width: 1000%;
+  display: flex;
+  overflow: hidden;
+}
+
+.proD-image {
+  width: 100%;
+  /* height: 100vh; */
+}
+
+.proD-image img {
+  object-position: fixed;
+  object-fit: cover;
+  /* height: 100%; */
+  width: 100%;
+}
+.proD-small-image {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  position: absolute;
+  top: 50%;
+  left: 44px;
+  transform: translateY(-50%);
+}
+.proD-small-image > img {
+  width: 68px;
+}
+.proD-small-image > img.active {
+  border: 3px solid #fff;
+}
+.proD-image-button {
+  border: 1px solid red;
+  position: absolute;
+  left: -20%;
+  top: 0;
+  width: 140%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.5s;
+}
+.proD-image-button span {
+  width: 40px;
+  height: 40px;
+  line-height: 36px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.proD-left-section:hover .proD-image-button {
+  left: 0;
+  width: 100%;
+}
+.proD-image-button span:hover {
+  background: #111;
+}
+.proD-image-button span i {
+  font-size: 12px;
+  color: #fff;
+}
+.proD-image-button span:nth-child(1) i {
+  transform: rotate(180deg);
+}
+
+.proD-progress {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 60px;
+  width: 86%;
+  height: 1px;
+  background: #fff;
+  opacity: 0.6;
+}
+.proD-bar {
+  width: 10%;
+  height: 4px;
+  background: #fff;
+  position: absolute;
+  bottom: 50%;
+  transform: translateY(50%);
+}
+
+/*----right----*/
+.proD-right-section {
+  position: absolute;
+  right: 0;
+  width: 50%;
+  /* height: 100vh; */
+  /* overflow-y: auto; */
+}
+
+/* .proD-right-section {
+  -ms-overflow-style: none;
+}
+.proD-right-section::-webkit-scrollbar {
+  display: none;
+} */
+
+.right-section-wrap {
+  position: relative;
+  width: 86%;
+  height: 645px;
+  background: #fff;
+  margin: 0 auto;
+  margin-top: 120px;
+}
+.proD-nav {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  gap: 20px;
+  font-family: "sofia";
+}
+.proD-nav a {
+  display: flex;
+  justify-content: space-between;
+  width: 80px;
+  align-items: center;
+  font-size: 14px;
+}
+.proD-nav a:last-child {
+  padding-left: 30px;
+}
+.proD-text-tit {
+  display: flex;
+  flex-direction: column;
+}
+.proD-text {
+  border: 1px solid green;
+  width: 100%;
+  /* height: 96%; */
+  height: 1000px;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.proD-text-new {
+  display: inline-block;
+  width: 50px;
+  height: 30px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 30px;
+  background: #333;
+  color: rgb(247, 225, 228);
+  font-weight: 600;
+  font-family: "sofia";
+}
+.proD-text-title {
+  font-size: 30px;
+
+  font-weight: 500;
+}
+.proD-text-price {
+  display: flex;
+  flex-direction: column;
+}
+.proD-price {
+  font-size: 24px;
+}
+.proD-price span {
+  font-size: 40px;
+  font-weight: bold;
+  font-family: "sofia";
+}
+.proD-linkAll {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 18px;
+}
+.proD-text-link a {
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding: 4px 15px;
+  color: #171c8f;
+}
+.proD-text-social img {
+  width: 30px;
+  display: inline-block;
+  margin-left: 10px;
+}
+.proD-text-option {
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+  margin-top: 18px;
+}
+.proD-text-op {
+  display: block;
+  background: #333;
+  border-radius: 5px;
+  width: 80px;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+  color: rgb(247, 225, 228);
+  font-family: "sofia";
+  font-weight: 600;
+}
+.proD-text-color {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+}
+.proD-text-colors span:nth-child(1) {
+  background: url("./content_img/멜론_fca193.jpg") center/cover no-repeat;
+}
+
+.proD-text-colors span:nth-child(2) {
+  background: url("./content_img/베리_f1a5ae.jpg") center/cover no-repeat;
+}
+.proD-text-desc {
+  background: #fafafa;
+  width: 520px;
+  height: 68px;
+  text-align: center;
+  margin-top: 34px;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.proD-text-desc span {
+  font-size: 40px;
+  line-height: 40px;
+  padding: 10px;
+}
+.proD-buy-button {
+  background: #333;
+  width: 520px;
+  height: 68px;
+  line-height: 64px;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 34px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #f2c6cf;
+}
+.proD-bottom-section {
+  /* position: absolute;
+  left: 0;
+  bottom: 0; */
+  width: 100%;
+  height: 500px;
+  border: 5px solid rebeccapurple;
+}

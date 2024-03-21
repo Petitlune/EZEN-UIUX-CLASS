@@ -711,10 +711,6 @@ const pageChange = (e) => {
   for (let i = 0; i < nextPageBtns.length; i++) {
     if (target == i) {
       nextPageBtns[i].classList.add("active");
-
-      // nextPageBtns[i].onclick = () => {
-      //   proSlidePages[i].classList.add("active");
-      // };
     }
   }
 };

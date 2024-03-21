@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.left-section {
+  width: 300px; /* Adjust as needed */
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #ccc;
+  overflow-y: auto;
+}
+
+.right-section {
+  flex: 1;
+  padding-left: 320px; /* Adjust based on left section width */
+  overflow-y: auto;
+}
+
+.content {
+  padding: 20px;
+}
+
+.bottom-element {
+  height: 100px; /* Adjust as needed */
+  background-color: #fff;
+  /* Add any additional styles for the bottom element */
+}
