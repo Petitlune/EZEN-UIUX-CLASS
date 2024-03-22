@@ -29,8 +29,7 @@ a {
 .proD-top-section {
   /* position: relative; */
   display: flex;
-  height: 1950vh;
-  border: 1px solid red;
+  height: auto;
 }
 
 /*----left----*/
@@ -46,12 +45,18 @@ a {
   /* height: 100%; */
 }
 .proDSlideBox {
+  position: absolute;
+  left: 0;
   width: 1000%;
   display: flex;
-  overflow: hidden;
+  transition: all 0.5s;
 }
 
+.proDSlideBox.active {
+  left: -100%;
+}
 .proD-image {
+  position: relative;
   width: 100%;
 }
 
@@ -61,6 +66,9 @@ a {
   min-height: 100vh;
   width: 100%;
 }
+/* .proD-image img.active {
+  left: -100%;
+} */
 .proD-small-image {
   display: flex;
   flex-direction: column;
@@ -132,6 +140,7 @@ a {
 
 /*----right----*/
 .proD-right-section {
+  /* overflow: hidden; */
   position: relative;
   width: 50%;
   height: auto;
@@ -144,6 +153,7 @@ a {
   margin: 0 auto;
   margin-top: 120px;
   overflow: hidden;
+  background: #fff;
 }
 .proD-nav {
   width: 100%;
@@ -312,7 +322,10 @@ a {
 .proD-sticky-bar span.active {
   font-weight: bold;
 }
-
+.proD-img-wrap {
+  background: #fff;
+  overflow-x: hidden;
+}
 .proD-img-content {
   width: 670px;
   margin: 0 auto;
@@ -324,6 +337,7 @@ a {
 .proD-img-content img {
   width: 100%;
 }
+
 .proD-product-detail {
   width: 80%;
   margin-left: 5%;
@@ -341,7 +355,6 @@ a {
   font-weight: 500;
   min-width: 160px;
   margin-bottom: 20px;
-  border: 1px solid red;
 }
 .proD-product-detail-title p {
   color: #777;
@@ -350,4 +363,42 @@ a {
 .proD-bottom-section {
   width: 100%;
   height: auto;
+  overflow: hidden;
+  text-align: center;
+  margin-top: 50px;
+}
+.proD-youlike {
+  font-size: 34px;
+  font-family: "sofia";
+  letter-spacing: 5px;
+  color: #333;
+  margin-bottom: 20px;
+}
+.proD-youlike-wrap {
+  display: flex;
+  gap: 12px;
+  padding: 0 20px 150px;
+}
+.proD-youlike-wrap li .random-imgBox-img {
+  width: 430px;
+  height: 430px;
+}
+.proD-youlike-wrap li img {
+  width: 100%;
+  height: auto;
+}
+.random-imgBox-text {
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  gap: 27px;
+}
+.random-imgBox-tit {
+  display: inline-block;
+  font-weight: 500;
+}
+.random-imgBox-price {
+  height: 25px;
+  line-height: 25px;
+  font-weight: bold;
 }
