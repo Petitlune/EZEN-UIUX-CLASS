@@ -1,0 +1,61 @@
+.common-footer-family-hidden
+  top: -100px;
+background: #fff
+
+/*--------- 768px --------*/
+  .common-responsibility-search-box {
+    width: 88%;
+  }
+  .common-responsibility-search-box-icon-x {
+    padding-left: 10px;
+  }
+
+script (product와 makeup)
+
+const re = () => {
+  if (innerWidth <= 1024) {
+
+    header.style.height = "50px";
+
+}
+<------추가입력사항------>
+
+< ----공통부분---->
+
+const productTopList = document.querySelector(
+  ".common-responsibility-product-top-menu"
+);
+const productTopListBtn = document.querySelector(".common-P");
+const makeupTopListBtn = document.querySelector(".common-M");
+
+
+
+< ---product부분---->
+
+productTopListBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  if (
+    productTopList.style.display === "none" ||
+    productTopList.style.display === ""
+  ) {
+    productTopList.style.display = "flex";
+    header.style.height = "500px";
+  } else {
+    productTopList.style.display = "none";
+    header.style.height = "50px";
+  }
+});
+< ----make up부분---->
+makeupTopListBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  if (
+    productTopList.style.display === "none" ||
+    productTopList.style.display === ""
+  ) {
+    productTopList.style.display = "flex";
+    header.style.height = "500px";
+  } else {
+    productTopList.style.display = "none";
+    header.style.height = "50px";
+  }
+});

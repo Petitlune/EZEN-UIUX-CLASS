@@ -110,7 +110,7 @@ const importData = () => {
     }
   });
 };
-// importData();
+importData();
 button.addEventListener("click", importData);
 newlisting.addEventListener("click", sortNew);
 asceButton.addEventListener("click", sortAsce);

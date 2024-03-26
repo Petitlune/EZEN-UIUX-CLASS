@@ -186,8 +186,7 @@ const products = {
       imgHover: "./page01_img/base_over_lip_MD_01-430x430.jpg",
       color: [],
     },
-  ],
-  data01: [
+
     {
       num: 13,
       id: Date.now() + 12,
@@ -374,8 +373,7 @@ const products = {
         "./page02_img/playcoloreyes_4colors_shibuya_c.jpg",
       ],
     },
-  ],
-  data02: [
+
     {
       num: 25,
       id: Date.now() + 24,
