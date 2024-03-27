@@ -6,7 +6,7 @@ JS Process
 3.자료형 변환 = 형변환
 - 문자 => 숫자 Number( )
 - 숫자 => 문자 String( )
-- 문자 & 숫자 => 논리 Boolean( )
+- 문자 & 숫자 => 논리 Boolean( ))
 
 
 
