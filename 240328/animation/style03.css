@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+section {
+  background: lightpink;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ul {
+  display: flex;
+  width: 400px;
+  flex-flow: wrap;
+}
+li {
+  width: calc(100% / 9 - 4px);
+  height: 30px;
+  margin: 0 2px 2px;
+  background: lightcoral;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+}

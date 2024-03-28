@@ -1,0 +1,169 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+/*https://webgradients.com/ 그라디언트 색상조합 가져올 수 있다. */
+#sec0 {
+  background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
+}
+
+#sec1 {
+  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+}
+#sec2 {
+  background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+#sec3 {
+  background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+}
+#sec4 {
+  background-image: linear-gradient(to top, #37ecba 0%, #72afd3 100%);
+}
+#fp-nav ul li a span {
+  background: #fff;
+}
+#nav_icon {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  width: 30px;
+  height: 25px;
+  z-index: 3;
+  cursor: pointer;
+}
+#nav_icon div {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+#nav_icon div span {
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  background: #fff;
+  height: 2px;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+#nav_icon div span:nth-child(1) {
+  top: 0;
+}
+#nav_icon div span:nth-child(2) {
+  top: 10px;
+}
+#nav_icon div span:nth-child(3) {
+  top: 20px;
+}
+#nav_icon.active div span:nth-child(1) {
+  top: 10px;
+  transform: rotate(45deg);
+}
+#nav_icon.active div span:nth-child(2) {
+  transform: translateX(100%);
+  opacity: 0;
+}
+#nav_icon.active div span:nth-child(3) {
+  top: 10px;
+  transform: rotate(-45deg);
+}
+.nav {
+  position: fixed;
+  top: 30px;
+  right: -380px;
+  z-index: 10;
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+}
+.nav.active {
+  right: 80px;
+  opacity: 1;
+}
+.nav ul {
+  display: flex;
+  gap: 20px;
+  color: #fff;
+}
+.nav ul li a {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin: auto;
+}
+
+.title {
+  color: #fff;
+  font-size: 50px;
+  transform: translateX(-100%);
+  transition: all 0.8s ease-in-out;
+  opacity: 0;
+}
+.section.active h1 {
+  transform: translateX(0);
+  opacity: 1;
+}
+#sec2 .inner {
+  justify-content: center;
+  align-items: center;
+}
+/* #sec2 .title {
+  margin-right: 400px;
+} */
+.slider_wrap {
+  background: #ccc;
+  width: 600px;
+  height: 400px;
+  margin-top: 50px;
+  position: relative;
+  opacity: 0;
+  transform: translateX(400px);
+  transition: all 0.5s ease-out;
+}
+
+.slider_wrap .slide {
+  height: 400px;
+}
+.slide_inner {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 30px;
+}
+.slider_wrap .fp-tableCell {
+  display: block;
+}
+.sl_01 {
+  background: #3a6cc2;
+}
+.sl_02 {
+  background: #3cb395;
+}
+.sl_03 {
+  background: #9246aa;
+}
+.sl_04 {
+  background: #5cbd4b;
+}
+.fp-controlArrow.fp-prev {
+  left: -40px;
+  border-width: 19px 18px 19px 0;
+}
+.fp-controlArrow.fp-next {
+  right: -40px;
+  border-width: 19px 0 19px 18px;
+}
