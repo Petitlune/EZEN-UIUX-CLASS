@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+/*-----nav-----*/
+.inner {
+  width: 1200px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+/* .inner h1 img {
+  width: 800px;
+} */
+
+/*-----section-----*/
+
+.section {
+  color: #fff;
+  font: 4rem/1 "Inter";
+}
+
+#sec0 {
+  background-image: linear-gradient(
+    to right,
+    #e4afcb 0%,
+    #b8cbb8 0%,
+    #b8cbb8 0%,
+    #e2c58b 30%,
+    #c2ce9c 64%,
+    #7edbdc 100%
+  );
+}
+#sec0 .inner svg,
+#sec0 .inner img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+#sec0 .inner .svg1 {
+  transform: translate(-50%, -50%);
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2;
+  z-index: 2;
+}
+
+#sec0 .inner .svg2 {
+  transform: translate(-49%, -49%);
+}
+
+#sec1 {
+  background-image: linear-gradient(to right, #74ebd5 0%, #9face6 100%);
+}
+#sec2 {
+  background-image: linear-gradient(
+    to right,
+    #ff8177 0%,
+    #ff867a 0%,
+    #ff8c7f 21%,
+    #f99185 52%,
+    #cf556c 78%,
+    #b12a5b 100%
+  );
+}
+#sec3 {
+  background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+}
+#sec4 {
+  background-image: linear-gradient(
+    to top,
+    #fcc5e4 0%,
+    #fda34b 15%,
+    #ff7882 35%,
+    #c8699e 52%,
+    #7046aa 71%,
+    #0c1db8 87%,
+    #020f75 100%
+  );
+}
+
+/*-----nav-----*/
+#nav_icon {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  height: 25px;
+  width: 30px;
+  height: 50px;
+
+  z-index: 2;
+}
+#nav_icon div {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+#nav_icon div span {
+  position: absolute;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: #fff;
+  transition: all 0.3s ease-in-out;
+}
+#nav_icon div span:nth-child(1) {
+  top: 0;
+}
+#nav_icon div span:nth-child(2) {
+  top: 10px;
+}
+#nav_icon div span:nth-child(3) {
+  top: 20px;
+}
+#nav_icon div.active span:nth-child(1) {
+  top: 10px;
+  transform: rotate(45deg);
+}
+#nav_icon div.active span:nth-child(2) {
+  left: 100%;
+  opacity: 0;
+}
+#nav_icon div.active span:nth-child(3) {
+  top: 10px;
+  transform: rotate(-45deg);
+}
+
+.nav {
+  position: relative;
+}
+.nav ul {
+  display: flex;
+  gap: 30px;
+  position: absolute;
+  margin-right: 80px;
+  right: -420px;
+  top: 30px;
+  opacity: 0;
+  z-index: 2;
+  color: rgb(214, 238, 230);
+  transition: all 0.5s ease-in-out;
+}
+.nav.active ul {
+  right: 0;
+  opacity: 1;
+}
