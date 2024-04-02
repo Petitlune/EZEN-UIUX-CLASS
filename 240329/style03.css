@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@font-face {
+  font-family: "Back to Black Demo";
+  src: url("./portfolio/font/Back_to_Black_Demo.otf");
+}
 
 * {
   margin: 0;
@@ -201,22 +205,76 @@ a {
   width: 20px;
   background: #fff;
 }
+
+/*-----sec3-----*/
+
 #sec3 {
-  background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+  background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
 }
+#sec3 .inner {
+  width: 1200px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  z-index: 2;
+  position: relative;
+}
+h1 {
+  font-family: "Back to Black Demo";
+  font-size: 100px;
+  display: flex;
+  letter-spacing: -3px;
+}
+#sec3 h1 {
+  transform: translateX(-100px);
+}
+#sec3 h1 span {
+  opacity: 0;
+}
+#sec3 h1 span:nth-child(6) {
+  margin-right: 50px;
+}
+.sec3_svg {
+  position: absolute;
+  fill: #667eea;
+  stroke: none;
+  left: 0;
+  bottom: 0;
+}
+/*-----sec4-----*/
+
 #sec4 {
   background-image: linear-gradient(
-    to top,
-    #fcc5e4 0%,
-    #fda34b 15%,
-    #ff7882 35%,
-    #c8699e 52%,
-    #7046aa 71%,
-    #0c1db8 87%,
-    #020f75 100%
+    -225deg,
+    #2cd8d5 0%,
+    #c5c1ff 56%,
+    #ffbac3 100%
   );
 }
 
+#sec4 h1 img {
+  width: 400px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  opacity: 1;
+}
+#sec4 .img_wrap {
+  width: 500px;
+  height: 500px;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+.tail {
+  width: calc(100% / 20);
+  height: calc(100% / 20);
+  background: #7366cc;
+}
 /*-----nav-----*/
 #nav_icon {
   position: fixed;

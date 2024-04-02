@@ -1,3 +1,8 @@
+// 2개의 자바스크립트 플러그인!!!
+// 1) anime 2) fullpage.js
+// fullpage : 섹션 나누는 방법, 네이게이션 클릭시, 이동, 우측 중간 이동버튼
+// anime: svg활용 애니메이션, 모핑, 드로잉, 로테이션 효과 / stagger(아이템 순차적으로 애니메이션 적용) / timeline(전체 총 애니메이션 플로우 컨트롤 목적 타임라인) / 함수 기반 / 옵션 객체형태로 사용
+
 const navBtn = document.querySelector("#nav_icon div");
 const navBar = document.querySelector(".nav");
 
@@ -130,6 +135,157 @@ const sec2 = () => {
   });
 };
 
+//sec03
+const sec3 = () => {
+  const d0 =
+    "M453 100C283.5 11.5 184 0.499989 0.5 0.5V772H1921V63C1753.5 144 1381.5 288 1146 288C825 288 726.67 242.89 453 100Z";
+  const d1 =
+    "M570 10C308.5 -26.5 135 62 0.5 95V730H1921V95C1753.5 176 1579.5 209 1344 209C1028.11 209 875.763 52.6782 570 10Z";
+  const d2 =
+    "M585.5 276C367.959 243.273 245 160.5 0.5 20V729H1921V20C1693 -24 1501 6.78688 1312 147.287C1070.85 326.558 758.5 302.027 585.5 276Z";
+  anime({
+    targets: ".sec3_svg path",
+    d: [
+      {
+        value: d0,
+      },
+      {
+        value: d1,
+      },
+      {
+        value: d2,
+      },
+    ],
+    easing: "easeInOutQuart",
+    duration: 3000,
+    loop: true,
+    direction: "alternate",
+  });
+
+  anime({
+    targets: "#sec3 h1 span",
+    delay: anime.stagger(100),
+    translateX: 100,
+    opacity: 1,
+    easing: "easeOutSine",
+  });
+};
+
+//sec04
+
+const staggerWrap = document.querySelector("#sec4 .img_wrap");
+const fragment = document.createDocumentFragment();
+const grid = [20, 20];
+const [col, row] = grid;
+const allElem = col * row;
+
+for (let i = 0; i < allElem; i++) {
+  const div = document.createElement("div");
+  fragment.appendChild(div);
+  div.className = "tail";
+}
+staggerWrap.appendChild(fragment);
+
+const sec4 = () => {
+  //tl의 공통속성 정의
+  const stageAni = anime.timeline({
+    targets: ".tail",
+    easing: "easeInBack",
+    delay: anime.stagger(10, { from: "last" }),
+    duration: 2000,
+    endDelay: 1000,
+    loop: false,
+    autoplay: false,
+  });
+  stageAni
+    .add({
+      targets: "#sec4 h1 img",
+      opacity: 0,
+      duration: 500,
+    })
+    .add({
+      translateX: () => {
+        return anime.random(-500, 500);
+      },
+      translateY: () => {
+        return anime.random(-500, 500);
+      },
+      delay: anime.stagger(200, { grid: grid, from: "last" }),
+      scale: 0.2,
+      background: "#fff",
+      borderRadius: "100%",
+    })
+    .add({
+      targets: staggerWrap,
+      rotate: 360,
+      easing: "linear",
+      duration: 4000,
+      scale: 0.5,
+    })
+    .add({
+      targets: staggerWrap,
+      duration: 1000,
+      scale: 1.2,
+    })
+    .add({
+      translateX: 0,
+      translateY: 0,
+      delay: anime.stagger(100, { grid: grid, from: "center" }),
+      scale: 0.8,
+      duration: 3000,
+      background: "#f495a8",
+    })
+    .add({
+      scale: 0.5,
+      duration: 500,
+      rotate: 60,
+      borderRadius: 0,
+      delay: anime.stagger(100, { grid: grid, from: "center" }),
+    })
+    .add({
+      scale: 0.8,
+      duration: 500,
+      rotate: -60,
+      borderRadius: "50%",
+      background: "#fff",
+      delay: anime.stagger(100, { grid: grid, from: "center" }),
+    })
+    .add({
+      scaleX: 0.2,
+      scaleY: 1,
+      duration: 500,
+      rotate: 120,
+      borderRadius: "0%",
+      background: "#70dde5",
+      delay: anime.stagger(100, { grid: grid, from: "center" }),
+    })
+    .add({
+      duration: 500,
+      rotate: 0,
+      delay: anime.stagger(100, { grid: grid, from: "center" }),
+    })
+    .add({
+      scaleX: 1,
+      duration: 500,
+      delay: anime.stagger(100, { grid: grid, from: "center" }),
+    })
+    .add({
+      scale: 1,
+      duration: 800,
+      background: "#7366cc",
+      delay: anime.stagger(100, { grid: grid, from: "center" }),
+    })
+    .add({
+      targets: "#sec4 h1 img",
+      opacity: 1,
+      duration: 500,
+    });
+
+  staggerWrap.addEventListener("click", () => {
+    stageAni.play();
+  });
+};
+
 //fullpage
 new fullpage("#fullpage", {
   //options here
@@ -150,6 +306,12 @@ new fullpage("#fullpage", {
     }
     if (new_elem.index === 2) {
       sec2();
+    }
+    if (new_elem.index === 3) {
+      sec3();
+    }
+    if (new_elem.index === 4) {
+      sec4();
     }
   },
 });
