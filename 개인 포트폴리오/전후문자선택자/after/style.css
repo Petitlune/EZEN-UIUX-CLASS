@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  padding: 50px 0;
+  font-family: "Noto Sans KR";
+  background-color: #f7b22d;
+}
+body .container ul {
+  position: relative;
+  width: 100%;
+  margin: 0 30px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+body .container ul li {
+  width: 240px;
+  height: 240px;
+  background: #fff;
+  border-radius: 10px;
+  position: relative;
+}
+body .container ul li .item-inner {
+  position: relative;
+  width: auto;
+  height: 180px;
+  margin: 30px;
+}
+body .container ul li .item-inner .title {
+  width: auto;
+  font-weight: bold;
+  font-size: 1.2rem;
+  line-height: 30px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+body .container ul li .item-inner .image {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+body .container ul li::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 100px;
+  background: #f7b22d;
+  opacity: 0;
+  border-radius: 100%;
+  position: absolute;
+  right: 16px;
+  bottom: -100px;
+  transition: all 0.5s ease-in-out;
+}
+body .container ul li:hover::after {
+  bottom: 16px;
+  opacity: 0.5;
+}
+body .container ul li:nth-child(2n) {
+  animation: card linear 0.3s both;
+}
+@keyframes card {
+  0% {
+    margin-top: 0;
+  }
+  100% {
+    margin-top: 60px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  ul {
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap;
+  }
+  li:nth-child(2n+1) {
+    animation: card linear 0.3s both;
+  }
+}/*# sourceMappingURL=style.css.map */

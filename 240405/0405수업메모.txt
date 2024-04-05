@@ -1,0 +1,72 @@
+*상태 관리 
+ - useState( )
+ - component상에 변화 및 업데이트가 필요한 요소가 존재 => 관리
+ - 하나의 컴포넌트 안에 관리해야할 상태가 많아지면 어떤 문제
+ - 컴포넌트 state 업데이트가 되면, 리렌더링
+(리액트 사용이유? 가상돔, 컴포넌트 CSR방식, SSR방식보다 서버에 의존도를 낮춰서 UI화면 출력 매우 빠르고 효율적이어서)
+*상태 관리의 효율성!! => useReducer
+=> reducer JS함수: 누산기 : 차곡차곡 쌓아서 어떤 작업을 실행하는 개념. 
+
+*useState( ) : 컴포넌트 바깥에서 실행해본 적 없음
+ => 1번만 실행되고 => 무한반복
+ => setCount함수 컴포넌트 바깥으로 나가게되면 컴포넌트가 리랜더링 되는 순간 count값을 최초의 초기값으로 reset
+
+* : 전체선택자 = 정식명칭은 wildcard selector
+
+
+*최적화
+(모든 컴포넌트와 함수 다 최적화 할 필요 없다. 기능구현이 먼저!!, 최적화는 정답이 없다.)
+
+
+ 1) 리액트 hook : useMemo
+ - 메모이제이션
+* useMemo는 첫번째 매개변수로 메모이제이션 하고자하는 함수를 콜백함수로 사용, 두번째 매개변수로 의존성 배열 사용.  
+
+* 리액트의 최적화를 위해 useMemo함수 사용. 
+=> 불필요한 함수 재호출 방지
+
+ 2) React.memo (리랜더링을 방지하고자 하는 컴포넌트)
+ - 불필요한 컴포넌트의 리랜더링을 방지하고자 할 때.
+
+* 컴포넌트 랜더링 3대 포인트
+ - state 상태 값이 변화
+ - props 값 변화
+ - 부모 컴포넌트 렌더링 => 자식 렌더링
+
+*JS 초기 학습
+ - 원시 타입 자료 : 문자열, 숫자, boolean
+ - 참조 타입 자료 : 객체, 배열, 함수
+ (*함수 => class / constructure => 프로토타입 객체 => instance 객체(=부모요소인 프로토타입 설정, 객체 키 & 메서드) 따라서 함수 => 객체 기반 자료
+변수 안에 원본 객체 => 두번째 변수에 복사/수정  독립적으로 사용 가능함.
+
+ 3) React.memo로 최적화 안된다면 useCallback 함수를 통해 컴포넌트 최적화 진행할 수 있음.
+useCallback(콜백함수, 의존성배열) : useEffect와 비슷 
+
+
+*데이터 효율
+
+props Drilling 문제
+
+Context : 책  => 목차 => 맥락
+
+Context를 활용한 API 
+
+데이터를 공급하는 root 컴포넌트에서는 React.createContext() 활용해서 객체 컴포넌트를 생성
+생성된 객체 컴포넌트에서 .Provider라는 속성을 사용해야하지만 데이터를 공급할 수 있는 환경설정 가능
+이때, root 컴포넌트에서 공급받은 데이터 중 자식 및 손자 컴포넌트에서 전달하고자 하는 데이터는
+value라는 key를 활용해서 정의하면 됨.
+
+이제 데이터를 공급받아야하는 컴포넌트에서 준비
+react  라이브러리에서 useContext  훅을 찾아와서 해당 훅 함수의 반환값을 특정 변수에 할당
+(* 이때 , 해당 훅 함수의 매개변수는 부모요소에서 정의했던 Context API 컴포넌트로 적용)
+
+
+리팩토링 !!
+=> JS함수기능 => 요소
+
+리팩토링과 함께 최적화하는 방법 
+TodoContext를 두개로 나눈다. 
+TodoStateContext 와 TodoDispatchContext
+TodoStateContext : Todo 데이터를 TodoList로 보낸다. 
+TodoDispatchContext : onUpdate( ), onDelete( )데이터를 TodoItem으로 보낸다.
+TodoDispatchContext : onCreate( )데이터를 TodoEditor으로 보낸다.

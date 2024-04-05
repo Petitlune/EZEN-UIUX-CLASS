@@ -1,8 +1,10 @@
+import { useState, useRef, useContext } from "react";
+import { TodoDispatchContext } from "../App";
 import "./TodoEditor.css";
-import { useState } from "react";
-import { useRef } from "react";
 
-const TodoEditor = ({ onCreate }) => {
+const TodoEditor = () => {
+  const { onCreate } = useContext(TodoDispatchContext);
+
   const [content, setContent] = useState("");
   const onChangeContent = (e) => {
     setContent(e.target.value);
@@ -19,6 +21,8 @@ const TodoEditor = ({ onCreate }) => {
       setContent(""); // input 리셋 시키는 함수.
     }
   };
+
+  //엔터 눌렀을때도 제출되게 하는 함수정의
   const onKeyDown = (e) => {
     if (e.keyCode === 13) {
       onSubmit();
