@@ -1,0 +1,118 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "product": "삼계죽",
+      "price": 12000,
+      "image": "./image/20220830_2CV_1661836585544_42Kb.jpg"
+    },
+    {
+      "id": 2,
+      "product": "홍게 품은 죽",
+      "price": 10000,
+      "image": "./image/20210302_Kpj_1614666223300_72Kb.jpg"
+    },
+    {
+      "id": 3,
+      "product": "불고기낙지죽",
+      "price": 15000,
+      "image": "./image/20210219_3f1_1613692170159_75Kb.jpg"
+    },
+    {
+      "id": 4,
+      "product": "진품쇠고기육개장죽",
+      "price": 12000,
+      "image": "./image/20220718_8QH_1658125323866_68Kb.jpg"
+    },
+    {
+      "id": 5,
+      "product": "신짬뽕죽",
+      "price": 11500,
+      "image": "./image/20230626_KXY_1687771189440_58Kb.jpg"
+    },
+    {
+      "id": 6,
+      "product": "특해물죽",
+      "price": 15000,
+      "image": "./image/20210302_fpK_1614666153359_74Kb.jpg"
+    },
+    {
+      "id": 7,
+      "product": "매생이굴죽",
+      "price": 12000,
+      "image": "./image/20210216_Ohg_1613448296460_79Kb.jpg"
+    },
+    {
+      "id": 8,
+      "product": "낙지김치죽",
+      "price": 10000,
+      "image": "./image/20220718_t6m_1658124563816_65Kb.jpg"
+    },
+    {
+      "id": 9,
+      "product": "버섯죽",
+      "price": 11000,
+      "image": "./image/20210225_mge_1614226009963_69Kb.jpg"
+    },
+    {
+      "id": 10,
+      "product": "잣죽",
+      "price": 12000,
+      "image": "./image/20210225_LeF_1614238217452_61Kb.jpg"
+    },
+    {
+      "id": 11,
+      "product": "단호박죽",
+      "price": 10500,
+      "image": "./image/20210216_a3r_1613447751627_67Kb.jpg"
+    },
+    {
+      "id": 12,
+      "product": "흑임자죽",
+      "price": 9000,
+      "image": "./image/20210302_f1k_1614666358263_68Kb.jpg"
+    },
+    {
+      "id": 13,
+      "product": "녹두죽",
+      "price": 9000,
+      "image": "./image/20210216_juX_1613447478089_72Kb.jpg"
+    },
+    {
+      "id": 14,
+      "product": "동지팥죽",
+      "price": 10000,
+      "image": "./image/20231222_Pvv_1703250784865_282Kb.jpg"
+    },
+    {
+      "id": 15,
+      "product": "(낱개)우리땅, 청매실",
+      "price": 1300,
+      "image": "./image/20221108_Ors_1667863579648_35Kb.jpg"
+    },
+    {
+      "id": 16,
+      "product": "(낱개)진짜배즙",
+      "price": 1300,
+      "image": "./image/20210326_Oxd_1616716149447_107Kb.jpg"
+    },
+    {
+      "id": 17,
+      "product": "(낱개)양배추사과즙",
+      "price": 1300,
+      "image": "./image/20210326_0Lm_1616715999059_115Kb.jpg"
+    },
+    {
+      "id": 18,
+      "product": "(낱개)단호박 식혜",
+      "price": 1000,
+      "image": "./image/20230719_284_1689747556482_99Kb.jpg"
+    },
+    {
+      "id": 19,
+      "product": "(낱개)뽀로로 홍삼쑥쑥",
+      "price": 1100,
+      "image": "./image/20230131_TXC_1675128002347_26Kb.jpg"
+    }
+  ]
+}
