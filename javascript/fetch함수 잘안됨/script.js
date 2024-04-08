@@ -1,20 +1,16 @@
-fetch("./list.json")
+// function devide(numA, numB) {
+//   return new Promise((resovle, reject) => {
+//     if (numB === 0) reject(new Error("unable"));
+//     else resovle(numA / numB);
+//   });
+// }
+
+// devide(8, 0)
+//   .then((result) => console.log("성공:", result))
+//   .catch((error) => console.log("실패"));
+
+fetch("https://jsonplaceholder.typicode.com/todos")
   .then((response) => response.json())
-  .then((json) => json.items);
-console.log(items);
-const createItems = (items) => {
-  const box = document.querySelector("#container");
-  const ul = document.createElement("ul");
-  const li = document.createElement("li");
-  const tit = document.createElement("span");
-  const item = document.createElement("span");
-  const price = document.createElement("span");
-
-  tit = items.product;
-
-  ul.className = "content";
-  li.className = "product";
-  li.append(tit, item, price);
-  ul.appendChild(li);
-  box.appendChild(ul);
-};
+  .then((json) => json.data);
+// const box = document.querySelector("#container");
+// box.innerHTML = `<h2>${data[0].title}</h2>`;
