@@ -1,0 +1,110 @@
+React.js
+*지난주부터 어제까지 작업해온 React 프로젝트의 공통점
+
+* 만약 에뛰드하우스 클론코딩 => React
+
+* 리액트는 컴포넌트 기반으로 작동 => 컴포넌트끼리 연결시킴.
+
+* html,css => "a" react 에서는?
+
+* Route = 라우트 = 경로 
+   ㄴ> 기원 : 네트워크 통신망에서 기원
+
+* UI 작업을 진행함에 있어서 page Routing
+
+
+* SSR  : server side rendering
+* MPA : Multi Page Application(복수의 페이지를 가지고 운영되는 방식)
+* Client -> Server 
+
+
+* CSR : Client Side Rendering ==> react 작업방식
+* SPA : Single Page Application ==> react 작업방식
+ index.html 1개만 있으면 에뛰드 하우스 4개 페이지를 각각의 컴포넌트 조합해서 만들어낼 수 있음
+
+
+*감정 일기장 
+날짜, 작성 내용, 감정
+
+=> 그날 그날 작성한 일기 데이터를 목록화해서 볼 수 있어야함. 
+
+목록화 되어 있는 페이지에서는 일기를삭제할 수 있는 기능
+
+최신순으로 오래된순 필터링
+
+세부적인 일기장 => 일기장 수정
+
+ 
+1. 일기장 작성할 수 있는 페이지 New.js
+2. 일기장 읽을 수 있는 페이지 Diary.js
+3. 여러개의 일기장 한눈에 볼 수 있는 목록화 된 페이지 Home.js
+4. 수정가능한 페이지  Edit.js
+
+> 만약, 내가 작성한 일기가 30개
+
+*react에서 작업되는 폴더는 모두 src 폴더 안에 넣어주어야한다.
+
+*컴포넌트는 페이지를 구성하게끔 해주는 요소!
+
+*함수 => 컴포넌트가 아닌 실제로 컴포넌트 내에서 부분적으로 사용할 수 있는 사용해야하는 함수의 기능이다. 
+
+
+*npm run build 으로 닫은후  => npm i react-router-dom 입력 => 다시 npm run start
+
+*npm i react-router-dom : react-router-dom 설치하는 명령문
+
+*index.js에 import { BrowserRouter } from "react-router-dom"; 입력
+
+
+동적 라이팅 구현
+
+1.index.js
+ - 메인 컴포넌트에 페이지 라우팅 기능을 구현하고자 하는 컴포넌트를 찾아서 <BrowserRouter /> 설정
+
+2. App.js
+ - <Routes /> & <Route /> => 페이지 분기 작업
+ - <Route /> : path & element
+ - path : 경로 => 상단 주소창의 경로 정의
+ - element : 보여줄 컴포넌트 소스 정의
+
+Route 안쓰고 switch 쓰는건 2년전 문법
+
+Page Routing을 설정할 때 URL Parameter 정의할 수 있음
+기본적인 page url 뒤에 "/" 특정정보라는 것을 인식할 수 있는 일종의 변수값 
+
+URL Parameter(변수 = 함수의 매개변수) 값 뒤에 "?"함께 입력되어 지는 값을 QueryString이라고 부름! (문자열 방식으로 무언가를 요청할 때)
+ 
+*파라미터를 사용할 때 :
+특정 섹션 및 카테고리 내 컨텐츠를 정리 및 보관하고자 할 때 신규로 일기를 작성 
+=> /diary/10
+<Route path="/diary/:id" element={<Diary />} />이렇게 파라미터 값을 입력해주어서 diary 안에 컨텐츠로 꺼내서 보내준다. 
+
+useParams : 상단 주소창에서 파라미터의 값을 찾아올 때 사용하는 리액트 훅
+
+useSearchParams : Query string 값을 찾올 때 사용.
+
+form action = "get"
+
+
+<리액트 훅>
+- useState
+- useRef
+- useEffect
+- useMemo
+- useContext
+- useReducer
+
+- useParams
+- useSearchParams
+ > Route
+ > Routing
+ > page routing 기능 구현
+ > 동적 라이팅 생성
+ > mpa vs spa
+ > SSR vs CSR
+
+
+html에서 1개의 태그에 복수의 class를 적용하고자 할 때?
+
+<div class="active holdon"> </div>
+

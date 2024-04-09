@@ -139,6 +139,7 @@ fetch(cityList)
       option.value = city;
       option.id = city;
       option.innerText = city;
+      console.log(city);
       cityOption.appendChild(option);
     }
   });
