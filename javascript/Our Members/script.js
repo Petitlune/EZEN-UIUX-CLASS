@@ -44,5 +44,5 @@ fetch("./mockup.json")
     });
   });
 
-//random 함수를 눌렀을 때는 i 값에 match를 할당해줌으로써 문제 해결.
+//random 함수를 눌렀을 때는 i 값에 match를 할당해줌으로써 이슈 해결.
 //fetch 함수를 이용해  json 파일에서 값을 불러옴.

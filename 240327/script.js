@@ -134,6 +134,7 @@ fetch(cityList)
   .then((response) => response.json())
   .then((data) => {
     cityInfo = data;
+    console.log(data);
     for (let city in cityInfo) {
       const option = document.createElement("option");
       option.value = city;

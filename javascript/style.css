@@ -1,128 +1,98 @@
 @import "./reset.css";
-@import "./font.css";
-.wrap {
-  font-family: "Pre";
-}
-/* header {
-  position: fixed;
-  left: 0;
-  top: 0;
-} */
-.header-search {
-  border: 1px solid #cfcfcf;
-}
-.search-bar {
-  height: 48px;
-  width: 78%;
-  min-width: 950px;
-  margin: 0 auto;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+  width: 100%;
+  height: 100vh;
+  background: rgb(245, 192, 210);
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-content: flex-end;
-  gap: 4px;
+  font-family: "Montserrat";
+  color: #222;
 }
-.search-bar input {
-  width: 244px;
-  height: 36px;
-  border-radius: 20px;
-  border: 1px solid #cfcfcf;
-  padding: 0 15px;
+form {
+  margin: 20px;
+  display: flex;
+
+  align-items: center;
+}
+input {
+  width: 280px;
+  height: 50px;
+  padding: 0 16px;
+  border: none;
   font-size: 1rem;
 }
-.search-bar input:focus {
-  outline: 4px solid rgba(0, 130, 255, 0.2);
+input:focus {
+  outline: none;
 }
-label {
-  background: rgb(0, 130, 255);
+form button {
+  width: 50px;
+  height: 50px;
+  border: none;
+  cursor: pointer;
+  background: rgb(243, 154, 184);
+}
+form button i {
+  font-size: 2rem;
+  color: #fff;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  gap: 28px;
+  margin-top: 20px;
+}
+.container h2 {
+  margin-bottom: 20px;
+}
+.todolist-box,
+.donelist-box {
+  width: 500px;
+  height: 600px;
+  padding: 50px;
+  text-align: center;
+  border: 2px solid #000;
+  border-radius: 16px;
+  background: #fff;
+}
+.todo-item {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.todo-item li {
+  width: 240px;
+  height: 34px;
+  text-align: left;
+  padding-left: 10px;
+  margin-right: 10px;
+  border-bottom: 1px solid rgb(243, 154, 184);
+  line-height: 34px;
+}
+.todo-item button {
   width: 34px;
   height: 34px;
-  border-radius: 100%;
-  text-align: center;
-  line-height: 40px;
+  border: none;
   cursor: pointer;
+  transition: all 0.3s;
 }
-.search-bar a {
-  margin-left: 20px;
+.todo-item button i {
+  font-size: 18px;
+  color: #222;
 }
-nav {
-  height: 68px;
-  width: 78%;
-  min-width: 950px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.done:hover {
+  background: green;
 }
-.grade-menu {
-  font: 500 1.2rem/1 "Pre";
-  display: flex;
-  gap: 70px;
+.done:hover .fa-check {
+  color: #fff;
 }
-.menu-button {
-  width: 40px;
-  height: 18px;
-  position: relative;
-  cursor: pointer;
+.delete:hover {
+  background: red;
 }
-.menu-button span {
-  position: absolute;
-  display: inline-block;
-  width: 24px;
-  height: 2px;
-  background: #000;
-}
-.menu-button span:nth-child(1) {
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.menu-button span:nth-child(2) {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.menu-button span:nth-child(3) {
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.slide {
-  width: 100%;
-  overflow: hidden;
-}
-.slide ul {
-  position: relative;
-  display: flex;
-  gap: 80px;
-  width: 100%;
-  margin: 0 auto;
-}
-.slide-btn {
-  position: absolute;
-  display: flex;
-  justify-content: space-between;
-  border: 1px solid red;
-  width: 100%;
-  left: -28px;
-  top: 50%;
-}
-.slide-btn span {
-  display: inline-block;
-  width: 42px;
-  height: 42px;
-  border-radius: 100%;
-  background: #fff;
-  text-align: center;
-  line-height: 50px;
-}
-
-.slide-btn .prev {
-  transform: rotate(180deg);
-}
-.slide ul li {
-  border: 1px solid red;
-  width: 100%;
-}
-.slide ul li img {
-  object-fit: cover;
+.delete:hover .fa-trash {
+  color: #fff;
 }

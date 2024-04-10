@@ -1,0 +1,112 @@
+@import "./reset.css";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Noto+Sans+KR:wght@100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+.wrap {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Noto Sans KR";
+}
+header {
+  display: flex;
+  width: 800px;
+  margin-top: 60px;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+header h1 {
+  margin-bottom: 20px;
+  position: relative;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+header h1::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -18px;
+  transform: translateX(-60%);
+  width: 80px;
+  height: 5px;
+  background: goldenrod;
+}
+header img {
+  border: 5px solid goldenrod;
+  border-radius: 8px;
+}
+.content {
+  padding: 20px 60px;
+}
+.content div {
+  width: 100%;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.2rem;
+}
+header div span {
+  font-size: 1rem;
+  color: brown;
+}
+header p {
+  color: #333;
+}
+
+.category-menu {
+  width: 1100px;
+  height: 50px;
+  margin-top: 20px;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.category-menu span {
+  width: 100%;
+  text-align: center;
+  line-height: 40px;
+  border: 5px solid goldenrod;
+  border-right: none;
+  border-bottom: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.category-menu span:first-child {
+  border-top-left-radius: 5px;
+}
+.category-menu span:last-child {
+  border-right: 5px solid goldenrod;
+  border-top-right-radius: 5px;
+}
+.category-menu span.active {
+  background: goldenrod;
+  color: #fff;
+}
+.container {
+  width: 1200px;
+  padding: 40px;
+  border: 5px solid goldenrod;
+  margin-bottom: 150px;
+}
+.container ul {
+  display: flex;
+  gap: 34px;
+  flex-wrap: wrap;
+}
+.container ul li img {
+  width: 250px;
+}
+.title {
+  font: 18px;
+  font-weight: 500;
+}
+.price {
+  color: brown;
+}
