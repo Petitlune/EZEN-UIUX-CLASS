@@ -1,0 +1,62 @@
+자주 사용될 것 같은 컴포넌트 함수에 저장 
+=> util.js에  getEmotionImgById 함수에 저장해둠
+
+if  와 else if 는 서로 관계가 있을 때 사용(if도 적용 받으면서 else if...)
+if문이 따로 독립적으로 사용될 때느 서로 관계가 없을 때
+
+react  <Link> = a(앵커) 태그의 역할을 함. 
+
+ useNavigate훅 : 현재로부터 몇번째 전으로 이동할 것인가에 대해 사용하는 훅
+
+* 데이터를 배열안에 담아 놓았다. => 반복해서 배열안에 있는 값을 처리하겠다는 의미
+- for(*in / of / forEach),  while
+ = map함수 사용
+
+<div class = "common emotionId1"> 
+
+
+</div>
+
+
+<지금까지 작업한 일기 과정>
+1. 공통 컴포넌트 
+ - 버튼
+ - 헤더영역
+ - editor : 일기 편집 및 새로작성 
+
+2. 공통 함수
+ - 이미지 불러오는 함수
+ - 찾아온 이미지 선택했을 때 기능 구현 함수
+ - 오늘의 날짜를 셋팅하는 함수
+
+3. 컴포넌트 안에서 일기 데이터가 업데이트 => 저장!!!
+
+ 값이 변경!!!
+저장 => 관리 => 컴포넌트 전달!!! 
+=> state / 상태변화. 관리 => useState( )
+but 지금 상태변화가 여러군데에서 일어나고 있어서(과부하 걸리지 않도록) 컴포넌트 밖에서 state 변화 처리하도록 할 것 이다.  => useReducer ( )
+
+
+const reducer = (value, action) => {
+switch(action)
+case action 1 :
+return ~~~
+}
+
+const [state, dispatch] = useReducer(컴포넌트 밖에서 대기하고 있던 함수(reducer), 초기값)
+
+이벤트 발생 => dispatch({
+key : value
+})
+
+4. react.js
+ - Creat
+ - Read
+ - Update
+ - Delete   에 입각해서 작성한다. 
+
+useRef( ) : DOM을 컨트롤 하고자 할 때 사용
+
+
+10개의 일기가 존재 
+[1번, 2번, 3번, ...............]

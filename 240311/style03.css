@@ -20,7 +20,7 @@ body {
 .slide-wrapper {
   width: 660px;
   height: 200px;
-  overflow: hidden;
+  /* overflow: hidden; */
   margin: 0 auto;
   position: relative;
 }
@@ -28,7 +28,7 @@ body {
   position: absolute;
   left: 0%;
   top: 0%;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .slides.animated {
   transition: all 0.5s ease-out;

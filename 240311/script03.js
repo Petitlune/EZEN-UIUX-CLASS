@@ -74,3 +74,6 @@ const moveSlide = (num) => {
 nextBtn.addEventListener("click", () => {
   moveSlide(currentIdx + 1);
 });
+prevBtn.addEventListener("click", () => {
+  moveSlide(currentIdx - 1);
+});
