@@ -13,19 +13,19 @@ import { type } from "@testing-library/user-event/dist/type";
 const mockData = [
   {
     id: "mock1",
-    date: new Date().getTime(),
+    date: new Date().getTime() - 1,
     emotionId: 1,
     content: "mock1",
   },
   {
     id: "mock2",
-    date: new Date().getTime(),
+    date: new Date().getTime() - 2,
     emotionId: 2,
     content: "mock2",
   },
   {
     id: "mock3",
-    date: new Date().getTime(),
+    date: new Date().getTime() - 3,
     emotionId: 3,
     content: "mock3",
   },
@@ -107,9 +107,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/new" element={<New />} />
-
             <Route path="/diary/:id" element={<Diary />} />
-            <Route path="/edit" element={<Edit />} />
+            <Route path="/edit/:id" element={<Edit />} />
           </Routes>
           {/* <div>
         <Link to={"/"}>Home</Link>

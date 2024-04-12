@@ -68,3 +68,23 @@ export const emotionList = [
     img: getEmotionImgById(5),
   },
 ];
+
+// 4월이면 => 하단 본문영역에 나타나야하는 일기는 4월에 작성한 일기만 나와야한다. => 2024.4.1. 0.0.0 작성한것부터 2024.4.30.23.59.59까지 읽게 하려면 (위는 인간의 생각) 컴퓨터가 2024 . 5 . 0 . 23.59.59 으로 읽게 해야한다. ===> 4월의 마지막날 마지막 시간의 시점(컴퓨터는 0일 존재)
+// =============== > getMonthRangeByData
+// getMonthRangeByDate: 특정 월 시작점부터 마지막날 끝점까지 지정하는 함수
+export const getMonthRangeByDate = (date) => {
+  const beginTimeStamp = new Date(
+    date.getFullYear(),
+    date.getMonth(),
+    1
+  ).getTime();
+  const endTimeStamp = new Date(
+    date.getFullYear(),
+    date.getMonth() + 1,
+    0,
+    23,
+    59,
+    59
+  ).getTime();
+  return { beginTimeStamp, endTimeStamp };
+};

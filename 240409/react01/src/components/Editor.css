@@ -20,11 +20,11 @@
 }
 .Editor textarea {
   width: 100%;
-  max-width: 1200px;
+  /* max-width: 1200px; */
   min-height: 200px;
 }
 .bottom_section h4 {
-  max-width: 1200px;
+  /* max-width: 1200px; */
 
   display: flex;
   justify-content: space-between;
@@ -34,5 +34,5 @@
   display: flex;
   gap: 2%;
   justify-content: space-around;
-  max-width: 1200px;
+  /* max-width: 1200px; */
 }

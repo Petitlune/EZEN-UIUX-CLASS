@@ -1,0 +1,11 @@
+const slide = li 8개
+ const slideCount = slide.length
+
+새로운 너비 =640 * li.length px
+ul.style.width = 새로운 너비
+
+초기값 
+
+const 초기translate값 =- ( 640 * slide.length)
+ul.style.transform = `translateX(${const 초기translate값}px)`
+

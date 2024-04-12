@@ -12,7 +12,6 @@ body {
   position: relative;
   width: 750px;
   height: 374px;
-
   border-radius: 18px;
   overflow: hidden;
   margin: 0 auto;
@@ -26,6 +25,22 @@ body {
 }
 .slides.animated {
   transition: all 0.3s ease-out;
+}
+.pageNum {
+  position: absolute;
+  width: 58px;
+  height: 30px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.2);
+  right: 20px;
+  bottom: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+.pageNum span {
+  color: #fff;
 }
 .controls {
   position: absolute;
