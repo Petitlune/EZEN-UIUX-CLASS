@@ -6,7 +6,7 @@ import React from "react";
 // import Editor from "../components/Editor";
 import { useState, useContext, useEffect } from "react";
 import { DiaryStateContext } from "../App";
-import { getMonthRangeByDate } from "../util";
+import { getMonthRangeByDate, setPageTitle } from "../util";
 import DiaryList from "../components/DiaryList";
 import Button from "../components/Button";
 import Header from "../components/Header";
@@ -30,7 +30,10 @@ const Home = () => {
   //최신 일기순으로 순서 정렬
   const [filteredData, setFilteredData] = useState([]);
   useEffect(() => {
-    if (data.length > 1) {
+    setPageTitle("감정일기장 Mainpage");
+  }, []);
+  useEffect(() => {
+    if (data.length >= 1) {
       const { beginTimeStamp, endTimeStamp } = getMonthRangeByDate(pivotDate);
       setFilteredData(
         data.filter(

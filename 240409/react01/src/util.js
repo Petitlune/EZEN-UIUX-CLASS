@@ -88,3 +88,9 @@ export const getMonthRangeByDate = (date) => {
   ).getTime();
   return { beginTimeStamp, endTimeStamp };
 };
+
+//상단 타이틀 바꾸게끔하는 함수
+export const setPageTitle = (title) => {
+  const titleElement = document.getElementsByTagName("title")[0];
+  titleElement.innerText = title;
+};

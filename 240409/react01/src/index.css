@@ -1,22 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Yeon+Sung&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Hahmlet:wght@100..900&display=swap");
 /* font-family: "Yeon Sung"; */
 /* font-family: "Nanum Pen Script"; */
+/* font-family: "Hahmlet" */
 
 body {
   width: 100%;
-  height: 100vh;
+  height: auto;
   background: #f6f6f6;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: "Nanum Pen Script";
+  margin-top: 50px;
 }
 
 #root {
   width: 100%;
   max-width: 600px;
-  height: 100vh;
-  max-height: 800px;
+  height: auto;
+  min-height: 700px;
   background: #fff;
   border-radius: 8px;
   padding: 40px 20px;

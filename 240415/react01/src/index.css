@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@font-face {
+  font-family: "Mapo";
+  src: url("./fonts/MapoGoldenPier.ttf");
+}
+
+/* font-family: "Mapo" */
+/* font-family: "Inter" */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 430px;
+  height: auto;
+  margin: 0 auto;
+  background: #fff;
+  font-family: "Mapo";
+  color: #222;
+}

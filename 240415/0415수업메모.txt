@@ -1,0 +1,8 @@
+* localstorage를 사용할 때 유의사항
+- 아이템을 저장할 때, setItem( )
+- 아이템 가져올 때, getItem( )
+- 아이템을 지울 때, removeItem( )
+- 로컬스토리지에 값이 저장되면 json 의 형태
+- 값의 형 변환 필수
+
+useEffect는 주로 API 가져올때 사용하는 훅
