@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap");
+
+body {
+  background: url("https://images.pexels.com/photos/1431822/pexels-photo-1431822.jpeg?cs=srgb&dl=pexels-brett-sayles-1431822.jpg&fm=jpg")
+    top/cover no-repeat;
+  height: 100vh;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 10px;
+  font-family: "Hi Melody";
+}
+.weatherBox {
+  border: 4px solid #3a7387;
+  border-radius: 30px;
+  padding: 50px 80px;
+  margin-bottom: 20px;
+  background: #fff;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-align: center;
+  line-height: 2;
+}
+.weatherButton {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.weatherButton button {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #fff;
+}
+.weatherButton button:hover {
+  color: #000;
+}
+.cityName {
+  text-transform: uppercase;
+}
