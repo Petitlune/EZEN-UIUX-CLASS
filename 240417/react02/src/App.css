@@ -1,0 +1,64 @@
+/*common*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+/*header*/
+.nav-header {
+  display: flex;
+  padding: 40px;
+  justify-content: space-between;
+  align-items: center;
+}
+.toggle-menu {
+  cursor: pointer;
+}
+.login-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+}
+/*logo*/
+.nav-logo {
+  display: flex;
+  justify-content: center;
+  margin: -30px 0 14px 0;
+}
+/*menu*/
+.nav-menu-area {
+  display: flex;
+  justify-content: center;
+}
+.menu {
+  display: flex;
+}
+.menu li a {
+  text-decoration: none;
+  color: inherit;
+  margin-left: 20px;
+}
+/*search*/
+.search-box {
+  position: absolute;
+  right: 50px;
+  top: 154px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+.search-box input {
+  border: 1px solid transparent;
+  width: 150px;
+  padding-left: 10px;
+}
+.search-box input:focus {
+  outline: none;
+  border-bottom: 1px solid #000;
+}

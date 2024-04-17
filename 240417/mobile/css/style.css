@@ -1,0 +1,173 @@
+/*reset*/
+@import url("./reset.css");
+
+/*variables*/
+@import url("./variables.css");
+/*common*/
+.slogan span {
+  font-family: var(--primary-kr);
+  color: var(--dark-black);
+  line-height: 1.5em;
+  font-size: 14px;
+}
+.container {
+  width: 100%;
+  position: relative;
+}
+.preloading,
+.signin {
+  height: 100vh;
+}
+.btn-primary {
+  border: 1px solid #f00;
+  border: none;
+  padding: 8px;
+  width: 100%;
+  font-size: 18px;
+  color: #fff;
+}
+/*preloading*/
+.preloading-inner {
+  height: inherit;
+  background: url("../images/preloading-back.jpg") top left/ cover no-repeat;
+  position: relative;
+}
+.heading-preloading {
+  position: absolute;
+  top: 160px;
+  left: 30px;
+  width: 220px;
+  height: 180px;
+}
+.logo {
+  font-family: var(--logo-en);
+  color: var(--crimson);
+  font-size: 28px;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+.slogan span {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--secondary-kr);
+  font-size: 24px;
+  font-weight: bolder;
+  line-height: 1.5;
+}
+/*signin*/
+.signin {
+  height: 700px;
+}
+.signin-photo {
+  background: url("../images/signin-header.jpg") center/520px auto no-repeat;
+  height: 250px;
+}
+.signin-header {
+  text-align: center;
+}
+.signin-header .logo {
+  font-size: 28px;
+  color: black;
+  letter-spacing: 0.4px;
+  margin: 10px 0;
+}
+.signin-header p {
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+.signin-field input {
+  width: 100%;
+  margin-bottom: 5px;
+  padding: 10px 20px;
+  border: 1px solid var(--gainsboro);
+  border-radius: 30px;
+}
+.signin-field input:focus {
+  outline: none;
+  border-color: var(--yellowgreen);
+}
+.signin-field input::placeholder {
+  color: var(--silver-gray);
+  transition: all 0.3s;
+}
+.signin-field input:focus::placeholder {
+  opacity: 0;
+}
+.status {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin: 10px 0;
+}
+.custom-chk label input[type="checkbox"] {
+  display: none;
+}
+.custom-chk label input[type="checkbox"] + em {
+  display: inline-block;
+  transform: translateY(4px);
+  margin-left: 6px;
+  width: 18px;
+  height: 18px;
+  border-radius: 100%;
+  border: 2px solid var(--crimson);
+}
+.custom-chk label input[type="checkbox"] + em::before {
+  content: "\f00c";
+  font-family: fontawesome;
+  font-style: normal;
+  font-size: 10px;
+  color: var(--light-gray);
+  position: absolute;
+  bottom: 2px;
+  left: 2px;
+}
+.custom-chk label input[type="checkbox"]:checked + em::before {
+  color: var(--crimson);
+}
+.btn-signin {
+  background: var(--yellowgreen);
+}
+.join-member {
+  text-align: center;
+  margin: 10px 0;
+}
+.join-member a {
+  text-decoration: underline;
+}
+.easy-signin {
+  text-align: center;
+}
+.easy-signin span {
+  color: var(--light-gray);
+}
+.social-btn {
+  margin: 10px 0;
+}
+.social-btn a {
+  margin: 2px;
+}
+/*gnb*/
+.gnb {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 65px;
+  /* display: flex; */
+  justify-content: space-around;
+  border-top: 1px solid var(--cloudy-gray);
+  align-items: center;
+  background: #fff;
+}
+.gnb a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+.gnb a i {
+  font-size: 18px;
+}

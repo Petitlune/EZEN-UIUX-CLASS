@@ -1,7 +1,7 @@
 const slides = document.querySelector("ul");
 const slide = slides.querySelectorAll("li");
 const slideCount = slide.length;
-const slidesWidth = 750;
+const slidesWidth = 800;
 const nextBtn = document.querySelector(".next");
 const prevBtn = document.querySelector(".prev");
 const pageNum = document.querySelector(".pageNum ");
