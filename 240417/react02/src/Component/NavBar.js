@@ -5,11 +5,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBars,
   faSearch,
-  faToggleOn,
   faUser,
-  faUserAlt,
   faUserCheck,
-  faUserEdit,
 } from "@fortawesome/free-solid-svg-icons";
 
 const menuList = [
@@ -43,7 +40,7 @@ const NavBar = ({ authenticate, setAuthenticate }) => {
             <span> 로그아웃</span>
           </div>
         ) : (
-          <div onClick={() => setAuthenticate(true)} className="login-menu">
+          <div onClick={() => navigate("/login")} className="login-menu">
             <FontAwesomeIcon icon={faUser} />
             <span> 로그인</span>
           </div>
