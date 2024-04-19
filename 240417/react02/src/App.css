@@ -65,9 +65,42 @@ li {
   border-bottom: 1px solid #000;
 }
 /*product card*/
+
 .productcard {
   padding: 20px 0;
 }
 .productcard img {
   margin-bottom: 10px;
+}
+
+.productDetail {
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.product-info-text {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+}
+.product-info:first-child {
+  font: bold 1.2rem/1.5 "arial";
+}
+.price {
+  font-style: italic;
+}
+.product-info {
+  margin: 10px;
+}
+.choice {
+  margin: 0 0 10px 14px;
+  font: lighter 0.8rem/1 "arial";
+  color: #f00;
+}
+.size,
+.add-button {
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 500px;
 }

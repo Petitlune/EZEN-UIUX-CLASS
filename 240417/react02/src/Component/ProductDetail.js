@@ -1,6 +1,5 @@
-import React from "react";
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Dropdown, Button } from "react-bootstrap";
 
 const ProductDetail = () => {
@@ -8,7 +7,7 @@ const ProductDetail = () => {
   const [loading, setLoading] = useState(false);
   const { id } = useParams();
   const getProductDetail = async () => {
-    const url = `http://localhost:3000/products/${id}`;
+    const url = `https://my-json-server.typicode.com/Petitlune/Shopping-Website/products/${id}`;
     setLoading(true);
     const response = await fetch(url);
     const data = await response.json();
@@ -19,22 +18,26 @@ const ProductDetail = () => {
     getProductDetail();
   }, []);
   if (loading || product == null) {
-    return <h1>Data Loading....</h1>;
+    return <h1>Data Loading...</h1>;
   } else {
     return (
-      <Container>
+      <Container className="productDetail">
         <Row>
-          <Col className="product-detail">
+          <Col className="product-detail-img">
             <img src={product?.img} alt="imgInfo" />
           </Col>
-          <Col>
-            <div className="product-info">{product?.title} </div>
-            <div className="product-info">{product?.price} </div>
+          <Col className="product-info-text">
+            <div className="product-info">◎ {product?.title}</div>
+            <div className="product-info price">￦{product?.price}</div>
             <div className="choice">
               {product?.choice ? "Conscious Point" : ""}
             </div>
             <Dropdown className="drop-down">
-              <Dropdown.Toggle variant="outline-dark" id="dropdown-basic">
+              <Dropdown.Toggle
+                className="size"
+                variant="outline-dark"
+                id="dropdown-basic"
+              >
                 사이즈 선택
               </Dropdown.Toggle>
               <Dropdown.Menu>
