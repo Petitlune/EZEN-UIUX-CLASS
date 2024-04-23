@@ -2,17 +2,18 @@ import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import ProductCard from "./ProductCard";
 import { Container, Row, Col } from "react-bootstrap";
+import { productAction } from "../redux/actions/productAction";
+import { useDispatch, useSelector } from "react-redux";
 
 const ProductAll = () => {
-  const [productList, setProdcutList] = useState([]);
+  // const [productList, setProdcutList] = useState([]);
+  const dispatch = useDispatch();
+  const productList = useSelector((state) => state.product.productList);
   const [query, setQuery] = useSearchParams();
-  const searchQuery = query.get("q") || "";
-  console.log(searchQuery);
+
   const getProducts = async () => {
-    const url = `https://my-json-server.typicode.com/Petitlune/Shopping-Website/products?q=${searchQuery}`;
-    const response = await fetch(url);
-    const data = await response.json();
-    setProdcutList(data);
+    const searchQuery = query.get("q") || "";
+    dispatch(productAction.getProducts(searchQuery));
   };
   useEffect(() => {
     getProducts(); //json 데이터 찾아오는 역할

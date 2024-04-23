@@ -1,12 +1,13 @@
 @import "./reset.css";
 @import "./font.css";
 body {
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
 }
 .wrap {
   font-family: "Pre";
   position: relative;
   color: #111;
+  width: 100%;
 }
 /*-----header-----*/
 header {
@@ -182,26 +183,27 @@ nav {
 /*-----content-slide-----*/
 .content-slide {
   width: 100%;
+  margin-top: 124px;
   display: flex;
   justify-content: center;
-  margin-top: 124px;
-  /* overflow: hidden; */
 }
-.content-slide ul {
+.content-slide-wrap {
   position: relative;
+  width: 1440px;
+  border: 1px solid red;
+}
+
+.content-slide-wrap ul {
   display: flex;
-  width: 75vw;
-  min-width: 1000px;
-  justify-content: flex-start;
+  gap: 80px;
 }
-.content-slide ul li {
-  margin-right: 80px;
-  width: 75vw;
-  min-width: 1000px;
+.content-slide-wrap ul.animated {
+  transition: all 0.5s ease-out;
 }
-.content-slide ul li img {
+.slide-wrap ul li {
   width: 100%;
 }
+
 .slide-btn span {
   position: absolute;
   display: inline-block;
@@ -215,6 +217,7 @@ nav {
   top: 50%;
   transform: translateY(-50%);
   box-shadow: 0 0 32px rgba(100, 100, 100, 0.2);
+  z-index: 2;
 }
 .slide-btn span:first-child {
   left: -21px;
@@ -240,6 +243,7 @@ nav {
   border-radius: 20px;
   font-size: 0.8rem;
   color: #fff;
+  z-index: 2;
 }
 
 /*-----content-info-----*/
@@ -742,11 +746,11 @@ footer {
 .footer-nav-left,
 .footer-nav-right {
   display: flex;
-  flex-wrap: wrap;
   color: #fff;
 }
 .footer-nav-left {
   width: 80%;
+  min-width: 720px;
   gap: 6%;
   margin-right: 10%;
 }
@@ -754,6 +758,8 @@ footer {
 .footer-nav-right {
   width: 20%;
   gap: 10%;
+  border: 1px solid red;
+  min-width: 200px;
 }
 #familySite {
   width: 160px;
@@ -813,6 +819,7 @@ em {
 }
 .footer-desc {
   display: flex;
+
   justify-content: space-between;
   align-items: flex-end;
 }
