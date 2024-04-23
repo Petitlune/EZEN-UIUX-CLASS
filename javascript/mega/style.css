@@ -229,7 +229,7 @@ nav {
   transform: rotate(180deg);
 }
 
-.current-page {
+.pageNum {
   position: absolute;
   right: 30px;
   bottom: 30px;
