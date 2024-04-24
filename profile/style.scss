@@ -1,0 +1,307 @@
+@import "reset";
+@import "variable";
+body {
+  background: map-get($font-color, bg);
+}
+// header
+header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100px;
+  background: map-get($font-color, primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24px;
+  color: #fff;
+  padding: 0 100px;
+  z-index: 999;
+  .gnb {
+    display: flex;
+    gap: 50px;
+    a {
+      font-family: map-get($font-family, main_en);
+    }
+  }
+  .toggle-btn {
+    display: none;
+  }
+}
+// common
+.wrap {
+  width: 100%;
+  height: auto;
+  color: map-get($font-color, primary-dark);
+  background: url("./img/cloud.png") top left;
+  font-family: map-get($font-family, sub_kr);
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  margin: 100px auto 0;
+
+  // border: 1px solid red;
+}
+.container {
+  width: 100%;
+  height: auto;
+  min-height: 800px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 80px;
+}
+.section {
+  width: 100%;
+  height: auto;
+  display: flex;
+}
+.section-tit {
+  font-size: 48px;
+  font-family: map-get($font-family, main_en);
+  font-weight: 600;
+  width: 180px;
+  height: 72px;
+  text-align: center;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background: map-get($font-color, primary);
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -2px;
+    width: 50%;
+    height: 8px;
+    background: map-get($font-color, primary);
+  }
+}
+.section-inner {
+  width: 100%;
+  height: 100%;
+  margin-top: 60px;
+  padding: 100px;
+  ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    li {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 10px;
+      gap: 36px;
+      .dew {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 150px;
+        height: 150px;
+        background: map-get($font-color, primary);
+        border-radius: 100%;
+        border-top-left-radius: 0;
+      }
+      .desc {
+        width: 280px;
+        text-align: center;
+        h3 {
+          margin-bottom: 8px;
+        }
+      }
+    }
+  }
+}
+// home
+.home {
+  max-width: 1000px;
+
+  .title {
+    display: flex;
+    flex-direction: column;
+    span {
+      font-size: 64px;
+      font-family: map-get($font-family, main_en);
+      font-weight: 500;
+      .blue {
+        color: map-get($font-color, primary);
+      }
+    }
+    .under-text {
+      margin-left: 80px;
+      margin-bottom: 20px;
+    }
+    p {
+      width: 280px;
+      line-height: 1.2;
+      text-align: right;
+      font-size: 20px;
+      font-weight: 500;
+    }
+  }
+  .img {
+    background: url("https://file2.nocutnews.co.kr/newsroom/image/2023/05/25/202305250649476532_0.jpg")
+      center/cover no-repeat;
+    width: 500px;
+    height: 550px;
+  }
+}
+// about
+.about {
+  .container {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
+// skill
+.skill {
+  .container {
+    flex-direction: column;
+    justify-content: flex-start;
+    .section-tit {
+      position: relative;
+      cursor: pointer;
+      #ani-dew {
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        border-top-left-radius: 0;
+        background: map-get($font-color, primary);
+        position: absolute;
+        bottom: -70px;
+        left: 50%;
+        transform: translateX(-50%) rotate(45deg);
+        animation: aniClick 0.8s alternate-reverse infinite;
+      }
+      #ani-dew.active {
+        animation: aniDew 3s linear;
+      }
+      @keyframes aniClick {
+        0% {
+          transform: translateX(-50%) rotate(45deg) scale(1);
+        }
+        100% {
+          transform: translateX(-50%) rotate(45deg) scale(1.2);
+        }
+      }
+      @keyframes aniDew {
+        0% {
+          transform: translateX(-50%) rotate(45deg);
+          bottom: -70px;
+          opacity: 1;
+        }
+        100% {
+          transform: translateX(-50%) rotate(45deg);
+          bottom: -600px;
+          opacity: 0;
+        }
+      }
+    }
+    .section-inner {
+      .skill-content {
+        .skill-box {
+          width: 400px;
+          height: 60px;
+          margin-bottom: 42px;
+          padding: 4px 0;
+          background: map-get($font-color, primary);
+          display: flex;
+          justify-content: center;
+          gap: 8px;
+          h2 {
+            line-height: 60px;
+            color: #fff;
+          }
+        }
+        .skill-desc {
+          display: flex;
+          display: none;
+          justify-content: center;
+          align-items: center;
+          width: 400px;
+          height: 150px;
+          padding: 60px;
+          background: map-get($font-color, primary-light);
+          margin-top: 28px;
+          position: relative;
+          &::before {
+            content: "";
+            width: 40px;
+            height: 40px;
+            background: map-get($font-color, primary-light);
+            position: absolute;
+            left: calc(360px / 2);
+            transform: rotate(45deg);
+            top: -15px;
+            z-index: -1;
+          }
+          p {
+            font-family: map-get($font-family, sub_kr);
+            line-height: 1.5;
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+.project {
+  .container {
+    flex-direction: column;
+    justify-content: flex-start;
+    .section-inner {
+      margin-top: 0;
+      ul {
+        gap: 4%;
+        // flex-wrap: nowrap;
+        // justify-content: flex-start;
+        li {
+          width: 40%;
+          height: auto;
+          min-width: 600px;
+          border: 1px solid red;
+          .clone-project {
+            a {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              gap: 20px;
+              width: 100%;
+              img {
+                width: 100%;
+              }
+              span {
+                display: inline-block;
+                text-align: center;
+                line-height: 32px;
+                height: 42px;
+                width: 140px;
+                padding: 5px 10px;
+                background: map-get($font-color, primary-dark);
+                border-radius: 24px;
+                color: #fff;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

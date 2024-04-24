@@ -1,19 +1,18 @@
 import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
-import Movie from "./Pages/Movie";
+import Movies from "./Pages/Movies";
 import MovieDetail from "./Pages/MovieDetail";
 import Navigation from "./components/Navigation";
 
 function App() {
   return (
-    <div className="wrapper">
+    <div>
       <Navigation />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/movie" element={<Movie />} />
-        <Route path="/movie/:id" element={<MovieDetail />} />
+        <Route path="/movies" element={<Movies />} />
+        <Route path="/movies/:id" element={<MovieDetail />} />
       </Routes>
     </div>
   );

@@ -1,31 +1,32 @@
-//API 끌어오기
 import axios from "axios";
 
 const api = axios.create({
   baseURL: "https://api.themoviedb.org/3",
-  timeout: 1000,
-  //headers는 응답메세지를 의미함.
   headers: { "Content-Type": "application/json" },
 });
 
-//데이터 불러올때 오류시 요청사항
 api.interceptors.request.use(
   function (config) {
+    // Do something before request is sent
     console.log("request start", config);
     return config;
   },
   function (error) {
-    console.log("request error", error);
+    // Do something with request error
+    console.log("requset error", error);
     return Promise.reject(error);
   }
 );
-
 api.interceptors.response.use(
   function (response) {
     console.log("get response", response);
+    // 2xx 범위에 있는 상태 코드는 이 함수를 트리거 합니다.
+    // 응답 데이터가 있는 작업 수행
     return response;
   },
   function (error) {
+    // 2xx 외의 범위에 있는 상태 코드는 이 함수를 트리거 합니다.
+    // 응답 오류가 있는 작업 수행
     console.log("request error", error);
     return Promise.reject(error);
   }

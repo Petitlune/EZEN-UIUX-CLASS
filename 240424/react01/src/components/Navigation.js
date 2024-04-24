@@ -1,16 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Form, Navbar, Container, Nav, Button } from "react-bootstrap";
-import netfilx from "../image/netflix.png";
+import {
+  Form,
+  Navbar,
+  Container,
+  Nav,
+  NavDropdown,
+  Button,
+} from "react-bootstrap";
 
 const Navigation = () => {
   return (
-    <Navbar className="navBar" bg="dark" variant="dark" expand="lg">
+    <Navbar bg="dark" variant="dark" expand="lg">
       <Container fluid>
-        {/* <img width={100} src="https://cromidi.cafe24.com/netflix/netflix.png" /> */}
-        <Link to="/">
-          <img width={100} src={netfilx} alt="netfilx" />
-        </Link>
+        <img width={100} src="https://cromidi.cafe24.com/netflix/netflix.png" />
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -21,7 +24,7 @@ const Navigation = () => {
             <Link to="/" className="nav-item">
               Home
             </Link>
-            <Link to="/movie" className="nav-item">
+            <Link to="/movies" className="nav-item">
               Movies
             </Link>
             <Link to="/" className="nav-item">

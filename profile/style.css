@@ -1,0 +1,315 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Orbit&family=Rajdhani:wght@300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@font-face {
+  font-family: "GmarketSansMedium";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  background: #f2f2f2;
+}
+
+header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100px;
+  background: #3f51b5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24px;
+  color: #fff;
+  padding: 0 100px;
+  z-index: 999;
+}
+header .gnb {
+  display: flex;
+  gap: 50px;
+}
+header .gnb a {
+  font-family: "Rajdhani";
+}
+header .toggle-btn {
+  display: none;
+}
+
+.wrap {
+  width: 100%;
+  height: auto;
+  color: #1d2833;
+  background: url("./img/cloud.png") top left;
+  font-family: "GmarketSansMedium";
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  margin: 100px auto 0;
+}
+
+.container {
+  width: 100%;
+  height: auto;
+  min-height: 800px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 80px;
+}
+
+.section {
+  width: 100%;
+  height: auto;
+  display: flex;
+}
+
+.section-tit {
+  font-size: 48px;
+  font-family: "Rajdhani";
+  font-weight: 600;
+  width: 180px;
+  height: 72px;
+  text-align: center;
+  position: relative;
+}
+.section-tit::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  background: #3f51b5;
+}
+.section-tit::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -2px;
+  width: 50%;
+  height: 8px;
+  background: #3f51b5;
+}
+
+.section-inner {
+  width: 100%;
+  height: 100%;
+  margin-top: 60px;
+  padding: 100px;
+}
+.section-inner ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.section-inner ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 10px;
+  gap: 36px;
+}
+.section-inner ul li .dew {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 150px;
+  background: #3f51b5;
+  border-radius: 100%;
+  border-top-left-radius: 0;
+}
+.section-inner ul li .desc {
+  width: 280px;
+  text-align: center;
+}
+.section-inner ul li .desc h3 {
+  margin-bottom: 8px;
+}
+
+.home {
+  max-width: 1000px;
+}
+.home .title {
+  display: flex;
+  flex-direction: column;
+}
+.home .title span {
+  font-size: 64px;
+  font-family: "Rajdhani";
+  font-weight: 500;
+}
+.home .title span .blue {
+  color: #3f51b5;
+}
+.home .title .under-text {
+  margin-left: 80px;
+  margin-bottom: 20px;
+}
+.home .title p {
+  width: 280px;
+  line-height: 1.2;
+  text-align: right;
+  font-size: 20px;
+  font-weight: 500;
+}
+.home .img {
+  background: url("https://file2.nocutnews.co.kr/newsroom/image/2023/05/25/202305250649476532_0.jpg") center/cover no-repeat;
+  width: 500px;
+  height: 550px;
+}
+
+.about .container {
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.skill .container {
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.skill .container .section-tit {
+  position: relative;
+  cursor: pointer;
+}
+.skill .container .section-tit #ani-dew {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  border-top-left-radius: 0;
+  background: #3f51b5;
+  position: absolute;
+  bottom: -70px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  animation: aniClick 0.8s alternate-reverse infinite;
+}
+.skill .container .section-tit #ani-dew.active {
+  animation: aniDew 3s linear;
+}
+@keyframes aniClick {
+  0% {
+    transform: translateX(-50%) rotate(45deg) scale(1);
+  }
+  100% {
+    transform: translateX(-50%) rotate(45deg) scale(1.2);
+  }
+}
+@keyframes aniDew {
+  0% {
+    transform: translateX(-50%) rotate(45deg);
+    bottom: -70px;
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50%) rotate(45deg);
+    bottom: -600px;
+    opacity: 0;
+  }
+}
+.skill .container .section-inner .skill-content .skill-box {
+  width: 400px;
+  height: 60px;
+  margin-bottom: 42px;
+  padding: 4px 0;
+  background: #3f51b5;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+.skill .container .section-inner .skill-content .skill-box h2 {
+  line-height: 60px;
+  color: #fff;
+}
+.skill .container .section-inner .skill-content .skill-desc {
+  display: flex;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 150px;
+  padding: 60px;
+  background: #dddddd;
+  margin-top: 28px;
+  position: relative;
+}
+.skill .container .section-inner .skill-content .skill-desc::before {
+  content: "";
+  width: 40px;
+  height: 40px;
+  background: #dddddd;
+  position: absolute;
+  left: 180px;
+  transform: rotate(45deg);
+  top: -15px;
+  z-index: -1;
+}
+.skill .container .section-inner .skill-content .skill-desc p {
+  font-family: "GmarketSansMedium";
+  line-height: 1.5;
+  font-size: 18px;
+}
+
+.project .container {
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.project .container .section-inner {
+  margin-top: 0;
+}
+.project .container .section-inner ul {
+  gap: 4%;
+}
+.project .container .section-inner ul li {
+  width: 40%;
+  height: auto;
+  min-width: 600px;
+  border: 1px solid red;
+}
+.project .container .section-inner ul li .clone-project a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+.project .container .section-inner ul li .clone-project a img {
+  width: 100%;
+}
+.project .container .section-inner ul li .clone-project a span {
+  display: inline-block;
+  text-align: center;
+  line-height: 32px;
+  height: 42px;
+  width: 140px;
+  padding: 5px 10px;
+  background: #1d2833;
+  border-radius: 24px;
+  color: #fff;
+}/*# sourceMappingURL=style.css.map */
