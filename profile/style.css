@@ -58,6 +58,25 @@ header .toggle-btn {
   font-family: "GmarketSansMedium";
 }
 
+.colorChange {
+  width: 50px;
+  height: 50px;
+  background: #3f51b5;
+  border-top-right-radius: 100%;
+  border-bottom-right-radius: 100%;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 200px;
+  cursor: pointer;
+  z-index: 999;
+}
+.colorChange i {
+  font-size: 24px;
+  color: #fff;
+  line-height: 50px;
+}
+
 .content {
   display: flex;
   flex-direction: column;
@@ -93,8 +112,7 @@ header .toggle-btn {
   text-align: center;
   position: relative;
 }
-.section-tit::after {
-  content: "";
+.section-tit .underbar {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -102,8 +120,7 @@ header .toggle-btn {
   height: 4px;
   background: #3f51b5;
 }
-.section-tit::before {
-  content: "";
+.section-tit .inner {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -198,7 +215,7 @@ header .toggle-btn {
   position: relative;
   cursor: pointer;
 }
-.skill .container .section-tit #ani-dew {
+.skill .container .section-tit .ani-dew {
   width: 50px;
   height: 50px;
   border-radius: 100%;
@@ -210,7 +227,7 @@ header .toggle-btn {
   transform: translateX(-50%) rotate(45deg);
   animation: aniClick 0.8s alternate-reverse infinite;
 }
-.skill .container .section-tit #ani-dew.active {
+.skill .container .section-tit .ani-dew.active {
   animation: aniDew 3s linear;
 }
 @keyframes aniClick {
@@ -248,16 +265,23 @@ header .toggle-btn {
   color: #fff;
 }
 .skill .container .section-inner .skill-content .skill-desc {
+  visibility: hidden;
+  opacity: 0;
   display: flex;
-  display: none;
   justify-content: center;
   align-items: center;
   width: 400px;
-  height: 150px;
-  padding: 60px;
+  height: 0;
+  padding: 20px;
   background: #dddddd;
   margin-top: 28px;
   position: relative;
+  transition: all 1s;
+}
+.skill .container .section-inner .skill-content .skill-desc.active {
+  visibility: visible;
+  opacity: 1;
+  height: 150px;
 }
 .skill .container .section-inner .skill-content .skill-desc::before {
   content: "";
@@ -282,30 +306,144 @@ header .toggle-btn {
 }
 .project .container .section-inner {
   margin-top: 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.project .container .section-inner .modalScreen {
+  position: fixed;
+  top: 10%;
+  bottom: 0;
+  margin: auto;
+  width: 80%;
+  height: 78%;
+  background: #dddddd;
+  border-radius: 20px;
+  z-index: 10;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.project .container .section-inner .modalScreen .modalScreenInner {
+  width: 94%;
+  border: 4px solid #fff;
+  height: 90%;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+.project .container .section-inner .modalScreen .modalScreenInner .cloneWeb {
+  width: 58%;
+  height: 100%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+.project .container .section-inner .modalScreen .modalScreenInner .cloneWeb img {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
+  transition: all 5s ease-in-out;
+}
+.project .container .section-inner .modalScreen .modalScreenInner .cloneWeb img:hover {
+  -o-object-position: bottom;
+     object-position: bottom;
+}
+.project .container .section-inner .modalScreen .modalScreenInner .project-text {
+  width: 38%;
+  height: 90%;
+  margin: 2%;
+  background: #fff;
+}
+.project .container .section-inner .modalScreen .modalScreenInner .modalCloseBtn {
+  position: absolute;
+  display: inline-block;
+  right: 10px;
+  top: 10px;
+  width: 64px;
+  height: 64px;
+  text-align: center;
+  line-height: 64px;
+  border-radius: 100%;
+  background: #dddddd;
+  cursor: pointer;
+}
+.project .container .section-inner .modalScreen .modalScreenInner .modalCloseBtn i {
+  font-family: "FontAwesome";
+  content: "\f00d";
+  font-size: 48px;
+  color: #3f51b5;
 }
 .project .container .section-inner ul {
-  gap: 4%;
+  gap: 2%;
 }
-.project .container .section-inner ul li {
+.project .container .section-inner ul .modalList {
   width: 40%;
   height: auto;
-  min-width: 600px;
-  border: 1px solid red;
+  min-width: 480px;
+  margin-bottom: 28px;
+  background: #dddddd;
+  border-radius: 20px;
+  position: relative;
+  transition: all 0.3s;
 }
-.project .container .section-inner ul li .clone-project a {
+.project .container .section-inner ul .modalList.active {
+  background: #3f51b5;
+}
+.project .container .section-inner ul .modalList::after {
+  font-family: "FontAwesome";
+  content: "\f245";
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  font-size: 42px;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+.project .container .section-inner ul .modalList .dew {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  border-top-left-radius: 0;
+  background: #3f51b5;
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-135deg);
+  z-index: 5;
+}
+.project .container .section-inner ul .modalList:hover::after {
+  display: flex;
+}
+.project .container .section-inner ul .modalList .clone-project a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 12px;
   width: 100%;
 }
-.project .container .section-inner ul li .clone-project a img {
-  width: 100%;
+.project .container .section-inner ul .modalList .clone-project a img {
+  width: 94%;
 }
-.project .container .section-inner ul li .clone-project a span {
+.project .container .section-inner ul .modalList .clone-project a span {
   display: inline-block;
   text-align: center;
-  line-height: 32px;
+  line-height: 34px;
   height: 42px;
   width: 140px;
   padding: 5px 10px;

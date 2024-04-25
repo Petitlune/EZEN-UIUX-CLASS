@@ -37,6 +37,25 @@ header {
   background: url("./img/cloud.png") top left;
   font-family: map-get($font-family, sub_kr);
 }
+.colorChange {
+  width: 50px;
+  height: 50px;
+  background: map-get($font-color, primary);
+  border-top-right-radius: 100%;
+  border-bottom-right-radius: 100%;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 200px;
+  cursor: pointer;
+  z-index: 999;
+
+  i {
+    font-size: 24px;
+    color: #fff;
+    line-height: 50px;
+  }
+}
 .content {
   display: flex;
   flex-direction: column;
@@ -70,8 +89,7 @@ header {
   height: 72px;
   text-align: center;
   position: relative;
-  &::after {
-    content: "";
+  .underbar {
     position: absolute;
     left: 0;
     bottom: 0;
@@ -79,8 +97,7 @@ header {
     height: 4px;
     background: map-get($font-color, primary);
   }
-  &::before {
-    content: "";
+  .inner {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -178,7 +195,7 @@ header {
     .section-tit {
       position: relative;
       cursor: pointer;
-      #ani-dew {
+      .ani-dew {
         width: 50px;
         height: 50px;
         border-radius: 100%;
@@ -190,7 +207,7 @@ header {
         transform: translateX(-50%) rotate(45deg);
         animation: aniClick 0.8s alternate-reverse infinite;
       }
-      #ani-dew.active {
+      .ani-dew.active {
         animation: aniDew 3s linear;
       }
       @keyframes aniClick {
@@ -231,16 +248,23 @@ header {
           }
         }
         .skill-desc {
+          visibility: hidden;
+          opacity: 0;
           display: flex;
-          display: none;
           justify-content: center;
           align-items: center;
           width: 400px;
-          height: 150px;
-          padding: 60px;
+          height: 0;
+          padding: 20px;
           background: map-get($font-color, primary-light);
           margin-top: 28px;
           position: relative;
+          transition: all 1s;
+          &.active {
+            visibility: visible;
+            opacity: 1;
+            height: 150px;
+          }
           &::before {
             content: "";
             width: 40px;
@@ -268,29 +292,140 @@ header {
     justify-content: flex-start;
     .section-inner {
       margin-top: 0;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .modalScreen {
+        position: fixed;
+        top: 10%;
+        bottom: 0;
+        margin: auto;
+        width: 80%;
+        height: 78%;
+        background: map-get($font-color, primary-light);
+        border-radius: 20px;
+        z-index: 10;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        .modalScreenInner {
+          width: 94%;
+          border: 4px solid #fff;
+          height: 90%;
+          border-radius: 20px;
+          display: flex;
+          // gap: 2%;
+          justify-content: space-between;
+          align-items: center;
+          overflow: hidden;
+          position: relative;
+          .cloneWeb {
+            width: 58%;
+            height: 100%;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            img {
+              display: inline-block;
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              object-position: top;
+              transition: all 5s ease-in-out;
+              &:hover {
+                object-position: bottom;
+              }
+            }
+          }
+          .project-text {
+            width: 38%;
+            height: 90%;
+            margin: 2%;
+            background: #fff;
+          }
+          .modalCloseBtn {
+            position: absolute;
+            display: inline-block;
+            right: 10px;
+            top: 10px;
+            width: 64px;
+            height: 64px;
+            text-align: center;
+            line-height: 64px;
+            border-radius: 100%;
+            background: map-get($font-color, primary-light);
+            cursor: pointer;
+            i {
+              font-family: "FontAwesome";
+              content: "\f00d";
+              font-size: 48px;
+              color: map-get($font-color, primary);
+            }
+          }
+        }
+      }
       ul {
-        gap: 4%;
-        // flex-wrap: nowrap;
-        // justify-content: flex-start;
-        li {
+        gap: 2%;
+        .modalList {
           width: 40%;
           height: auto;
-          min-width: 600px;
-          border: 1px solid red;
+          min-width: 480px;
+          margin-bottom: 28px;
+          background: map-get($font-color, primary-light);
+          border-radius: 20px;
+          position: relative;
+          transition: all 0.3s;
+          &.active {
+            background: map-get($font-color, primary);
+          }
+          &::after {
+            font-family: "FontAwesome";
+            content: "\f245";
+            display: none;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 20px;
+            width: 100%;
+            height: 100%;
+            font-size: 42px;
+            font-weight: 500;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+          }
+          .dew {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+            border-top-left-radius: 0;
+            background: map-get($font-color, primary);
+            position: absolute;
+            top: -35px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-135deg);
+            z-index: 5;
+          }
+          &:hover::after {
+            display: flex;
+          }
+
           .clone-project {
             a {
               display: flex;
               flex-direction: column;
               align-items: center;
-              gap: 20px;
+              gap: 12px;
               width: 100%;
               img {
-                width: 100%;
+                width: 94%;
               }
               span {
                 display: inline-block;
                 text-align: center;
-                line-height: 32px;
+                line-height: 34px;
                 height: 42px;
                 width: 140px;
                 padding: 5px 10px;
