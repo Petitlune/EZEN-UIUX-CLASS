@@ -1,0 +1,62 @@
+< typescript >
+1. TS 사용해야하는 이유
+2. TS 세팅하는 방법
+3. TS Compiler Option 세팅하는 방법
+
+
+모듈 
+Node.js => JS 모듈 정식 표준 설정 / 생성x
+CommonJS  > import => require를 사용 / export  =>  exports.객체
+
+npm i tsx (모듈 전쟁때문에...)
+
+2명의 개발자가 넷플릭스를 만들기로 했다.
+ > 1명은 CJS로 만들었고
+ >  다른 한명은 ESM로 만들었다. 
+
+====> 이 문제를 해결하기 위해(서로 다른 모듈의 호환을 위해 나온 것이 esModuleInterop 이다.)
+
+외부라이브러리에 의존도가 높은 Redux같은 프로그램 사용시 모듈 충돌 방지를 위해
+ "moduleResolution": "Node" 사용함. 
+
+타입스크립트에서 반복문 쓰는데 오류가 나는 것을 방지하기 위해     "downlevelIteration": true 사용.
+
+타입스크립트가 자바스크립트 끌어오고 싶을 때  "allowJs": true  사용.
+
+
+1. TS 주석
+- JS 타입 종류 : 
+1) 원시타입 : number, string, boolean, null, undefine
+2) 참조타입 : object, array, function
+
+2. TS 추론
+- 굳이 주석 달지 않아도 됨. 하지만 특별한 케이스는 사용해야됨.
+
+3. TS 치트키(*any타입)
+
+4. TS
+- JS VS => undefined/null : value 값으로만 사용됨. 
+- TS => undefined/null 타입으로 지정 가능하다.
+       ==> TS 타입의 분류를 Super Type(받을 수 있는 값 많음)과 Sub Type으로 나눔
+
+5. TS에서 object => 객체계의 any임. (객체계의 치트키임)
+- interface => 객체 안에 들어가있는 각각의 key & value 값의 타입을 정의 
+- 익명  interface : 이름을 부여하지 않은 interface
+- optional property(선택 속성) : 객체 안에 있어도 되고 없어도 되는 타입을 정의하고자 할 때 
+
+6. class 타입 정의하기
+- 유사한 형태의 객체가 반복적으로 사용되어야할 때 class  사용. 
+new Class( ) ex) Date / Array ...
+
+7. interface의 응용
+ - 객체의 세부타입을 정의
+ - class 선언 할 때 참고 활용
+ - class가 interface를 참고해서 객체를 구현할 때에는 implements(:실행하다)
+ - 반드시 implement를 하기로한 인터페이스 객체를 구현!!!
+
+9. 추상클래스
+ - 추상화
+ - 추상 -> 명쾌하지 않음
+ - 어떤 사물이나 개념에서 공통점을 찾아서 추출한 형이상학적인 개념.
+ - 공통적인 부분만 재활용하기 위해서 class 함수를 재활용한 것을 추상클래스라 한다.
+

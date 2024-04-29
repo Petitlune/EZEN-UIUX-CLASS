@@ -1,9 +1,9 @@
 import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Question from "./pages/Question";
 import Result from "./pages/Result";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (

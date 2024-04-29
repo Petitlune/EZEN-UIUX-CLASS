@@ -58,6 +58,29 @@ header .toggle-btn {
   font-family: "GmarketSansMedium";
 }
 
+.color-select-box {
+  position: fixed;
+  left: 0;
+  bottom: 200px;
+  cursor: pointer;
+  z-index: 999;
+  display: flex;
+}
+.color-select-box .colorBox {
+  width: 160px;
+  height: 140px;
+  padding: 20px;
+  border: 1px solid red;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.color-select-box .colorBox .select-color {
+  width: 50px;
+  height: 50px;
+  border: 1px solid red;
+}
+
 .colorChange {
   width: 50px;
   height: 50px;
@@ -65,11 +88,6 @@ header .toggle-btn {
   border-top-right-radius: 100%;
   border-bottom-right-radius: 100%;
   text-align: center;
-  position: fixed;
-  left: 0;
-  bottom: 200px;
-  cursor: pointer;
-  z-index: 999;
 }
 .colorChange i {
   font-size: 24px;

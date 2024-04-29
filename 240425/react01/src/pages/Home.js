@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
 import catImage from "../assets/ggompang.jpeg";
 
@@ -58,6 +59,10 @@ const Button = styled.button`
   background-color: #000000;
 `;
 const Home = () => {
+  const navigate = useNavigate();
+  const handleClickButton = () => {
+    navigate("/question");
+  };
   return (
     <Wrapper>
       <Header>💖예비 집사 판별기💖</Header>
@@ -73,7 +78,7 @@ const Home = () => {
           />
         </LogoImage>
         <Desc>MBTI를 기반으로 하는 나랑 잘 맞는 고양이 찾기!</Desc>
-        <Button>테스트 시작</Button>
+        <Button onClick={handleClickButton}>테스트 시작</Button>
       </Content>
     </Wrapper>
   );

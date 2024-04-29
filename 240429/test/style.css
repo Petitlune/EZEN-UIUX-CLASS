@@ -1,0 +1,48 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+.wrap {
+  border: 1px solid #f00;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+}
+ul {
+  display: flex;
+  position: absolute;
+  left: -12px;
+  top: 0;
+  gap: 10px;
+}
+.pagenation {
+  display: flex;
+  width: 100px;
+  justify-content: center;
+  gap: 8px;
+}
+.pagenation div {
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  background: lightgray;
+  cursor: pointer;
+}
+.btn.active {
+  background: crimson;
+}
