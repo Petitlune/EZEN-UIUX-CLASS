@@ -60,17 +60,20 @@ header .toggle-btn {
 
 .color-select-box {
   position: fixed;
-  left: 0;
-  bottom: 200px;
-  cursor: pointer;
+  left: -154px;
+  bottom: 120px;
   z-index: 999;
   display: flex;
+  transition: all 0.3s;
+}
+.color-select-box.active {
+  left: 0;
 }
 .color-select-box .colorBox {
-  width: 160px;
-  height: 140px;
+  width: 154px;
+  height: 150px;
   padding: 20px;
-  border: 1px solid red;
+  background: #fff;
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
@@ -78,18 +81,31 @@ header .toggle-btn {
 .color-select-box .colorBox .select-color {
   width: 50px;
   height: 50px;
-  border: 1px solid red;
+  cursor: pointer;
+}
+.color-select-box .colorBox .select-color:nth-child(1) {
+  background: #3f51b5;
+}
+.color-select-box .colorBox .select-color:nth-child(2) {
+  background: #00a73e;
+}
+.color-select-box .colorBox .select-color:nth-child(3) {
+  background: #ff9801;
+}
+.color-select-box .colorBox .select-color:nth-child(4) {
+  background: #ea1e63;
 }
 
-.colorChange {
+.color-setting {
   width: 50px;
   height: 50px;
   background: #3f51b5;
   border-top-right-radius: 100%;
   border-bottom-right-radius: 100%;
   text-align: center;
+  cursor: pointer;
 }
-.colorChange i {
+.color-setting i {
   font-size: 24px;
   color: #fff;
   line-height: 50px;
@@ -407,13 +423,10 @@ header .toggle-btn {
   height: auto;
   min-width: 480px;
   margin-bottom: 28px;
-  background: #dddddd;
+  background-color: #3f51b5;
   border-radius: 20px;
   position: relative;
   transition: all 0.3s;
-}
-.project .container .section-inner ul .modalList.active {
-  background: #3f51b5;
 }
 .project .container .section-inner ul .modalList::after {
   font-family: "FontAwesome";
@@ -432,6 +445,9 @@ header .toggle-btn {
   background: rgba(255, 255, 255, 0.5);
   cursor: pointer;
 }
+.project .container .section-inner ul .modalList:hover::after {
+  display: flex;
+}
 .project .container .section-inner ul .modalList .dew {
   position: absolute;
   width: 50px;
@@ -444,9 +460,11 @@ header .toggle-btn {
   left: 50%;
   transform: translateX(-50%) rotate(-135deg);
   z-index: 5;
+  opacity: 0;
+  transition: all 0.3s;
 }
-.project .container .section-inner ul .modalList:hover::after {
-  display: flex;
+.project .container .section-inner ul .modalList:hover .dew {
+  opacity: 1;
 }
 .project .container .section-inner ul .modalList .clone-project a {
   display: flex;

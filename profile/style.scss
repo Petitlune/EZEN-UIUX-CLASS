@@ -39,35 +39,49 @@ header {
 }
 .color-select-box {
   position: fixed;
-  left: 0;
-  bottom: 200px;
-  cursor: pointer;
+  left: -154px;
+  bottom: 120px;
   z-index: 999;
   display: flex;
+  transition: all 0.3s;
+  &.active {
+    left: 0;
+  }
   .colorBox {
-    width: 160px;
-    height: 140px;
+    width: 154px;
+    height: 150px;
     padding: 20px;
-    border: 1px solid red;
+    background: #fff;
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
     .select-color {
       width: 50px;
       height: 50px;
-
-      border: 1px solid red;
+      cursor: pointer;
+      &:nth-child(1) {
+        background: map-get($font-color, primary);
+      }
+      &:nth-child(2) {
+        background: #00a73e;
+      }
+      &:nth-child(3) {
+        background: #ff9801;
+      }
+      &:nth-child(4) {
+        background: #ea1e63;
+      }
     }
   }
 }
-.colorChange {
+.color-setting {
   width: 50px;
   height: 50px;
   background: map-get($font-color, primary);
   border-top-right-radius: 100%;
   border-bottom-right-radius: 100%;
   text-align: center;
-
+  cursor: pointer;
   i {
     font-size: 24px;
     color: #fff;
@@ -390,13 +404,10 @@ header {
           height: auto;
           min-width: 480px;
           margin-bottom: 28px;
-          background: map-get($font-color, primary-light);
+          background-color: map-get($font-color, primary);
           border-radius: 20px;
           position: relative;
           transition: all 0.3s;
-          &.active {
-            background: map-get($font-color, primary);
-          }
           &::after {
             font-family: "FontAwesome";
             content: "\f245";
@@ -414,6 +425,9 @@ header {
             background: rgba(255, 255, 255, 0.5);
             cursor: pointer;
           }
+          &:hover::after {
+            display: flex;
+          }
           .dew {
             position: absolute;
             width: 50px;
@@ -426,11 +440,12 @@ header {
             left: 50%;
             transform: translateX(-50%) rotate(-135deg);
             z-index: 5;
+            opacity: 0;
+            transition: all 0.3s;
           }
-          &:hover::after {
-            display: flex;
+          &:hover .dew {
+            opacity: 1;
           }
-
           .clone-project {
             a {
               display: flex;
