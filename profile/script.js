@@ -13,7 +13,7 @@ colorSet.addEventListener("click", () => {
   colorBox.classList.toggle("active");
   console.log("click");
 });
-
+console.log(colorSet);
 wrap.addEventListener("click", (e) => {
   if (e.target !== colorSet) {
     colorBox.classList.remove("active");
@@ -29,6 +29,7 @@ colorBtn.forEach((btn, i) => {
     colorTextChangeList.forEach((item) => {
       item.style.color = `#${colorArray[i]}`;
     });
+    colorBox.classList.remove("active");
   });
 });
 
@@ -52,7 +53,6 @@ const modalCloseBtn = document.querySelectorAll(".modalCloseBtn");
 
 modalList.forEach((item, i) => {
   item.addEventListener("click", () => {
-    console.log("click");
     modalScreen[i].style.display = "flex";
     body.style.overflowY = "hidden";
   });

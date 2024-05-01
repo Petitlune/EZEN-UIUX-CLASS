@@ -12,6 +12,8 @@ searchBtn.addEventListener("click", () => {
 });
 closeBtn.addEventListener("click", () => {
   modalBox.classList.remove("active");
+  searchBox.value === "";
+  console.log(searchBox.value);
 });
 
 searchBox.addEventListener("focus", function () {
@@ -24,28 +26,31 @@ searchBox.addEventListener("blur", function () {
 });
 
 //커스터 마이징
+
 tagText.forEach((text) => {
   text.addEventListener("click", (e) => {
     const str = e.target.innerText;
     const selectStr = str.substr(1);
     searchBox.value = selectStr;
   });
-});
-
-const matchText = hashTag.innerText.split("");
-
-searchBox.addEventListener("input", (e) => {
-  matchText.forEach((textElement) => {
-    console.log(textElement);
-    if (textElement.textContent === e.target.value) {
-      textElement.style.color = "#f00";
+  searchBox.addEventListener("input", (e) => {
+    const input = e.target.value.trim().toLowerCase();
+    const searchText = text.innerText.toLowerCase();
+    if (input === "") {
+      text.style.color = "#ffa500";
+    } else if (searchText.includes(input)) {
+      text.style.color = "#000";
     } else {
-      textElement.style.color = "";
+      text.style.color = "#ffa500";
     }
   });
-});
-
-submitBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  searchBox.value = "";
+  submitBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    searchBox.value = "";
+    text.style.color = "";
+  });
+  closeBtn.addEventListener("click", () => {
+    searchBox.value = "";
+    text.style.color = "";
+  });
 });
