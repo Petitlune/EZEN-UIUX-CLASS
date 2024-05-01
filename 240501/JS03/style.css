@@ -1,0 +1,125 @@
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+}
+header {
+  width: 100%;
+  height: 80px;
+  background: slategray;
+  padding: 34px;
+}
+nav {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo img {
+  width: 50px;
+  cursor: pointer;
+}
+nav i {
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #fff;
+}
+section {
+  height: calc(100vh - 80px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.4rem;
+}
+
+/* modal */
+.modal-search {
+  position: fixed;
+  left: 0;
+  top: -240px;
+  width: 100%;
+  height: 240px;
+  background: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
+}
+.modal-search.active {
+  top: 0;
+}
+.modal-search i {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.6rem;
+}
+input[type="search"] {
+  border: none;
+  width: 280px;
+  height: 40px;
+  padding: 18px;
+}
+input[type="search"]:focus,
+input[type="submit"]:focus {
+  outline: none;
+}
+input[type="search"]::placeholder {
+  font-style: italic;
+  transition: all 0.3s;
+}
+input[type="search"]:focus::placeholder {
+  opacity: 0;
+}
+input::-ms-clear,
+input::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration {
+  display: none;
+}
+input[type="submit"] {
+  width: 60px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+  background: crimson;
+  color: #fff;
+  opacity: 0.9;
+  transition: all 0.3s;
+}
+input[type="submit"]:hover {
+  opacity: 1;
+}
+.hash-tag {
+  margin-top: 10px;
+  color: goldenrod;
+  opacity: 0;
+  transition: all 0.3s;
+}
+.hash-tag.active {
+  opacity: 1;
+}
+.hash-tag span {
+  cursor: pointer;
+}

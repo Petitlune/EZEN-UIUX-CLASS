@@ -1,0 +1,70 @@
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+body {
+  font-size: 18px;
+}
+.modal {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  background: #fff;
+  width: 350px;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  position: relative;
+  animation: slidefade 0.3s linear;
+}
+.modal-content img {
+  margin: 10px;
+}
+.btn-close {
+  position: absolute;
+  right: 16px;
+  top: 10px;
+  font-size: 1.5rem;
+  color: #222;
+}
+.btn-guide {
+  display: block;
+  padding: 5px 40px;
+  margin-top: 20px;
+  background: rgb(86, 126, 245);
+  color: #fff;
+  font-size: 1.2rem;
+  border-radius: 5px;
+}
+.modal.active {
+  display: flex;
+}
+
+@keyframes slidefade {
+  0% {
+    opacity: 0;
+    margin-top: -100px;
+  }
+  100% {
+    opacity: 1;
+    margin-top: 0;
+  }
+}
