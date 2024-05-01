@@ -22,6 +22,7 @@ a {
 }
 body {
   background: #f2f2f2;
+  z-index: -100;
 }
 
 header {
@@ -126,7 +127,8 @@ header .toggle-btn {
   height: auto;
   min-height: 800px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
   padding-top: 80px;
 }
@@ -142,7 +144,7 @@ header .toggle-btn {
   font-family: "Rajdhani";
   font-weight: 600;
   width: 180px;
-  height: 72px;
+  height: 78px;
   text-align: center;
   position: relative;
 }
@@ -207,49 +209,44 @@ header .toggle-btn {
 .home {
   max-width: 1000px;
 }
-.home .title {
+.home .container {
+  flex-direction: row;
+  justify-content: space-between;
+}
+.home .container .title {
   display: flex;
   flex-direction: column;
 }
-.home .title span {
+.home .container .title span {
   font-size: 64px;
   font-family: "Rajdhani";
   font-weight: 500;
 }
-.home .title span .blue {
+.home .container .title span .blue {
   color: #3f51b5;
 }
-.home .title .under-text {
+.home .container .title .under-text {
   margin-left: 80px;
   margin-bottom: 20px;
 }
-.home .title p {
+.home .container .title p {
   width: 280px;
   line-height: 1.2;
   text-align: right;
   font-size: 20px;
   font-weight: 500;
 }
-.home .img {
+.home .container .img {
   background: url("https://file2.nocutnews.co.kr/newsroom/image/2023/05/25/202305250649476532_0.jpg") center/cover no-repeat;
   width: 500px;
   height: 550px;
 }
 
-.about .container {
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-.skill .container {
-  flex-direction: column;
-  justify-content: flex-start;
-}
-.skill .container .section-tit {
+.skill .section-tit {
   position: relative;
   cursor: pointer;
 }
-.skill .container .section-tit .ani-dew {
+.skill .section-tit .ani-dew {
   width: 50px;
   height: 50px;
   border-radius: 100%;
@@ -261,7 +258,7 @@ header .toggle-btn {
   transform: translateX(-50%) rotate(45deg);
   animation: aniClick 0.8s alternate-reverse infinite;
 }
-.skill .container .section-tit .ani-dew.active {
+.skill .section-tit .ani-dew.active {
   animation: aniDew 3s linear;
 }
 @keyframes aniClick {
@@ -284,7 +281,7 @@ header .toggle-btn {
     opacity: 0;
   }
 }
-.skill .container .section-inner .skill-content .skill-box {
+.skill .section-inner .skill-content .skill-box {
   width: 400px;
   height: 60px;
   margin-bottom: 42px;
@@ -294,11 +291,11 @@ header .toggle-btn {
   justify-content: center;
   gap: 8px;
 }
-.skill .container .section-inner .skill-content .skill-box h2 {
+.skill .section-inner .skill-content .skill-box h2 {
   line-height: 60px;
   color: #fff;
 }
-.skill .container .section-inner .skill-content .skill-desc {
+.skill .section-inner .skill-content .skill-desc {
   visibility: hidden;
   opacity: 0;
   display: flex;
@@ -312,12 +309,12 @@ header .toggle-btn {
   position: relative;
   transition: all 1s;
 }
-.skill .container .section-inner .skill-content .skill-desc.active {
+.skill .section-inner .skill-content .skill-desc.active {
   visibility: visible;
   opacity: 1;
   height: 150px;
 }
-.skill .container .section-inner .skill-content .skill-desc::before {
+.skill .section-inner .skill-content .skill-desc::before {
   content: "";
   width: 40px;
   height: 40px;
@@ -328,40 +325,39 @@ header .toggle-btn {
   top: -15px;
   z-index: -1;
 }
-.skill .container .section-inner .skill-content .skill-desc p {
+.skill .section-inner .skill-content .skill-desc p {
   font-family: "GmarketSansMedium";
   line-height: 1.5;
   font-size: 18px;
 }
 
-.project .container {
-  flex-direction: column;
-  justify-content: flex-start;
-}
-.project .container .section-inner {
+.project .section-inner {
   margin-top: 0;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.project .container .section-inner .modalScreen {
+.project .section-inner .modalScreen {
   position: fixed;
   top: 10%;
   bottom: 0;
-  margin: auto;
   width: 80%;
   height: 78%;
+  margin: auto;
   background: #dddddd;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
   border-radius: 20px;
   z-index: 10;
   display: none;
   justify-content: center;
   align-items: center;
 }
-.project .container .section-inner .modalScreen .modalScreenInner {
+.project .section-inner .modalScreen .modalScreenInner {
   width: 94%;
-  border: 4px solid #fff;
+  border-width: 4px;
+  border-style: solid;
+  border-color: #3f51b5;
   height: 90%;
   border-radius: 20px;
   display: flex;
@@ -370,13 +366,12 @@ header .toggle-btn {
   overflow: hidden;
   position: relative;
 }
-.project .container .section-inner .modalScreen .modalScreenInner .cloneWeb {
+.project .section-inner .modalScreen .modalScreenInner .cloneWeb {
   width: 58%;
   height: 100%;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
   overflow: hidden;
 }
-.project .container .section-inner .modalScreen .modalScreenInner .cloneWeb img {
+.project .section-inner .modalScreen .modalScreenInner .cloneWeb img {
   display: inline-block;
   width: 100%;
   height: 100%;
@@ -386,49 +381,82 @@ header .toggle-btn {
      object-position: top;
   transition: all 5s ease-in-out;
 }
-.project .container .section-inner .modalScreen .modalScreenInner .cloneWeb img:hover {
+.project .section-inner .modalScreen .modalScreenInner .cloneWeb img:hover {
   -o-object-position: bottom;
      object-position: bottom;
 }
-.project .container .section-inner .modalScreen .modalScreenInner .project-text {
-  width: 38%;
-  height: 90%;
-  margin: 2%;
+.project .section-inner .modalScreen .modalScreenInner .project-text {
+  width: 42%;
+  height: 100%;
   background: #fff;
+  padding: 20px 0 0 20px;
 }
-.project .container .section-inner .modalScreen .modalScreenInner .modalCloseBtn {
+.project .section-inner .modalScreen .modalScreenInner .project-text ul {
+  width: 90%;
+  height: 88%;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.project .section-inner .modalScreen .modalScreenInner .project-text .clone-desc li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+.project .section-inner .modalScreen .modalScreenInner .project-text .clone-desc li .tit {
+  font-size: 22px;
+}
+.project .section-inner .modalScreen .modalScreenInner .project-text .clone-desc li .tit i {
+  margin-right: 12px;
+  color: #3f51b5;
+}
+.project .section-inner .modalScreen .modalScreenInner .project-text .clone-desc li p {
+  margin-left: 20px;
+}
+.project .section-inner .modalScreen .modalScreenInner .modalCloseBtn {
   position: absolute;
   display: inline-block;
-  right: 10px;
+  right: 20px;
   top: 10px;
-  width: 64px;
-  height: 64px;
   text-align: center;
-  line-height: 64px;
-  border-radius: 100%;
-  background: #dddddd;
   cursor: pointer;
 }
-.project .container .section-inner .modalScreen .modalScreenInner .modalCloseBtn i {
+.project .section-inner .modalScreen .modalScreenInner .modalCloseBtn i {
   font-family: "FontAwesome";
   content: "\f00d";
   font-size: 48px;
   color: #3f51b5;
 }
-.project .container .section-inner ul {
+.project .section-inner .modalScreen .modalScreenInner .viewMore {
+  display: inline-block;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  text-align: center;
+  line-height: 34px;
+  height: 42px;
+  width: 140px;
+  padding: 5px 10px;
+  background: #3f51b5;
+  border-radius: 24px;
+  color: #fff;
+}
+.project .section-inner ul {
   gap: 2%;
 }
-.project .container .section-inner ul .modalList {
+.project .section-inner ul .modalList {
   width: 40%;
   height: auto;
   min-width: 480px;
   margin-bottom: 28px;
-  background-color: #3f51b5;
+  background-color: #dddddd;
   border-radius: 20px;
   position: relative;
   transition: all 0.3s;
 }
-.project .container .section-inner ul .modalList::after {
+.project .section-inner ul .modalList::after {
   font-family: "FontAwesome";
   content: "\f245";
   display: none;
@@ -445,10 +473,10 @@ header .toggle-btn {
   background: rgba(255, 255, 255, 0.5);
   cursor: pointer;
 }
-.project .container .section-inner ul .modalList:hover::after {
+.project .section-inner ul .modalList:hover::after {
   display: flex;
 }
-.project .container .section-inner ul .modalList .dew {
+.project .section-inner ul .modalList .dew {
   position: absolute;
   width: 50px;
   height: 50px;
@@ -460,23 +488,18 @@ header .toggle-btn {
   left: 50%;
   transform: translateX(-50%) rotate(-135deg);
   z-index: 5;
-  opacity: 0;
-  transition: all 0.3s;
 }
-.project .container .section-inner ul .modalList:hover .dew {
-  opacity: 1;
-}
-.project .container .section-inner ul .modalList .clone-project a {
+.project .section-inner ul .modalList .clone-project a {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 12px;
   width: 100%;
 }
-.project .container .section-inner ul .modalList .clone-project a img {
+.project .section-inner ul .modalList .clone-project a img {
   width: 94%;
 }
-.project .container .section-inner ul .modalList .clone-project a span {
+.project .section-inner ul .modalList .clone-project a span {
   display: inline-block;
   text-align: center;
   line-height: 34px;
@@ -486,4 +509,61 @@ header .toggle-btn {
   background: #1d2833;
   border-radius: 24px;
   color: #fff;
+}
+
+.example .section-inner {
+  margin-top: 60px;
+  width: 78%;
+  border: 1px solid red;
+}
+.example .section-inner .ex-menu {
+  display: flex;
+  height: auto;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 0 auto;
+}
+.example .section-inner .ex-menu li {
+  text-align: center;
+  height: 42px;
+  width: 140px;
+  line-height: 32px;
+  padding: 5px 10px;
+  background: #3f51b5;
+  border-radius: 24px;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+}
+.example .section-inner .ex-menu li span {
+  position: absolute;
+  top: 0;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  line-height: 42px;
+  border-radius: 20px;
+  background: #1d2833;
+  opacity: 1;
+}
+.example .section-inner .ex-menu li span.active {
+  opacity: 0;
+}
+.example .section-inner .ex-box {
+  border: 1px solid black;
+  width: 100%;
+  height: 100%;
+  margin-top: 24px;
+  background: #dddddd;
+}
+.example .section-inner .ex-box .ex-box-wrap {
+  width: 100%;
+  height: 100%;
+  gap: 5%;
+}
+.example .section-inner .ex-box .ex-box-wrap li {
+  width: 28%;
+  height: 84%;
+  border: 1px solid red;
+  margin: 20px;
 }/*# sourceMappingURL=style.css.map */

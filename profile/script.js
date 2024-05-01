@@ -1,5 +1,8 @@
-const colorChangeList = document.querySelectorAll("#colors");
-const colorTextChangeList = document.querySelectorAll("#colorstext");
+//Portfolio color change
+const body = document.querySelector("body");
+const wrap = document.querySelector(".wrap");
+const colorChangeList = document.querySelectorAll(".colors");
+const colorTextChangeList = document.querySelectorAll(".colorstext");
 const colorSet = document.querySelector(".color-setting");
 const colorBox = document.querySelector(".color-select-box");
 const colorBtn = document.querySelectorAll(".select-color");
@@ -8,13 +11,20 @@ const colorArray = ["3f51b5", "00a73e", "ff9801", "ea1e63"];
 
 colorSet.addEventListener("click", () => {
   colorBox.classList.toggle("active");
+  console.log("click");
+});
+
+wrap.addEventListener("click", (e) => {
+  if (e.target !== colorSet) {
+    colorBox.classList.remove("active");
+  }
 });
 
 colorBtn.forEach((btn, i) => {
   btn.addEventListener("click", () => {
-    console.log(colorChangeList);
     colorChangeList.forEach((item) => {
       item.style.background = `#${colorArray[i]}`;
+      item.style.borderColor = `#${colorArray[i]}`;
     });
     colorTextChangeList.forEach((item) => {
       item.style.color = `#${colorArray[i]}`;
@@ -34,14 +44,15 @@ dewDrop.addEventListener("click", () => {
 });
 
 //project-section
-const body = document.querySelector("body");
+
 const modalList = document.querySelectorAll(".modalList");
 const projectSection = document.querySelector(".project");
 const modalScreen = document.querySelectorAll(".modalScreen");
 const modalCloseBtn = document.querySelectorAll(".modalCloseBtn");
 
-modalList.forEach((item) => {
+modalList.forEach((item, i) => {
   item.addEventListener("click", () => {
+    console.log("click");
     modalScreen[i].style.display = "flex";
     body.style.overflowY = "hidden";
   });
@@ -51,11 +62,15 @@ modalList.forEach((item) => {
   });
 });
 
-// modalList.forEach((item) => {
-//   item.addEventListener("mouseenter", () => {
-//     item.style.backgroundColor = `#${colorArray[i]}`;
-//   });
-//   item.addEventListener("mouseleave", () => {
-//     item.style.backgroundColor = "rgba(255, 255, 255, 0.5)";
-//   });
-// });
+// example menu
+const exList = document.querySelectorAll(".ex-menu li span");
+
+exList.forEach((li) => {
+  li.addEventListener("click", () => {
+    exList.forEach((li) => {
+      li.classList.remove("active");
+    });
+
+    li.classList.add("active");
+  });
+});

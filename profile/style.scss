@@ -2,6 +2,7 @@
 @import "variable";
 body {
   background: map-get($font-color, bg);
+  z-index: -100;
 }
 // header
 header {
@@ -88,7 +89,6 @@ header {
     line-height: 50px;
   }
 }
-
 .content {
   display: flex;
   flex-direction: column;
@@ -97,7 +97,6 @@ header {
   width: 100%;
   height: auto;
   margin: 100px auto 0;
-
   // border: 1px solid red;
 }
 .container {
@@ -105,7 +104,8 @@ header {
   height: auto;
   min-height: 800px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
   padding-top: 80px;
 }
@@ -119,7 +119,7 @@ header {
   font-family: map-get($font-family, main_en);
   font-weight: 600;
   width: 180px;
-  height: 72px;
+  height: 78px;
   text-align: center;
   position: relative;
   .underbar {
@@ -182,293 +182,375 @@ header {
 // home
 .home {
   max-width: 1000px;
-
-  .title {
-    display: flex;
-    flex-direction: column;
-    span {
-      font-size: 64px;
-      font-family: map-get($font-family, main_en);
-      font-weight: 500;
-      .blue {
-        color: map-get($font-color, primary);
+  .container {
+    flex-direction: row;
+    justify-content: space-between;
+    .title {
+      display: flex;
+      flex-direction: column;
+      span {
+        font-size: 64px;
+        font-family: map-get($font-family, main_en);
+        font-weight: 500;
+        .blue {
+          color: map-get($font-color, primary);
+        }
+      }
+      .under-text {
+        margin-left: 80px;
+        margin-bottom: 20px;
+      }
+      p {
+        width: 280px;
+        line-height: 1.2;
+        text-align: right;
+        font-size: 20px;
+        font-weight: 500;
       }
     }
-    .under-text {
-      margin-left: 80px;
-      margin-bottom: 20px;
+    .img {
+      background: url("https://file2.nocutnews.co.kr/newsroom/image/2023/05/25/202305250649476532_0.jpg")
+        center/cover no-repeat;
+      width: 500px;
+      height: 550px;
     }
-    p {
-      width: 280px;
-      line-height: 1.2;
-      text-align: right;
-      font-size: 20px;
-      font-weight: 500;
-    }
-  }
-  .img {
-    background: url("https://file2.nocutnews.co.kr/newsroom/image/2023/05/25/202305250649476532_0.jpg")
-      center/cover no-repeat;
-    width: 500px;
-    height: 550px;
   }
 }
 // about
 .about {
-  .container {
-    flex-direction: column;
-    justify-content: flex-start;
-  }
 }
 // skill
 .skill {
-  .container {
-    flex-direction: column;
-    justify-content: flex-start;
-    .section-tit {
-      position: relative;
-      cursor: pointer;
-      .ani-dew {
-        width: 50px;
-        height: 50px;
-        border-radius: 100%;
-        border-top-left-radius: 0;
-        background: map-get($font-color, primary);
-        position: absolute;
-        bottom: -70px;
-        left: 50%;
+  .section-tit {
+    position: relative;
+    cursor: pointer;
+    .ani-dew {
+      width: 50px;
+      height: 50px;
+      border-radius: 100%;
+      border-top-left-radius: 0;
+      background: map-get($font-color, primary);
+      position: absolute;
+      bottom: -70px;
+      left: 50%;
+      transform: translateX(-50%) rotate(45deg);
+      animation: aniClick 0.8s alternate-reverse infinite;
+    }
+    .ani-dew.active {
+      animation: aniDew 3s linear;
+    }
+    @keyframes aniClick {
+      0% {
+        transform: translateX(-50%) rotate(45deg) scale(1);
+      }
+      100% {
+        transform: translateX(-50%) rotate(45deg) scale(1.2);
+      }
+    }
+    @keyframes aniDew {
+      0% {
         transform: translateX(-50%) rotate(45deg);
-        animation: aniClick 0.8s alternate-reverse infinite;
+        bottom: -70px;
+        opacity: 1;
       }
-      .ani-dew.active {
-        animation: aniDew 3s linear;
+      100% {
+        transform: translateX(-50%) rotate(45deg);
+        bottom: -600px;
+        opacity: 0;
       }
-      @keyframes aniClick {
-        0% {
-          transform: translateX(-50%) rotate(45deg) scale(1);
+    }
+  }
+  .section-inner {
+    .skill-content {
+      .skill-box {
+        width: 400px;
+        height: 60px;
+        margin-bottom: 42px;
+        padding: 4px 0;
+        background: map-get($font-color, primary);
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        h2 {
+          line-height: 60px;
+          color: #fff;
         }
-        100% {
-          transform: translateX(-50%) rotate(45deg) scale(1.2);
-        }
       }
-      @keyframes aniDew {
-        0% {
-          transform: translateX(-50%) rotate(45deg);
-          bottom: -70px;
+      .skill-desc {
+        visibility: hidden;
+        opacity: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 400px;
+        height: 0;
+        padding: 20px;
+        background: map-get($font-color, primary-light);
+        margin-top: 28px;
+        position: relative;
+        transition: all 1s;
+        &.active {
+          visibility: visible;
           opacity: 1;
+          height: 150px;
         }
-        100% {
-          transform: translateX(-50%) rotate(45deg);
-          bottom: -600px;
-          opacity: 0;
+        &::before {
+          content: "";
+          width: 40px;
+          height: 40px;
+          background: map-get($font-color, primary-light);
+          position: absolute;
+          left: calc(360px / 2);
+          transform: rotate(45deg);
+          top: -15px;
+          z-index: -1;
+        }
+        p {
+          font-family: map-get($font-family, sub_kr);
+          line-height: 1.5;
+          font-size: 18px;
         }
       }
     }
-    .section-inner {
-      .skill-content {
-        .skill-box {
-          width: 400px;
-          height: 60px;
-          margin-bottom: 42px;
-          padding: 4px 0;
-          background: map-get($font-color, primary);
-          display: flex;
-          justify-content: center;
-          gap: 8px;
-          h2 {
-            line-height: 60px;
-            color: #fff;
+  }
+}
+
+// project
+.project {
+  .section-inner {
+    margin-top: 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .modalScreen {
+      position: fixed;
+      top: 10%;
+      bottom: 0;
+      width: 80%;
+      height: 78%;
+      margin: auto;
+      background: map-get($font-color, primary-light);
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+      border-radius: 20px;
+      z-index: 10;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      .modalScreenInner {
+        width: 94%;
+        border-width: 4px;
+        border-style: solid;
+        border-color: map-get($font-color, primary);
+        height: 90%;
+        border-radius: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+        .cloneWeb {
+          width: 58%;
+          height: 100%;
+          overflow: hidden;
+          img {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            transition: all 5s ease-in-out;
+            &:hover {
+              object-position: bottom;
+            }
           }
         }
-        .skill-desc {
-          visibility: hidden;
-          opacity: 0;
-          display: flex;
+        .project-text {
+          width: 42%;
+          height: 100%;
+          background: #fff;
+          padding: 20px 0 0 20px;
+          ul {
+            width: 90%;
+            height: 88%;
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+          }
+          .clone-desc li {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            .tit {
+              font-size: 22px;
+              i {
+                margin-right: 12px;
+                color: map-get($font-color, primary);
+              }
+            }
+            p {
+              margin-left: 20px;
+            }
+          }
+        }
+        .modalCloseBtn {
+          position: absolute;
+          display: inline-block;
+          right: 20px;
+          top: 10px;
+          text-align: center;
+          cursor: pointer;
+          i {
+            font-family: "FontAwesome";
+            content: "\f00d";
+            font-size: 48px;
+            color: map-get($font-color, primary);
+          }
+        }
+        .viewMore {
+          display: inline-block;
+          position: absolute;
+          right: 20px;
+          bottom: 20px;
+          text-align: center;
+          line-height: 34px;
+          height: 42px;
+          width: 140px;
+          padding: 5px 10px;
+          background: map-get($font-color, primary);
+          border-radius: 24px;
+          color: #fff;
+        }
+      }
+    }
+    ul {
+      gap: 2%;
+      .modalList {
+        width: 40%;
+        height: auto;
+        min-width: 480px;
+        margin-bottom: 28px;
+        background-color: map-get($font-color, primary-light);
+        border-radius: 20px;
+        position: relative;
+        transition: all 0.3s;
+        &::after {
+          font-family: "FontAwesome";
+          content: "\f245";
+          display: none;
           justify-content: center;
           align-items: center;
-          width: 400px;
-          height: 0;
-          padding: 20px;
-          background: map-get($font-color, primary-light);
-          margin-top: 28px;
-          position: relative;
-          transition: all 1s;
-          &.active {
-            visibility: visible;
-            opacity: 1;
-            height: 150px;
-          }
-          &::before {
-            content: "";
-            width: 40px;
-            height: 40px;
-            background: map-get($font-color, primary-light);
-            position: absolute;
-            left: calc(360px / 2);
-            transform: rotate(45deg);
-            top: -15px;
-            z-index: -1;
-          }
-          p {
-            font-family: map-get($font-family, sub_kr);
-            line-height: 1.5;
-            font-size: 18px;
+          position: absolute;
+          left: 0;
+          top: 0;
+          border-radius: 20px;
+          width: 100%;
+          height: 100%;
+          font-size: 42px;
+          font-weight: 500;
+          background: rgba(255, 255, 255, 0.5);
+          cursor: pointer;
+        }
+        &:hover::after {
+          display: flex;
+        }
+        .dew {
+          position: absolute;
+          width: 50px;
+          height: 50px;
+          border-radius: 100%;
+          border-top-left-radius: 0;
+          background: map-get($font-color, primary);
+          position: absolute;
+          top: -35px;
+          left: 50%;
+          transform: translateX(-50%) rotate(-135deg);
+          z-index: 5;
+        }
+
+        .clone-project {
+          a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            width: 100%;
+            img {
+              width: 94%;
+            }
+            span {
+              display: inline-block;
+              text-align: center;
+              line-height: 34px;
+              height: 42px;
+              width: 140px;
+              padding: 5px 10px;
+              background: map-get($font-color, primary-dark);
+              border-radius: 24px;
+              color: #fff;
+            }
           }
         }
       }
     }
   }
 }
-.project {
-  .container {
-    flex-direction: column;
-    justify-content: flex-start;
-    .section-inner {
-      margin-top: 0;
-      position: relative;
+// example
+.example {
+  .section-inner {
+    margin-top: 60px;
+    width: 78%;
+    border: 1px solid red;
+    .ex-menu {
       display: flex;
-      justify-content: center;
-      align-items: center;
-      .modalScreen {
-        position: fixed;
-        top: 10%;
-        bottom: 0;
-        margin: auto;
-        width: 80%;
-        height: 78%;
-        background: map-get($font-color, primary-light);
-        border-radius: 20px;
-        z-index: 10;
-        display: none;
-        justify-content: center;
-        align-items: center;
-        .modalScreenInner {
-          width: 94%;
-          border: 4px solid #fff;
-          height: 90%;
+      height: auto;
+      justify-content: flex-start;
+      align-items: flex-start;
+      margin: 0 auto;
+      li {
+        text-align: center;
+        height: 42px;
+        width: 140px;
+        line-height: 32px;
+        padding: 5px 10px;
+        background: map-get($font-color, primary);
+        border-radius: 24px;
+        color: #fff;
+        cursor: pointer;
+        position: relative;
+        span {
+          position: absolute;
+          top: 0;
+          display: inline-block;
+          width: 100%;
+          height: 100%;
+          line-height: 42px;
           border-radius: 20px;
-          display: flex;
-          // gap: 2%;
-          justify-content: space-between;
-          align-items: center;
-          overflow: hidden;
-          position: relative;
-          .cloneWeb {
-            width: 58%;
-            height: 100%;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-            overflow: hidden;
-            img {
-              display: inline-block;
-              width: 100%;
-              height: 100%;
-              object-fit: cover;
-              object-position: top;
-              transition: all 5s ease-in-out;
-              &:hover {
-                object-position: bottom;
-              }
-            }
-          }
-          .project-text {
-            width: 38%;
-            height: 90%;
-            margin: 2%;
-            background: #fff;
-          }
-          .modalCloseBtn {
-            position: absolute;
-            display: inline-block;
-            right: 10px;
-            top: 10px;
-            width: 64px;
-            height: 64px;
-            text-align: center;
-            line-height: 64px;
-            border-radius: 100%;
-            background: map-get($font-color, primary-light);
-            cursor: pointer;
-            i {
-              font-family: "FontAwesome";
-              content: "\f00d";
-              font-size: 48px;
-              color: map-get($font-color, primary);
-            }
+          background: map-get($font-color, primary-dark);
+          opacity: 1;
+          &.active {
+            opacity: 0;
           }
         }
       }
-      ul {
-        gap: 2%;
-        .modalList {
-          width: 40%;
-          height: auto;
-          min-width: 480px;
-          margin-bottom: 28px;
-          background-color: map-get($font-color, primary);
-          border-radius: 20px;
-          position: relative;
-          transition: all 0.3s;
-          &::after {
-            font-family: "FontAwesome";
-            content: "\f245";
-            display: none;
-            justify-content: center;
-            align-items: center;
-            position: absolute;
-            left: 0;
-            top: 0;
-            border-radius: 20px;
-            width: 100%;
-            height: 100%;
-            font-size: 42px;
-            font-weight: 500;
-            background: rgba(255, 255, 255, 0.5);
-            cursor: pointer;
-          }
-          &:hover::after {
-            display: flex;
-          }
-          .dew {
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            border-radius: 100%;
-            border-top-left-radius: 0;
-            background: map-get($font-color, primary);
-            position: absolute;
-            top: -35px;
-            left: 50%;
-            transform: translateX(-50%) rotate(-135deg);
-            z-index: 5;
-            opacity: 0;
-            transition: all 0.3s;
-          }
-          &:hover .dew {
-            opacity: 1;
-          }
-          .clone-project {
-            a {
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              gap: 12px;
-              width: 100%;
-              img {
-                width: 94%;
-              }
-              span {
-                display: inline-block;
-                text-align: center;
-                line-height: 34px;
-                height: 42px;
-                width: 140px;
-                padding: 5px 10px;
-                background: map-get($font-color, primary-dark);
-                border-radius: 24px;
-                color: #fff;
-              }
-            }
-          }
+    }
+    .ex-box {
+      border: 1px solid black;
+      width: 100%;
+      height: 100%;
+      margin-top: 24px;
+      background: map-get($font-color, primary-light);
+      .ex-box-wrap {
+        width: 100%;
+        height: 100%;
+        gap: 5%;
+        li {
+          width: 28%;
+          height: 84%;
+          border: 1px solid red;
+          margin: 20px;
         }
       }
     }
