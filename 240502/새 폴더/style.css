@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #222;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.faq-inner {
+  width: 700px;
+}
+.faq-inner h1 {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.accordion {
+  font-size: 1rem;
+}
+.content,
+.title {
+  background: #303030;
+  margin-bottom: 7px;
+  padding: 10px 15px;
+}
+.title {
+  cursor: pointer;
+  overflow: hidden;
+  line-height: 1.6rem;
+}
+.title::after {
+  content: "\2b";
+  font-family: fontawesom;
+  float: right;
+  margin-bottom: 6px;
+  transition: all 0.3s;
+  font-size: 2rem;
+}
+.title.active {
+  background: #353b48;
+}
+
+.title.active::after {
+  transform: rotate(45deg);
+}
+
+.content {
+  display: none;
+  padding: 20px;
+}
+.content.active {
+  display: block;
+}
+.newsletter {
+  width: 100%;
+  text-align: center;
+}
+.newsletter p {
+  margin-bottom: 10px;
+}
+.newsletter input[type="email"],
+button {
+  border: none;
+  height: 60px;
+  font-size: 20px;
+}
+form {
+  display: flex;
+}
+.newsletter input[type="email"] {
+  flex: 3;
+  padding-left: 10px;
+}
+.newsletter input[type="email"]:focus {
+  outline: none;
+}
+.newsletter input[type="email"]::placeholder {
+  opacity: 1;
+  transition: all 0.3s;
+}
+.newsletter input[type="email"]:focus::placeholder {
+  opacity: 0;
+}
+button {
+  flex: 1;
+  background: #e84118;
+  color: #fff;
+  cursor: pointer;
+}
+button::after {
+  content: "\f105";
+  font-family: fontawesome;
+  margin-left: 6px;
+}
