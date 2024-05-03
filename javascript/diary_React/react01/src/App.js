@@ -2,9 +2,8 @@ import "./App.css";
 import React, { useRef } from "react";
 import Main from "./pages/Main";
 
-import HowToGo from "./pages/HowToGo";
-import PageButton from "./pages/PageButton";
 import Date from "./pages/Date";
+import HowToGo from "./pages/HowToGo";
 
 function App() {
   const calendarRef = useRef(null);
@@ -32,9 +31,8 @@ function App() {
       <div ref={calendarRef}>
         <Date></Date>
       </div>
-      <PageButton></PageButton>
       <div ref={howToGoRef}>
-        <HowToGo></HowToGo>
+        <HowToGo />
       </div>
     </div>
   );

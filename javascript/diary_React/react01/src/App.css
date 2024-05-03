@@ -12,21 +12,25 @@
   box-sizing: border-box;
 }
 body {
-  background: #fff;
+  background: #f8f8f8;
   font-family: "Inter";
   color: #222;
 }
 
 .App {
   text-align: center;
-  width: auto;
+  width: 100%;
+  height: 100%;
   max-width: 400px;
   min-width: 320px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid red;
+  justify-content: center;
+  /* border: 1px solid red; */
+  position: relative;
+  padding-top: 20px;
 }
 
 .App-logo {
@@ -35,10 +39,12 @@ body {
 }
 .music {
   cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 20px;
 }
 .weddingMain {
   width: 96%;
-
   min-width: 300px;
   height: auto;
   border-radius: 150px;
@@ -47,7 +53,7 @@ body {
   width: 100%;
   height: 50px;
   line-height: 48px;
-  border-radius: 16px;
+  border-radius: 10px;
   box-shadow: 0 10px 10px rgba(248, 164, 164, 0.3);
   margin: 30px 0;
 }
@@ -67,7 +73,16 @@ body {
   color: #f8a4a4;
 }
 h2 {
-  font-size: 1.4rem;
+  font-family: "Mapo";
+  font-size: 1.2rem;
+  color: #f8a4a4;
+  margin: 10px;
+}
+.HowToGo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 34px;
 }
 .date-wrap {
   display: flex;
@@ -75,6 +90,10 @@ h2 {
   align-items: center;
 }
 .date-info {
-  width: 70%;
+  width: 80%;
   min-width: 280px;
+  line-height: 25px;
+}
+.date-info p {
+  margin-top: 20px;
 }
