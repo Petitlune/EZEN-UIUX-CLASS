@@ -30,11 +30,7 @@ const Main = () => {
 
       <h1>2024.09.07</h1>
       <p className="subtitle">saturday</p>
-      <img
-        className="weddingMain"
-        src="./img/eugenivy_now-mUYjrnQLrSA-unsplash.jpg"
-        alt="wedding-img"
-      />
+      <img className="weddingMain" src="./img/MainPage.jpg" alt="wedding-img" />
       <div className="mainText">
         <p>현기환 · 김다슬</p>
         <p>

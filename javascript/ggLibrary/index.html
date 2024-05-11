@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!--custom css&js-->
+    <script defer src="./script.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <div class="sign-log-in">
+          <div class="header-top">
+            <span class="login">
+              <span>
+                <img src="./image/ico_link_header_top.png" alt="login"
+              /></span>
+
+              <p>로그인</p>
+            </span>
+            <span class="signin">
+              <span> <img src="./image/ico_link_header_top.png" alt="" /></span>
+
+              <p>회원가입</p>
+            </span>
+          </div>
+        </div>
+        <nav>
+          <div class="nav-inner">
+            <a href="#" class="title">
+              <img src="./image/logo_new.png" alt="logo" />
+              <h1>경기도청 도서관</h1>
+            </a>
+            <div class="nav-menu">
+              <a href="">자료검색</a>
+              <a href="">큐레이션</a>
+              <a href="">도서관이용</a>
+              <a href="">나의도서관</a>
+              <div class="hidden-menu">
+                <div class="hidden-menu-inner">
+                  <div class="section01 sec">
+                    <a href="#">자료검색</a>
+                  </div>
+                  <div class="section02 sec">
+                    <a href="#">신간도서</a>
+                    <a href="#">인기도서</a>
+                    <a href="#">추천도서</a>
+                  </div>
+                  <div class="section03 sec">
+                    <a href="#">이용안내</a>
+                    <a href="#">공지사항</a>
+                  </div>
+                  <div class="section04 sec">
+                    <a href="#">대출현황</a>
+                    <a href="#">대출이력</a>
+                    <a href="#">희망도서</a>
+                    <a href="#">예약목록</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="menu-btn">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <div class="section-wrap">
+        <section class="inner-content">
+          <div class="top-sec">
+            <h1 class="subtitle">
+              책 읽는 경기도,<span>경기도청 도서관</span>
+            </h1>
+            <img src="./image/ico_library_menu.png" alt="" />
+            <div class="library-modal">
+              <div class="content">
+                <h1 class="library-title">도서관바로가기</h1>
+                <div class="sub-menu">
+                  <a href="#">
+                    <h3>경기도청 도서관</h3>
+                  </a>
+                  <a href="#">
+                    <h3>경기행정도서관</h3>
+                  </a>
+                  <a href="#">
+                    <h3>경기평화광장 북카페</h3>
+                  </a>
+                  <a href="#">
+                    <h3>경기도인재개발원 도서관</h3>
+                  </a>
+                </div>
+                <img
+                  class="close-btn"
+                  src="./image/ico_library_menu_close.png"
+                  alt="close-button"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="middle-sec">
+            <div class="middle-top">
+              <div class="slide"></div>
+              <div class="search">
+                <div class="search-top">
+                  <img src="./image/ico_main_open_book.png" alt="bookimage" />
+                  <h2>원하는 도서관에서 자료를 검색해 보세요.</h2>
+                </div>
+                <div class="search-bottom">
+                  <div class="search-box">
+                    <select name="library" id="library">
+                      <option value="All">전체</option>
+                      <option value="hang-library">경기행정도서관</option>
+                      <option value="phyeng-library">
+                        경기평화광장 북카페
+                      </option>
+                      <option value="injae-library">
+                        경기도인재개발원 도서관
+                      </option>
+                    </select>
+                    <input type="text" placeholder="도서명을 입력하세요" />
+                  </div>
+                  <button>검색</button>
+                </div>
+              </div>
+            </div>
+            <div class="middle-bottom">
+              <div class="notice">
+                <div class="notive-tit">
+                  <h2>공지사항</h2>
+                  <a href="#" class="more"> 자세히 <span>+</span> </a>
+                </div>
+                <ul class="notice-inner">
+                  <li>
+                    <a href="#">
+                      <span class="sub-name">광장</span>
+                      <span class="sub-content"
+                        >경기평화광장 북카페 5월 18일 행사안내 <span></span
+                      ></span>
+                      <span class="festa-day">2024.05.09</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span class="sub-name">광장</span>
+                      <span class="sub-content"
+                        >경기평화광장 북카페 5월 휴관일 안내
+                      </span>
+                      <span class="festa-day">2024.04.23</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span class="sub-name">광장</span>
+                      <span class="sub-content"
+                        >경기평화광장 북카페 4월 20~21(토~일) 임시휴관 알림
+                      </span>
+                      <span class="festa-day">2024.04.11</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span class="sub-name">광장</span>
+                      <span class="sub-content"
+                        >경기평화광장 북카페 4월 휴관일 안내
+                      </span>
+                      <span class="festa-day">2024.03.25</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span class="sub-name">광장</span>
+                      <span class="sub-content"
+                        >2024년 3~5월 봄날 정오음악회, 봄날 가족공연 행사 안내
+                      </span>
+                      <span class="festa-day">2024.03.12</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="info">
+                <h2>전자정보원</h2>
+                <ul class="info-inner">
+                  <li>
+                    <a href="#">경기도 발간자료 <span>+</span></a>
+                  </li>
+                  <li>
+                    <a href="#">정부 간행물 <span>+</span></a>
+                  </li>
+                  <li>
+                    <a href="#">국내학술자료검색 <span>+</span></a>
+                  </li>
+                  <li>
+                    <a href="#">해외학술자료검색 <span>+</span></a>
+                  </li>
+                  <li>
+                    <a href="#">전자책 도서관 <span>+</span></a>
+                  </li>
+                  <li>
+                    <a href="#">경기도 메모리 <span>+</span></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="service">
+                <h2>자주 찾는 서비스</h2>
+                <ul class="service-inner">
+                  <li>
+                    <a href="#">
+                      <img
+                        src="./image/ico_link_search.png"
+                        alt="search-image"
+                      />
+                      <p>자료검색</p>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="./image/ico_link_book.png" alt="search-image" />
+                      <p>도서예약</p>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img
+                        src="./image/ico_link_hope_book.png"
+                        alt="search-image"
+                      />
+                      <p>희망도서신청</p>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img
+                        src="./image/ico_link_guide.png"
+                        alt="search-image"
+                      />
+                      <p>이용안내</p>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img
+                        src="./image/ico_link_loan_status.png"
+                        alt="search-image"
+                      />
+                      <p>대출현황</p>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img
+                        src="./image/ico_link_delivery.png"
+                        alt="search-image"
+                      />
+                      <p>책 배달</p>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="link">
+                <div class="link-left">
+                  <h2>자주찾는링크</h2>
+                  <div class="buttons">
+                    <img src="./image/ico_roll_btn_arrow.png" alt="" />
+                    <span class="play"></span>
+                    <img src="./image/ico_roll_btn_arrow.png" alt="" />
+                  </div>
+                </div>
+                <div class="link-right">
+                  <ul class="bannerAll">
+                    <li class="banner">
+                      <a href="https://www.gg.go.kr/"
+                        ><img src="./image/logo_01.png" alt=""
+                      /></a>
+                    </li>
+                    <li class="banner">
+                      <a href="https://www.ggc.go.kr/site/main/home"
+                        ><img src="./image/logo_11.png" alt=""
+                      /></a>
+                    </li>
+                    <li class="banner">
+                      <a href="https://www.nanet.go.kr/main.do"
+                        ><img src="./image/logo_05.png" alt=""
+                      /></a>
+                    </li>
+                    <li class="banner">
+                      <a href="https://www.nl.go.kr/"
+                        ><img src="./image/logo_04.png" alt=""
+                      /></a>
+                    </li>
+
+                    <li class="banner">
+                      <a href="https://www.gri.re.kr/web/main/index.do"
+                        ><img src="./image/logo_08.png" alt=""
+                      /></a>
+                    </li>
+                    <li class="banner">
+                      <a href="about:blank"
+                        ><img src="./image/logo_07.png" alt=""
+                      /></a>
+                    </li>
+                    <li class="banner">
+                      <a href="https://www.gg.go.kr/"
+                        ><img src="./image/logo_04.png" alt=""
+                      /></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <footer></footer>
+    </div>
+  </body>
+</html>
