@@ -371,6 +371,137 @@ nav .nav-inner .menu-btn.active span:nth-child(3) {
   box-shadow: 0 15px 15px rgba(0, 0, 0, 0.1);
   color: #222;
 }
+.section-wrap .inner-content .middle-sec .middle-top .slide {
+  position: relative;
+}
+.section-wrap .inner-content .middle-sec .middle-top .slide .slide-title {
+  height: 84px;
+  border-bottom: 1px solid #eee;
+  width: 100%;
+  padding: 24px 28px;
+  display: flex;
+  gap: 24px;
+}
+.section-wrap .inner-content .middle-sec .middle-top .slide .slide-title h2 {
+  height: 60px;
+  color: #999;
+  font-size: 22px;
+  cursor: pointer;
+}
+.section-wrap .inner-content .middle-sec .middle-top .slide .slide-title h2.active {
+  color: #000;
+  border-bottom: 2px solid #000;
+}
+.section-wrap .inner-content .middle-sec .middle-top .slide .slide-title .more {
+  position: absolute;
+  right: 0;
+  top: 24px;
+  padding: 12px 60px 12px 25px;
+  background: #437dea;
+  color: #fff;
+  font-size: 14px;
+  border-top-left-radius: 28px;
+  border-bottom-left-radius: 28px;
+}
+.section-wrap .inner-content .middle-sec .middle-top .slide .slide-title .more span {
+  font-size: 36px;
+  font-weight: lighter;
+  position: absolute;
+  right: 18px;
+  top: -7px;
+}
+.section-wrap .inner-content .middle-sec .middle-top .slide .slide-wrap {
+  width: 100%;
+  height: 278px;
+  padding: 16px 28px;
+  position: relative;
+}
+.section-wrap .inner-content .middle-sec .middle-top .slide .slide-wrap .slide-btns .prev,
+.section-wrap .inner-content .middle-sec .middle-top .slide .slide-wrap .slide-btns .next {
+  position: absolute;
+  top: 46%;
+  transform: translateY(-50%);
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  color: #437dea;
+  font-size: 20px;
+  text-align: center;
+  line-height: 42px;
+  background: rgba(238, 238, 238, 0.6);
+  cursor: pointer;
+}
+.section-wrap .inner-content .middle-sec .middle-top .slide .slide-wrap .slide-btns .prev:hover,
+.section-wrap .inner-content .middle-sec .middle-top .slide .slide-wrap .slide-btns .next:hover {
+  background: rgb(238, 238, 238);
+}
+.section-wrap .inner-content .middle-sec .middle-top .slide .slide-wrap .slide-btns .prev {
+  left: 0;
+  border-top-right-radius: 24px;
+  border-bottom-right-radius: 24px;
+}
+.section-wrap .inner-content .middle-sec .middle-top .slide .slide-wrap .slide-btns .next {
+  right: 0;
+  border-top-left-radius: 24px;
+  border-bottom-left-radius: 24px;
+}
+.section-wrap .inner-content .middle-sec .middle-top .slide .slide-wrap .hidden-box {
+  position: relative;
+  width: 94%;
+  height: 244px;
+  margin: 0 28px;
+  overflow: hidden;
+}
+.section-wrap .inner-content .middle-sec .middle-top .slide .slide-wrap .hidden-box .slide-inner {
+  display: none;
+  position: absolute;
+  left: 0;
+  gap: 20px;
+  transition: all 0.1s;
+}
+.section-wrap .inner-content .middle-sec .middle-top .slide .slide-wrap .hidden-box .slide-inner.active {
+  display: flex;
+}
+.section-wrap .inner-content .middle-sec .middle-top .slide .slide-wrap .hidden-box .slide-inner li {
+  width: 130px;
+  height: 180px;
+}
+.section-wrap .inner-content .middle-sec .middle-top .slide .slide-wrap .hidden-box .slide-inner li img {
+  width: 100%;
+  height: 100%;
+}
+.section-wrap .inner-content .middle-sec .middle-top .slide .slide-wrap .hidden-box .slide-inner li p {
+  display: inline-block;
+  width: 100%;
+  height: 21px;
+  margin-top: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #111;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.section-wrap .inner-content .middle-sec .middle-top .slide .slide-wrap .pagers {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 18px;
+  display: flex;
+  gap: 8px;
+}
+.section-wrap .inner-content .middle-sec .middle-top .slide .slide-wrap .pagers .pager {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: #999;
+  border-radius: 100%;
+  cursor: pointer;
+}
+.section-wrap .inner-content .middle-sec .middle-top .slide .slide-wrap .pagers .pager.active {
+  background: #437dea;
+}
 .section-wrap .inner-content .middle-sec .middle-top .search {
   height: 208px;
   padding: 38px 28px;
