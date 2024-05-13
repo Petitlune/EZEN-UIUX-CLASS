@@ -22,11 +22,9 @@ function App() {
         <span onClick={scrollToRef} className="date">
           예식일시
         </span>
-        <span onClick={scrollToHowRef} className="date">
-          오시는길
-        </span>
-        <span className="date">사진첩</span>
-        <span className="date">마음전하기</span>
+        <span onClick={scrollToHowRef}>오시는길</span>
+        <span>사진첩</span>
+        <span>마음전하기</span>
       </div>
       <div ref={calendarRef}>
         <Date></Date>
@@ -34,7 +32,7 @@ function App() {
       <div ref={howToGoRef}>
         <HowToGo />
       </div>
-      <div ref={howToGoRef}>
+      <div>
         <PhotoBook />
       </div>
     </div>

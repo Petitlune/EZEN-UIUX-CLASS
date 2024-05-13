@@ -11,13 +11,14 @@ const Main = () => {
 
   const playMusic = () => {
     const audio = audioRef.current;
-
+    audio.volume = 0.2;
+    audio.loop = true;
     if (audio.paused) {
       audio.play();
-      setVolume(<FaVolumeMute />);
+      setVolume(<FaVolumeHigh />);
     } else {
       audio.pause();
-      setVolume(<FaVolumeHigh />);
+      setVolume(<FaVolumeMute />);
       audio.currentTime = 0;
     }
 
@@ -36,7 +37,8 @@ const Main = () => {
       <div className="mainText">
         <p>현기환 · 김다슬</p>
         <p>
-          2024 9월 7일 토요일 오후 12시 20분 <br /> 가천컨벤션센터 5층, 컨벤션홀
+          2024년 9월 7일 토요일 오후 12시 20분 <br /> 가천컨벤션센터 5층,
+          컨벤션홀
         </p>
       </div>
     </div>

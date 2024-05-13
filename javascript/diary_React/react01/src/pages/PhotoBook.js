@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { styled } from "styled-components";
 import GuestBook from "./GuestBook";
+import { FaAngleRight } from "react-icons/fa";
 
 const Container = styled.div`
   position: relative;
@@ -13,7 +14,6 @@ const SlideWrap = styled.div`
   flex-wrap: wrap;
   position: relative;
   margin: 20px;
-  border: 1px solid red;
 `;
 
 const ImgSlide = styled.img`
@@ -33,7 +33,7 @@ const ImgSlide = styled.img`
   }
   &:nth-child(4) {
     position: absolute;
-    right: 20px;
+    right: 0;
     top: 380px;
     width: 40%;
     height: auto;
@@ -49,7 +49,8 @@ const ImgSlide = styled.img`
     width: 50%;
     height: auto;
   }
-1px s`;
+`;
+
 
 const PhotoBook = () => {
   const [modal, setModal] = useState(false);
@@ -58,8 +59,7 @@ const PhotoBook = () => {
     <Container>
       <h3 className="subtitle">photo gallery</h3>
       <h2>사진첩</h2>
-      <SlideWrap onClick={() => setModal(!modal)}>
-        {modal === true ? <GuestBook /> : null}
+      <SlideWrap>
         <ImgSlide
           src="./img/photos-by-lanty-qHjwSGv2p8c-unsplash.jpg"
           alt="weddingImg"
@@ -85,6 +85,7 @@ const PhotoBook = () => {
           alt="weddingImg"
         />
       </SlideWrap>
+  <GuestBook />
     </Container>
   );
 };
