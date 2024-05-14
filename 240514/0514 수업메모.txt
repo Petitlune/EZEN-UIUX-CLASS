@@ -1,0 +1,27 @@
+target: ESNext
+
+moduleDetection: force
+
+downlevelIteration: true
+
+noImplicitAny: true
+
+noImplicitThis : false
+
+"exm" : true
+인클루드 위에
+
+프라이빗 밑에
+"type" : "module"
+
+- createBrowserRouter / RouterProvider / <Outlet /> ==>Router의 최신문법
+ ==> 존재하지 않는 컴포넌트 페이지를 클라이언트가 요청시 메세지 및 문구 출력 기능 추가
+Outlet : 특정 컴포넌트 페이지에 도착을 했을 때 이에 맞는 자식 컴포넌트 페이지가 존재하면, 해당 컴포넌트 페이지를 보여주게 하는 역할, 데이터를 전달해주는 역할도 함!
+
+* 기존에 서비스를 제공하고 있는 페이지 => 만약 해당 페이지에 문제 발생시 해당 페이지에 아무런 메세지 없이 마냥 기다리게 하지 않고 문제 발생했다는 메세지를 전달할 수 있는 기능도 있음.
+
+<Link />  VS  useNavigate( )
+
+ 링크 : 사용자가 직접 어떤 행위를 해서 특정 페이지로 이동시켜주고자 할 때
+useNavigate : 사용자의 의도와 관계없이 기획자가 사용자를 어떠한 페이지로 이끌고자 할 때
+=> 버튼 클릭 후 이벤트 결과값으로 자동 이동!

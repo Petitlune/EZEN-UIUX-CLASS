@@ -11,6 +11,7 @@ const renderdata = (data) => {
     const tit = document.createElement("div");
     const price = document.createElement("div");
     const priceKR = item.price.toLocaleString("ko-KR");
+    console.log(item);
 
     tit.className = "title";
     price.className = "price";

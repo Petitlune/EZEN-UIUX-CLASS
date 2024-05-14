@@ -190,7 +190,6 @@ nav {
 .content-slide-wrap {
   position: relative;
   width: 1440px;
-  border: 1px solid red;
 }
 
 .content-slide-wrap ul {
@@ -758,7 +757,6 @@ footer {
 .footer-nav-right {
   width: 20%;
   gap: 10%;
-  border: 1px solid red;
   min-width: 200px;
 }
 #familySite {

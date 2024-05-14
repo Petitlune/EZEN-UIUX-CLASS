@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!--fontawesome-->
+    <script
+      src="https://kit.fontawesome.com/b06e382e17.js"
+      crossorigin="anonymous"
+    ></script>
+    <!--custom css&js-->
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="./script.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="content navOne">
+        <ul class="nav-bar">
+          <a href="#">
+            <li><i class="fa-solid fa-magnifying-glass"></i>객실 예약</li>
+          </a>
+          <a href="#">
+            <li>다이닝 예약</li>
+          </a>
+          <a href="#">
+            <li>스페셜 오퍼</li>
+          </a>
+
+          <a href="#">
+            <li>e-shop</li>
+          </a>
+          <a href="#">
+            <li>Q&A</li>
+          </a>
+        </ul>
+      </div>
+      <div class="toggle-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="content navTwo">
+        <ul class="reservation-bar">
+          <li>
+            <span class="title">호텔 또는 도시</span>
+            <input
+              id="hotel-name"
+              type="text"
+              placeholder="도시, 명소, 호텔을 입력하세요."
+            />
+          </li>
+          <li>
+            <span class="title">
+              <span>체크인</span>
+              <span>체크아웃</span>
+            </span>
+            <div class="input-box">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </li>
+          <li>
+            <span class="title">
+              <span>객실수</span>
+              <span>성인</span>
+              <span>어린이</span>
+            </span>
+            <div class="input-box">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </li>
+          <li>
+            <button class="search">검색</button>
+          </li>
+        </ul>
+      </div>
+      <div class="calender-member">
+        <div class="calender">
+          <input type="date" id="now-month" />
+          <input type="date" id="next-month" />
+        </div>
+        <div class="member">
+          <div class="room">
+            <ul class="room-item">
+              <li>객실1</li>
+              <li>
+                <button>-</button>
+                <span id="adult">성인</span>
+                <button>+</button>
+              </li>
+              <li>
+                <button>-</button>
+                <span id="child">어린이</span>
+                <button>+</button>
+              </li>
+            </ul>
+            <div class="room-plus">
+              객실추가<i class="fa-solid fa-circle-plus"></i>
+            </div>
+            <button>선택완료</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section>
+      <div class="hotel-main">
+        <h1>Welcome to the <br />Our resort<span>!</span></h1>
+      </div>
+    </section>
+  </body>
+</html>
