@@ -1,42 +1,36 @@
 const slides = document.querySelector(".slides");
-const slide = slides.querySelectorAll("li");
+const slide = document.querySelectorAll(".slides li");
 const slideCount = slide.length;
-const slidesWidth = 1440;
-const slidesMargin = 80;
-const nextBtn = document.querySelector(".first-next");
-const prevBtn = document.querySelector(".first-prev");
-const pageNum = document.querySelector(".pageNum ");
-const pagetotalNum = slide.length;
+const slideWidth = slide[0].clientWidth;
+const sliedMargin = 80;
+const prevBtn = document.querySelector(".prev");
+const nextBtn = document.querySelector(".next");
 const currentNum = document.querySelector("#currentNum");
 const lastNum = document.querySelector("#lastNum");
+
 let currentIdx = 0;
 
 const updateWidth = () => {
   const currentSlides = document.querySelectorAll(".slides li");
   const newSlideCount = currentSlides.length;
-  console.log(newSlideCount); // 복제한 후에 li 태그 갯수 10개
   const newWidth = `${
-    (slidesWidth + slidesMargin) * newSlideCount - slidesMargin
+    (slideWidth + sliedMargin) * newSlideCount - sliedMargin
   }px`;
   slides.style.width = newWidth;
 };
 
-//초기값 셋팅
-
-const setStart = () => {
-  const startleft = -(slidesWidth + slidesMargin) * slideCount;
-  slides.style.transform = `translateX(${startleft}px)`;
-  console.log(startleft);
-  currentNum.innerText = currentIdx + 1;
+const setInitialPos = () => {
+  const initialTranslateValue = -(slideWidth + sliedMargin) * slideCount;
+  slides.style.transform = `translateX(${initialTranslateValue}px)`;
+  currentNum.innerText = (currentIdx % slideCount) + 1;
   lastNum.innerText = slideCount;
 };
 
-//앞뒤로 노드 복제
 const makeClone = () => {
   for (let i = 0; i < slideCount; i++) {
-    const cloneSlide = slide[i].cloneNode(true);
-    cloneSlide.classList.add("clone");
-    slides.appendChild(cloneSlide);
+    const clonSlide = slide[i].cloneNode(true);
+    clonSlide.classList.add("clone");
+    slides.appendChild(clonSlide);
   }
   for (let i = slideCount - 1; i >= 0; i--) {
     const cloneSlide = slide[i].cloneNode(true);
@@ -44,69 +38,72 @@ const makeClone = () => {
     slides.prepend(cloneSlide);
   }
   updateWidth();
-  setStart();
+  setInitialPos();
+  setTimeout(() => {
+    slides.classList.add("animated");
+  }, 100);
 };
+
 makeClone();
 
-//무한 슬라이드 셋팅
-
 const moveSlide = (num) => {
-  slides.style.transform = `translateX(${-num * 1520 - 13680}px)`;
+  slides.style.left = `${-num * (slideWidth + sliedMargin)}px`;
   currentIdx = num;
   if (currentIdx === slideCount || currentIdx === -slideCount) {
     setTimeout(() => {
       slides.classList.remove("animated");
-      setStart();
-    }, 1000);
-    currentNum.innerText = currentIdx + 1;
-    currentIdx = 0;
+      slides.style.left = "0px";
+      currentIdx = 0;
+      currentNum.innerText = (currentIdx % slideCount) + 1;
+    }, 500);
+    setTimeout(() => {
+      slides.classList.add("animated");
+    }, 600);
   }
-  console.log(currentIdx);
 };
 
+prevBtn.addEventListener("click", () => {
+  moveSlide(currentIdx - 1);
+  console.log(currentIdx);
+  if (currentIdx > 0) {
+    currentNum.innerText = (currentIdx % slideCount) + 1;
+  } else if (currentIdx === 0) {
+    currentNum.innerText = 1;
+  } else {
+    currentNum.innerText = currentIdx + 10;
+  }
+});
+
+nextBtn.addEventListener("click", () => {
+  moveSlide(currentIdx + 1);
+  if (currentIdx < 0) {
+    currentNum.innerText = currentIdx + 10;
+  } else {
+    currentNum.innerText = (currentIdx % slideCount) + 1;
+  }
+});
+//auto slide
 const autoSlide = () => {
-  auto = setInterval(() => {
-    slides.classList.add("animated");
+  timer = setInterval(() => {
     moveSlide(currentIdx + 1);
 
-    currentNum.innerText = currentIdx + 1;
-  }, 5000);
+    currentNum.innerText = (currentIdx % slideCount) + 1;
+  }, 3000);
 };
 
 autoSlide();
 
 const stopSlide = () => {
-  clearInterval(auto);
+  clearInterval(timer);
 };
-
-// 최종 이벤트 리스너
 slides.addEventListener("mouseenter", stopSlide);
 slides.addEventListener("mouseleave", autoSlide);
-nextBtn.addEventListener("mouseenter", stopSlide);
-nextBtn.addEventListener("mouseleave", autoSlide);
 prevBtn.addEventListener("mouseenter", stopSlide);
 prevBtn.addEventListener("mouseleave", autoSlide);
+nextBtn.addEventListener("mouseenter", stopSlide);
+nextBtn.addEventListener("mouseleave", autoSlide);
 
-nextBtn.addEventListener("click", () => {
-  if (currentIdx < slideCount) {
-    slides.classList.add("animated");
-    moveSlide(currentIdx + 1);
-    currentNum.innerText = currentIdx + 1;
-  }
-});
-prevBtn.addEventListener("click", () => {
-  if (-slideCount < currentIdx) {
-    slides.classList.add("animated");
-    moveSlide(currentIdx - 1);
-    //하단 slideNumber 표시
-    if (currentIdx < 0) {
-      currentNum.innerText = currentIdx + slideCount + 1;
-    } else {
-      currentNum.innerText = currentIdx + 1;
-    }
-  }
-});
-
+//Book title
 const bookTitle = document.querySelectorAll(".book-tit");
 const bookTitleHover = document.querySelectorAll("#book-tit-hover");
 

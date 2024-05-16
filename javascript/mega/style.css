@@ -190,11 +190,15 @@ nav {
 .content-slide-wrap {
   position: relative;
   width: 1440px;
+  height: 480px;
 }
 
 .content-slide-wrap ul {
   display: flex;
   gap: 80px;
+  position: absolute;
+  left: 0%;
+  top: 0%;
 }
 .content-slide-wrap ul.animated {
   transition: all 0.5s ease-out;
