@@ -1,0 +1,28 @@
+* 외부에서 API 활용해서 외부에서 데이터를 수신
+  => 수신한 Data를 어딘가에 저장(coins에 담아놓는게 효율적) / 수신한 Data 안에 세부적인 코인 종류가 존재한다면, 이것을 컨트롤 할 수 있어야하지 않을까? 
+/ coins 안에 담길 API 수신 Data는 Coins라는 컴포넌트가 마운트될때 자동으로 생성이 되어야 함. 
+
+
+my json sever : 쇼핑몰 작업: 데이터를 json으로 만들어놓고 json파일 불러와라
+
+TS: 고차함수 !! / 함수 안에 콜백함수를 사용하는 방법 : 타입정의
+ex) add(1)(2)
+
+* key 값만 찾아오기
+전역 변수에 저장(마우스 우클릭)
+ => Object.keys(temp1).join()
+
+(단축키는 shift + alt + i)
+
+* 속성 찾아오기
+ => Object.values(temp1).map((v) => typeof v).join()
+
+*react - hook
+ => useMatch : Boolean값으로 어떤 페이지에 현재 도착했는가 알려주는 훅
+
+낙산해수욕장
+낙산사
+남애항
+오산리선사유적박물관
+대청봉
+양양 용소폭포
