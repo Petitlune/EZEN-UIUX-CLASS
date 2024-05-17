@@ -110,3 +110,60 @@ const bookTitleHover = document.querySelectorAll("#book-tit-hover");
 bookTitle.forEach((item, i) => {
   bookTitleHover[i].innerText = item.innerText;
 });
+
+const clickSlide = () => {
+  const pickSlide = document.querySelector(".pick-slide-wrap");
+  const pickSlideWidth = pickSlide.clientWidth;
+  const pickSlideItem = document.querySelectorAll(".pick-book").length;
+  const progressbar = document.querySelector(".bar-inner");
+  const progressbarWidth = 100 / 3;
+  const pickNextBtn = document.querySelector(".right");
+  const pickPrevBtn = document.querySelector(".left");
+  let i = 0;
+  pickNextBtn.addEventListener("click", () => {
+    i++;
+    if (i > pickSlideItem - 1) {
+      i = 0;
+    }
+    pickSlide.style.left = `-${pickSlideWidth * i}px`;
+    progressbar.style.width = `${progressbarWidth * (i + 1)}%`;
+  });
+  console.log(pickSlideItem);
+  pickPrevBtn.addEventListener("click", () => {
+    --i;
+    if (i < 0) {
+      i = pickSlideItem - 1;
+    }
+    pickSlide.style.left = `-${pickSlideWidth * i + 1}px`;
+    progressbar.style.width = `${progressbarWidth * (i + 1)}%`;
+  });
+};
+
+clickSlide();
+
+const menuBtn = document.querySelector(".menu-button");
+const navHiddenMenu = document.querySelector(".toggle-menu");
+
+menuBtn.addEventListener("click", () => {
+  navHiddenMenu.classList.toggle("active");
+  menuBtn.classList.toggle("active");
+});
+
+const bestSlide = () => {
+  const selectGrade = document.querySelectorAll("#grade span");
+  const gradeInner = document.querySelectorAll(".slide-wrap .item");
+
+  selectGrade.forEach((grade, i) => {
+    grade.addEventListener("click", () => {
+      gradeInner.forEach((it, i) => {
+        it.classList.remove("active");
+        selectGrade[i].classList.remove("active");
+      });
+
+      grade.classList.add("active");
+      gradeInner[i].classList.add("active");
+    });
+  });
+};
+
+bestSlide();

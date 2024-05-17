@@ -75,6 +75,25 @@ const Description = styled.p`
     color: ${(props) => props.theme.whiteColor};
   }
 `;
+const Taps = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 25px 0;
+  gap: 10px;
+`;
+
+const Tap = styled.span<{ isActive: boolean }>`
+  padding: 7px 0;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 10px;
+  background: ${(props) => props.theme.accentColor};
+  color: ${(props) =>
+    props.isActive ? props.theme.textColor : props.theme.whiteColor};
+`;
 
 interface RouterParams {
   coinId: string;
@@ -134,7 +153,7 @@ const Coin = () => {
   const { state } = useLocation() as LocationState;
   const priceMatch = useMatch("/:coinId/price");
   const chartMatch = useMatch("/:coinId/chart");
-  console.log(chartMatch);
+
   useEffect(() => {
     (async () => {
       const infoData = await (
@@ -191,8 +210,15 @@ const Coin = () => {
               <span>{priceInfo?.max_supply}</span>
             </OverViewItem>
           </OverView>
-          <Link to={`/${coinId}/chart`}>Chart</Link>
-          <Link to={`/${coinId}/price`}>Price</Link>
+          <Taps>
+            <Tap isActive={chartMatch !== null}>
+              <Link to={`/${coinId}/chart`}>Chart</Link>
+            </Tap>
+            <Tap isActive={priceMatch !== null}>
+              <Link to={`/${coinId}/price`}>Price</Link>
+            </Tap>
+          </Taps>
+
           <Routes>
             <Route path="/chart" element={<Chart />} />
             <Route path="/price" element={<Price />} />

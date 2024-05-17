@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { fetchCoins } from "../api";
+import { useQuery } from "@tanstack/react-query";
 
 const Container = styled.div`
   max-width: 1080px;
@@ -66,28 +68,29 @@ interface CoinInterface {
 }
 
 const Coins = () => {
-  const [coins, setCoins] = useState<CoinInterface[]>([]);
-  const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    (async () => {
-      const reponse = await fetch(
-        "https://my-json-server.typicode.com/Divjason/coinlist/coins"
-      );
-      const json = await reponse.json();
-      setCoins(json);
-      setLoading(false);
-    })();
-  }, []);
+  const { isLoading, data } = useQuery<CoinInterface[]>("allCoins", fetchCoins);
+  // const [coins, setCoins] = useState<CoinInterface[]>([]);
+  // const [loading, setLoading] = useState(true);
+  // useEffect(() => {
+  //   (async () => {
+  //     const reponse = await fetch(
+  //       "https://my-json-server.typicode.com/Divjason/coinlist/coins"
+  //     );
+  //     const json = await reponse.json();
+  //     setCoins(json);
+  //     setLoading(false);
+  //   })();
+  // }, []);
   return (
     <Container>
       <Header>
         <Title>Coins Infomation</Title>
       </Header>
-      {loading ? (
+      {isLoading ? (
         <Loader>"Loading..."</Loader>
       ) : (
         <CoinList>
-          {coins.map((coin) => (
+          {data?.map((coin) => (
             <Coin key={coin.id}>
               Now Rank : {coin.rank}
               <Link to={`/${coin.id}`} state={`${coin.name}`}>
