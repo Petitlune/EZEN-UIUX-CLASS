@@ -1,12 +1,64 @@
 import React, { useState, useRef } from "react";
-
 import { FaVolumeHigh } from "react-icons/fa6";
 import { FaVolumeMute } from "react-icons/fa";
-
 import music from "../mp3/SellBuyMusic.mp3";
-const Main = () => {
+import { styled } from "styled-components";
+
+const Wrap = styled.div`
+  position: relative;
+`;
+
+const TopDate = styled.h1`
+  margin: 10px 0;
+  font-family: "Mapo";
+  font-weight: 600;
+`;
+const Music = styled.div`
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 150;
+  animation: volume alternate 2s infinite;
+
+  @keyframes volume {
+    0% {
+      transform: scale(0.8);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+`;
+
+const WeddingMainImg = styled.img`
+  width: 96%;
+  min-width: 300px;
+  height: auto;
+  margin: 20px auto;
+  border-radius: 180px;
+`;
+
+const MainText = styled.div`
+  &:first-child {
+    display: inline-block;
+    margin: 6px;
+    font-size: 24px;
+    color: #222;
+  }
+  &:last-child {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 16px;
+    line-height: 25px;
+  }
+`;
+
+const Main = ({ Subtitle }) => {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [volume, setVolume] = useState(<FaVolumeHigh />);
+  const [volume, setVolume] = useState(<FaVolumeMute />);
   const audioRef = useRef(new Audio(music));
 
   const playMusic = () => {
@@ -26,22 +78,19 @@ const Main = () => {
   };
 
   return (
-    <div className="wrap">
-      <div className="music" onClick={playMusic}>
-        {volume}
-      </div>
-
-      <h1>2024.09.07</h1>
-      <p className="subtitle">saturday</p>
-      <img className="weddingMain" src="./img/MainPage.jpg" alt="wedding-img" />
-      <div className="mainText">
+    <Wrap>
+      <Music onClick={playMusic}>{volume}</Music>
+      <TopDate>2024.09.07</TopDate>
+      <Subtitle>saturday</Subtitle>
+      <WeddingMainImg src="./img/MainPage.jpg" alt="wedding-img" />
+      <MainText>
         <p>현기환 · 김다슬</p>
         <p>
           2024년 9월 7일 토요일 오후 12시 20분 <br /> 가천컨벤션센터 5층,
           컨벤션홀
         </p>
-      </div>
-    </div>
+      </MainText>
+    </Wrap>
   );
 };
 

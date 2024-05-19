@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import { IoIosCloseCircle } from "react-icons/io";
@@ -18,82 +18,129 @@ const Container = styled.div`
 `;
 
 const ModalBox = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
   width: 90%;
-  height: 80vh;
-  background-color: #fff;
+  max-width: 400px;
+  height: 62%;
+  min-height: 480px;
+  background-color: #f8a4a4;
   z-index: 100;
-  border: 2px solid #f8a4a4;
   border-radius: 8px;
   color: #fff;
+  overflow: hidden;
 `;
 const Buttons = styled.span`
-  display: inline-block;
-  border-radius: 100%;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  color: #f8a4a4;
-  font-size: 48px;
+  color: #fff;
+  font-size: 36px;
   font-weight: lighter;
-  line-height: 58px;
-  cursor: pointer;
-
-  &:first-child {
-    left: 0;
-  }
-  &:nth-child(2) {
-    right: 0;
-  }
-  &:last-child {
-    right: 10px;
-    top: 40px;
-  }
 `;
-const SlideAll = styled.p`
+
+const ClosedButtons = styled.span`
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: #fff;
+  font-size: 36px;
+  cursor: pointer;
+`;
+
+const SlideWrap = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  margin-right: 18px;
-  cursor: pointer;
-  &:hover {
-    text-decoration: underline;
-  }
+  transform: ${({ currentIndex }) => `translateX(-${currentIndex * 100}%)`};
+  transition: all 1s ease-in-out;
 `;
+const InnerImg = styled.img`
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+`;
+const GuestBook = ({ initialIndex = 0, onClose }) => {
+  const [currentIndex, setCurrentIndex] = useState(initialIndex);
+  const images = [
+    "./img/photos-by-lanty-qHjwSGv2p8c-unsplash.jpg",
+    "./img/nikita-shirokov-qGgjalogCdE-unsplash.jpg",
+    "./img/rikonavt-oAIEk6xqYYc-unsplash.jpg",
+    "./img/leonardo-miranda-dvF6s1H1x68-unsplash.jpg",
+    "./img/eugenivy_now-mUYjrnQLrSA-unsplash.jpg",
+    "./img/ulyana-tim-AbnCRgL2DNs-unsplash.jpg",
+  ];
 
-const GuestBook = () => {
-  const [modal, setModal] = useState(false);
-  const [modalXButton, setModalXButton] = useState(false);
+  const intervalRef = useRef(null);
 
-  const openModal = () => {
-    setModal(true);
+  useEffect(() => {
+    startAutoSlide();
+    return () => stopAutoSlide();
+  }, [currentIndex]);
+
+  const startAutoSlide = () => {
+    stopAutoSlide();
+    intervalRef.current = setInterval(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex < images.length - 1 ? prevIndex + 1 : 0
+      );
+    }, 3000);
   };
 
-  const closeModal = () => {
-    setModal(false);
+  const stopAutoSlide = () => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+  };
+
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex < images.length - 1 ? prevIndex + 1 : 0
+    );
+    startAutoSlide();
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex > 0 ? prevIndex - 1 : images.length - 1
+    );
+    startAutoSlide();
+  };
+
+  useEffect(() => {
+    setCurrentIndex(initialIndex);
+  }, [initialIndex]);
+
+  const handleMouseEnter = () => {
+    stopAutoSlide();
+  };
+
+  const handleMouseLeave = () => {
+    startAutoSlide();
   };
 
   return (
-    <div>
-      {modal === true ? (
-        <Container>
-          <ModalBox>
-            <Buttons>
-              <FaAngleLeft />
-            </Buttons>
-            <Buttons>
-              <FaAngleRight />
-            </Buttons>
-            <Buttons onClick={closeModal}>
-              <IoIosCloseCircle />
-            </Buttons>
-          </ModalBox>
-        </Container>
-      ) : null}
-      <SlideAll onClick={openModal}>
-        사진 전체보기 <FaAngleRight />
-      </SlideAll>
-    </div>
+    <Container>
+      <ModalBox onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+        <SlideWrap currentIndex={currentIndex}>
+          {images.map((src, index) => (
+            <InnerImg key={index} src={src} alt={`weddingImg${index}`} />
+          ))}
+        </SlideWrap>
+        <Buttons>
+          <FaAngleLeft style={{ cursor: "pointer" }} onClick={prevSlide} />
+          <FaAngleRight style={{ cursor: "pointer" }} onClick={nextSlide} />
+        </Buttons>
+        <ClosedButtons onClick={onClose}>
+          <IoIosCloseCircle />
+        </ClosedButtons>
+      </ModalBox>
+    </Container>
   );
 };
 
