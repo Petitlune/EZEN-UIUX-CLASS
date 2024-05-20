@@ -11,7 +11,9 @@ const InnerText = styled.div`
 const Groom = styled.span`
   display: flex;
   gap: 8px;
-  color: #88e5f9;
+  span {
+    color: #777;
+  }
 `;
 
 const Celebration = styled.div`
@@ -31,14 +33,22 @@ const Celebration = styled.div`
 `;
 
 const InnerContent = ({ title, name, bank }) => {
+  const copyBank = async () => {
+    await navigator.clipboard.writeText(bank).then(() => {
+      alert("계좌번호가 복사되었습니다. 🥰");
+      console.log("복사된 계좌번호:", bank);
+    });
+  };
+
   return (
     <InnerText>
       <Groom>
-        {title} <p>{name}</p>
+        <span>{title}</span>
+        <p>{name}</p>
       </Groom>
       <Celebration>
         <p>{bank}</p>
-        <span>계좌번호 복사</span>
+        <span onClick={copyBank}>계좌번호 복사</span>
       </Celebration>
     </InnerText>
   );

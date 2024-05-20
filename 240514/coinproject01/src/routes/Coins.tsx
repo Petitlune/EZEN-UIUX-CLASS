@@ -57,7 +57,7 @@ const Img = styled.img`
   height: 25px;
 `;
 
-interface CoinInterface {
+interface ICoinInterface {
   id: string;
   name: string;
   symbol: string;
@@ -66,39 +66,41 @@ interface CoinInterface {
   is_active: boolean;
   type: string;
 }
+interface ICoinProps {
+  toggleDark: () => void;
+}
 
-const Coins = () => {
-  const { isLoading, data } = useQuery<CoinInterface[]>("allCoins", fetchCoins);
-  // const [coins, setCoins] = useState<CoinInterface[]>([]);
-  // const [loading, setLoading] = useState(true);
-  // useEffect(() => {
-  //   (async () => {
-  //     const reponse = await fetch(
-  //       "https://my-json-server.typicode.com/Divjason/coinlist/coins"
-  //     );
-  //     const json = await reponse.json();
-  //     setCoins(json);
-  //     setLoading(false);
-  //   })();
-  // }, []);
+const Coins = ({ toggleDark }: ICoinProps) => {
+  const [coins, setCoins] = useState<ICoinInterface[]>([]);
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    (async () => {
+      const response = await fetch(
+        "https://my-json-server.typicode.com/Divjason/coinlist/coins"
+      );
+      const json = await response.json();
+      setCoins(json);
+      setLoading(false);
+    })();
+  }, []);
   return (
     <Container>
       <Header>
-        <Title>Coins Infomation</Title>
+        <Title>Coins</Title>
+        <button onClick={toggleDark}>Toggle Mode</button>
       </Header>
-      {isLoading ? (
+      {loading ? (
         <Loader>"Loading..."</Loader>
       ) : (
         <CoinList>
-          {data?.map((coin) => (
+          {coins.map((coin) => (
             <Coin key={coin.id}>
-              Now Rank : {coin.rank}
               <Link to={`/${coin.id}`} state={`${coin.name}`}>
+                Now Rank : {coin.rank}
                 <Img
                   src={`https://cryptoicon-api.pages.dev/api/icon/${coin.symbol.toLowerCase()}`}
                 />
-                {coin.name}({coin.symbol}) &rarr; {coin.name} 상세정보 보러가기
-                {coin.is_new ? <Title>"NEW"</Title> : ""}
+                {coin.name} ({coin.symbol}) &rarr; {coin.name}상세정보 보러가기
               </Link>
             </Coin>
           ))}

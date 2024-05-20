@@ -56,11 +56,11 @@ const InnerTitle = styled.div`
     height: 22px;
   }
   h3 {
-    color: ${({ theme }) => theme.color.groom};
+    color: ${({ theme }) => theme.color.bride};
   }
 `;
 
-const ModalBox = ({ onClose }) => {
+const ModalBoxBride = ({ onClose, theme }) => {
   return (
     <Container>
       <ModalInner>
@@ -70,22 +70,19 @@ const ModalBox = ({ onClose }) => {
         <InnerWrap>
           <InnerTitle>
             <img src="./img/flower.png" alt="flower" />
-            <h3>신랑측</h3>
+            <h3>신부측</h3>
           </InnerTitle>
           <InnerContent
-            title="신랑"
-            name="현기환"
+            theme={theme}
+            title="신부"
+            name="김다슬"
             bank="신한은행 110 426 124578"
           />
           <InnerContent
+            theme={theme}
             title="아버지"
-            name="현아빠"
+            name="김아빠"
             bank="우리은행 110 426 124578"
-          />
-          <InnerContent
-            title="어머니"
-            name="최엄마"
-            bank="농협은행 351031 52 054156"
           />
         </InnerWrap>
       </ModalInner>
@@ -93,4 +90,4 @@ const ModalBox = ({ onClose }) => {
   );
 };
 
-export default ModalBox;
+export default ModalBoxBride;

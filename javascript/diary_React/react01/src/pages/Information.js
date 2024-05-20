@@ -1,12 +1,21 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import ModalBox from "../components/ModalBox";
+import ModalBoxBride from "../components/ModalBoxBride";
+import { ThemeProvider } from "styled-components";
+
+const theme = {
+  color: {
+    groom: "#88e5f9",
+    bride: "#f8a4a4",
+  },
+};
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 80px;
+  margin-top: 60px;
 `;
 
 const Info = styled.div`
@@ -55,6 +64,7 @@ const InfoImg = styled.img`
 `;
 const Information = ({ Subtitle, SubtitleKR, DateInfo }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalBrideOpen, setIsModalBrideOpen] = useState(false);
 
   const OpenInfoGroom = () => {
     setIsModalOpen(true);
@@ -62,42 +72,52 @@ const Information = ({ Subtitle, SubtitleKR, DateInfo }) => {
   const handleCloseModal = () => {
     setIsModalOpen(false);
   };
+  const OpenInfoBride = () => {
+    setIsModalBrideOpen(true);
+  };
+  const handleCloseBrideModal = () => {
+    setIsModalBrideOpen(false);
+  };
 
   return (
-    <Container>
-      <DateInfo>
-        <Subtitle>expressing celebration</Subtitle>
-        <SubtitleKR>축하의 마음 전하기</SubtitleKR>
-        <p>
-          저희 둘의 시작을 축하해 주시는
-          <br />
-          모든 분들에게 진심으로 감사드리며
-          <br />
-          전해주신 따뜻한 마음, <br />
-          오래도록 간직하겠습니다.
-        </p>
-      </DateInfo>
-      <Info>
-        <InfoInner>
-          <Title>
-            <img src="./img/flower.png" alt="flower" />
-            <span>신랑측</span>
-          </Title>
-          <BankClone onClick={OpenInfoGroom}>계좌번호 보기</BankClone>
-          {isModalOpen && <ModalBox onClose={handleCloseModal} />}
-        </InfoInner>
-        <InfoInner>
-          <Title>
-            <img src="./img/flower.png" alt="flower" />
-            <span>신부측</span>
-          </Title>
-          <BankClone onClick={OpenInfoGroom}>계좌번호 보기</BankClone>
-          {isModalOpen && <ModalBox onClose={handleCloseModal} />}
-        </InfoInner>
-      </Info>
-      <InfoImg src="./img/InfoPage.jpg" alt="InfoImage" />
-      <Subtitle style={{ fontSize: "24px" }}>THANK YOU !</Subtitle>
-    </Container>
+    <ThemeProvider theme={theme}>
+      <Container>
+        <DateInfo>
+          <Subtitle>expressing celebration</Subtitle>
+          <SubtitleKR>축하의 마음 전하기</SubtitleKR>
+          <p>
+            저희 둘의 시작을 축하해 주시는
+            <br />
+            모든 분들에게 진심으로 감사드리며
+            <br />
+            전해주신 따뜻한 마음, <br />
+            오래도록 간직하겠습니다.
+          </p>
+        </DateInfo>
+        <Info>
+          <InfoInner>
+            <Title>
+              <img src="./img/flower.png" alt="flower" />
+              <span>신랑측</span>
+            </Title>
+            <BankClone onClick={OpenInfoGroom}>계좌번호 보기</BankClone>
+            {isModalOpen && <ModalBox onClose={handleCloseModal} />}
+          </InfoInner>
+          <InfoInner>
+            <Title>
+              <img src="./img/flower.png" alt="flower" />
+              <span>신부측</span>
+            </Title>
+            <BankClone onClick={OpenInfoBride}>계좌번호 보기</BankClone>
+            {isModalBrideOpen && (
+              <ModalBoxBride onClose={handleCloseBrideModal} />
+            )}
+          </InfoInner>
+        </Info>
+        <InfoImg src="./img/InfoPage.jpg" alt="InfoImage" />
+        <Subtitle style={{ fontSize: "24px" }}>THANK YOU !</Subtitle>
+      </Container>
+    </ThemeProvider>
   );
 };
 

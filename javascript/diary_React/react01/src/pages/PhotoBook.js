@@ -6,7 +6,7 @@ import GuestBook from "./GuestBook";
 const Container = styled.div`
   width: 100%;
   height: 100%;
-  margin-top: 80px;
+  margin-top: 60px;
 `;
 
 const SlideWrap = styled.div`
@@ -54,9 +54,9 @@ const SlideAll = styled.p`
   align-items: center;
   justify-content: flex-end;
   margin-right: 18px;
+  font-size: 14px;
   cursor: pointer;
   &:hover {
-    text-decoration: underline;
     color: #f8a4a4;
   }
 `;

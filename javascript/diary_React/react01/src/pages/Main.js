@@ -42,17 +42,18 @@ const WeddingMainImg = styled.img`
 `;
 
 const MainText = styled.div`
-  &:first-child {
+  p:first-child {
     display: inline-block;
     margin: 6px;
     font-size: 24px;
     color: #222;
   }
-  &:last-child {
+  p:last-child {
     display: inline-block;
     margin-top: 12px;
     font-size: 16px;
     line-height: 25px;
+    font-weight: 600;
   }
 `;
 

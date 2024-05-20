@@ -6,6 +6,7 @@ import HowToGo from "./pages/HowToGo";
 import PhotoBook from "./pages/PhotoBook";
 import Information from "./pages/Information";
 import styled from "styled-components";
+import BottomPage from "./pages/BottomPage";
 
 const Container = styled.div`
   text-align: center;
@@ -41,6 +42,7 @@ const DateInfo = styled.div`
   width: 90%;
   min-width: 280px;
   line-height: 25px;
+
   p {
     margin: 28px 0;
   }
@@ -109,6 +111,7 @@ function App() {
           DateInfo={DateInfo}
         />
       </div>
+      <BottomPage />
     </Container>
   );
 }

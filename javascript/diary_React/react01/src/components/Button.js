@@ -10,13 +10,13 @@ const Btn = styled.div`
   border-radius: 10px;
   line-height: 46px;
   cursor: pointer;
-  margin-top: 28px;
+  margin-bottom: 28px;
 `;
 
 const Button = () => {
   const copyLocation = async () => {
     await navigator.clipboard
-      .writeText("경기도 성남시 수정구 성남대로 1342")
+      .writeText("경기 성남시 수정구 성남대로 1342 가천컨벤션센터")
       .then(() => {
         alert("Copy🥰");
       });
