@@ -83,7 +83,10 @@ const Main = ({ Subtitle }) => {
       <Music onClick={playMusic}>{volume}</Music>
       <TopDate>2024.09.07</TopDate>
       <Subtitle>saturday</Subtitle>
-      <WeddingMainImg src="./img/MainPage.jpg" alt="wedding-img" />
+      <WeddingMainImg
+        src="./img/samantha-gades-2TdhwS6Y3pU-unsplash.jpg"
+        alt="wedding-img"
+      />
       <MainText>
         <p>현기환 · 김다슬</p>
         <p>
