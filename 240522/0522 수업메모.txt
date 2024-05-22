@@ -1,0 +1,60 @@
+* Recoil 라이브러리
+- atom 원자 => 모든 하위 컴포넌트
+- selector 함수 - state값을 받아와서 해당 요소를 변환 후 반환하는 함수
+
+*enum type : 열거할 수 있는 열거형 타입 ( 순서를 갖고 있는 요소의 타입을 지정할 때 사용)
+
+* Recoil의 세가지 함수
+  - useRecoilValue : atom의 값을 가져올 때
+  - useSetRecoilState: atom의 값을 편집 (해당 컴포넌트 안에서만 편집 가능)
+  - useRecoilState : atom의 값을 가져와서 편집
+
+* Recoil을 활용해서 atom 생성후 그 값을 하위 컴포넌트를 요소들이 사용하게 만들어줌. 
+ > selector 함수 역시 사용할 수 있었다. (atom의 저장되어 있는 value값을 가져다가 변환 및 가공을해서 반환하는 역할을 함.) 
+ ==> export const toDoSelector = selector({
+  key: "toDoSelector",
+  get: ({ get }) => {
+    const toDos = get(toDoState);
+    const category = get(categoryState);
+    return toDos.filter((toDo) => toDo.category === category);
+  },
+});
+ ==> selector 함수는 객체를 매개변수로 선언 > 해당 매개변수는 get이라는 함수를 가지고 있는 객체의 타입 > 객체 안에 담긴 get 함수: atom의 값을 반환할 수 있도록 해줌. / return문을 활용한 반환값이 필수 / atom을 사용할 때는 반드시 매개변수로 객체를 사용해야하는데 key & default 가 필수값
+
+* react-hook-form 라이브러리
+ - form 태그  > input 태그에 입력도니 값을 라벨링을 해서 찾아오거나, 값이 변경되고 있는 사항을 실시간 모니터링, 유효성 검사를 위해서 에러가 발생되었을 때 해당 에러를 알 수 있는 메세지도 정의, 폼 요소 안에 이벤트 핸들러 정의 
+
+* recoil 함수 안에는 get과 set 함수가 있따. 
+- get : atom 값을 찾아와서 어떤 연산작업 후 값을 반환!
+- set : state의 값을 특정 값으로 변경시켜주고자 할 때 / 두번째 매개변수로 들어오는 값이 신규 state의 값이다. 
+
+* 드래그 앤 드롭 기능 구현
+- 리액트 라이브러리 beautiful-dnd
+ ==> 가장 바깥 영역은 반드시 <DragDropContext>가 필요
+ ==> 실제 드래그가 가능하게 할 수 있도록 해주는 영역 설정 <Droppable />
+ ==> <Draggable />
+
+사용원칙
+1)  <Droppable /> &  <Draggable /> 반드시 본인들만의 고유한 ID값을 가지고 있어야함. 
+2)  <Droppable /> &  <Draggable /> 자식요소 태그들은 함수의 반환값 형태가 되어야함. 
+3)  <Draggable /> id값과 index값 모두 필요(카드들이 여러개가 있기 때문에 index 필요)
+4)  <Draggable /> 드래그를 종료하는 시점에  함수 도출 => onDragEnd(*이동한 지점의 정보값을 알려주는 역할)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

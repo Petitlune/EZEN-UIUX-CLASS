@@ -1,0 +1,93 @@
+@import url("./reset.css");
+header {
+  width: 100%;
+  padding: 0 4%;
+  font-family: "Pretendard";
+  font-weight: 500;
+  height: 100px;
+}
+header .header-wrap {
+  display: flex;
+  width: 84vw;
+  height: 100%;
+  padding-left: 4.6vw;
+  align-items: center;
+  justify-content: space-between;
+}
+header .header-wrap .header-left {
+  display: flex;
+  align-items: center;
+  gap: 64px;
+}
+header .header-wrap .header-left ul {
+  display: flex;
+  gap: 24px;
+}
+header .header-wrap .header-left ul li {
+  font-size: 18px;
+  position: relative;
+}
+header .header-wrap .header-left ul li:last-child::before {
+  content: "";
+  position: absolute;
+  right: -26px;
+  bottom: 3px;
+  width: 16px;
+  height: 16px;
+  background: url("./img/ico_new_window.svg") center/contain no-repeat;
+  cursor: pointer;
+}
+header .header-wrap .option-menu {
+  display: flex;
+  align-items: center;
+  width: 186px;
+  height: 36px;
+  position: relative;
+  cursor: pointer;
+}
+header .header-wrap .option-menu::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: url("./img/bg_underline.png") center/cover no-repeat;
+}
+header .header-wrap .option-menu::after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  right: 0;
+  width: 12px;
+  height: 12px;
+  background: url("./img/ico_family-arrow.svg") no-repeat;
+}
+header .header-wrap .option-menu ul {
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  border: 2px solid black;
+  margin-top: 14px;
+  width: 100%;
+  height: 0;
+  opacity: 0;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s;
+}
+header .header-wrap .option-menu ul.active {
+  opacity: 1;
+  height: 260px;
+  gap: 16px;
+}
+header .header-wrap .option-menu ul li {
+  display: none;
+  font-weight: 400;
+  transition: all 0.3s;
+}
+header .header-wrap .option-menu ul li.active {
+  display: block;
+}/*# sourceMappingURL=style.css.map */
