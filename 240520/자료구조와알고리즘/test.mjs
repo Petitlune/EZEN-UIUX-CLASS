@@ -19,3 +19,33 @@ list.insertAt(2, 2);
 list.insertAt(3, 3);
 list.insertAt(4, 4);
 list.printAll();
+
+console.log("=== clear() 호출 ===");
+list.clear();
+list.printAll();
+
+console.log("=== insertLast() 세번 호출 ===");
+list.insertLast(0);
+list.insertLast(1);
+list.insertLast(2);
+list.printAll();
+
+console.log("=== deleteAt() 호출 ===");
+list.deleteAt(2);
+list.deleteAt(0);
+list.printAll();
+
+console.log("=== deleteLast() 호출 ===");
+list.insertLast(5);
+list.deleteLast();
+list.deleteLast();
+list.printAll();
+
+console.log("=== getNodeAt() 호출 ===");
+list.insertLast(1);
+list.insertLast(2);
+list.insertLast(3);
+list.insertLast(4);
+list.insertLast(5);
+let secondNode = list.getNodeAt(2);
+console.log(secondNode);
