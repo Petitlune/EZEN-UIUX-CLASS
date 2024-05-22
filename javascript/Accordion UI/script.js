@@ -1,15 +1,18 @@
 const clickMenu = document.querySelectorAll(".visible");
 const hiddenMenu = document.querySelectorAll(".hidden");
 const minusBtn = document.querySelectorAll(".btn span:last-child");
+const question = document.querySelectorAll(".question");
 
 clickMenu.forEach((item, i) => {
   item.addEventListener("click", () => {
     hiddenMenu[i].classList.toggle("active");
     minusBtn[i].classList.toggle("active");
+    question[i].classList.toggle("active");
     clickMenu.forEach((item2, i) => {
       if (item2 !== item) {
         hiddenMenu[i].classList.remove("active");
         minusBtn[i].classList.remove("active");
+        question[i].classList.remove("active");
       }
     });
   });

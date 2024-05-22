@@ -8,13 +8,15 @@ body {
   justify-content: center;
   align-items: center;
   font-family: "Noto Sans KR";
+  background: #fae4f8;
 }
 .container {
   width: 800px;
-  height: 460px;
+  height: auto;
   padding: 50px;
   background: #f2f2f2;
-  border-radius: 5px;
+  border-radius: 12px;
+  border: 1px solid #e6007e;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 .title {
@@ -46,6 +48,9 @@ li {
   line-height: 36px;
   border-radius: 100%;
   color: #fff;
+}
+.question.active {
+  background: #e6007e;
 }
 .question i {
   font-size: 22px;
@@ -91,5 +96,5 @@ li {
   text-align: center;
   line-height: 28px;
   border-radius: 100%;
-  color: rgb(226, 68, 160);
+  color: #e6007e;
 }

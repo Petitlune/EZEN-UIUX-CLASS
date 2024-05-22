@@ -15,6 +15,7 @@ body {
   height: 376px;
   border-radius: 18px;
   margin: 0 auto;
+  overflow: hidden;
 }
 .slides {
   position: absolute;
