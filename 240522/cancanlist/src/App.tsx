@@ -1,42 +1,76 @@
 import React from "react";
-import { useRecoilState, useRecoilValue } from "recoil";
-import { minState, hourSelector } from "./atoms";
+import styled from "styled-components";
+import { useRecoilState, useSetRecoilState } from "recoil";
+import {
+  DragDropContext,
+  Droppable,
+  Draggable,
+  DropResult,
+} from "react-beautiful-dnd";
+import { toDoState } from "./atoms";
 
-function App() {
-  const [minutes, setMinutes] = useRecoilState(minState);
-  const [hours, setHours] = useRecoilState(hourSelector);
-  const onMinutesChange = (event: React.FormEvent<HTMLInputElement>) => {
-    //+를 붙여서 타입을 숫자로 바꾸었다.
-    setMinutes(+event.currentTarget.value);
-  };
-  const onHoursChange = (event: React.FormEvent<HTMLInputElement>) => {
-    setHours(+event.currentTarget.value);
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  /* border: 1px solid #fff; */
+`;
+const Boards = styled.div`
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(1, 1fr);
+`;
+const Board = styled.div`
+  min-height: 200px;
+  padding: 20px 10px;
+  padding-top: 30px;
+  border-radius: 5px;
+  background-color: ${(props) => props.theme.boardColor};
+`;
+const Card = styled.div`
+  background-color: ${(props) => props.theme.cardColor};
+  color: #000;
+  margin-bottom: 5px;
+  padding: 10px;
+  border-radius: 5px;
+`;
+
+const App = () => {
+  const [toDos, setToDos] = useRecoilState(toDoState);
+  const onDragEnd = ({ source, destination }: DropResult) => {
+    console.log({ source, destination });
   };
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        height: "100vh",
-        gap: "10px",
-      }}
-    >
-      <input
-        value={minutes}
-        onChange={onMinutesChange}
-        type="number"
-        placeholder="Minutes"
-      />
-      <input
-        value={hours}
-        onChange={onHoursChange}
-        type="number"
-        placeholder="Hours"
-      />
-    </div>
+    <DragDropContext onDragEnd={onDragEnd}>
+      <Wrapper>
+        <Boards>
+          <Droppable droppableId="one">
+            {(magic) => (
+              <Board ref={magic.innerRef} {...magic.droppableProps}>
+                {toDos.map((toDo, index) => (
+                  <Draggable draggableId={toDo} key={index} index={index}>
+                    {(magic) => (
+                      <Card
+                        ref={magic.innerRef}
+                        {...magic.draggableProps}
+                        {...magic.dragHandleProps}
+                      >
+                        {toDo}
+                      </Card>
+                    )}
+                  </Draggable>
+                ))}
+              </Board>
+            )}
+          </Droppable>
+        </Boards>
+      </Wrapper>
+    </DragDropContext>
   );
-}
+};
 
 export default App;

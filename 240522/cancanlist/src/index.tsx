@@ -14,6 +14,9 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     font-family: "Source Sans 3";
+    color:${(props) => props.theme.cardColor};
+    background-color:${(props) => props.theme.bgColor};
+    line-height: 1.2;
   }
   li {
     list-style: none;
