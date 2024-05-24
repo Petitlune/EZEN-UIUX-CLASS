@@ -1,8 +1,16 @@
 import { atom, selector } from "recoil";
 
-export const toDoState = atom({
+interface IToDoState {
+  [key: string]: string[];
+}
+
+export const toDoState = atom<IToDoState>({
   key: "toDo",
-  default: ["a", "b", "c", "d", "e"],
+  default: {
+    to_do: ["a", "b"],
+    doing: ["c", "d", "e"],
+    done: ["f"],
+  },
 });
 
 //초를 분으로 바꾸는 코드

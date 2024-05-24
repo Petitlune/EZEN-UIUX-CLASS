@@ -226,3 +226,156 @@ getLength({
 });
 // getLength(null); //이 둘은 안됨
 // getLength(undefined);
+
+// 5) JSX 문법을 활용한 반복실행, 처리 => map
+// 기존 배열 가져와서 새로운 배열 생성
+// a = [1,2,3,4] => b = ["1","2",,"3", "4"] string으로 타입 바뀜
+
+const arr10: number[] = [1, 2, 3];
+const newArr = arr.map((it) => it * 2); // newArr = [2, 4, 6]
+
+// 기본적인 map 매서드 타입을 unknown으로 정의했을 때
+const map = (
+  arr: unknown[],
+  callback: (item: unknown) => unknown
+): unknown[] => {
+  return [];
+};
+
+//map 매서드 타입을 타입변수를 활용한 제네릭 형식으로 정의했을 때.
+const arr20 = [1, 2, 3];
+const map01 = <T, U>(arr: T[], callback: (item: T) => U): U[] => {
+  let result = [];
+  for (let i = 0; i < arr.length; i++) {
+    result.push(callback(arr[i]));
+  }
+  return result;
+};
+
+// map01(arr20, (it) = > it * 2 )
+map01(arr20, (it) => it.toString());
+
+//forEach함수의 제네릭 형식으로 타입 정의
+const arr5 = [1, 2, 3];
+arr5.forEach((it) => console.log(it));
+//반환값이 존재하지 않으므로 void형식으로 함수의 타입 정의.
+const forEach = <T>(arr: T[], callback: (item: T) => void) => {
+  for (let i = 0; arr.length; i++) {
+    callback(arr[i]);
+  }
+};
+
+// 제네릭 응용: 인터페이스
+interface KeyPair<K, T> {
+  key: K;
+  value: T;
+}
+
+//==> 적용하고자하는 인터페이스에도 제네릭을 끌고 가야한다.
+let KeyPair: KeyPair<string, number> = {
+  key: "key",
+  value: 0,
+};
+let KeyPair2: KeyPair<boolean, string[]> = {
+  key: true,
+  value: ["1"],
+};
+interface Map<V> {
+  [key: string]: V;
+}
+let stringMap: Map<string> = {
+  key: "value",
+};
+let booleanMap: Map<boolean> = {
+  key: true,
+};
+type Map2<V> = {
+  [key: string]: V;
+};
+let stringMap2: Map2<string> = {
+  key: "string",
+};
+
+//제네릭 인터페이스를 활용한 또 다른 예제
+interface Students {
+  type: "student";
+  school: string;
+}
+
+interface Developer {
+  type: "developer";
+  skill: string;
+}
+
+interface User<T> {
+  name: string;
+  // profile: Students | Developer  =>이런식으로 유니온 타입으로 사용 가능
+  profile: T; //프로필 안에 값이 방대하게 늘어나는 경우는 제네릭 타입으로 지정
+}
+
+const goToSchool = (user: User<Students>) => {
+  if (user.profile.type !== "student") {
+    console.log("잘 못 오셨습니다.");
+    return;
+  }
+  const school = user.profile.school;
+  console.log(`${school}로 등교 완료`);
+};
+
+const developerUser: User<Developer> = {
+  name: "Petit",
+  profile: {
+    type: "developer",
+    skill: "TS",
+  },
+};
+const studentUser: User<Students> = {
+  name: "JJong",
+  profile: {
+    type: "student",
+    school: "TS",
+  },
+};
+
+//제네릭 응용 => 제네릭 클래스
+
+// class NumberList {
+//   constructor(public list: number[]) {}
+//   push(data: number) {
+//     this.list.push(data);
+//   }
+//   pop() {
+//     return this.list.pop();
+//   }
+//   print() {
+//     console.log(this.list);
+//   }
+// }
+// class StringList {
+//   constructor(public list: string[]) {}
+//   push(data: string) {
+//     this.list.push(data);
+//   }
+//   pop() {
+//     return this.list.pop();
+//   }
+//   print() {
+//     console.log(this.list);
+//   }
+// }
+//위처럼 두개로 쪼개는게 비효율적이니까 제네릭형식으로 만들어준다.
+class List<T> {
+  constructor(public list: T[]) {}
+  push(data: T) {
+    this.list.push(data);
+  }
+  pop() {
+    return this.list.pop();
+  }
+  print() {
+    console.log(this.list);
+  }
+}
+
+const numberList = new List([1, 2, 3]);
+const stringList = new List(["1", "2", "3"]);

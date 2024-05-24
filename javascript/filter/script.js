@@ -11,22 +11,21 @@ const modalCloseBtn = document.querySelector(".closeBtn");
 // 상품 List DOM 생성
 
 const renderdata = (data) => {
-  data.forEach((item) => {
+  data.forEach((item, i) => {
     const list = document.createElement("li");
     const menuImg = document.createElement("img");
     const descWrap = document.createElement("div");
     const tit = document.createElement("div");
     const price = document.createElement("div");
     const priceKR = item.price.toLocaleString("ko-KR");
-    const eachImages = createList.querySelectorAll("li");
+    console.log(menuImg);
 
-    eachImages.forEach((img, i) => {
-      img.addEventListener("click", () => {
-        modal.classList.add("active");
-        modalImg.src = data[i].image;
-        modalName.innerText = data[i].product;
-        modalPrice.innerText = data[i].price;
-      });
+    menuImg.addEventListener("click", () => {
+      modal.classList.add("active");
+      modalImg.src = item.image;
+      modalName.innerText = item.product;
+      modalPrice.innerText = `${priceKR} 원`;
+      modalDesc.innerText = item.description;
     });
     modalCloseBtn.addEventListener("click", () => {
       modal.classList.remove("active");
@@ -44,6 +43,7 @@ const renderdata = (data) => {
     createList.appendChild(list);
   });
 };
+// const eachImages = createList.querySelectorAll("li");
 
 let menuList;
 
