@@ -112,30 +112,48 @@ bookTitle.forEach((item, i) => {
 });
 
 const clickSlide = () => {
-  const pickSlide = document.querySelector(".pick-slide-wrap");
-  const pickSlideWidth = pickSlide.clientWidth;
-  const pickSlideItem = document.querySelectorAll(".pick-book").length;
+  const pickSlide = document.querySelector(".pick-slide");
+  let pickSlideWidth = pickSlide.clientWidth;
+  const gap = 16;
+  const pickSlideItems = document.querySelectorAll(".pick-book").length;
   const progressbar = document.querySelector(".bar-inner");
-  const progressbarWidth = 100 / 3;
   const pickNextBtn = document.querySelector(".right");
   const pickPrevBtn = document.querySelector(".left");
+
   let i = 0;
+
+  const updateSlide = () => {
+    pickSlideWidth = pickSlide.clientWidth + gap;
+    const slideDistance = pickSlideWidth;
+    pickSlide.style.left = `-${slideDistance * i}px`;
+    progressbar.style.width = `${(100 / pickSlideItems) * (i + 1)}%`;
+  };
+
+  const initSlide = () => {
+    pickSlideWidth = pickSlide.clientWidth;
+    const slideDistance = pickSlideWidth;
+    pickSlide.style.left = `-${slideDistance * i}px`;
+    progressbar.style.width = `${(100 / pickSlideItems) * (i + 1)}%`;
+  };
+
+  window.addEventListener("resize", updateSlide);
+
   pickNextBtn.addEventListener("click", () => {
-    i++;
-    if (i > pickSlideItem - 1) {
-      i = 0;
+    i = (i + 1) % pickSlideItems;
+    if (window.innerWidth === 1920) {
+      initSlide();
+    } else {
+      updateSlide();
     }
-    pickSlide.style.left = `-${pickSlideWidth * i}px`;
-    progressbar.style.width = `${progressbarWidth * (i + 1)}%`;
   });
-  console.log(pickSlideItem);
+
   pickPrevBtn.addEventListener("click", () => {
-    --i;
-    if (i < 0) {
-      i = pickSlideItem - 1;
+    i = (i - 1 + pickSlideItems) % pickSlideItems;
+    if (window.innerWidth === 1920) {
+      initSlide();
+    } else {
+      updateSlide();
     }
-    pickSlide.style.left = `-${pickSlideWidth * i + 1}px`;
-    progressbar.style.width = `${progressbarWidth * (i + 1)}%`;
   });
 };
 
@@ -152,6 +170,10 @@ menuBtn.addEventListener("click", () => {
 const bestSlide = () => {
   const selectGrade = document.querySelectorAll("#grade span");
   const gradeInner = document.querySelectorAll(".slide-wrap .item");
+  const bestItemWidth = document.querySelectorAll(".slide-item")[0];
+  const bestItemWrap = document.querySelectorAll(".items-wrap");
+  const bestBtnPrev = document.querySelector(".bestseller-btn .prev");
+  const bestBtnNext = document.querySelector(".bestseller-btn .next");
 
   selectGrade.forEach((grade, i) => {
     grade.addEventListener("click", () => {

@@ -1,0 +1,74 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "유기농 면 생리대 3종 (택1)",
+      "provider": "생활/리빙",
+      "price": 8600,
+      "image": "/images/image001.png"
+    },
+    {
+      "id": 2,
+      "name": "파티용 상품 17종 (택1)",
+      "provider": "생활/리빙",
+      "price": 3000,
+      "image": "/images/image002.png"
+    },
+    {
+      "id": 3,
+      "name": "과탄산소다 워터 세탁세제",
+      "provider": "생활/리빙",
+      "price": 8900,
+      "image": "/images/image003.png"
+    },
+    {
+      "id": 4,
+      "name": "올리브 서브 테이블 (택1)",
+      "provider": "가구/인테리어",
+      "price": 37900,
+      "image": "/images/image004.png"
+    },
+    {
+      "id": 5,
+      "name": "경추 기능성 베개 더블세트",
+      "provider": "가구/인테리어",
+      "price": 446000,
+      "image": "/images/image005.png"
+    },
+    {
+      "id": 6,
+      "name": "폭신한 체크 거실화",
+      "provider": "생활/리빙",
+      "price": 11900,
+      "image": "/images/image006.png"
+    },
+    {
+      "id": 7,
+      "name": "벌레퇴치 휴대용 전기 모기채",
+      "provider": "아웃도어/캠핑",
+      "price": 7900,
+      "image": "/images/image007.png"
+    },
+    {
+      "id": 8,
+      "name": "카탈리나 스몰 트레이 4종 (택1)",
+      "provider": "아웃도어/캠핑",
+      "price": 45000,
+      "image": "/images/image008.png"
+    },
+    {
+      "id": 9,
+      "name": "달루 테이블 램프",
+      "provider": "가구/인테리어",
+      "price": 180000,
+      "image": "/images/image009.png"
+    },
+    {
+      "id": 10,
+      "name": "라운드 아치형 스탠딩거울",
+      "provider": "가구/인테리어",
+      "price": 103200,
+      "image": "/images/image010.png"
+    }
+  ]
+}

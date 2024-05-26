@@ -121,16 +121,16 @@ header p,
 .container ul {
   width: 90%;
   display: flex;
-  margin-left: 4%;
+  justify-content: flex-start;
   align-items: center;
-  justify-content: start;
+  gap: 5%;
   flex-wrap: wrap;
+  margin-left: 4%;
 }
 
 .container ul li {
   margin-bottom: 24px;
   cursor: pointer;
-  margin-right: auto;
 }
 .container ul li img {
   width: 250px;
