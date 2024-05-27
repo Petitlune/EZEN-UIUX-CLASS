@@ -170,21 +170,59 @@ menuBtn.addEventListener("click", () => {
 const bestSlide = () => {
   const selectGrade = document.querySelectorAll("#grade span");
   const gradeInner = document.querySelectorAll(".slide-wrap .item");
-  const bestItemWidth = document.querySelectorAll(".slide-item")[0];
+  const itemLength = document.querySelectorAll(".special .slide-item").length;
+  const bestItemWidth = document.querySelectorAll(".slide-item");
   const bestItemWrap = document.querySelectorAll(".items-wrap");
   const bestBtnPrev = document.querySelector(".bestseller-btn .prev");
   const bestBtnNext = document.querySelector(".bestseller-btn .next");
+  const innerBar = document.querySelector(".inner-bar");
+  let idx = 0;
+  let gIdx = 0;
+
+  const updateSlide = () => {
+    let gap;
+    if (gIdx > 0) {
+      gap = gradeInner[gIdx].clientWidth * 0.38;
+    } else {
+      gap = gradeInner[gIdx].clientWidth * 0.14;
+    }
+    let slideDistance = bestItemWidth[gIdx].clientWidth + gap;
+    console.log(slideDistance);
+    bestItemWrap[gIdx].style.left = `-${slideDistance * idx}px`;
+    innerBar.style.width = `${100 / ((itemLength - 3) / idx)}%`;
+  };
 
   selectGrade.forEach((grade, i) => {
     grade.addEventListener("click", () => {
-      gradeInner.forEach((it, i) => {
+      gradeInner.forEach((it, j) => {
         it.classList.remove("active");
-        selectGrade[i].classList.remove("active");
+        selectGrade[j].classList.remove("active");
       });
-
       grade.classList.add("active");
       gradeInner[i].classList.add("active");
+      gIdx = i;
+      idx = 0;
+
+      updateSlide();
     });
+  });
+
+  window.addEventListener("resize", updateSlide);
+
+  bestBtnNext.addEventListener("click", () => {
+    idx = (idx + 1) % itemLength;
+
+    updateSlide();
+    if (idx >= itemLength - 3) {
+      idx = 0;
+    }
+  });
+
+  bestBtnPrev.addEventListener("click", () => {
+    if (idx > 0) {
+      idx = (idx - 1 + itemLength) % itemLength;
+      updateSlide();
+    }
   });
 };
 

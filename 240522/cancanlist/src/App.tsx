@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   align-items: center;
   height: 100vh;
   width: 100%;
-  max-width: 680px;
+  max-width: 840px;
   margin: 0 auto;
 `;
 
@@ -25,22 +25,24 @@ const Board = styled.div`
 const App = () => {
   const [toDos, setToDos] = useRecoilState(toDoState);
   // const onDragEnd = ({ source, destination, draggableId }: DropResult) => {
-  //   if (!destination) return;
-  //   // setToDos((oldToDos) => {
-  //   //   const copyToDos = [...oldToDos];
-  //   //   copyToDos.splice(source.index, 1);
-  //   //   copyToDos.splice(destination.index, 0, draggableId);
-  //   //   return copyToDos;
-  //   // });
-  // };
+  // if (!destination) return;
+  // setToDos((oldToDos) => {
+  //   const copyToDos = [...oldToDos];
+  //   copyToDos.splice(source.index, 1);
+  //   copyToDos.splice(destination.index, 0, draggableId);
+  //   return copyToDos;
+  // });
+
   const onDragEnd = (info: DropResult) => {
     const { source, destination, draggableId } = info;
     //각 보드 내에 이동되게 만드는 코드
     if (destination?.droppableId === source.droppableId) {
+      if (!destination) return;
       setToDos((oldToDos) => {
         const boardCopy = [...oldToDos[source.droppableId]];
+        const taskObj = boardCopy[source.index];
         boardCopy.splice(source.index, 1);
-        boardCopy.splice(destination.index, 0, draggableId);
+        boardCopy.splice(destination.index, 0, taskObj);
         return {
           ...oldToDos,
           [source.droppableId]: boardCopy,
@@ -53,9 +55,10 @@ const App = () => {
       if (!destination) return;
       setToDos((oldToDos) => {
         const sourceBoard = [...oldToDos[source.droppableId]];
+        const taskObj = sourceBoard[source.index];
         const destinationBoard = [...oldToDos[destination?.droppableId]];
         sourceBoard.splice(source.index, 1);
-        destinationBoard.splice(destination?.index, 0, draggableId);
+        destinationBoard.splice(destination?.index, 0, taskObj);
         return {
           ...oldToDos,
           [source.droppableId]: sourceBoard,
