@@ -187,9 +187,7 @@ const bestSlide = () => {
       gap = gradeInner[gIdx].clientWidth * 0.14;
     }
     let slideDistance = bestItemWidth[gIdx].clientWidth + gap;
-    console.log(slideDistance);
     bestItemWrap[gIdx].style.left = `-${slideDistance * idx}px`;
-    innerBar.style.width = `${100 / ((itemLength - 3) / idx)}%`;
   };
 
   selectGrade.forEach((grade, i) => {
@@ -202,7 +200,7 @@ const bestSlide = () => {
       gradeInner[i].classList.add("active");
       gIdx = i;
       idx = 0;
-
+      innerBar.style.width = `${100 / itemLength}%`;
       updateSlide();
     });
   });
@@ -211,19 +209,73 @@ const bestSlide = () => {
 
   bestBtnNext.addEventListener("click", () => {
     idx = (idx + 1) % itemLength;
+    innerBar.style.width = `${100 / ((itemLength - 3) / idx)}%`;
 
     updateSlide();
-    if (idx >= itemLength - 3) {
+    if (idx === itemLength - 3) {
       idx = 0;
+    } else if (idx > itemLength - 3) {
+      innerBar.style.width = `${100 / itemLength}%`;
     }
   });
 
   bestBtnPrev.addEventListener("click", () => {
+    innerBar.style.width = `${100 / ((itemLength - 3) / idx)}%`;
     if (idx > 0) {
       idx = (idx - 1 + itemLength) % itemLength;
       updateSlide();
+    } else {
+      innerBar.style.width = `${100 / itemLength}%`;
     }
   });
 };
 
 bestSlide();
+
+//이미지 index값이 0이면 left 비활성화 index 값이 마지막이면 right 비활성화
+
+const youtubeSlide = () => {
+  const youtubeLeftBtn = document.querySelector(".content-youtube .btn .left");
+  const youtubeRightBtn = document.querySelector(
+    ".content-youtube .btn .right"
+  );
+  const youtubeLeftSvg = document.querySelectorAll(".svgLeftBtn");
+  const youtubeRightSvg = document.querySelectorAll(".svgRightBtn");
+  const youtubeSlideWrap = document.querySelector(".thumbnail");
+  const youtubeImage = document.querySelectorAll(".thumbnail img");
+  let i = 0;
+  const youtubeSlidePlay = () => {
+    const gap = 28;
+    let imgWidth = youtubeImage[i].clientWidth + gap;
+    youtubeSlideWrap.style.left = `-${imgWidth * i}px`;
+    console.log(i);
+    if (i === 0) {
+      youtubeLeftSvg.forEach((it) => it.setAttribute("stroke", "#999999"));
+    } else if (i == youtubeImage.length - 1) {
+      youtubeRightSvg.forEach((it) => it.setAttribute("stroke", "#999999"));
+    } else {
+      youtubeLeftSvg.forEach((it) => it.setAttribute("stroke", "#111111"));
+      youtubeRightSvg.forEach((it) => it.setAttribute("stroke", "#111111"));
+    }
+  };
+
+  youtubeRightBtn.addEventListener("click", () => {
+    if (i < youtubeImage.length - 1) {
+      i++;
+      youtubeSlidePlay();
+    }
+  });
+  youtubeLeftBtn.addEventListener("click", () => {
+    if (i > 0) {
+      i--;
+      youtubeSlidePlay();
+    }
+  });
+};
+youtubeSlide();
+
+const gotoTopBtn = document.querySelector(".gotoTop");
+
+gotoTopBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
