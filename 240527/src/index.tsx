@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-import App03 from "./App03";
+import App10 from "./App10";
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyled = createGlobalStyle`
@@ -31,6 +31,6 @@ const root = ReactDOM.createRoot(
 root.render(
   <>
     <GlobalStyled />
-    <App03 />
+    <App10 />
   </>
 );

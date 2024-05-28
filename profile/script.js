@@ -50,14 +50,17 @@ const modalList = document.querySelectorAll(".modalList");
 const projectSection = document.querySelector(".project");
 const modalScreen = document.querySelectorAll(".modalScreen");
 const modalCloseBtn = document.querySelectorAll(".modalCloseBtn");
+const modalBg = document.querySelectorAll(".modalback");
 
 modalList.forEach((item, i) => {
   item.addEventListener("click", () => {
     modalScreen[i].style.display = "flex";
+    modalBg[i].style.display = "flex";
     body.style.overflowY = "hidden";
   });
   modalCloseBtn[i].addEventListener("click", () => {
     modalScreen[i].style.display = "none";
+    modalBg[i].style.display = "none";
     body.style.overflowY = "auto";
   });
 });

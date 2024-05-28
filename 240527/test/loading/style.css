@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.wrap {
+  background: teal;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+img {
+  max-width: 150px;
+  margin-bottom: 50px;
+  animation: ani 1s linear infinite;
+}
+
+label {
+  font-size: 28px;
+  font-weight: 500;
+}
+input {
+  width: 24px;
+  height: 24px;
+}
+@keyframes ani {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}
+.time {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+span {
+  font-size: 24px;
+  font-weight: 500;
+}

@@ -323,18 +323,26 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-
-    .modalScreen {
+    .modalback {
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
       position: fixed;
-      top: 6%;
       bottom: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      justify-content: center;
+      align-items: center;
+      z-index: 100;
+    }
+    .modalScreen {
       width: 80%;
       height: 78%;
       margin: auto;
       background: map-get($font-color, primary-light);
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
       border-radius: 20px;
-      z-index: 10;
       display: none;
       justify-content: center;
       align-items: center;

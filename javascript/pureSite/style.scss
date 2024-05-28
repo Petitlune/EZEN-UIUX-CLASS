@@ -1,18 +1,55 @@
 @import url("./reset.css");
 
+.brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  top: -100px;
+  width: 100%;
+  height: 140px;
+  border-top: 1px solid #ddd;
+  background: #fff;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease-in-out;
+  z-index: -1;
+  ul {
+    display: flex;
+    gap: 4px;
+    a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+.brand.active {
+  top: 100px;
+  z-index: 1;
+}
+
 header {
   width: 100%;
   padding: 0 4%;
   font-family: "Pretendard";
   font-weight: 500;
   height: 100px;
+  background: #fff;
+  position: relative;
+  z-index: 100;
+
   .header-wrap {
     display: flex;
     width: 84vw;
     height: 100%;
-    padding-left: 4.6vw;
+    padding-left: 7.2vw;
     align-items: center;
     justify-content: space-between;
+    background: #fff;
     .header-left {
       display: flex;
       align-items: center;
@@ -21,9 +58,8 @@ header {
         display: flex;
         gap: 24px;
         li {
-          font-size: 18px;
+          font-size: 1.2rem;
           position: relative;
-
           &:last-child::before {
             content: "";
             position: absolute;
@@ -37,12 +73,15 @@ header {
         }
       }
     }
+
     .option-menu {
       display: flex;
       align-items: center;
       width: 186px;
       height: 36px;
       position: relative;
+      font-size: 1rem;
+
       cursor: pointer;
       &::before {
         content: "";
@@ -76,6 +115,8 @@ header {
         display: flex;
         flex-direction: column;
         transition: all 0.3s;
+        background: #fff;
+
         &.active {
           opacity: 1;
           height: 260px;
@@ -83,12 +124,66 @@ header {
         }
         li {
           display: none;
+
           font-weight: 400;
           transition: all 0.3s;
           &.active {
             display: block;
           }
         }
+      }
+    }
+  }
+}
+section {
+  height: 100%;
+  width: 100%;
+  .main-sec {
+    height: 100%;
+    width: 100%;
+    margin-top: 20px;
+    .sec-wrap {
+      width: 100%;
+      height: auto;
+      min-height: 800px;
+      font-family: "UBuntu";
+      font-weight: 500;
+      position: relative;
+      gap: 72px;
+      font-size: 7.2vw;
+      .better {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+      }
+      .middle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 60px;
+        .changeImg {
+          border: 1px solid red;
+          width: 100%;
+          max-width: 480px;
+          height: 100%;
+        }
+      }
+      .life {
+        width: 100%;
+        text-align: center;
+        font-size: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
       }
     }
   }
