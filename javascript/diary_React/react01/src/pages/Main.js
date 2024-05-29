@@ -62,7 +62,6 @@ const Main = ({ Subtitle }) => {
   const [volume, setVolume] = useState(<FaVolumeMute />);
   const audioRef = useRef(new Audio(music));
 
-  console.log(isPlaying);
   const playMusic = () => {
     const audio = audioRef.current;
     audio.volume = 0.2;

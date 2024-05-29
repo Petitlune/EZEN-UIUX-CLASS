@@ -12,10 +12,12 @@ const theme = {
 };
 
 const Container = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 60px;
+  margin-top: 40px;
+  min-height: 980px;
 `;
 
 const Info = styled.div`

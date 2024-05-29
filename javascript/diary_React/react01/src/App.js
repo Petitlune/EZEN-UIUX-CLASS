@@ -1,5 +1,5 @@
-import "./App.css";
 import React, { useRef } from "react";
+import "./App.css";
 import Main from "./pages/Main";
 import Date from "./pages/Date";
 import HowToGo from "./pages/HowToGo";
@@ -18,7 +18,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   position: relative;
   padding-top: 20px;
 `;
@@ -50,7 +50,7 @@ const DateInfo = styled.div`
 
 const Navigation = styled.div`
   position: sticky;
-  top: 0;
+  top: 50px;
   display: flex;
   justify-content: space-between;
   width: 100%;
