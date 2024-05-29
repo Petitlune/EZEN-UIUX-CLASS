@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import styled from "styled-components";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import { IoIosCloseCircle } from "react-icons/io";
@@ -67,36 +67,36 @@ const InnerImg = styled.img`
 const GuestBook = ({ initialIndex = 0, onClose }) => {
   const [currentIndex, setCurrentIndex] = useState(initialIndex);
   const images = [
-    "./img/photos-by-lanty-qHjwSGv2p8c-unsplash.jpg",
-    "./img/nikita-shirokov-qGgjalogCdE-unsplash.jpg",
-    "./img/rikonavt-oAIEk6xqYYc-unsplash.jpg",
-    "./img/leonardo-miranda-dvF6s1H1x68-unsplash.jpg",
-    "./img/eugenivy_now-mUYjrnQLrSA-unsplash.jpg",
-    "./img/ulyana-tim-AbnCRgL2DNs-unsplash.jpg",
+    "./img/wedding02.jpg",
+    "./img/wedding03.jpg",
+    "./img/wedding04.jpg",
+    "./img/wedding05.jpg",
+    "./img/wedding06.jpg",
+    "./img/wedding07.jpg",
   ];
 
   const intervalRef = useRef(null);
 
-  useEffect(() => {
-    startAutoSlide();
-    return () => stopAutoSlide();
-  }, [currentIndex]);
+  const stopAutoSlide = useCallback(() => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+  }, []);
 
-  const startAutoSlide = () => {
+  const startAutoSlide = useCallback(() => {
     stopAutoSlide();
     intervalRef.current = setInterval(() => {
       setCurrentIndex((prevIndex) =>
         prevIndex < images.length - 1 ? prevIndex + 1 : 0
       );
     }, 3000);
-  };
+  }, [images.length, stopAutoSlide]);
 
-  const stopAutoSlide = () => {
-    if (intervalRef.current) {
-      clearInterval(intervalRef.current);
-      intervalRef.current = null;
-    }
-  };
+  useEffect(() => {
+    startAutoSlide();
+    return () => stopAutoSlide();
+  }, [startAutoSlide, stopAutoSlide]);
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) =>

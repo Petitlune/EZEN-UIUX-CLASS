@@ -66,12 +66,12 @@ const PhotoBook = ({ Subtitle, SubtitleKR }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const images = [
-    "./img/photos-by-lanty-qHjwSGv2p8c-unsplash.jpg",
-    "./img/nikita-shirokov-qGgjalogCdE-unsplash.jpg",
-    "./img/rikonavt-oAIEk6xqYYc-unsplash.jpg",
-    "./img/leonardo-miranda-dvF6s1H1x68-unsplash.jpg",
-    "./img/eugenivy_now-mUYjrnQLrSA-unsplash.jpg",
-    "./img/ulyana-tim-AbnCRgL2DNs-unsplash.jpg",
+    "./img/wedding02.jpg",
+    "./img/wedding03.jpg",
+    "./img/wedding04.jpg",
+    "./img/wedding05.jpg",
+    "./img/wedding06.jpg",
+    "./img/wedding07.jpg",
   ];
 
   const handleImageClick = (index) => {

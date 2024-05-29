@@ -114,7 +114,7 @@ const Information = ({ Subtitle, SubtitleKR, DateInfo }) => {
             )}
           </InfoInner>
         </Info>
-        <InfoImg src="./img/InfoPage.jpg" alt="InfoImage" />
+        <InfoImg src="./img/wedding08.jpg" alt="InfoImage" />
         <Subtitle style={{ fontSize: "24px" }}>THANK YOU !</Subtitle>
       </Container>
     </ThemeProvider>

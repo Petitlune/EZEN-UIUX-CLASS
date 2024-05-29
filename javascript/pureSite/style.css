@@ -170,7 +170,6 @@ section .main-sec .sec-wrap .middle {
   gap: 60px;
 }
 section .main-sec .sec-wrap .middle .changeImg {
-  border: 1px solid red;
   width: 100%;
   max-width: 480px;
   height: 100%;

@@ -11,6 +11,7 @@ imgBox.addEventListener("dragleave", (e) => {
 
 imgBox.addEventListener("drop", (e) => {
   e.preventDefault();
+  console.log(e.dataTransfer.files);
   imgBox.classList.remove("on");
   const fileItem = e.dataTransfer.files;
   displayImg(fileItem);

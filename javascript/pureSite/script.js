@@ -22,21 +22,24 @@ brand.addEventListener("mouseleave", () => {
 });
 
 //changeImg
-let changeImg = document.querySelector(".changeImg").src;
+//
+const changeImg = document.querySelector(".changeImg");
 
 const imgArr = [
-  "brand-main-img1.png",
-  "brand-main-img2.png",
-  "brand-main-img3.png",
-  "brand-main-img4.png",
-  "brand-main-img5.png",
-  "brand-main-img6.png",
-  "brand-main-img7.png",
+  "./img/brand-main-img1.png",
+  "./img/brand-main-img2.png",
+  "./img/brand-main-img3.png",
+  "./img/brand-main-img4.png",
+  "./img/brand-main-img5.png",
+  "./img/brand-main-img6.png",
+  "./img/brand-main-img7.png",
 ];
 
-for (let i = 0; i < imgArr; i++) {
-  imgUrl = imgArr[i];
-  changeImg = imgUrl;
-}
+console.log(changeImg.src);
+let i = 0;
+const changeSrc = () => {
+  changeImg.src = imgArr[i];
+  i = (i + 1) % imgArr.length;
+};
 
-console.log(changeImg);
+setInterval(changeSrc, 500);

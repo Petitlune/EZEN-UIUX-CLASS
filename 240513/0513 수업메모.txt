@@ -29,6 +29,8 @@ npm install @types/styled-components
 npm install react-router-dom 
 npm install @types/react-router-dom 
 
+npm install react-hook-form(intput 태그 관련 훅)
+
 원래 js 기반의 react => 확장자명 .jsx 인데 요새는 그냥 .js로 사용하고 있음
 
 

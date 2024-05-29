@@ -62,6 +62,7 @@ const Main = ({ Subtitle }) => {
   const [volume, setVolume] = useState(<FaVolumeMute />);
   const audioRef = useRef(new Audio(music));
 
+  console.log(isPlaying);
   const playMusic = () => {
     const audio = audioRef.current;
     audio.volume = 0.2;
@@ -83,10 +84,7 @@ const Main = ({ Subtitle }) => {
       <Music onClick={playMusic}>{volume}</Music>
       <TopDate>2024.09.07</TopDate>
       <Subtitle>saturday</Subtitle>
-      <WeddingMainImg
-        src="./img/samantha-gades-2TdhwS6Y3pU-unsplash.jpg"
-        alt="wedding-img"
-      />
+      <WeddingMainImg src="./img/wedding01.jpg" alt="wedding-img" />
       <MainText>
         <p>현기환 · 김다슬</p>
         <p>
