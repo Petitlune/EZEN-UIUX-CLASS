@@ -43,3 +43,28 @@ const changeSrc = () => {
 };
 
 setInterval(changeSrc, 500);
+
+//스크롤 이벤트
+
+const better = document.querySelector(".better");
+const life = document.querySelector(".letter");
+
+document.addEventListener("scroll", () => {
+  let test = window.scrollY;
+  console.log(test);
+  // if (test === 0) {
+  //   better.style.left = 0;
+  //   life.style.left = 0;
+  //   better.style.opacity = 1;
+  //   life.style.opacity = 1;
+
+  //   better.style.fontSize = "100%";
+  // }
+  if (test) {
+    better.style.left = `-${test * 0.05}%`;
+    life.style.left = `${test * 0.05}%`;
+    better.style.opacity = `${(1 / test) * 50}`;
+    life.style.opacity = `${(1 / test) * 50}`;
+  }
+});
+console.log(better, life);
