@@ -5,7 +5,7 @@ import GuestBook from "./GuestBook";
 
 const Container = styled.div`
   width: 100%;
-  margin-top: 40px;
+  margin-top: 74px;
 `;
 
 const SlideWrap = styled.div`

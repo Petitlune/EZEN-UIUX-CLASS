@@ -13,22 +13,31 @@ const Groom = styled.span`
   gap: 8px;
   span {
     color: #777;
+    font-weight: 600;
+  }
+  p {
+    font-weight: 600;
   }
 `;
 
 const Celebration = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 8px;
+
   p {
     color: #777;
+    font-weight: 600;
   }
   span {
+    width: 116px;
     border: 1px solid #999;
     border-radius: 5px;
     padding: 8px;
     margin: 0 24px;
     cursor: pointer;
+    font-weight: 600;
   }
 `;
 

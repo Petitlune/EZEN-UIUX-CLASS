@@ -46,6 +46,7 @@ const MainText = styled.div`
     display: inline-block;
     margin: 6px;
     font-size: 24px;
+    font-weight: 600;
     color: #222;
   }
   p:last-child {

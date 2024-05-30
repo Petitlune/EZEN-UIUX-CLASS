@@ -11,8 +11,8 @@ import BottomPage from "./pages/BottomPage";
 const Container = styled.div`
   text-align: center;
   width: 100%;
-  height: 100%;
-  max-width: 400px;
+  height: auto;
+  max-width: 420px;
   min-width: 320px;
   margin: 0 auto;
   display: flex;
@@ -50,7 +50,9 @@ const DateInfo = styled.div`
 
 const Navigation = styled.div`
   position: sticky;
-  top: 50px;
+  top: 0;
+  left: 0;
+
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -59,7 +61,7 @@ const Navigation = styled.div`
   line-height: 48px;
   background: #f8f8f8;
   border-radius: 10px;
-  box-shadow: 0 15px 10px rgba(248, 164, 164, 0.2);
+  box-shadow: 0 10px 10px rgba(248, 164, 164, 0.2);
   margin: 30px 0;
   font-family: "Mapo";
   font-weight: 600;

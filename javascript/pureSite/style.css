@@ -10,7 +10,7 @@ body {
   align-items: center;
   position: absolute;
   left: 0;
-  top: -100px;
+  top: -150px;
   width: 100%;
   height: 140px;
   border-top: 1px solid #ddd;
@@ -61,14 +61,17 @@ body {
 }
 
 header {
+  position: fixed;
+  left: 0;
+  top: 0;
   width: 100%;
   padding: 0 4%;
   font-family: "Pretendard";
   font-weight: 500;
   height: 100px;
   background: #fff;
-  position: relative;
   z-index: 100;
+  transition: top 0.3s ease-in-out;
 }
 header .header-wrap {
   display: flex;
@@ -78,6 +81,7 @@ header .header-wrap {
   align-items: center;
   justify-content: space-between;
   background: #fff;
+  position: relative;
 }
 header .header-wrap .header-left {
   display: flex;
@@ -108,7 +112,7 @@ header .header-wrap .option-menu {
   width: 186px;
   height: 36px;
   position: relative;
-  font-size: 0.8vw;
+  font-size: 15px;
 }
 header .header-wrap .option-menu .option-menu-title {
   cursor: pointer;
@@ -167,9 +171,14 @@ header .header-wrap .option-menu ul li.active {
 section {
   height: 100%;
   width: 100%;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 100px;
 }
 section .main-sec {
-  height: 88vh;
+  height: 100vh;
   width: 100%;
   display: flex;
   align-items: center;
@@ -200,6 +209,7 @@ section .main-sec .sec-wrap .middle {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -208,7 +218,7 @@ section .main-sec .sec-wrap .middle {
 section .main-sec .sec-wrap .middle .changeImg {
   width: 28vw;
   max-width: 480px;
-  height: 100%;
+  height: auto;
 }
 section .main-sec .sec-wrap .life {
   width: 100%;
@@ -224,7 +234,7 @@ section .main-sec .sec-wrap .life .letter {
   bottom: 0;
   left: 0;
 }
-section .sec-bottom {
+section .main-sec .sec-bottom {
   width: 92vw;
   display: flex;
   justify-content: space-between;
@@ -237,13 +247,13 @@ section .sec-bottom {
   font-size: 1vw;
   font-weight: 500;
 }
-section .sec-bottom a {
+section .main-sec .sec-bottom a {
   width: auto;
   display: flex;
   flex-direction: column;
   position: relative;
 }
-section .sec-bottom a::before {
+section .main-sec .sec-bottom a::before {
   content: "";
   position: absolute;
   right: -50px;
@@ -252,7 +262,7 @@ section .sec-bottom a::before {
   width: 30%;
   height: 30%;
 }
-section .sec-bottom a::after {
+section .main-sec .sec-bottom a::after {
   content: "";
   position: absolute;
   right: -56px;
@@ -261,12 +271,138 @@ section .sec-bottom a::after {
   width: 10%;
   height: 10%;
 }
-section .sec-bottom a img {
+section .main-sec .sec-bottom a span {
+  width: 100%;
+  height: auto;
+}
+section .main-sec .sec-bottom a span::after {
+  content: "";
+  position: absolute;
+  left: 90px;
+  bottom: 46px;
+  background: url("./img/ico_video_play.svg") center/contain no-repeat;
+  width: 24%;
+  height: 24%;
+  z-index: 50;
+}
+section .main-sec .sec-bottom a img {
   width: 100%;
   max-width: 240px;
   margin-top: 16px;
+  position: relative;
 }
-section .sec-bottom .eat {
+section .main-sec .sec-bottom .eat {
   font-family: "UBuntu";
   cursor: pointer;
+}
+section .middle-sec {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+section .middle-sec ul {
+  width: 92vw;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+section .middle-sec ul li {
+  width: 100%;
+  height: 17vw;
+  overflow: hidden;
+  position: relative;
+}
+section .middle-sec ul li::before {
+  content: "";
+  background: url("./img/chungjungone-logo1.png") center/contain no-repeat;
+  position: absolute;
+  left: 38px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10%;
+  height: 3.6vw;
+  z-index: 10;
+}
+section .middle-sec ul li:nth-child(2)::before {
+  background: url("./img/chungjungone-logo2.png") center/contain no-repeat;
+}
+section .middle-sec ul li:nth-child(3)::before {
+  background: url("./img/chungjungone-logo3.png") center/contain no-repeat;
+}
+section .middle-sec ul li:nth-child(4)::before {
+  background: url("./img/chungjungone-logo4.png") center/contain no-repeat;
+}
+section .middle-sec ul li:nth-child(5)::before {
+  background: url("./img/chungjungone-logo5.png") center/contain no-repeat;
+}
+section .middle-sec ul li:nth-child(6)::before {
+  background: url("./img/chungjungone-logo6.png") center/contain no-repeat;
+}
+section .middle-sec ul li:nth-child(7)::before {
+  background: url("./img/chungjungone-logo7.png") center/contain no-repeat;
+}
+section .middle-sec ul li:nth-child(8)::before {
+  background: url("./img/chungjungone-logo8.png") center/contain no-repeat;
+}
+section .middle-sec ul li:nth-child(2) a {
+  background: url("./img/chungjungone-bg2-min.png") center/cover no-repeat;
+}
+section .middle-sec ul li:nth-child(3) a {
+  background: url("./img/chungjungone-bg3-min.png") center/cover no-repeat;
+}
+section .middle-sec ul li:nth-child(4) a {
+  background: url("./img/chungjungone-bg4-min.png") center/cover no-repeat;
+}
+section .middle-sec ul li:nth-child(5) a {
+  background: url("./img/chungjungone-bg5-min.png") center/cover no-repeat;
+}
+section .middle-sec ul li:nth-child(6) a {
+  background: url("./img/chungjungone-bg6-min.png") center/cover no-repeat;
+}
+section .middle-sec ul li:nth-child(7) a {
+  background: url("./img/chungjungone-bg7-min.png") center/cover no-repeat;
+}
+section .middle-sec ul li:nth-child(8) a {
+  background: url("./img/chungjungone-bg8-min.png") center/cover no-repeat;
+}
+section .middle-sec ul li a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  background: url("./img/chungjungone_bg_1-min.png") center/cover no-repeat;
+}
+section .middle-sec ul li a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+}
+section .middle-sec ul li a .middle-title {
+  position: absolute;
+  width: 100%;
+  left: 100%;
+  opacity: 1;
+  top: 38%;
+  transform: translateY(-50%);
+  font-family: "Pretendard";
+  font-size: 2.6vw;
+  color: #fff;
+  transition: all 1s;
+}
+section .middle-sec ul li a .middle-title::before {
+  content: "";
+  background: url("./img/ico_more.svg") center/cover no-repeat;
+  position: absolute;
+  left: 0;
+  bottom: -60%;
+  width: 2.4vw;
+  height: 2.4vw;
 }/*# sourceMappingURL=style.css.map */

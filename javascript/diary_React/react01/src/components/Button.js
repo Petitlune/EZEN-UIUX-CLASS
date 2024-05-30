@@ -18,7 +18,7 @@ const Button = () => {
     await navigator.clipboard
       .writeText("경기 성남시 수정구 성남대로 1342 가천컨벤션센터")
       .then(() => {
-        alert("Copy🥰");
+        alert("주소가 복사되었습니다.🥰");
       });
   };
 
