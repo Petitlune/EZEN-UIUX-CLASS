@@ -49,8 +49,8 @@ setInterval(changeSrc, 500);
 const better = document.querySelector(".better");
 const life = document.querySelector(".letter");
 const header = document.querySelector("header");
-const middleTitle = document.querySelectorAll(".middle-title")[0];
-const middleImg = document.querySelector(".middle-main-img");
+const middleTitle = document.querySelectorAll(".middle-title");
+const middleImg = document.querySelectorAll(".middle-main-img");
 const mainHeight = document.querySelector(".main-sec").clientHeight;
 
 console.log(middleTitle);
@@ -74,6 +74,10 @@ document.addEventListener("scroll", () => {
     header.style.top = "-150px";
   } else if (test > 150) {
     better.style.opacity = 0;
-    middleTitle.style.left = "70%";
+    middleTitle.forEach((it, i) => {
+      it.style.left = "74%";
+      middleTitle[i].style.transitionDelay = `${(i + 1) * 0.5}s`;
+      middleImg[i].style.animationDelay = `${(i + 1) * 0.8}s`;
+    });
   }
 });

@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { Link, useMatch } from "react-router-dom";
+import {
+  Link,
+  NavigateFunction,
+  useMatch,
+  useNavigate,
+} from "react-router-dom";
 import { motion, useAnimation, useScroll } from "framer-motion";
+import { useForm } from "react-hook-form";
 // useAnimation은 하나의 이벤트에 복수의 애니메이션이 일어나야하는 경우 인라인형식으로 작성하지 못하기 때문에 이 함수를 사용해서 애니메이션 정리해줌
 const Nav = styled(motion.nav)`
   display: flex;
@@ -33,7 +39,7 @@ const Logo = styled(motion.svg)`
   }
 `;
 
-const Search = styled(motion.span)`
+const Search = styled(motion.form)`
   color: #fff;
   cursor: pointer;
   display: flex;
@@ -48,15 +54,15 @@ const Search = styled(motion.span)`
 const Input = styled(motion.input)`
   position: absolute;
   transform-origin: right center;
-  left: -268px;
-  width: 260px;
+  right: 0;
+  width: 240px;
   height: 42px;
   border-radius: 5px;
   padding-left: 40px;
   font-size: 16px;
   background-color: transparent;
-  color: #fff;
-  border: 1px solid ${(props) => props.theme.white.lighter};
+  color: ${(props) => props.theme.black.lighter};
+  border: none;
   z-index: -1;
 `;
 
@@ -92,7 +98,6 @@ const logoVariants = {
   },
   active: {
     fillOpacity: [0, 1, 0],
-    scale: [1, 1.2, 1],
     transition: { repeat: Infinity },
   },
 };
@@ -101,12 +106,28 @@ const navVariants = {
   scroll: { backgroundColor: "rgba(255,255,255,1)" },
 };
 
+interface IForm {
+  keyword: string;
+}
 const Header = () => {
+  const histoty = useNavigate();
   const homeMatch = useMatch("/");
+  const modalMatch = useMatch("/movies/*");
   const tvMatch = useMatch("/tv");
   const inputAni = useAnimation();
   const navAni = useAnimation();
   const [search, setSearch] = useState(false);
+  const { register, handleSubmit, setValue } = useForm<IForm>();
+  // const navigate: NavigateFunction = useNavigate();
+  const onValid = (data: IForm) => {
+    histoty(`/search?keyword=${data.keyword}`);
+    setValue("keyword", "");
+  };
+
+  const gotoMain = () => {
+    histoty("/");
+  };
+
   const openSearch = () => {
     if (search) {
       inputAni.start({
@@ -133,6 +154,7 @@ const Header = () => {
     <Nav variants={navVariants} animate={navAni} initial="top">
       <Col>
         <Logo
+          onClick={gotoMain}
           variants={logoVariants}
           initial="normal"
           whileHover="active"
@@ -146,20 +168,22 @@ const Header = () => {
           />
         </Logo>
         <Items>
-          <Link to="/">
-            <Item>
-              HOME
-              {homeMatch && <Circle layoutId="circle" />}
-            </Item>
-          </Link>
-          <Link to="/tv">
-            <Item> TV SHOWS{tvMatch && <Circle layoutId="circle" />}</Item>
-          </Link>
+          <Item>
+            <Link to="/">HOME </Link>
+            {homeMatch && <Circle layoutId="circle" />}
+            {modalMatch && <Circle layoutId="circle" />}
+          </Item>
+
+          <Item>
+            <Link to="/tv"> TV SHOWS</Link>
+            {tvMatch && <Circle layoutId="circle" />}
+          </Item>
         </Items>
       </Col>
       <Col>
-        <Search onClick={openSearch}>
+        <Search onSubmit={handleSubmit(onValid)}>
           <Input
+            {...register("keyword", { required: true, minLength: 2 })}
             type="text"
             placeholder="Search for movie or tv"
             animate={inputAni}
@@ -167,6 +191,7 @@ const Header = () => {
             transition={{ type: "leaner" }}
           />
           <motion.svg
+            onClick={openSearch}
             animate={{ x: search ? -260 : 0 }}
             transition={{ type: "leaner" }}
             fill="currentColor"

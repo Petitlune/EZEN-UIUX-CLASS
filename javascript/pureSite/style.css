@@ -368,6 +368,8 @@ section .middle-sec ul li:nth-child(8) a {
   background: url("./img/chungjungone-bg8-min.png") center/cover no-repeat;
 }
 section .middle-sec ul li a {
+  animation: zoom 1s ease-in-out;
+  animation-fill-mode: both;
   width: 100%;
   height: 100%;
   display: flex;
@@ -375,6 +377,7 @@ section .middle-sec ul li a {
   justify-content: space-between;
   padding: 0 50px;
   background: url("./img/chungjungone_bg_1-min.png") center/cover no-repeat;
+  transform: scale(1.2);
 }
 section .middle-sec ul li a::before {
   content: "";
@@ -385,6 +388,14 @@ section .middle-sec ul li a::before {
   height: 100%;
   background: rgba(0, 0, 0, 0.3);
 }
+@keyframes zoom {
+  0% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 section .middle-sec ul li a .middle-title {
   position: absolute;
   width: 100%;
@@ -393,9 +404,9 @@ section .middle-sec ul li a .middle-title {
   top: 38%;
   transform: translateY(-50%);
   font-family: "Pretendard";
-  font-size: 2.6vw;
+  font-size: 2.2vw;
   color: #fff;
-  transition: all 1s;
+  transition: all 1s ease-in-out;
 }
 section .middle-sec ul li a .middle-title::before {
   content: "";

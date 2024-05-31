@@ -382,7 +382,8 @@ section {
             no-repeat;
         }
         a {
-          // transform: scale(1.2);
+          animation: zoom 1s ease-in-out;
+          animation-fill-mode: both;
           width: 100%;
           height: 100%;
           display: flex;
@@ -391,6 +392,7 @@ section {
           padding: 0 50px;
           background: url("./img/chungjungone_bg_1-min.png") center/cover
             no-repeat;
+          transform: scale(1.2);
           &::before {
             content: "";
             position: absolute;
@@ -400,7 +402,14 @@ section {
             height: 100%;
             background: rgba(0, 0, 0, 0.3);
           }
-
+          @keyframes zoom {
+            0% {
+              transform: scale(1.1);
+            }
+            100% {
+              transform: scale(1);
+            }
+          }
           .middle-title {
             position: absolute;
             //오른쪽에서 튀어나오게 조작
@@ -410,9 +419,10 @@ section {
             top: 38%;
             transform: translateY(-50%);
             font-family: "Pretendard";
-            font-size: 2.6vw;
+            font-size: 2.2vw;
             color: #fff;
-            transition: all 1s;
+            transition: all 1s ease-in-out;
+
             &::before {
               content: "";
               background: url("./img/ico_more.svg") center/cover no-repeat;
