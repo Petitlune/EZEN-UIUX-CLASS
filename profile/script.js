@@ -11,7 +11,7 @@ const colorArray = ["3f51b5", "00a73e", "ff9801", "ea1e63"];
 
 colorSet.addEventListener("click", () => {
   colorBox.classList.toggle("active");
-  console.log("click");
+
 });
 console.log(colorSet);
 wrap.addEventListener("click", (e) => {

@@ -91,9 +91,7 @@ header {
   text-align: center;
   border-right: 2px solid #ed8c48;
 }
-.reservation-bar li:first-child {
-  place-items: start;
-}
+
 .reservation-bar li:not(:first-child) {
   cursor: pointer;
 }
@@ -125,6 +123,7 @@ header {
 }
 #hotel-name::placeholder {
   color: #ed8c48;
+  text-align: center;
   font-size: 16px;
   font-weight: 500;
 }
@@ -570,7 +569,7 @@ footer {
   }
   .nav-bar {
     position: absolute;
-    top: -30vh;
+    top: -280px;
     left: 0;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(5, 50px);
@@ -579,12 +578,10 @@ footer {
     width: 100%;
     padding-bottom: 20px;
     transition: all 0.3s;
-    opacity: 0;
   }
 
   .nav-bar.active {
     top: 50px;
-    opacity: 1;
   }
   .toggle-btn {
     display: grid;

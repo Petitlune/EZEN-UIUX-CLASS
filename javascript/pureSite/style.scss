@@ -4,100 +4,110 @@ body {
   overflow-x: hidden;
 }
 
-.brand {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  left: 0;
-  top: -150px;
-  width: 100%;
-  height: 140px;
-  border-top: 1px solid #ddd;
-  background: #fff;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-  transition: all 0.5s ease-in-out;
-  z-index: -1;
-
-  ul {
-    display: flex;
-    gap: 4px;
-    a {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: relative;
-      &::before {
-        content: "";
-        width: 100%;
-        height: 80%;
-        position: absolute;
-        left: 0;
-        top: 0;
-        z-index: 100;
-        background: transparent;
-      }
-      &:hover {
-        text-decoration: underline;
-        &::before {
-          background: rgba(255, 255, 255, 0.2);
-        }
-      }
-      img {
-        width: 100%;
-      }
-      span {
-        font-family: "Pretendard";
-        font-weight: 500;
-        font-size: 0.8vw;
-      }
-    }
-  }
-}
-.brand.active {
-  top: 100px;
-  z-index: 1;
-}
-
 header {
   position: fixed;
   left: 0;
   top: 0;
   width: 100%;
-  padding: 0 4%;
   font-family: "Pretendard";
   font-weight: 500;
-  height: 100px;
+  height: 5.2vw;
   background: #fff;
   z-index: 100;
   transition: top 0.3s ease-in-out;
+
+  .brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    top: -12vw;
+    width: 100%;
+    height: 8vw;
+    border-top: 1px solid #ddd;
+    background: #fff;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease-in-out;
+    z-index: -5;
+
+    ul {
+      display: flex;
+      gap: 0.2vw;
+      a {
+        width: 8.4vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        &::before {
+          content: "";
+          width: 100%;
+          height: 80%;
+          position: absolute;
+          left: 0;
+          top: 0;
+          z-index: 100;
+          background: transparent;
+        }
+        &:hover {
+          text-decoration: underline;
+          &::before {
+            background: rgba(255, 255, 255, 0.2);
+          }
+        }
+        img {
+          width: 100%;
+          height: auto;
+        }
+        span {
+          font-family: "Pretendard";
+          font-weight: 500;
+          font-size: 0.8vw;
+        }
+      }
+    }
+  }
+  .brand.active {
+    top: 5.2vw;
+    z-index: 1;
+  }
+
   .header-wrap {
     display: flex;
-    width: 84vw;
+    width: 100vw;
     height: 100%;
-    padding-left: 7.2vw;
+    padding: 0 12vw;
     align-items: center;
     justify-content: space-between;
     background: #fff;
     position: relative;
+    z-index: 100;
     .header-left {
       display: flex;
       align-items: center;
-      gap: 64px;
+      gap: 3.4vw;
+      .title {
+        width: 5.8vw;
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
       ul {
         display: flex;
-        gap: 24px;
+        gap: 1.4vw;
         li {
-          font-size: 1.2rem;
+          font-size: 1vw;
           position: relative;
           &:last-child::before {
             content: "";
             position: absolute;
-            right: -26px;
+            right: -1.3vw;
             bottom: 3px;
-            width: 16px;
-            height: 16px;
+            width: 0.8vw;
+            height: 0.8vw;
             background: url("./img/ico_new_window.svg") center/contain no-repeat;
             cursor: pointer;
           }
@@ -108,10 +118,10 @@ header {
     .option-menu {
       display: flex;
       align-items: center;
-      width: 186px;
-      height: 36px;
+      width: 9.6vw;
+      height: 2vw;
       position: relative;
-      font-size: 15px;
+      font-size: 0.8vw;
       .option-menu-title {
         cursor: pointer;
         width: 100%;
@@ -119,20 +129,20 @@ header {
       &::before {
         content: "";
         position: absolute;
-        bottom: 0px;
+        bottom: 0;
         left: 0;
         width: 100%;
-        height: 4px;
+        height: 0.2vw;
         background: url("./img/bg_underline.png") center/cover no-repeat;
       }
       &::after {
         content: "";
         position: absolute;
-        top: 12px;
+        top: 0.8vw;
         right: 0;
-        width: 12px;
-        height: 12px;
-        background: url("./img/ico_family-arrow.svg") no-repeat;
+        width: 0.4vw;
+        height: 0.4vw;
+        background: url("./img/ico_family-arrow.svg") center/contain no-repeat;
       }
       ul {
         display: flex;
@@ -170,9 +180,9 @@ header {
   }
 }
 section {
-  height: 100%;
+  height: auto;
   width: 100%;
-  margin-top: 100px;
+  margin: 1.8vw 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -207,10 +217,11 @@ section {
         left: 50%;
         transform: translate(-50%, -50%);
         width: 100%;
-        height: 100vh;
+        min-height: 780px;
         display: flex;
         align-items: center;
         justify-content: center;
+
         gap: 60px;
         .changeImg {
           width: 28vw;
@@ -239,7 +250,7 @@ section {
       justify-content: space-between;
       align-items: flex-end;
       position: absolute;
-      bottom: 10px;
+      bottom: 4.4vw;
       left: 50%;
       transform: translateX(-50%);
       font-family: "Pretendard";
@@ -353,6 +364,10 @@ section {
           background: url("./img/chungjungone-logo8.png") center/contain
             no-repeat;
         }
+        &:nth-child(9)::before {
+          background: url("./img/chungjungone-logo9.png") center/contain
+            no-repeat;
+        }
         &:nth-child(2) a {
           background: url("./img/chungjungone-bg2-min.png") center/cover
             no-repeat;
@@ -381,9 +396,14 @@ section {
           background: url("./img/chungjungone-bg8-min.png") center/cover
             no-repeat;
         }
+        &:nth-child(9) a {
+          background: url("./img/chungjungone-bg9.png") center/cover no-repeat;
+        }
         a {
-          animation: zoom 1s ease-in-out;
-          animation-fill-mode: both;
+          &.active {
+            animation: zoom 1s ease-in-out;
+            animation-fill-mode: both;
+          }
           width: 100%;
           height: 100%;
           display: flex;
@@ -404,7 +424,7 @@ section {
           }
           @keyframes zoom {
             0% {
-              transform: scale(1.1);
+              transform: scale(1.2);
             }
             100% {
               transform: scale(1);
@@ -412,16 +432,15 @@ section {
           }
           .middle-title {
             position: absolute;
-            //오른쪽에서 튀어나오게 조작
             width: 100%;
             left: 100%;
             opacity: 1;
-            top: 38%;
+            top: 7.4vw;
             transform: translateY(-50%);
             font-family: "Pretendard";
             font-size: 2.2vw;
             color: #fff;
-            transition: all 1s ease-in-out;
+            transition: all 1.2s ease-in-out;
 
             &::before {
               content: "";
@@ -435,6 +454,102 @@ section {
           }
         }
       }
+    }
+  }
+}
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2vw 0 6vw;
+  font-size: 0.9vw;
+  font-family: "Pretendard";
+
+  .personal {
+    display: flex;
+    gap: 18px;
+    height: 4vw;
+    justify-content: center;
+    padding-right: 5vw;
+    span:first-child {
+      font-weight: 600;
+      position: relative;
+      display: inline-block;
+      width: 8vw;
+      text-align: left;
+      cursor: pointer;
+      &::before {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 2px;
+        width: 1vw;
+        height: 1vw;
+        margin-left: 4px;
+        background: url("./img/ico_new_window.svg") center/contain no-repeat;
+      }
+    }
+    span:last-child {
+      position: relative;
+      cursor: pointer;
+      &::before {
+        content: "";
+        position: absolute;
+        right: -3vw;
+        top: -0.6vw;
+        width: 2vw;
+        height: 2vw;
+        margin-left: 4px;
+        background: url("./img/ccm.png") center/contain no-repeat;
+      }
+    }
+  }
+  .logo-bottom {
+    width: 6vw;
+    margin-bottom: 1.2vw;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .desc-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 0.9vw;
+    .bar {
+      position: relative;
+      padding-right: 10px;
+      margin-right: 8px;
+      width: 2vw;
+      &::before {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border-right: 1px solid black;
+      }
+    }
+  }
+  .social {
+    display: flex;
+    width: 8vw;
+    gap: 0.6vw;
+    justify-content: space-between;
+    margin: 1.2vw auto;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .copyright {
+    font-size: 0.8vw;
+    span {
+      font-weight: 300;
+      margin: 0 4px;
     }
   }
 }

@@ -97,6 +97,9 @@ header .toggle-btn {
 }
 
 .color-setting {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 50px;
   height: 50px;
   background: #3f51b5;
@@ -108,7 +111,15 @@ header .toggle-btn {
 .color-setting i {
   font-size: 24px;
   color: #fff;
-  line-height: 50px;
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .content {
@@ -526,19 +537,30 @@ header .toggle-btn {
   color: #fff;
 }
 
-.example .section-inner {
-  margin-top: 60px;
-  width: 78%;
+.example {
   border: 1px solid red;
+  padding-bottom: 60px;
+  height: auto;
 }
-.example .section-inner .ex-menu {
+.example .section-inner {
+  margin-top: 0;
+  display: flex;
+  justify-content: center;
+}
+.example .section-inner .inner-wrap {
+  width: 78%;
+  height: 100vw;
+  height: auto;
+  background: #dddddd;
+}
+.example .section-inner .inner-wrap .ex-menu {
   display: flex;
   height: auto;
   justify-content: flex-start;
   align-items: flex-start;
-  margin: 0 auto;
+  position: relative;
 }
-.example .section-inner .ex-menu li {
+.example .section-inner .inner-wrap .ex-menu li {
   text-align: center;
   height: 42px;
   width: 140px;
@@ -550,7 +572,7 @@ header .toggle-btn {
   cursor: pointer;
   position: relative;
 }
-.example .section-inner .ex-menu li span {
+.example .section-inner .inner-wrap .ex-menu li span {
   position: absolute;
   top: 0;
   display: inline-block;
@@ -561,24 +583,61 @@ header .toggle-btn {
   background: #1d2833;
   opacity: 1;
 }
-.example .section-inner .ex-menu li span.active {
+.example .section-inner .inner-wrap .ex-menu li span.active {
   opacity: 0;
 }
-.example .section-inner .ex-box {
-  border: 1px solid black;
+.example .section-inner .inner-wrap .ex-box {
   width: 100%;
-  height: 100%;
+  height: auto;
   margin-top: 24px;
+  position: relative;
   background: #dddddd;
 }
-.example .section-inner .ex-box .ex-box-wrap {
+.example .section-inner .inner-wrap .ex-box .ex-box-wrap {
+  position: absolute;
+  left: 0;
+  top: 0;
   width: 100%;
   height: 100%;
-  gap: 5%;
+  display: none;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
-.example .section-inner .ex-box .ex-box-wrap li {
-  width: 28%;
-  height: 84%;
-  border: 1px solid red;
+.example .section-inner .inner-wrap .ex-box .ex-box-wrap.active {
+  display: flex;
+}
+.example .section-inner .inner-wrap .ex-box .ex-box-wrap li {
+  flex-grow: 1;
+  height: auto;
+  min-height: 420px;
+  min-width: 380px;
   margin: 20px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  z-index: 10;
+}
+.example .section-inner .inner-wrap .ex-box .ex-box-wrap li div {
+  position: absolute;
+  left: 0;
+  top: -100%;
+  width: 100%;
+  height: 100%;
+  background: #1d2833;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+.example .section-inner .inner-wrap .ex-box .ex-box-wrap li:hover div {
+  top: 0;
+  opacity: 1;
+}
+.example .section-inner .inner-wrap .ex-box .ex-box-wrap li img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
 }/*# sourceMappingURL=style.css.map */

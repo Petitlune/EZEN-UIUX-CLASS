@@ -53,7 +53,6 @@ const middleTitle = document.querySelectorAll(".middle-title");
 const middleImg = document.querySelectorAll(".middle-main-img");
 const mainHeight = document.querySelector(".main-sec").clientHeight;
 
-console.log(middleTitle);
 document.addEventListener("scroll", () => {
   let test = window.scrollY;
   better.style.left = `-${test * 0.07}%`;
@@ -61,10 +60,9 @@ document.addEventListener("scroll", () => {
   life.style.left = `${test * 0.08}%`;
   life.style.opacity = `${(1 / test) * 50}`;
 
-  console.log(mainHeight, test, middleTitle);
   if (test === 0 || test < 50) {
     better.style.opacity = 1;
-
+    life.style.opacity = 1;
     better.style.transform = `scale(1)`;
     life.style.transform = `scale(1)`;
     header.style.top = 0;
@@ -72,12 +70,19 @@ document.addEventListener("scroll", () => {
     better.style.transform = `scale(${test * 0.015})`;
     life.style.transform = `scale(${test * 0.012})`;
     header.style.top = "-150px";
+    middleTitle.forEach((it, i) => {
+      it.style.left = "100%";
+      it.style.transitionDelay = 0;
+      middleImg[i].style.animationDelay = 0;
+      middleImg[i].classList.remove("active");
+    });
   } else if (test > 150) {
     better.style.opacity = 0;
     middleTitle.forEach((it, i) => {
       it.style.left = "74%";
-      middleTitle[i].style.transitionDelay = `${(i + 1) * 0.5}s`;
-      middleImg[i].style.animationDelay = `${(i + 1) * 0.8}s`;
+      it.style.transitionDelay = `${(i + 1) * 0.5}s`;
+      middleImg[i].classList.add("active");
+      middleImg[i].style.animationDelay = `${(i + 1) * 0.6}s`;
     });
   }
 });
