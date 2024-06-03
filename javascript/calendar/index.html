@@ -14,25 +14,51 @@
     <script defer src="./script.js"></script>
   </head>
   <body>
-    <div class="wrapper">
-      <header>
-        <p class="now"></p>
-        <div class="icons">
-          <i id="prev" class="fa-solid fa-chevron-left"></i>
-          <i id="next" class="fa-solid fa-chevron-right"></i>
+    <div class="container">
+      <div class="title">
+        <i class="fa-solid fa-cake-candles"></i>
+        <h1>당신의 생일을 입력해주세요.</h1>
+        <i class="fa-solid fa-cake-candles"></i>
+      </div>
+      <div class="birthday">
+        <input id="user-month" type="text" placeholder="ex)05월" />
+        <input id="user-day" type="text" placeholder="ex)25일" />
+        <button>저장</button>
+      </div>
+
+      <div class="wrapper">
+        <header>
+          <p class="now"></p>
+          <div class="icons">
+            <i id="prev" class="fa-solid fa-chevron-left"></i>
+            <i id="next" class="fa-solid fa-chevron-right"></i>
+          </div>
+        </header>
+        <div class="calendar">
+          <ul class="weeks">
+            <li>일</li>
+            <li>월</li>
+            <li>화</li>
+            <li>수</li>
+            <li>목</li>
+            <li>금</li>
+            <li>토</li>
+          </ul>
+          <ul class="days"></ul>
         </div>
-      </header>
-      <div class="calendar">
-        <ul class="weeks">
-          <li>일</li>
-          <li>월</li>
-          <li>화</li>
-          <li>수</li>
-          <li>목</li>
-          <li>금</li>
-          <li>토</li>
-        </ul>
-        <ul class="days"></ul>
+      </div>
+      <div class="countdown">
+        <div class="countdown-days"><span class="DAYS"></span>DAYS</div>
+        <div class="countdown-hours"><span class="hours"></span>HOURS</div>
+        <div class="countdown-minutes">
+          <span class="minutes"></span>MINUTES
+        </div>
+        <div class="countdown-seconds">
+          <span class="seconds"></span>SECONDS
+        </div>
+      </div>
+      <div class="congratulation">
+        Happy Birthday Have a Good Day! <i class="fa-solid fa-cake-candles"></i>
       </div>
     </div>
   </body>

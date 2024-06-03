@@ -19,6 +19,7 @@ const months = [
 let date = new Date();
 let year = date.getFullYear();
 let month = date.getMonth();
+let nowDay = date.getDate();
 
 const renderCalendar = () => {
   let firstDay = new Date(year, month, 1).getDay(); //1일의 요일
@@ -26,7 +27,6 @@ const renderCalendar = () => {
   let nextDay = new Date(year, month, lastDate).getDay(); // 현재달의 마지막 날짜의 요일
   let prevDate = new Date(year, month, 0).getDate(); //저번달의 마지막 날짜
   let day = "";
-  console.log(nextDay);
 
   for (let i = firstDay; i > 0; i--) {
     day += `<li class="lastmonth-day">${prevDate - i + 1}</li>`;
@@ -61,3 +61,79 @@ buttons.forEach((btn) => {
   });
 });
 renderCalendar();
+
+//생일 카운트다운
+
+const birMonth = document.querySelector("#user-month");
+const birDay = document.querySelector("#user-day");
+const birBtn = document.querySelector("button");
+const DAYS = document.querySelector(".DAYS");
+const hours = document.querySelector(".hours");
+const minutes = document.querySelector(".minutes");
+const seconds = document.querySelector(".seconds");
+const congratulation = document.querySelector(".congratulation");
+let onlyNumMonth;
+let onlyNumDay;
+let birthday;
+let count;
+
+const countStart = () => {
+  congratulation.classList.remove("active");
+  year = date.getFullYear();
+  count = setInterval(() => {
+    let now = new Date().getTime();
+    let countDown = new Date(birthday).getTime();
+    let distance = countDown - now;
+
+    let d = Math.floor(distance / (1000 * 60 * 60 * 24));
+    let h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    let s = Math.floor((distance % (1000 * 60)) / 1000);
+
+    DAYS.innerText = d;
+    hours.innerText = h;
+    minutes.innerText = m;
+    seconds.innerText = s;
+
+    if (distance < 0) {
+      clearInterval(count);
+      DAYS.innerText = "0";
+      hours.innerText = "0";
+      minutes.innerText = "0";
+      seconds.innerText = "0";
+      congratulation.classList.add("active");
+    }
+  }, 1000);
+};
+
+birBtn.addEventListener("click", () => {
+  if (count) {
+    clearInterval(count);
+  }
+  let userMonth = birMonth.value;
+  let userDay = birDay.value;
+
+  if (
+    userMonth < 1 ||
+    userMonth > 12 ||
+    userDay < 1 ||
+    userDay > 31 ||
+    !userMonth ||
+    !userDay
+  ) {
+    return;
+  }
+
+  onlyNumMonth = parseInt(userMonth.replace(/[^0-9]/g, ""));
+  onlyNumDay = parseInt(userDay.replace(/[^0-9]/g, ""));
+
+  if (
+    onlyNumMonth < month + 1 ||
+    (onlyNumMonth === month + 1 && onlyNumDay < nowDay)
+  ) {
+    year += 1;
+  }
+  birthday = `${onlyNumMonth}/${onlyNumDay}/${year} 00:00:00`;
+
+  countStart();
+});
