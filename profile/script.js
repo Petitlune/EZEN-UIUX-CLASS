@@ -107,15 +107,32 @@ const cloneCoding = [
   "https://chungjungone-hompage-petit.web.app",
 ];
 const iframURL = [
+  "https://flex-hompage-petit.web.app",
+  "https://grid-hompage-petit.web.app",
+  "https://calendar-petit.web.app",
+  "https://accordion-ui-petit.web.app",
   "https://calendar-petit.web.app",
   "https://accordion-ui-petit.web.app",
   "https://filter-petit.web.app",
-  "https://flex-hompage-petit.web.app",
-  "https://grid-hompage-petit.web.app",
   "https://loginform-petit.web.app",
   "https://matching-member-petit.web.app",
   "https://mobile-wedding-petit.web.app",
   "https://react-shoppingmall-petit.web.app",
 ];
 const examModal = document.querySelectorAll(".ex-box-wrap li");
-console.log(examModal);
+const modalFull = document.querySelector(".modal-full");
+const modalClose = document.querySelector(" .modal-close-btn ");
+const modalView = document.querySelector("#my-modal iframe");
+
+examModal.forEach((exam, i) => {
+  exam.addEventListener("click", () => {
+    modalFull.style.display = "flex";
+    modalView.src = iframURL[i];
+    body.style.overflowY = "hidden";
+  });
+});
+
+modalClose.addEventListener("click", () => {
+  modalFull.style.display = "none";
+  body.style.overflowY = "auto";
+});

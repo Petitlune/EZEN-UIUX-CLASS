@@ -5,7 +5,7 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
-  background: rgba(119, 190, 236, 0.1);
+  background: #77beec;
 }
 .container {
   width: 800px;
@@ -22,9 +22,9 @@ header span {
   display: flex;
   align-items: center;
   height: 100%;
-  font: bold 2rem/1 "Inter";
+  font: bold 3rem/1 "Inter";
   letter-spacing: 2px;
-  color: #222;
+  color: #fff;
   position: relative;
 }
 header span::after {
