@@ -43,8 +43,9 @@ header .gnb {
   display: flex;
   gap: 50px;
 }
-header .gnb a {
+header .gnb li {
   font-family: "Rajdhani";
+  cursor: pointer;
 }
 header .toggle-btn {
   display: none;
@@ -94,6 +95,25 @@ header .toggle-btn {
 }
 .color-select-box .colorBox .select-color:nth-child(4) {
   background: #ea1e63;
+}
+
+.gotoTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #3f51b5;
+  box-shadow: inset 5px -5px 15px rgba(0, 0, 0, 0.3);
+  opacity: 0.9;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 9999;
 }
 
 .color-setting {
@@ -218,6 +238,7 @@ header .toggle-btn {
 
 .home {
   max-width: 1000px;
+  margin-bottom: 20px;
 }
 .home .container {
   flex-direction: row;
@@ -538,20 +559,20 @@ header .toggle-btn {
 }
 
 .example {
-  border: 1px solid red;
-  padding-bottom: 60px;
+  padding-bottom: 20px;
   height: auto;
 }
 .example .section-inner {
   margin-top: 0;
   display: flex;
   justify-content: center;
+  height: auto;
 }
 .example .section-inner .inner-wrap {
   width: 78%;
-  height: 100vw;
   height: auto;
-  background: #dddddd;
+  display: flex;
+  flex-direction: column;
 }
 .example .section-inner .inner-wrap .ex-menu {
   display: flex;
@@ -590,18 +611,52 @@ header .toggle-btn {
   width: 100%;
   height: auto;
   margin-top: 24px;
-  position: relative;
-  background: #dddddd;
 }
-.example .section-inner .inner-wrap .ex-box .ex-box-wrap {
-  position: absolute;
+.example .section-inner .inner-wrap .ex-box .modal-full {
+  display: none;
+  position: fixed;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+}
+.example .section-inner .inner-wrap .ex-box .modal-full #my-modal {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.example .section-inner .inner-wrap .ex-box .modal-full #my-modal #chat-iframe {
+  width: 80%;
+  height: 78%;
+  border: none;
+  border-radius: 5px;
+  position: relative;
+}
+.example .section-inner .inner-wrap .ex-box .modal-full #my-modal .modal-close-btn {
+  width: 58px;
+  height: 32px;
+  border-radius: 25px;
+  text-align: center;
+  line-height: 32px;
+  position: absolute;
+  right: 10%;
+  bottom: 7%;
+  background: #3f51b5;
+  color: #fff;
+  cursor: pointer;
+}
+.example .section-inner .inner-wrap .ex-box .ex-box-wrap {
+  padding: 20px;
+  padding-bottom: 40px;
+  width: 100%;
+  height: auto;
   display: none;
-  flex-wrap: wrap;
   justify-content: space-between;
+  background: #dddddd;
 }
 .example .section-inner .inner-wrap .ex-box .ex-box-wrap.active {
   display: flex;
@@ -610,26 +665,27 @@ header .toggle-btn {
   flex-grow: 1;
   height: auto;
   min-height: 420px;
-  min-width: 380px;
+  min-width: 390px;
+  max-width: 600px;
   margin: 20px;
   overflow: hidden;
   position: relative;
   cursor: pointer;
   z-index: 10;
 }
-.example .section-inner .inner-wrap .ex-box .ex-box-wrap li div {
+.example .section-inner .inner-wrap .ex-box .ex-box-wrap li .colors {
   position: absolute;
   left: 0;
   top: -100%;
   width: 100%;
   height: 100%;
-  background: #1d2833;
+  background: #3f51b5;
   opacity: 0;
   transition: all 0.3s ease;
 }
 .example .section-inner .inner-wrap .ex-box .ex-box-wrap li:hover div {
   top: 0;
-  opacity: 1;
+  opacity: 0.8;
 }
 .example .section-inner .inner-wrap .ex-box .ex-box-wrap li img {
   width: 100%;
@@ -640,4 +696,76 @@ header .toggle-btn {
   left: 0;
   top: 0;
   z-index: -1;
+}
+
+.contact {
+  height: 360px;
+  background: #1d2833;
+  margin: 0;
+  position: relative;
+}
+.contact::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 90%;
+  background: url("./img/cloud.png") left top/cover;
+  opacity: 0.1;
+}
+.contact .container {
+  min-height: 0;
+  color: #fff;
+  margin-top: 40px;
+  padding: 0;
+}
+.contact .container .section-tit {
+  width: auto;
+}
+.contact .container .section-inner {
+  margin-top: 20px;
+  padding: 0;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.contact .container .section-inner .social {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #3f51b5;
+  border-radius: 50px;
+  width: 180px;
+  height: 60px;
+  z-index: 10;
+}
+.contact .container .section-inner .social a,
+.contact .container .section-inner .social span {
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border-radius: 100%;
+  border-top-left-radius: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact .container .section-inner .social a img,
+.contact .container .section-inner .social span img {
+  width: 88%;
+  padding: 5px;
+}
+.contact .container .bottom {
+  width: 100%;
+  height: 150px;
+  background: #3f51b5;
+  font-family: "NotoSans";
+  font-style: italic;
+  font-weight: lighter;
+  text-align: center;
+  font-size: 14px;
+  padding-top: 50px;
 }/*# sourceMappingURL=style.css.map */

@@ -11,9 +11,8 @@ const colorArray = ["3f51b5", "00a73e", "ff9801", "ea1e63"];
 
 colorSet.addEventListener("click", () => {
   colorBox.classList.toggle("active");
-
 });
-console.log(colorSet);
+
 wrap.addEventListener("click", (e) => {
   if (e.target !== colorSet) {
     colorBox.classList.remove("active");
@@ -45,7 +44,6 @@ dewDrop.addEventListener("click", () => {
 });
 
 //project-section
-
 const modalList = document.querySelectorAll(".modalList");
 const projectSection = document.querySelector(".project");
 const modalScreen = document.querySelectorAll(".modalScreen");
@@ -65,15 +63,59 @@ modalList.forEach((item, i) => {
   });
 });
 
-// example menu
+// example-section
 const exList = document.querySelectorAll(".ex-menu li span");
+const exContents = document.querySelectorAll(".ex-box-wrap");
 
-exList.forEach((li) => {
+exList.forEach((li, i) => {
   li.addEventListener("click", () => {
-    exList.forEach((li) => {
+    exList.forEach((li, j) => {
       li.classList.remove("active");
+      exContents[j].classList.remove("active");
     });
 
     li.classList.add("active");
+    exContents[i].classList.add("active");
   });
 });
+
+//scrollTo event
+const navMenu = document.querySelectorAll(".gnb li");
+const sections = document.querySelectorAll(".section");
+const goToTop = document.querySelector(".gotoTop");
+
+navMenu.forEach((menu, i) => {
+  menu.addEventListener("click", () => {
+    window.scrollTo({
+      top: sections[i].offsetTop - 50,
+      behavior: "smooth",
+    });
+  });
+});
+
+goToTop.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+});
+
+const cloneCoding = [
+  "https://etude-boo-0329.web.app/product_inner/productD.html",
+  "https://gglibrary-petit.web.app",
+  "https://megastudybooks-petit.web.app",
+  "https://chungjungone-hompage-petit.web.app",
+];
+const iframURL = [
+  "https://calendar-petit.web.app",
+  "https://accordion-ui-petit.web.app",
+  "https://filter-petit.web.app",
+  "https://flex-hompage-petit.web.app",
+  "https://grid-hompage-petit.web.app",
+  "https://loginform-petit.web.app",
+  "https://matching-member-petit.web.app",
+  "https://mobile-wedding-petit.web.app",
+  "https://react-shoppingmall-petit.web.app",
+];
+const examModal = document.querySelectorAll(".ex-box-wrap li");
+console.log(examModal);

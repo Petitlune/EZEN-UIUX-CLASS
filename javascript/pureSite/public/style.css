@@ -1,0 +1,529 @@
+@import url("./reset.css");
+body {
+  height: 2000px;
+  overflow-x: hidden;
+}
+
+header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  font-family: "Pretendard";
+  font-weight: 500;
+  height: 5.2vw;
+  background: #fff;
+  z-index: 100;
+  transition: top 0.3s ease-in-out;
+}
+header .brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  top: -12vw;
+  width: 100%;
+  height: 8vw;
+  border-top: 1px solid #ddd;
+  background: #fff;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease-in-out;
+  z-index: -5;
+}
+header .brand ul {
+  display: flex;
+  gap: 0.2vw;
+}
+header .brand ul a {
+  width: 8.4vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+header .brand ul a::before {
+  content: "";
+  width: 100%;
+  height: 80%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  background: transparent;
+}
+header .brand ul a:hover {
+  text-decoration: underline;
+}
+header .brand ul a:hover::before {
+  background: rgba(255, 255, 255, 0.2);
+}
+header .brand ul a img {
+  width: 100%;
+  height: auto;
+}
+header .brand ul a span {
+  font-family: "Pretendard";
+  font-weight: 500;
+  font-size: 0.8vw;
+}
+header .brand.active {
+  top: 5.2vw;
+  z-index: 1;
+}
+header .header-wrap {
+  display: flex;
+  width: 100vw;
+  height: 100%;
+  padding: 0 12vw;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  position: relative;
+  z-index: 100;
+}
+header .header-wrap .header-left {
+  display: flex;
+  align-items: center;
+  gap: 3.4vw;
+}
+header .header-wrap .header-left .title {
+  width: 5.8vw;
+}
+header .header-wrap .header-left .title img {
+  width: 100%;
+  height: auto;
+}
+header .header-wrap .header-left ul {
+  display: flex;
+  gap: 1.4vw;
+}
+header .header-wrap .header-left ul li {
+  font-size: 1vw;
+  position: relative;
+}
+header .header-wrap .header-left ul li:last-child::before {
+  content: "";
+  position: absolute;
+  right: -1.3vw;
+  bottom: 3px;
+  width: 0.8vw;
+  height: 0.8vw;
+  background: url("./img/ico_new_window.svg") center/contain no-repeat;
+  cursor: pointer;
+}
+header .header-wrap .option-menu {
+  display: flex;
+  align-items: center;
+  width: 9.6vw;
+  height: 2vw;
+  position: relative;
+  font-size: 0.8vw;
+}
+header .header-wrap .option-menu .option-menu-title {
+  cursor: pointer;
+  width: 100%;
+}
+header .header-wrap .option-menu::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.2vw;
+  background: url("./img/bg_underline.png") center/cover no-repeat;
+}
+header .header-wrap .option-menu::after {
+  content: "";
+  position: absolute;
+  top: 0.8vw;
+  right: 0;
+  width: 0.4vw;
+  height: 0.4vw;
+  background: url("./img/ico_family-arrow.svg") center/contain no-repeat;
+}
+header .header-wrap .option-menu ul {
+  display: flex;
+  gap: 0;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  border: 2px solid black;
+  margin-top: 14px;
+  width: 100%;
+  height: 0;
+  opacity: 0;
+  padding: 16px;
+  display: flex;
+  background: #fff;
+  transition: all 0.3s;
+}
+header .header-wrap .option-menu ul.active {
+  opacity: 1;
+  height: auto;
+  gap: 16px;
+}
+header .header-wrap .option-menu ul li {
+  height: 0;
+  opacity: 0;
+  font-weight: 400;
+}
+header .header-wrap .option-menu ul li.active {
+  height: auto;
+  opacity: 1;
+}
+
+section {
+  height: auto;
+  width: 100%;
+  margin: 1.8vw 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 100px;
+}
+section .main-sec {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+section .main-sec .sec-wrap {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  font-family: "UBuntu";
+  font-weight: 500;
+  position: relative;
+  font-size: 7.2vw;
+  min-height: 42vw;
+}
+section .main-sec .sec-wrap .better {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  transition: all 0.1s;
+}
+section .main-sec .sec-wrap .middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  min-height: 780px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+}
+section .main-sec .sec-wrap .middle .changeImg {
+  width: 28vw;
+  max-width: 480px;
+  height: auto;
+}
+section .main-sec .sec-wrap .life {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+}
+section .main-sec .sec-wrap .life .letter {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+section .main-sec .sec-bottom {
+  width: 92vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: absolute;
+  bottom: 4.4vw;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Pretendard";
+  font-size: 1vw;
+  font-weight: 500;
+}
+section .main-sec .sec-bottom a {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+section .main-sec .sec-bottom a::before {
+  content: "";
+  position: absolute;
+  right: -50px;
+  top: 0px;
+  background: url("./img/ico_FlotingCampaign_arrow.svg") center/contain no-repeat;
+  width: 30%;
+  height: 30%;
+}
+section .main-sec .sec-bottom a::after {
+  content: "";
+  position: absolute;
+  right: -56px;
+  top: 8px;
+  background: url("./img/ico_event_go.png") center/contain no-repeat;
+  width: 10%;
+  height: 10%;
+}
+section .main-sec .sec-bottom a span {
+  width: 100%;
+  height: auto;
+}
+section .main-sec .sec-bottom a span::after {
+  content: "";
+  position: absolute;
+  left: 90px;
+  bottom: 46px;
+  background: url("./img/ico_video_play.svg") center/contain no-repeat;
+  width: 24%;
+  height: 24%;
+  z-index: 50;
+}
+section .main-sec .sec-bottom a img {
+  width: 100%;
+  max-width: 240px;
+  margin-top: 16px;
+  position: relative;
+}
+section .main-sec .sec-bottom .eat {
+  font-family: "UBuntu";
+  cursor: pointer;
+}
+section .middle-sec {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+section .middle-sec ul {
+  width: 92vw;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+section .middle-sec ul li {
+  width: 100%;
+  height: 17vw;
+  overflow: hidden;
+  position: relative;
+}
+section .middle-sec ul li::before {
+  content: "";
+  background: url("./img/chungjungone-logo1.png") center/contain no-repeat;
+  position: absolute;
+  left: 38px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10%;
+  height: 3.6vw;
+  z-index: 10;
+}
+section .middle-sec ul li:nth-child(2)::before {
+  background: url("./img/chungjungone-logo2.png") center/contain no-repeat;
+}
+section .middle-sec ul li:nth-child(3)::before {
+  background: url("./img/chungjungone-logo3.png") center/contain no-repeat;
+}
+section .middle-sec ul li:nth-child(4)::before {
+  background: url("./img/chungjungone-logo4.png") center/contain no-repeat;
+}
+section .middle-sec ul li:nth-child(5)::before {
+  background: url("./img/chungjungone-logo5.png") center/contain no-repeat;
+}
+section .middle-sec ul li:nth-child(6)::before {
+  background: url("./img/chungjungone-logo6.png") center/contain no-repeat;
+}
+section .middle-sec ul li:nth-child(7)::before {
+  background: url("./img/chungjungone-logo7.png") center/contain no-repeat;
+}
+section .middle-sec ul li:nth-child(8)::before {
+  background: url("./img/chungjungone-logo8.png") center/contain no-repeat;
+}
+section .middle-sec ul li:nth-child(9)::before {
+  background: url("./img/chungjungone-logo9.png") center/contain no-repeat;
+}
+section .middle-sec ul li:nth-child(2) a {
+  background: url("./img/chungjungone-bg2-min.png") center/cover no-repeat;
+}
+section .middle-sec ul li:nth-child(3) a {
+  background: url("./img/chungjungone-bg3-min.png") center/cover no-repeat;
+}
+section .middle-sec ul li:nth-child(4) a {
+  background: url("./img/chungjungone-bg4-min.png") center/cover no-repeat;
+}
+section .middle-sec ul li:nth-child(5) a {
+  background: url("./img/chungjungone-bg5-min.png") center/cover no-repeat;
+}
+section .middle-sec ul li:nth-child(6) a {
+  background: url("./img/chungjungone-bg6-min.png") center/cover no-repeat;
+}
+section .middle-sec ul li:nth-child(7) a {
+  background: url("./img/chungjungone-bg7-min.png") center/cover no-repeat;
+}
+section .middle-sec ul li:nth-child(8) a {
+  background: url("./img/chungjungone-bg8-min.png") center/cover no-repeat;
+}
+section .middle-sec ul li:nth-child(9) a {
+  background: url("./img/chungjungone-bg9.png") center/cover no-repeat;
+}
+section .middle-sec ul li a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  background: url("./img/chungjungone_bg_1-min.png") center/cover no-repeat;
+  transform: scale(1.2);
+}
+section .middle-sec ul li a.active {
+  animation: zoom 1s ease-in-out;
+  animation-fill-mode: both;
+}
+section .middle-sec ul li a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+}
+@keyframes zoom {
+  0% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+section .middle-sec ul li a .middle-title {
+  position: absolute;
+  width: 100%;
+  left: 100%;
+  opacity: 1;
+  top: 7.4vw;
+  transform: translateY(-50%);
+  font-family: "Pretendard";
+  font-size: 2.2vw;
+  color: #fff;
+  transition: all 1.2s ease-in-out;
+}
+section .middle-sec ul li a .middle-title::before {
+  content: "";
+  background: url("./img/ico_more.svg") center/cover no-repeat;
+  position: absolute;
+  left: 0;
+  bottom: -60%;
+  width: 2.4vw;
+  height: 2.4vw;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2vw 0 6vw;
+  font-size: 0.9vw;
+  font-family: "Pretendard";
+}
+footer .personal {
+  display: flex;
+  gap: 18px;
+  height: 4vw;
+  justify-content: center;
+  padding-right: 5vw;
+}
+footer .personal span:first-child {
+  font-weight: 600;
+  position: relative;
+  display: inline-block;
+  width: 8vw;
+  text-align: left;
+  cursor: pointer;
+}
+footer .personal span:first-child::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 2px;
+  width: 1vw;
+  height: 1vw;
+  margin-left: 4px;
+  background: url("./img/ico_new_window.svg") center/contain no-repeat;
+}
+footer .personal span:last-child {
+  position: relative;
+  cursor: pointer;
+}
+footer .personal span:last-child::before {
+  content: "";
+  position: absolute;
+  right: -3vw;
+  top: -0.6vw;
+  width: 2vw;
+  height: 2vw;
+  margin-left: 4px;
+  background: url("./img/ccm.png") center/contain no-repeat;
+}
+footer .logo-bottom {
+  width: 6vw;
+  margin-bottom: 1.2vw;
+}
+footer .logo-bottom img {
+  width: 100%;
+  height: auto;
+}
+footer .desc-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.9vw;
+}
+footer .desc-bottom .bar {
+  position: relative;
+  padding-right: 10px;
+  margin-right: 8px;
+  width: 2vw;
+}
+footer .desc-bottom .bar::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-right: 1px solid black;
+}
+footer .social {
+  display: flex;
+  width: 8vw;
+  gap: 0.6vw;
+  justify-content: space-between;
+  margin: 1.2vw auto;
+}
+footer .social img {
+  width: 100%;
+  height: auto;
+}
+footer .copyright {
+  font-size: 0.8vw;
+}
+footer .copyright span {
+  font-weight: 300;
+  margin: 0 4px;
+}/*# sourceMappingURL=style.css.map */

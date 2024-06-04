@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!--fontawesome-->
+    <script
+      src="https://kit.fontawesome.com/b06e382e17.js"
+      crossorigin="anonymous"
+    ></script>
+    <!--custom css&js-->
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="./script.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="content navOne">
+        <ul class="nav-bar">
+          <a href="#">
+            <li><i class="fa-solid fa-magnifying-glass"></i>객실 예약</li>
+          </a>
+          <a href="#">
+            <li>다이닝 예약</li>
+          </a>
+          <a href="#">
+            <li>스페셜 오퍼</li>
+          </a>
+
+          <a href="#">
+            <li>e-shop</li>
+          </a>
+          <a href="#">
+            <li>Q&A</li>
+          </a>
+        </ul>
+      </div>
+      <div class="toggle-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="content navTwo">
+        <ul class="reservation-bar">
+          <li>
+            <span class="title">호텔 또는 도시</span>
+            <input
+              id="hotel-name"
+              type="text"
+              placeholder="도시, 명소, 호텔을 입력하세요."
+            />
+          </li>
+          <li class="check-in">
+            <span class="title">
+              <span>체크인</span>
+              <span>체크아웃</span>
+            </span>
+            <div class="input-box">
+              <span>05월 21일</span>
+              <span>1박</span>
+              <span>05월 22일</span>
+            </div>
+          </li>
+          <li class="check-in-person">
+            <span class="title">
+              <span>객실수</span>
+              <span>성인</span>
+              <span>어린이</span>
+            </span>
+            <div class="input-box">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </li>
+          <li>
+            <button class="search">검색</button>
+          </li>
+        </ul>
+      </div>
+      <div class="calendar-member">
+        <div class="calendar">
+          <input type="date" id="now-month" />
+          <input type="date" id="next-month" />
+        </div>
+        <div class="member">
+          <div class="room">
+            <ul class="room-item">
+              <li>객실1</li>
+              <li>
+                <button>-</button>
+                <span id="adult">성인</span>
+                <button>+</button>
+              </li>
+              <li>
+                <button>-</button>
+                <span id="child">어린이</span>
+                <button>+</button>
+              </li>
+            </ul>
+            <div class="room-plus">
+              객실추가<i class="fa-solid fa-circle-plus"></i>
+            </div>
+            <button>선택완료</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="section-wrap">
+      <section class="main">
+        <div class="hotel-main">
+          <h1 class="welcome-letter">
+            Welcome to the <br />Our resort<span>!</span>
+          </h1>
+        </div>
+      </section>
+      <section class="room-type types content">
+        <h1>객실유형</h1>
+        <div class="room-type-content">
+          <div class="deluxe-double-room">
+            <h1>디럭스 더블룸</h1>
+            <span> <img src="./img/main_hotel_ocean.jpg" alt="" /></span>
+
+            <p>
+              기존 더블룸보다 여유로운 공간을 제공하며, 고객의 다양한 취향과
+              감각을 고려한 인테리어 스타일의 객실이 준비되어 있습니다.
+            </p>
+          </div>
+          <div class="twin-room">
+            <h1>디럭스 트윈룸</h1>
+            <span> <img src="./img//main_resort_family.jpg" alt="" /></span>
+
+            <p>
+              모던한 감각에 따뜻한 우드 인테리어를 가미한 트윈룸은 기존
+              사이즈보다 한 사이즈 업된 트윈베드로 준비되어 있습니다.
+            </p>
+          </div>
+          <div class="family-room">
+            <h1>패밀리룸</h1>
+            <span> <img src="./img/main_hotel_superior.jpg" alt="" /></span>
+            <p>
+              큰방과 작은방으로 구성되어 있어 가족 모두 넓고 쾌적한 환경을
+              만끽할 수 있습니다. 안방에는 더블침대, 작은방에는 침구류 세트가
+              준비되어 있습니다.
+            </p>
+          </div>
+          <div class="double-room">
+            <h1>프레지덴셜(로얄)</h1>
+            <span><img src="./img//main_hotel_pr.jpg" alt="" /></span>
+
+            <p>
+              프레지덴셜(로얄)은 공간을 확장하여 최대 10인까지 이용 가능한
+              객실로 조식과 라운지바까지 이용 가능합니다. 총 3개의 더블베드와
+              1개의 트윈베드가 준비되어 있습니다.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="hotel-place types content">
+        <h1>부대시설</h1>
+        <div class="container">
+          <div class="item">
+            <img src="img/placeItem01.jpg" alt="" />
+            <p>
+              <b>오락실</b>
+              <span>
+                온 가족이 함께 즐기는 전자오락실, 당구장, 탁구장 등 다양한
+                놀거리로 가득한 PLAY ZONE</span
+              >
+            </p>
+          </div>
+          <div class="item">
+            <img src="img/placeItem00.jpg" alt="" />
+            <p>
+              <b>베이커리&카페</b>
+              <span>
+                스페인의 이국적인 풍경과 바다가 한눈에 펼처진 베이커리& 카페에서
+                커피 한잔의 여유를 즐기세요.</span
+              >
+            </p>
+          </div>
+          <div class="item">
+            <img src="img/placeItem06.jpg" alt="" />
+            <p>
+              <b>조식 서비스</b>
+              <span>
+                동해안 바다에 위치한 쏠비치에서는 낮에는 눈부신 햇살의 바다
+                전경을, 밤에는 감성적인 야경을 감상하며 편안한 휴식을 즐길 수
+                있습니다.</span
+              >
+            </p>
+          </div>
+          <div class="item">
+            <img src="img/placeItem03.jpg" alt="" />
+            <p>
+              <b>굿앤굿 마트</b>
+              <span>
+                고객님들이 필요로 하는 물품들로 채워진 마트에서 편안한 분위기로
+                고객님의 여유로운 쇼핑을 도와드립니다.</span
+              >
+            </p>
+          </div>
+          <div class="item">
+            <img src="img/placeItem08.jpg" alt="" />
+            <p>
+              <b>해수 사우나</b>
+              <span>
+                인체에 유익한 온도로 끓인 온탕, 고객들의 건강과 심신의 피로를
+                풀어 드립니다.</span
+              >
+            </p>
+          </div>
+          <div class="item">
+            <img src="img/placeItem07.jfif" alt="" />
+            <p>
+              <b>셰프스 키친</b>
+              <span>
+                프리미엄 뷔페 전문 레스토랑 '셰프스 키친(Chef's Kitchen)' 에서는
+                동해의 아름다운 햇살과 함께 갓 구운 6종류의 빵과 신선한 샐러드로
+                여유로운 아침을 만끽할 수 있습니다.</span
+              >
+            </p>
+          </div>
+        </div>
+      </section>
+      <div class="middle-img"></div>
+      <section class="activity types content">
+        <h1>오늘의 이벤트</h1>
+        <div class="activity-content">
+          <div class="fun-active">
+            <img src="./img/image_15.jpg" alt="" />
+            <p>
+              가족과 함께 <span class="accent">'가을 숲속 체험'</span>을
+              즐겨보세요. 4가지 코스를 취향에 따라 선택할 수 있습니다.
+            </p>
+          </div>
+          <div class="food-active">
+            <img src="./img/image_16.jpg" alt="" />
+            <p>
+              <span class="accent">'오늘은 내가 요리사!'</span> 쿠키를 직접 굽고
+              포장까지 완료할 수 있습니다.
+            </p>
+          </div>
+          <div class="other-active">
+            <img src="./img/image_19.jpg" alt="" />
+            <p>
+              <span class="accent">'야외에서 즐기는 특별 상영영화'</span>를
+              즐겨보세요. (팝콘과 음료 또한 준비되어 있습니다.)
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="popular-place types content">
+        <h1>추천 명소</h1>
+        <p>(해당 명소 클릭시 관련 게시물 사이트로 이동합니다.)</p>
+        <div class="imgAll">
+          <a
+            href="https://m.blog.naver.com/likeyyang/221812498890"
+            target="_blank"
+            class="imgItem"
+          >
+            <h2>오산리 해수욕장</h2>
+            <img src="./img/popular00.jpg" alt="popular00" />
+          </a>
+          <a
+            href="https://m.blog.naver.com/PostView.naver?blogId=likeyyang&logNo=222787046847&referrerCode=0&searchKeyword=%EB%82%99%EC%82%B0%EC%82%AC"
+            target="_blank"
+            class="imgItem"
+          >
+            <h2>낙산사</h2>
+            <img src="./img/popular02.jpg" alt="popular02" />
+          </a>
+          <a
+            href="https://m.blog.naver.com/PostView.naver?blogId=likeyyang&logNo=223306663813&referrerCode=0&searchKeyword=%EB%82%A8%EC%95%A0%ED%95%AD"
+            target="_blank"
+            class="imgItem"
+          >
+            <h2>남애항</h2>
+            <img src="./img/popular03.png" alt="popular03" />
+          </a>
+          <a
+            href="https://m.blog.naver.com/PostView.naver?blogId=likeyyang&logNo=223348009012&referrerCode=0&searchKeyword=%EC%98%A4%EC%82%B0%EB%A6%AC"
+            target="_blank"
+            class="imgItem"
+          >
+            <h2>오산리 선사유적박물관</h2>
+            <img src="./img/popular04.jpg" alt="popular04" />
+          </a>
+          <a
+            href="https://m.blog.naver.com/PostView.naver?blogId=likeyyang&logNo=223258255516&referrerCode=0&searchKeyword=%EC%84%A4%EC%95%85%EC%82%B0"
+            target="_blank"
+            class="imgItem"
+          >
+            <h2>설악산 대청봉</h2>
+            <img src="./img/popular05.jpg" alt="popular05" />
+          </a>
+          <a
+            href="https://m.blog.naver.com/PostView.naver?blogId=likeyyang&logNo=222923959336&referrerCode=0&searchKeyword=%EC%9A%A9%EC%86%8C"
+            class="imgItem"
+            target="_blank"
+          >
+            <h2>용소 폭포</h2>
+            <img src="./img/popular06.png" alt="popular06" />
+          </a>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <div class="footer-inner">
+        <ul>
+          <li>회사소개</li>
+          <li>뉴스룸</li>
+          <li>인재채용</li>
+          <li>제휴문의</li>
+          <li>웹진</li>
+          <li>개인정보처리방침</li>
+          <li>이용약관</li>
+          <li>원격지원</li>
+        </ul>
+
+        <p>
+          (주)호텔앤리조트강원 강원특별자치도 홍천군 남면 덕머리길 대표이사 :
+          김이슬, 이지수 개인정보 보호책임자 : 대표이사 김이슬 사업자등록번호 :
+          223-81-00000 통신판매업신고 : 2002-강원홍천-0008 통신판매사업자 정보
+          호텔예약센터 1588-4988 운영시간 09:00 ~18:00 ( 연중무휴 ) 이메일
+          petit1234@daemyungsono.com
+        </p>
+        <p>Copyright © HOTEL INTERNATIONAL Co., Ltd. All Rights Reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

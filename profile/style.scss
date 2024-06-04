@@ -21,8 +21,9 @@ header {
   .gnb {
     display: flex;
     gap: 50px;
-    a {
+    li {
       font-family: map-get($font-family, main_en);
+      cursor: pointer;
     }
   }
   .toggle-btn {
@@ -73,6 +74,24 @@ header {
       }
     }
   }
+}
+.gotoTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: map-get($font-color, primary);
+  box-shadow: inset 5px -5px 15px rgba(0, 0, 0, 0.3);
+  opacity: 0.9;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 9999;
 }
 .color-setting {
   display: flex;
@@ -191,6 +210,7 @@ header {
 // home
 .home {
   max-width: 1000px;
+  margin-bottom: 20px;
   .container {
     flex-direction: row;
     justify-content: space-between;
@@ -519,19 +539,18 @@ header {
 }
 // example
 .example {
-  border: 1px solid red;
-  padding-bottom: 60px;
+  padding-bottom: 20px;
   height: auto;
   .section-inner {
     margin-top: 0;
     display: flex;
     justify-content: center;
-
+    height: auto;
     .inner-wrap {
       width: 78%;
-      height: 100vw;
       height: auto;
-      background: map-get($font-color, primary-light);
+      display: flex;
+      flex-direction: column;
       .ex-menu {
         display: flex;
         height: auto;
@@ -567,51 +586,85 @@ header {
           }
         }
       }
-
       .ex-box {
         width: 100%;
         height: auto;
         margin-top: 24px;
-        position: relative;
-        background: map-get($font-color, primary-light);
-        .ex-box-wrap {
-          position: absolute;
+        .modal-full {
+          display: none;
+          position: fixed;
           left: 0;
           top: 0;
           width: 100%;
           height: 100%;
+          background: rgba(0, 0, 0, 0.3);
+          z-index: 9999;
+          #my-modal {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            #chat-iframe {
+              width: 80%;
+              height: 78%;
+              border: none;
+              border-radius: 5px;
+              position: relative;
+            }
+            .modal-close-btn {
+              width: 58px;
+              height: 32px;
+              border-radius: 25px;
+              text-align: center;
+              line-height: 32px;
+              position: absolute;
+              right: 10%;
+              bottom: 7%;
+              background: map-get($font-color, primary);
+              color: #fff;
+              cursor: pointer;
+            }
+          }
+        }
+        .ex-box-wrap {
+          padding: 20px;
+          padding-bottom: 40px;
+          width: 100%;
+          height: auto;
           display: none;
-          flex-wrap: wrap;
           justify-content: space-between;
+          background: map-get($font-color, primary-light);
           &.active {
             display: flex;
           }
+
           li {
             flex-grow: 1;
             height: auto;
             min-height: 420px;
-            min-width: 380px;
+            min-width: 390px;
+            max-width: 600px;
             margin: 20px;
             overflow: hidden;
             position: relative;
             cursor: pointer;
             z-index: 10;
-
-            div {
+            .colors {
               position: absolute;
               left: 0;
               top: -100%;
               width: 100%;
               height: 100%;
-              background: map-get($font-color, primary-dark);
+              background: map-get($font-color, primary);
               opacity: 0;
               transition: all 0.3s ease;
             }
             &:hover div {
               top: 0;
-              opacity: 1;
+              opacity: 0.8;
             }
-
             img {
               width: 100%;
               object-fit: cover;
@@ -624,6 +677,76 @@ header {
           }
         }
       }
+    }
+  }
+}
+.contact {
+  height: 360px;
+  background: #1d2833;
+  margin: 0;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 90%;
+    background: url("./img/cloud.png") left top/cover;
+    opacity: 0.1;
+  }
+  .container {
+    min-height: 0;
+    color: #fff;
+    margin-top: 40px;
+    padding: 0;
+    .section-tit {
+      width: auto;
+    }
+    .section-inner {
+      margin-top: 20px;
+      padding: 0;
+      width: 100%;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      .social {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background: map-get($font-color, primary);
+        border-radius: 50px;
+        width: 180px;
+        height: 60px;
+        z-index: 10;
+        a,
+        span {
+          width: 40px;
+          height: 40px;
+          background: #fff;
+          border-radius: 100%;
+          border-top-left-radius: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          img {
+            width: 88%;
+            padding: 5px;
+          }
+        }
+      }
+    }
+    .bottom {
+      width: 100%;
+      height: 150px;
+      background: map-get($font-color, primary);
+      font-family: "NotoSans";
+      font-style: italic;
+      font-weight: lighter;
+      text-align: center;
+      font-size: 14px;
+      padding-top: 50px;
     }
   }
 }
