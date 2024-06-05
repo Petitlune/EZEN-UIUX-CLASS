@@ -23,12 +23,10 @@ header {
   align-items: center;
   justify-content: center;
   .header-top {
-    width: 75%;
-    min-width: 1400px;
+    width: 1440px;
     display: flex;
     justify-content: right;
     gap: 18px;
-    margin-right: 50px;
     .login,
     .signin {
       width: 100px;
@@ -81,7 +79,7 @@ nav {
   z-index: 10;
   .nav-inner {
     width: 1440px;
-    padding: 0 18px;
+    padding: 0 2vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -90,20 +88,18 @@ nav {
       display: flex;
       align-items: center;
       gap: 16px;
-      margin-right: 24%;
       cursor: pointer;
     }
     .nav-menu {
       display: flex;
       align-items: center;
-      min-width: 620px;
-
+      justify-content: flex-end;
+      width: 70%;
       a {
         font: 600 20px/1 "Noto Sans KR";
         color: #444;
         padding: 28px 34px;
         transition: all 0.2s;
-
         &:hover {
           color: #437dea;
         }
@@ -113,7 +109,6 @@ nav {
       }
       .hidden-menu {
         width: 100%;
-        min-width: 1500px;
         height: 300px;
         display: none;
         opacity: 0;
@@ -130,12 +125,12 @@ nav {
           opacity: 1;
         }
         .hidden-menu-inner {
-          width: 75%;
+          width: 1400px;
           height: 100%;
           display: flex;
           justify-content: flex-end;
           background: #fff;
-          padding-right: 115px;
+          padding-right: 4.2%;
           .sec {
             display: flex;
             flex-direction: column;
@@ -827,6 +822,210 @@ nav {
               }
             }
           }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .sign-log-in {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 70px;
+    z-index: 50;
+    background: #3942af;
+    .header-top {
+      justify-content: left;
+      padding-left: 12px;
+      .login,
+      .signin {
+        width: 100px;
+        height: 100%;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+        span {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          width: 32px;
+          height: 32px;
+          border: none;
+          background: none;
+
+          img {
+            position: absolute;
+            left: 8px;
+            top: 6px;
+          }
+        }
+        p {
+          display: inline-block;
+          font-size: 13px;
+          color: #fff;
+          padding-bottom: 4px;
+        }
+      }
+    }
+  }
+  nav {
+    height: 68px;
+    .nav-inner {
+      width: 1440px;
+      padding: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .title {
+        img {
+          width: 30%;
+        }
+      }
+      .nav-menu {
+        position: relative;
+        left: 0;
+        top: 0;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        width: 100vw;
+        height: 100vh;
+
+        a {
+          font: 600 20px/1 "Noto Sans KR";
+          color: #444;
+          padding: 28px 34px;
+          transition: all 0.2s;
+          &:hover {
+            color: #437dea;
+          }
+          &.active {
+            color: #437dea;
+          }
+        }
+        .hidden-menu {
+          width: 100%;
+          display: flex;
+          opacity: 1;
+          justify-content: center;
+          position: absolute;
+          left: 0;
+          bottom: -301px;
+          font-size: 14px;
+          background: #fff;
+          box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+          transition: all 0.2s;
+          &.active {
+            display: flex;
+            opacity: 1;
+          }
+          .hidden-menu-inner {
+            width: 1400px;
+            height: 100%;
+            display: flex;
+            justify-content: flex-end;
+            background: #fff;
+            padding-right: 4.2%;
+            .sec {
+              display: flex;
+              flex-direction: column;
+              gap: 16px;
+              width: 140px;
+              padding-top: 12px;
+              text-align: center;
+              border-right: 1px solid #f0f0f0;
+              background: transparent;
+              transition: all 0.2s;
+              position: relative;
+              &::before {
+                content: "";
+                width: 0;
+                position: absolute;
+                left: 32px;
+                top: -2px;
+                height: 2px;
+                background: #437dea;
+                transition: all 0.2s;
+              }
+              a {
+                display: inline-block;
+                font-size: 14px;
+                padding: 4px 0;
+                &:hover {
+                  text-decoration: underline;
+                }
+              }
+            }
+            .sec:hover {
+              background: #f0f0f0;
+            }
+            .sec.active {
+              background: #f0f0f0;
+            }
+            .sec:hover:before {
+              width: 52%;
+            }
+            .sec.active::before {
+              width: 52%;
+            }
+            .section01 {
+              border-left: 1px solid #f0f0f0;
+            }
+            .section03 {
+              width: 160px;
+              &::before {
+                left: 38px;
+              }
+            }
+            .section04 {
+              width: 170px;
+              &::before {
+                left: 40px;
+              }
+            }
+          }
+        }
+      }
+      .menu-btn {
+        display: flex;
+        position: relative;
+        width: 25px;
+        height: 21px;
+        cursor: pointer;
+
+        span {
+          position: absolute;
+          left: 0;
+          display: inline-block;
+          width: 100%;
+          height: 3px;
+          background: #555;
+
+          &:nth-child(2) {
+            top: 50%;
+            transform: translateY(-50%);
+          }
+          &:nth-child(3) {
+            bottom: 0;
+          }
+        }
+        &.active span:nth-child(1) {
+          top: 50%;
+          transform: translateY(-50%) rotate(45deg);
+        }
+        &.active span:nth-child(2) {
+          opacity: 0;
+        }
+        &.active span:nth-child(3) {
+          bottom: 50%;
+          transform: translateY(50%) rotate(-45deg);
         }
       }
     }

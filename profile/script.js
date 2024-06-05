@@ -100,17 +100,10 @@ goToTop.addEventListener("click", () => {
   });
 });
 
-const cloneCoding = [
-  "https://etude-boo-0329.web.app/product_inner/productD.html",
-  "https://gglibrary-petit.web.app",
-  "https://megastudybooks-petit.web.app",
-  "https://chungjungone-hompage-petit.web.app",
-];
 const iframURL = [
   "https://flex-hompage-petit.web.app",
   "https://grid-hompage-petit.web.app",
-  "https://calendar-petit.web.app",
-  "https://accordion-ui-petit.web.app",
+  "https://css-project02-petit.web.app",
   "https://calendar-petit.web.app",
   "https://accordion-ui-petit.web.app",
   "https://filter-petit.web.app",
@@ -119,6 +112,7 @@ const iframURL = [
   "https://mobile-wedding-petit.web.app",
   "https://react-shoppingmall-petit.web.app",
 ];
+
 const examModal = document.querySelectorAll(".ex-box-wrap li");
 const modalFull = document.querySelector(".modal-full");
 const modalClose = document.querySelector(" .modal-close-btn ");

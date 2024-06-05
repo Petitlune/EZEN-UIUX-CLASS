@@ -443,6 +443,7 @@ header .toggle-btn {
 }
 .project .section-inner .modalback .modalScreen .modalScreenInner {
   width: 94%;
+  background: #3f51b5;
   border-width: 4px;
   border-style: solid;
   border-color: #3f51b5;
@@ -487,7 +488,7 @@ header .toggle-btn {
   width: 90%;
   height: 100%;
   display: flex;
-  gap: 52px;
+  gap: 2vw;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
@@ -692,12 +693,12 @@ header .toggle-btn {
   height: 32px;
   text-align: center;
   position: absolute;
-  right: 10px;
+  right: 20px;
   top: 20px;
   cursor: pointer;
 }
 .example .section-inner .inner-wrap .ex-box .modal-full #my-modal .modal-close-btn i {
-  color: #3f51b5;
+  color: ddd;
   font-size: 18px;
 }
 .example .section-inner .inner-wrap .ex-box .ex-box-wrap {
@@ -706,7 +707,7 @@ header .toggle-btn {
   width: 100%;
   height: auto;
   display: none;
-  justify-content: space-between;
+  justify-content: center;
   background: #dddddd;
 }
 .example .section-inner .inner-wrap .ex-box .ex-box-wrap.active {
@@ -739,6 +740,7 @@ header .toggle-btn {
   justify-content: center;
   align-items: center;
   top: 0;
+  left: 0;
   opacity: 0.9;
   text-align: left;
   padding: 0 50px;

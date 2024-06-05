@@ -112,6 +112,13 @@ header {
             cursor: pointer;
           }
         }
+        .header-social {
+          display: none;
+        }
+        .popup-btn {
+          display: none;
+          background: url("./img/ico_popup_close.svg") center/contain no-repeat;
+        }
       }
     }
 
@@ -148,7 +155,7 @@ header {
         display: flex;
         gap: 0;
         flex-direction: column;
-        position: absolute;
+        position: fixed;
         top: 100%;
         left: 0;
         border: 2px solid black;
@@ -550,6 +557,62 @@ footer {
     span {
       font-weight: 300;
       margin: 0 4px;
+    }
+  }
+}
+@media (max-width: 1024px) {
+  .brand.active {
+    display: none;
+  }
+  .header-wrap {
+    justify-content: center;
+    .header-left {
+      ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100vh;
+        width: 48vw;
+        padding-left: 8vw;
+        background: #fff;
+        z-index: 10;
+        justify-content: center;
+        gap: 10vw;
+        li {
+          &:last-child::before {
+            display: none;
+          }
+          a {
+            font-size: 4.8vw;
+          }
+          &:last-child a {
+            font-size: 2.4vw;
+            font-weight: 400;
+            text-decoration: underline;
+            position: relative;
+            &::after {
+              content: "";
+              position: absolute;
+              background: url("img/ico_mobile_nav_arrow.svg") center/contain
+                no-repeat;
+              right: -20%;
+              top: 50%;
+              transform: translateY(-50%);
+              text-align: center;
+              width: 1vw;
+              height: 1vw;
+            }
+          }
+        }
+        .header-social {
+          display: flex;
+        }
+        .popup-btn {
+          display: block;
+        }
+      }
     }
   }
 }

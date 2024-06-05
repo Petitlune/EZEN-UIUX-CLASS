@@ -112,6 +112,13 @@ header .header-wrap .header-left ul li:last-child::before {
   background: url("./img/ico_new_window.svg") center/contain no-repeat;
   cursor: pointer;
 }
+header .header-wrap .header-left ul .header-social {
+  display: none;
+}
+header .header-wrap .header-left ul .popup-btn {
+  display: none;
+  background: url("./img/ico_popup_close.svg") center/contain no-repeat;
+}
 header .header-wrap .option-menu {
   display: flex;
   align-items: center;
@@ -146,7 +153,7 @@ header .header-wrap .option-menu ul {
   display: flex;
   gap: 0;
   flex-direction: column;
-  position: absolute;
+  position: fixed;
   top: 100%;
   left: 0;
   border: 2px solid black;
@@ -264,7 +271,8 @@ section .main-sec .sec-bottom a::before {
   position: absolute;
   right: -50px;
   top: 0px;
-  background: url("./img/ico_FlotingCampaign_arrow.svg") center/contain no-repeat;
+  background: url("./img/ico_FlotingCampaign_arrow.svg") center/contain
+    no-repeat;
   width: 30%;
   height: 30%;
 }
@@ -526,4 +534,56 @@ footer .copyright {
 footer .copyright span {
   font-weight: 300;
   margin: 0 4px;
-}/*# sourceMappingURL=style.css.map */
+}
+
+@media (max-width: 1024px) {
+  .brand.active {
+    display: none;
+  }
+  .header-wrap {
+    justify-content: center;
+  }
+  .header-wrap .header-left ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 48vw;
+    padding-left: 8vw;
+    background: #fff;
+    z-index: 10;
+    justify-content: center;
+    gap: 10vw;
+  }
+  .header-wrap .header-left ul li:last-child::before {
+    display: none;
+  }
+  .header-wrap .header-left ul li a {
+    font-size: 4.8vw;
+  }
+  .header-wrap .header-left ul li:last-child a {
+    font-size: 2.4vw;
+    font-weight: 400;
+    text-decoration: underline;
+    position: relative;
+  }
+  .header-wrap .header-left ul li:last-child a::after {
+    content: "";
+    position: absolute;
+    background: url("img/ico_mobile_nav_arrow.svg") center/contain no-repeat;
+    right: -20%;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    width: 1vw;
+    height: 1vw;
+  }
+  .header-wrap .header-left ul .header-social {
+    display: flex;
+  }
+  .header-wrap .header-left ul .popup-btn {
+    display: block;
+  }
+} /*# sourceMappingURL=style.css.map */

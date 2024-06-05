@@ -429,6 +429,7 @@ header {
         align-items: center;
         .modalScreenInner {
           width: 94%;
+          background: map-get($font-color, primary);
           border-width: 4px;
           border-style: solid;
           border-color: map-get($font-color, primary);
@@ -468,7 +469,7 @@ header {
               width: 90%;
               height: 100%;
               display: flex;
-              gap: 52px;
+              gap: 2vw;
               flex-direction: column;
               align-items: flex-start;
               justify-content: center;
@@ -681,11 +682,11 @@ header {
               height: 32px;
               text-align: center;
               position: absolute;
-              right: 10px;
+              right: 20px;
               top: 20px;
               cursor: pointer;
               i {
-                color: map-get($font-color, primary);
+                color: ddd;
                 font-size: 18px;
               }
             }
@@ -697,7 +698,7 @@ header {
           width: 100%;
           height: auto;
           display: none;
-          justify-content: space-between;
+          justify-content: center;
           background: map-get($font-color, primary-light);
           &.active {
             display: flex;
@@ -729,6 +730,7 @@ header {
               justify-content: center;
               align-items: center;
               top: 0;
+              left: 0;
               opacity: 0.9;
               text-align: left;
               padding: 0 50px;

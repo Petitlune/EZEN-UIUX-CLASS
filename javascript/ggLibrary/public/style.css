@@ -39,12 +39,10 @@ header {
   justify-content: center;
 }
 .sign-log-in .header-top {
-  width: 75%;
-  min-width: 1400px;
+  width: 1440px;
   display: flex;
   justify-content: right;
   gap: 18px;
-  margin-right: 50px;
 }
 .sign-log-in .header-top .login,
 .sign-log-in .header-top .signin {
@@ -97,7 +95,7 @@ nav {
 }
 nav .nav-inner {
   width: 1440px;
-  padding: 0 18px;
+  padding: 0 2vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -107,13 +105,13 @@ nav .nav-inner .title {
   display: flex;
   align-items: center;
   gap: 16px;
-  margin-right: 24%;
   cursor: pointer;
 }
 nav .nav-inner .nav-menu {
   display: flex;
   align-items: center;
-  min-width: 620px;
+  justify-content: flex-end;
+  width: 70%;
 }
 nav .nav-inner .nav-menu a {
   font: 600 20px/1 "Noto Sans KR";
@@ -129,7 +127,6 @@ nav .nav-inner .nav-menu a.active {
 }
 nav .nav-inner .nav-menu .hidden-menu {
   width: 100%;
-  min-width: 1500px;
   height: 300px;
   display: none;
   opacity: 0;
@@ -147,12 +144,12 @@ nav .nav-inner .nav-menu .hidden-menu.active {
   opacity: 1;
 }
 nav .nav-inner .nav-menu .hidden-menu .hidden-menu-inner {
-  width: 75%;
+  width: 1400px;
   height: 100%;
   display: flex;
   justify-content: flex-end;
   background: #fff;
-  padding-right: 115px;
+  padding-right: 4.2%;
 }
 nav .nav-inner .nav-menu .hidden-menu .hidden-menu-inner .sec {
   display: flex;
@@ -832,5 +829,206 @@ nav .nav-inner .menu-btn.active span:nth-child(3) {
   }
   100% {
     transform: translateX(-200%);
+  }
+}
+
+@media (max-width: 1024px) {
+  .sign-log-in {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 70px;
+    z-index: 50;
+    background: #3942af;
+  }
+  .sign-log-in .header-top {
+    justify-content: left;
+    padding-left: 12px;
+  }
+  .sign-log-in .header-top .login,
+  .sign-log-in .header-top .signin {
+    width: 100px;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+  }
+  .sign-log-in .header-top .login span,
+  .sign-log-in .header-top .signin span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: none;
+  }
+  .sign-log-in .header-top .login span img,
+  .sign-log-in .header-top .signin span img {
+    position: absolute;
+    left: 8px;
+    top: 6px;
+  }
+  .sign-log-in .header-top .login p,
+  .sign-log-in .header-top .signin p {
+    display: inline-block;
+    font-size: 13px;
+    color: #fff;
+    padding-bottom: 4px;
+  }
+  nav {
+    height: 68px;
+  }
+  nav .nav-inner {
+    width: 1440px;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  nav .nav-inner .title img {
+    width: 30%;
+  }
+  nav .nav-inner .nav-menu {
+    position: relative;
+    left: 0;
+    top: 0;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100vw;
+    height: 100vh;
+  }
+  nav .nav-inner .nav-menu a {
+    font: 600 20px/1 "Noto Sans KR";
+    color: #444;
+    padding: 28px 34px;
+    transition: all 0.2s;
+  }
+  nav .nav-inner .nav-menu a:hover {
+    color: #437dea;
+  }
+  nav .nav-inner .nav-menu a.active {
+    color: #437dea;
+  }
+  nav .nav-inner .nav-menu .hidden-menu {
+    width: 100%;
+    display: flex;
+    opacity: 1;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    bottom: -301px;
+    font-size: 14px;
+    background: #fff;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s;
+  }
+  nav .nav-inner .nav-menu .hidden-menu.active {
+    display: flex;
+    opacity: 1;
+  }
+  nav .nav-inner .nav-menu .hidden-menu .hidden-menu-inner {
+    width: 1400px;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    background: #fff;
+    padding-right: 4.2%;
+  }
+  nav .nav-inner .nav-menu .hidden-menu .hidden-menu-inner .sec {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 140px;
+    padding-top: 12px;
+    text-align: center;
+    border-right: 1px solid #f0f0f0;
+    background: transparent;
+    transition: all 0.2s;
+    position: relative;
+  }
+  nav .nav-inner .nav-menu .hidden-menu .hidden-menu-inner .sec::before {
+    content: "";
+    width: 0;
+    position: absolute;
+    left: 32px;
+    top: -2px;
+    height: 2px;
+    background: #437dea;
+    transition: all 0.2s;
+  }
+  nav .nav-inner .nav-menu .hidden-menu .hidden-menu-inner .sec a {
+    display: inline-block;
+    font-size: 14px;
+    padding: 4px 0;
+  }
+  nav .nav-inner .nav-menu .hidden-menu .hidden-menu-inner .sec a:hover {
+    text-decoration: underline;
+  }
+  nav .nav-inner .nav-menu .hidden-menu .hidden-menu-inner .sec:hover {
+    background: #f0f0f0;
+  }
+  nav .nav-inner .nav-menu .hidden-menu .hidden-menu-inner .sec.active {
+    background: #f0f0f0;
+  }
+  nav .nav-inner .nav-menu .hidden-menu .hidden-menu-inner .sec:hover:before {
+    width: 52%;
+  }
+  nav .nav-inner .nav-menu .hidden-menu .hidden-menu-inner .sec.active::before {
+    width: 52%;
+  }
+  nav .nav-inner .nav-menu .hidden-menu .hidden-menu-inner .section01 {
+    border-left: 1px solid #f0f0f0;
+  }
+  nav .nav-inner .nav-menu .hidden-menu .hidden-menu-inner .section03 {
+    width: 160px;
+  }
+  nav .nav-inner .nav-menu .hidden-menu .hidden-menu-inner .section03::before {
+    left: 38px;
+  }
+  nav .nav-inner .nav-menu .hidden-menu .hidden-menu-inner .section04 {
+    width: 170px;
+  }
+  nav .nav-inner .nav-menu .hidden-menu .hidden-menu-inner .section04::before {
+    left: 40px;
+  }
+  nav .nav-inner .menu-btn {
+    display: flex;
+    position: relative;
+    width: 25px;
+    height: 21px;
+    cursor: pointer;
+  }
+  nav .nav-inner .menu-btn span {
+    position: absolute;
+    left: 0;
+    display: inline-block;
+    width: 100%;
+    height: 3px;
+    background: #555;
+  }
+  nav .nav-inner .menu-btn span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  nav .nav-inner .menu-btn span:nth-child(3) {
+    bottom: 0;
+  }
+  nav .nav-inner .menu-btn.active span:nth-child(1) {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+  }
+  nav .nav-inner .menu-btn.active span:nth-child(2) {
+    opacity: 0;
+  }
+  nav .nav-inner .menu-btn.active span:nth-child(3) {
+    bottom: 50%;
+    transform: translateY(50%) rotate(-45deg);
   }
 }/*# sourceMappingURL=style.css.map */
