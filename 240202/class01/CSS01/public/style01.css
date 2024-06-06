@@ -27,14 +27,14 @@ body {
   grid-template-columns: repeat(6, 1fr);
   grid-gap: 20px;
 }
-.icons li input[name="check-item"] {
+.icons li input[name=check-item] {
   display: none;
   display: none;
 }
-.icons li input[name="check-item"]:checked + div {
+.icons li input[name=check-item]:checked + div {
   box-shadow: 0 0 10px rgb(88, 88, 245);
 }
-.icons li input[name="check-item"]:checked + div span {
+.icons li input[name=check-item]:checked + div span {
   text-shadow: 0 0 10px rgb(88, 88, 245);
 }
 .icons li label {
@@ -53,4 +53,4 @@ body {
 }
 .icons li label div span {
   font-size: 50px;
-} /*# sourceMappingURL=style01.css.map */
+}/*# sourceMappingURL=style01.css.map */

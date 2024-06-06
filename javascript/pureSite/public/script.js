@@ -21,8 +21,23 @@ brand.addEventListener("mouseleave", () => {
   brand.classList.remove("active");
 });
 
+//toggle-btn
+const toggleBtn = document.querySelector(".toggle-button");
+const toggleBg = document.querySelector(".responsible-bg ");
+const sideMenu = document.querySelector(".header-menu");
+const popupBtn = document.querySelector(".popup-btn");
+
+toggleBtn.addEventListener("click", () => {
+  sideMenu.classList.add("active");
+  toggleBg.classList.add("active");
+});
+popupBtn.addEventListener("click", () => {
+  sideMenu.classList.remove("active");
+  toggleBg.classList.remove("active");
+});
+
 //changeImg
-//
+
 const changeImg = document.querySelector(".changeImg");
 
 const imgArr = [
@@ -52,6 +67,7 @@ const header = document.querySelector("header");
 const middleTitle = document.querySelectorAll(".middle-title");
 const middleImg = document.querySelectorAll(".middle-main-img");
 const mainHeight = document.querySelector(".main-sec").clientHeight;
+const letEat = document.querySelector(".eat");
 
 document.addEventListener("scroll", () => {
   let test = window.scrollY;
@@ -78,11 +94,27 @@ document.addEventListener("scroll", () => {
     });
   } else if (test > 150) {
     better.style.opacity = 0;
-    middleTitle.forEach((it, i) => {
-      it.style.left = "74%";
-      it.style.transitionDelay = `${(i + 1) * 0.5}s`;
-      middleImg[i].classList.add("active");
-      middleImg[i].style.animationDelay = `${(i + 1) * 0.6}s`;
-    });
+    if (window.innerWidth < 768) {
+      middleTitle.forEach((it, i) => {
+        it.style.left = "58%";
+        it.style.transitionDelay = `${(i + 1) * 0.5}s`;
+        middleImg[i].classList.add("active");
+        middleImg[i].style.animationDelay = `${(i + 1) * 0.6}s`;
+      });
+    } else {
+      middleTitle.forEach((it, i) => {
+        it.style.left = "74%";
+        it.style.transitionDelay = `${(i + 1) * 0.5}s`;
+        middleImg[i].classList.add("active");
+        middleImg[i].style.animationDelay = `${(i + 1) * 0.6}s`;
+      });
+    }
   }
+});
+
+letEat.addEventListener("click", () => {
+  window.scrollTo({
+    top: mainHeight + (3.4 * window.innerWidth) / 100,
+    behavior: "smooth",
+  });
 });
