@@ -84,6 +84,9 @@ header {
 .sign-log-in .header-top .signin span img {
   top: -105px;
 }
+.sign-log-in .fa-x {
+  display: none;
+}
 
 nav {
   display: flex;
@@ -113,16 +116,19 @@ nav .nav-inner .nav-menu {
   justify-content: flex-end;
   width: 70%;
 }
-nav .nav-inner .nav-menu a {
+nav .nav-inner .nav-menu .main-nav {
   font: 600 20px/1 "Noto Sans KR";
   color: #444;
   padding: 28px 34px;
   transition: all 0.2s;
 }
-nav .nav-inner .nav-menu a:hover {
+nav .nav-inner .nav-menu .main-nav img {
+  display: none;
+}
+nav .nav-inner .nav-menu .main-nav:hover {
   color: #437dea;
 }
-nav .nav-inner .nav-menu a.active {
+nav .nav-inner .nav-menu .main-nav.active {
   color: #437dea;
 }
 nav .nav-inner .nav-menu .hidden-menu {
@@ -187,7 +193,7 @@ nav .nav-inner .nav-menu .hidden-menu .hidden-menu-inner .sec:hover {
 nav .nav-inner .nav-menu .hidden-menu .hidden-menu-inner .sec.active {
   background: #f0f0f0;
 }
-nav .nav-inner .nav-menu .hidden-menu .hidden-menu-inner .sec:hover:before {
+nav .nav-inner .nav-menu .hidden-menu .hidden-menu-inner .sec:hover::before {
   width: 52%;
 }
 nav .nav-inner .nav-menu .hidden-menu .hidden-menu-inner .sec.active::before {
@@ -834,9 +840,11 @@ nav .nav-inner .menu-btn.active span:nth-child(3) {
 
 @media (max-width: 1024px) {
   .sign-log-in {
+    display: none;
     position: fixed;
     left: 0;
     top: 0;
+    width: 100vw;
     height: 70px;
     z-index: 50;
     background: #3942af;
@@ -868,9 +876,17 @@ nav .nav-inner .menu-btn.active span:nth-child(3) {
   }
   .sign-log-in .header-top .login span img,
   .sign-log-in .header-top .signin span img {
+    display: none;
+  }
+  .sign-log-in .header-top .login span::after,
+  .sign-log-in .header-top .signin span::after {
+    content: "";
     position: absolute;
-    left: 8px;
     top: 6px;
+    left: 0;
+    background: url("./image/ico_link_header_top_w.png") top/contain no-repeat;
+    width: 100%;
+    height: 187px;
   }
   .sign-log-in .header-top .login p,
   .sign-log-in .header-top .signin p {
@@ -879,12 +895,27 @@ nav .nav-inner .menu-btn.active span:nth-child(3) {
     color: #fff;
     padding-bottom: 4px;
   }
+  .sign-log-in .header-top .signin span::after {
+    top: -108px;
+  }
+  .sign-log-in.active {
+    display: flex;
+  }
+  .sign-log-in .fa-x {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    margin-top: 20px;
+    font-size: 28px;
+    color: #fff;
+    cursor: pointer;
+  }
   nav {
     height: 68px;
   }
   nav .nav-inner {
     width: 1440px;
-    padding: 0;
+    padding: 0 16px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -893,110 +924,100 @@ nav .nav-inner .menu-btn.active span:nth-child(3) {
     width: 30%;
   }
   nav .nav-inner .nav-menu {
-    position: relative;
+    display: none;
+    position: fixed;
     left: 0;
-    top: 0;
+    top: 70px;
     background: #fff;
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-    width: 100vw;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 40vw;
     height: 100vh;
   }
-  nav .nav-inner .nav-menu a {
-    font: 600 20px/1 "Noto Sans KR";
+  nav .nav-inner .nav-menu .main-nav {
     color: #444;
-    padding: 28px 34px;
-    transition: all 0.2s;
-  }
-  nav .nav-inner .nav-menu a:hover {
-    color: #437dea;
-  }
-  nav .nav-inner .nav-menu a.active {
-    color: #437dea;
-  }
-  nav .nav-inner .nav-menu .hidden-menu {
-    width: 100%;
+    padding: 22px 34px;
+    width: 40vw;
+    text-align: left;
+    padding-left: 20px;
+    border-bottom: 1px solid #ddd;
     display: flex;
-    opacity: 1;
-    justify-content: center;
-    position: absolute;
-    left: 0;
-    bottom: -301px;
-    font-size: 14px;
-    background: #fff;
-    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
-    transition: all 0.2s;
-  }
-  nav .nav-inner .nav-menu .hidden-menu.active {
-    display: flex;
-    opacity: 1;
-  }
-  nav .nav-inner .nav-menu .hidden-menu .hidden-menu-inner {
-    width: 1400px;
-    height: 100%;
-    display: flex;
-    justify-content: flex-end;
-    background: #fff;
-    padding-right: 4.2%;
-  }
-  nav .nav-inner .nav-menu .hidden-menu .hidden-menu-inner .sec {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    width: 140px;
-    padding-top: 12px;
-    text-align: center;
-    border-right: 1px solid #f0f0f0;
-    background: transparent;
-    transition: all 0.2s;
+    justify-content: space-between;
+    align-items: center;
     position: relative;
   }
-  nav .nav-inner .nav-menu .hidden-menu .hidden-menu-inner .sec::before {
-    content: "";
-    width: 0;
+  nav .nav-inner .nav-menu .main-nav img {
+    display: none;
+    margin-right: 8px;
+    width: 10px;
+    height: 14px;
+  }
+  nav .nav-inner .nav-menu .main-nav img.active {
+    display: block;
+  }
+  nav .nav-inner .nav-menu .main-nav:hover {
+    color: #437dea;
+  }
+  nav .nav-inner .nav-menu .main-nav.active {
+    color: #437dea;
+    background: rgba(67, 125, 234, 0.2);
+  }
+  nav .nav-inner .nav-menu .main-nav.active img {
+    display: block;
+  }
+  nav .nav-inner .nav-menu .hidden-menu {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    opacity: 1;
+    position: fixed;
+    left: 40vw;
+    top: 70px;
+    box-shadow: none;
+  }
+  nav .nav-inner .nav-menu .hidden-menu .hidden-menu-inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background: #eee;
+    position: relative;
+  }
+  nav .nav-inner .nav-menu .hidden-menu .hidden-menu-inner .sec {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    border-right: 1px solid #f0f0f0;
     position: absolute;
-    left: 32px;
-    top: -2px;
-    height: 2px;
-    background: #437dea;
-    transition: all 0.2s;
+    padding-top: 0;
+  }
+  nav .nav-inner .nav-menu .hidden-menu .hidden-menu-inner .sec::before {
+    display: none;
   }
   nav .nav-inner .nav-menu .hidden-menu .hidden-menu-inner .sec a {
-    display: inline-block;
-    font-size: 14px;
-    padding: 4px 0;
+    text-align: left;
+    width: 100vw;
+    border-bottom: 1px solid #ddd;
+    height: 65px;
+    font-size: 16px;
+    line-height: 65px;
+    font-weight: 500;
+    padding: 0 0 0 16px;
   }
   nav .nav-inner .nav-menu .hidden-menu .hidden-menu-inner .sec a:hover {
-    text-decoration: underline;
-  }
-  nav .nav-inner .nav-menu .hidden-menu .hidden-menu-inner .sec:hover {
-    background: #f0f0f0;
+    text-decoration: none;
+    background: none;
   }
   nav .nav-inner .nav-menu .hidden-menu .hidden-menu-inner .sec.active {
-    background: #f0f0f0;
+    display: flex;
   }
-  nav .nav-inner .nav-menu .hidden-menu .hidden-menu-inner .sec:hover:before {
-    width: 52%;
-  }
-  nav .nav-inner .nav-menu .hidden-menu .hidden-menu-inner .sec.active::before {
-    width: 52%;
-  }
-  nav .nav-inner .nav-menu .hidden-menu .hidden-menu-inner .section01 {
-    border-left: 1px solid #f0f0f0;
-  }
-  nav .nav-inner .nav-menu .hidden-menu .hidden-menu-inner .section03 {
-    width: 160px;
-  }
-  nav .nav-inner .nav-menu .hidden-menu .hidden-menu-inner .section03::before {
-    left: 38px;
-  }
-  nav .nav-inner .nav-menu .hidden-menu .hidden-menu-inner .section04 {
-    width: 170px;
-  }
-  nav .nav-inner .nav-menu .hidden-menu .hidden-menu-inner .section04::before {
-    left: 40px;
+  nav .nav-inner .nav-menu.active {
+    display: flex;
   }
   nav .nav-inner .menu-btn {
     display: flex;
@@ -1004,6 +1025,7 @@ nav .nav-inner .menu-btn.active span:nth-child(3) {
     width: 25px;
     height: 21px;
     cursor: pointer;
+    z-index: 80000;
   }
   nav .nav-inner .menu-btn span {
     position: absolute;
@@ -1012,6 +1034,7 @@ nav .nav-inner .menu-btn.active span:nth-child(3) {
     width: 100%;
     height: 3px;
     background: #555;
+    z-index: 100;
   }
   nav .nav-inner .menu-btn span:nth-child(2) {
     top: 50%;
