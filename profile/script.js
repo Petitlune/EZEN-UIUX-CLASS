@@ -31,7 +31,37 @@ colorBtn.forEach((btn, i) => {
     colorBox.classList.remove("active");
   });
 });
+//weather API
+let weatherTem = document.querySelector(".temp");
+let weatherImg = document.querySelector(".weatherImg");
+let weatherDesc = document.querySelector(".weather-desc");
+let kel;
+let cel;
 
+const weatherDescription = [
+  {
+    Clouds: "구름 많음",
+    Clear: "맑음",
+    Rain: "비 내림",
+    Snow: "눈 내림",
+  },
+];
+
+const weather = () => {
+  const weatherAPI =
+    " https://api.openweathermap.org/data/2.5/weather?lat=37.4966645&lon=127.0629804&appid=8831f40327d3a39171fe604f814e8560";
+  fetch(weatherAPI)
+    .then((res) => res.json())
+    .then((data) => {
+      let currentWeather = data.weather[0].main;
+      kel = data.main.temp;
+      cel = `${(kel - 273.15).toFixed(1)}℃`;
+      weatherTem.innerText = cel;
+      weatherImg.src = `./img/${data.weather[0].main}.png`;
+      weatherDesc.innerText = weatherDescription[0][currentWeather];
+    });
+};
+weather();
 //skill-section
 const dewDrop = document.querySelector(".ani-dew");
 const skillDescription = document.querySelectorAll(".skill-desc");

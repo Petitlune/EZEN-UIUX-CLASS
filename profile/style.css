@@ -39,13 +39,75 @@ header {
   padding: 0 100px;
   z-index: 999;
 }
+header .header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+header .header-left .logo {
+  font-size: 48px;
+  font-family: "Rajdhani";
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  color: #fff;
+  transition: all 0.3s;
+}
+header .header-left .logo:hover {
+  background: linear-gradient(-45deg, #43c2cd 25%, #e75cd0 25%, #e75cd0 50%, #43c2cd 50%, #43c2cd 75%, #e75cd0 75%, #e75cd0);
+  -webkit-text-stroke: 1px #222;
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+  background-size: 20px 20px;
+  background-position: 0 0;
+  animation: colors 1s linear infinite;
+}
+@keyframes colors {
+  100% {
+    background-position: 20px 0, 20px 0, 20px 0;
+  }
+}
+header .header-left .weather {
+  display: flex;
+  align-items: center;
+  height: 80%;
+  gap: 15px;
+  padding: 20px;
+}
+header .header-left .weather img {
+  width: 60px;
+}
+header .header-left .weather div {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+header .header-left .weather div .temp {
+  font-size: 24px;
+}
+header .header-left .weather div span:last-child {
+  font-size: 16px;
+}
 header .gnb {
   display: flex;
   gap: 50px;
+  overflow: hidden;
+  height: 80px;
+  padding: 0 20px;
+  align-items: center;
 }
 header .gnb li {
+  font-size: 28px;
   font-family: "Rajdhani";
+  font-weight: 500;
   cursor: pointer;
+  transition: all 0.3s;
+}
+header .gnb li:hover {
+  font-size: 42px;
+  font-weight: 600;
+  -webkit-text-stroke: 1px #222;
+  text-shadow: 5px 5px 0px #43c2cd, 10px 10px 0px #e75cd0, 15px 15px 0px #5f4997;
 }
 header .toggle-btn {
   display: none;
@@ -217,16 +279,20 @@ header .toggle-btn {
   align-items: center;
   padding: 30px 10px;
   gap: 36px;
+  cursor: pointer;
 }
 .section-inner ul li .dew {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   background: #3f51b5;
   border-radius: 100%;
   border-top-left-radius: 0;
+}
+.section-inner ul li .dew img {
+  width: 42px;
 }
 .section-inner ul li .desc {
   width: 280px;
@@ -237,59 +303,132 @@ header .toggle-btn {
 }
 
 .home {
-  max-width: 60%;
+  max-width: 75%;
   margin-bottom: 20px;
 }
 .home .container {
   width: 100%;
   flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0;
   padding-top: 60px;
+  gap: 50px;
 }
 .home .container .title {
+  padding-top: 20px;
+  gap: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.home .container .title span {
+.home .container .title .hiseul {
+  text-align: center;
+}
+.home .container .title .hiseul span {
   font-size: 64px;
   font-family: "Rajdhani";
-  font-weight: 500;
+  font-weight: 900;
+  -webkit-text-stroke: 1px #222;
+  color: #fff;
 }
-.home .container .title span .blue {
+.home .container .title .hiseul span .blue {
   color: #3f51b5;
-}
-.home .container .title .under-text {
-  margin-left: 80px;
-  margin-bottom: 20px;
+  -webkit-text-stroke: 1px transparent;
 }
 .home .container .title p {
-  width: 280px;
-  line-height: 1.2;
-  text-align: center;
+  width: 65%;
+  line-height: 2rem;
   font-size: 20px;
   font-weight: 500;
   letter-spacing: 1px;
 }
-.home .container .title .description {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 20px;
-  background: #fff;
-  border-radius: 5px;
-  width: 400px;
-  text-align: left;
+.home .container .title p .point {
+  font-weight: 600;
   letter-spacing: 1px;
+  font-size: 24px;
+  color: #3f51b5;
+}
+.home .container .title .section-inner {
+  margin: 0;
+  margin-top: 20px;
+  padding: 0;
+}
+.home .container .title .section-inner li {
+  border-radius: 5px;
+  padding: 20px 0;
+  gap: 10px;
+  width: 16vw;
+  height: 12vw;
+  position: relative;
+  perspective: 400px;
+}
+.home .container .title .section-inner li .card-horizontal,
+.home .container .title .section-inner li .card-vertical {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  transition: transform 0.5s ease-in-out;
+  transform-style: preserve-3d;
+}
+.home .container .title .section-inner li .card-horizontal .front,
+.home .container .title .section-inner li .card-horizontal .back,
+.home .container .title .section-inner li .card-vertical .front,
+.home .container .title .section-inner li .card-vertical .back {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  backface-visibility: hidden;
+}
+.home .container .title .section-inner li .card-horizontal .front,
+.home .container .title .section-inner li .card-vertical .front {
+  background: #fff;
+  position: absolute;
+}
+.home .container .title .section-inner li .card-horizontal .back,
+.home .container .title .section-inner li .card-vertical .back {
+  background: linear-gradient(to right, #36d1dc, #5b86e5);
+  color: #fff;
+}
+.home .container .title .section-inner li .card-horizontal .back p,
+.home .container .title .section-inner li .card-vertical .back p {
+  font-size: 16px;
+  line-height: 24px;
+}
+.home .container .title .section-inner li:nth-child(2) .back {
+  background: linear-gradient(to right, #38ef7d, #11998e);
+}
+.home .container .title .section-inner li:nth-child(3) .back {
+  background: linear-gradient(to right, #fdc830, #f37335);
+}
+.home .container .title .section-inner li:nth-child(4) .back {
+  background: linear-gradient(to right, #fbd3e9, #bb377d);
+}
+.home .container .title .section-inner li:hover .card-horizontal {
+  transform: rotateY(180deg);
+}
+.home .container .title .section-inner li:hover .card-vertical {
+  transform: rotateX(180deg);
+}
+.home .container .title .section-inner li .hori {
+  transform: rotateY(180deg);
+}
+.home .container .title .section-inner li .ver {
+  transform: rotateX(180deg);
 }
 .home .container .img {
-  background: url("./img/yiseul01.jpg") top/cover no-repeat;
-  width: 540px;
-  height: 740px;
-}
-
-.about {
-  width: 100%;
+  background: url("./img/yiseul01.jpg") center/cover no-repeat;
+  width: 50vw;
+  height: 40vw;
 }
 
 .skill .section-tit {
