@@ -20,7 +20,12 @@ a {
   font-weight: normal;
   font-style: normal;
 }
+html {
+  font-size: 62.5%;
+}
+
 body {
+  font-size: 1.6rem;
   background: #f2f2f2;
 }
 
@@ -29,12 +34,11 @@ header {
   left: 0;
   top: 0;
   width: 100%;
-  height: 100px;
+  height: 5.2vw;
   background: #3f51b5;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 24px;
   color: #fff;
   padding: 0 100px;
   z-index: 999;
@@ -45,10 +49,10 @@ header .header-left {
   gap: 20px;
 }
 header .header-left .logo {
-  font-size: 42px;
+  font-size: 4.6rem;
   font-family: "Rajdhani";
   font-weight: bold;
-  letter-spacing: 1.5px;
+  letter-spacing: 0.15rem;
   color: #fff;
   transition: all 0.3s;
 }
@@ -58,24 +62,24 @@ header .header-left .logo:hover {
   -webkit-background-clip: text;
           background-clip: text;
   color: transparent;
-  background-size: 20px 20px;
+  background-size: 2rem 2rem;
   background-position: 0 0;
   animation: colors 1s linear infinite;
 }
 @keyframes colors {
   100% {
-    background-position: 20px 0, 20px 0, 20px 0;
+    background-position: 2rem 0, 2rem 0, 2rem 0;
   }
 }
 header .header-left .weather {
   display: flex;
   align-items: center;
-  height: 80%;
-  gap: 15px;
-  padding: 20px;
+  height: auto;
+  gap: 1.5rem;
+  padding: 2rem;
 }
 header .header-left .weather img {
-  width: 60px;
+  width: 4vw;
 }
 header .header-left .weather div {
   display: flex;
@@ -83,28 +87,28 @@ header .header-left .weather div {
   text-align: center;
 }
 header .header-left .weather div .temp {
-  font-size: 22px;
+  font-size: 2rem;
 }
 header .header-left .weather div span:last-child {
-  font-size: 14px;
+  font-size: 1.2rem;
 }
 header .gnb {
   display: flex;
-  gap: 50px;
+  gap: 5rem;
   overflow: hidden;
-  height: 80px;
-  padding: 0 20px;
+  height: auto;
+  padding: 0 2rem;
   align-items: center;
 }
 header .gnb li {
-  font-size: 24px;
+  font-size: 2.6rem;
   font-family: "Rajdhani";
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s;
 }
 header .gnb li:hover {
-  font-size: 38px;
+  font-size: 3.8rem;
   font-weight: 600;
   -webkit-text-stroke: 1px #222;
   text-shadow: 5px 5px 0px #43c2cd, 10px 10px 0px #e75cd0, 15px 15px 0px #5f4997;
@@ -123,8 +127,8 @@ header .toggle-btn {
 
 .color-select-box {
   position: fixed;
-  left: -154px;
-  bottom: 120px;
+  left: -8vw;
+  bottom: 4.2vw;
   z-index: 999;
   display: flex;
   transition: all 0.3s;
@@ -133,17 +137,17 @@ header .toggle-btn {
   left: 0;
 }
 .color-select-box .colorBox {
-  width: 154px;
-  height: 150px;
-  padding: 20px;
+  width: 8vw;
+  height: 8vw;
+  padding: 1vw;
   background: #fff;
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 1vw;
 }
 .color-select-box .colorBox .select-color {
-  width: 50px;
-  height: 50px;
+  width: 2.4vw;
+  height: 2.4vw;
   cursor: pointer;
 }
 .color-select-box .colorBox .select-color:nth-child(1) {
@@ -163,17 +167,19 @@ header .toggle-btn {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 50px;
-  height: 50px;
+  width: 2.6vw;
+  height: 2.6vw;
+  min-width: 36px;
+  min-height: 36px;
   border-radius: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   background: #3f51b5;
-  box-shadow: inset 5px -5px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 5px -5px 1.5rem rgba(0, 0, 0, 0.2);
   opacity: 0.9;
   color: #fff;
-  font-size: 24px;
+  font-size: 1.6vw;
   cursor: pointer;
   z-index: 9999;
 }
@@ -182,8 +188,8 @@ header .toggle-btn {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50px;
-  height: 50px;
+  width: 2.6vw;
+  height: 2.6vw;
   background: #3f51b5;
   border-top-right-radius: 100%;
   border-bottom-right-radius: 100%;
@@ -191,7 +197,7 @@ header .toggle-btn {
   cursor: pointer;
 }
 .color-setting i {
-  font-size: 24px;
+  font-size: 1.2vw;
   color: #fff;
   animation: spin 2s linear infinite;
 }
@@ -211,32 +217,33 @@ header .toggle-btn {
   justify-content: flex-start;
   width: 100%;
   height: auto;
-  margin: 100px auto 0;
+  margin: 5.2vw auto 0;
 }
 
 .container {
   width: 100%;
   height: auto;
-  min-height: 800px;
+  min-height: 42vw;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding-top: 80px;
+  padding-top: 4.2vw;
 }
 
 .section {
   width: 100%;
   height: auto;
   display: flex;
+  justify-content: center;
 }
 
 .section-tit {
-  font-size: 48px;
+  font-size: 2.5vw;
   font-family: "Rajdhani";
   font-weight: 600;
-  width: 180px;
-  height: 78px;
+  width: 9.4vw;
+  height: 4vw;
   text-align: center;
   position: relative;
 }
@@ -245,7 +252,7 @@ header .toggle-btn {
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 4px;
+  height: 0.2vw;
   background: #3f51b5;
 }
 .section-tit .inner {
@@ -254,15 +261,15 @@ header .toggle-btn {
   transform: translateX(-50%);
   bottom: -2px;
   width: 50%;
-  height: 8px;
+  height: 0.4vw;
   background: #3f51b5;
 }
 
 .section-inner {
   width: 100%;
   height: 100%;
-  margin-top: 60px;
-  padding: 100px;
+  margin-top: 3.1vw;
+  padding: 5.2vw;
 }
 .section-inner ul {
   width: 100%;
@@ -271,40 +278,40 @@ header .toggle-btn {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 0.84vw;
 }
 .section-inner ul li {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 30px 10px;
-  gap: 36px;
+  padding: 1.5vw 0.52vw;
+  gap: 1.8vw;
   cursor: pointer;
 }
 .section-inner ul li .dew {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100px;
-  height: 100px;
+  width: 4.8vw;
+  height: 4.8vw;
   background: #3f51b5;
   border-radius: 100%;
   border-top-left-radius: 0;
 }
 .section-inner ul li .dew img {
-  width: 42px;
+  width: 2vw;
 }
 .section-inner ul li .desc {
-  width: 280px;
+  width: 14vw;
   text-align: center;
 }
 .section-inner ul li .desc h3 {
-  margin-bottom: 8px;
+  margin-bottom: 0.4vw;
 }
 
 .home {
-  max-width: 75%;
-  margin-bottom: 20px;
+  padding: 1vw 0;
+  margin-bottom: 1vw;
 }
 .home .container {
   width: 100%;
@@ -314,8 +321,8 @@ header .toggle-btn {
   padding: 0;
 }
 .home .container .title {
-  width: 44vw;
-  gap: 20px;
+  width: 42vw;
+  gap: 1vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -324,7 +331,7 @@ header .toggle-btn {
   text-align: center;
 }
 .home .container .title .hiseul span {
-  font-size: 64px;
+  font-size: 3.2vw;
   font-family: "Rajdhani";
   font-weight: 900;
   -webkit-text-stroke: 1px #222;
@@ -338,29 +345,30 @@ header .toggle-btn {
   width: 65%;
   line-height: 2rem;
   font-family: "GmarketSansMedium";
-  font-size: 20px;
+  font-size: 1vw;
   font-weight: 500;
   letter-spacing: -1px;
+  line-height: 2.4rem;
 }
 .home .container .title p .point {
   font-weight: 600;
   letter-spacing: 1px;
-  font-size: 24px;
+  font-size: 1.2vw;
   color: #3f51b5;
 }
 .home .container .title .section-inner {
   margin: 0;
-  margin-top: 20px;
+  margin-top: 1vw;
   padding: 0;
 }
 .home .container .title .section-inner li {
   border-radius: 5px;
-  padding: 20px 0;
-  gap: 10px;
-  width: 16vw;
-  height: 12vw;
-  min-width: 260px;
-  min-height: 180px;
+  padding: 1vw 0;
+  gap: 0.5vw;
+  width: 0.8vw;
+  height: 0.6vw;
+  min-width: 16vw;
+  min-height: 14vw;
   position: relative;
   perspective: 400px;
 }
@@ -384,7 +392,7 @@ header .toggle-btn {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 12px;
+  gap: 0.6vw;
   width: 100%;
   height: 100%;
   border-radius: 8px;
@@ -402,8 +410,8 @@ header .toggle-btn {
 }
 .home .container .title .section-inner li .card-horizontal .back p,
 .home .container .title .section-inner li .card-vertical .back p {
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 1.6rem;
+  line-height: 1.2vw;
 }
 .home .container .title .section-inner li:nth-child(2) .back {
   background: linear-gradient(to right, #38ef7d, #11998e);
@@ -432,9 +440,9 @@ header .toggle-btn {
   justify-content: center;
   align-items: center;
   width: 32vw;
-  min-width: 500px;
-  height: 90%;
-  padding: 18px;
+  min-width: 26vw;
+  height: 42vw;
+  padding: 0.9vw;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   background: #fff;
@@ -459,14 +467,34 @@ header .toggle-btn {
   left: 0;
   top: 0;
   transition: all 0.3s;
+  overflow: hidden;
+}
+.home .container .profile .images::before {
+  content: attr(data-iam);
+  font-family: "Rajdhani";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-40%, -54%) rotateZ(-28deg);
+  color: #fff;
+  font-size: 18vw;
+  font-weight: 500;
+  opacity: 0;
+  transition: all 0.3s;
+}
+.home .container .profile .images:hover::before {
+  opacity: 1;
 }
 .home .container .profile .images .image {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 32vmin;
-  height: auto;
+  width: 16vw;
+  height: 16vw;
+  border-radius: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .home .container .profile .images .image[data-status=inactive] {
   display: none;
@@ -1031,16 +1059,12 @@ header .toggle-btn {
 
 @media (max-width: 1440px) {
   header {
-    padding: 0 20px;
-  }
-  .home {
-    max-width: 100%;
+    padding: 0 1.4vw;
   }
   .home .container .title p {
-    width: 84%;
-    font-size: 18px;
+    font-size: 1.8rem;
   }
   .home .container .title .section-inner li {
-    font-size: 14px;
+    font-size: 1.4rem;
   }
 }/*# sourceMappingURL=style.css.map */
