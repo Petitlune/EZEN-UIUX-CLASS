@@ -62,6 +62,62 @@ const weather = () => {
     });
 };
 weather();
+//home-section
+const homeJS = () => {
+  const imageBg = document.querySelector(".images");
+  const images = document.querySelectorAll(".image");
+  const imageMoveBox = document.querySelector(".profile");
+  const homeWidth = document.querySelector(".home").offsetWidth;
+  const titleWidth = document.querySelector(".title").offsetWidth;
+  const marginLeft = (window.innerWidth - homeWidth) / 2;
+  let globalIndex = 0;
+  let last = { x: 0, y: 0 };
+  let isThrottled = false;
+
+  const activate = (image, x, y) => {
+    image.style.left = `${x}px`;
+    image.style.top = `${y}px`;
+    image.style.zIndex = globalIndex;
+    image.dataset.status = "active";
+    last = { x, y };
+  };
+
+  const handleOnMove = (e) => {
+    if (isThrottled) return;
+    isThrottled = true;
+    const lead = images[globalIndex % images.length];
+    activate(
+      lead,
+      e.clientX - marginLeft - titleWidth,
+      e.clientY - imageMoveBox.offsetTop
+    );
+    if (lead.dataset.index === images.length - 1) {
+      globalIndex = 0;
+    } else {
+      globalIndex++;
+    }
+
+    imageBg.style.background = "rgba(0,0,0,0.3)";
+    setTimeout(() => {
+      isThrottled = false;
+    }, 100);
+  };
+
+  const inactivate = () => {
+    images.forEach((image) => {
+      image.dataset.status = "inactive";
+    });
+    imageBg.style.background = "rgba(0,0,0,0)";
+  };
+  const addImageEvent = () => {
+    imageMoveBox.addEventListener("mousemove", handleOnMove);
+  };
+
+  imageMoveBox.addEventListener("mouseenter", addImageEvent);
+  imageMoveBox.addEventListener("mouseleave", inactivate);
+};
+homeJS();
+window.addEventListener("resize", homeJS);
 //skill-section
 const dewDrop = document.querySelector(".ani-dew");
 const skillDescription = document.querySelectorAll(".skill-desc");
@@ -117,7 +173,7 @@ const goToTop = document.querySelector(".gotoTop");
 navMenu.forEach((menu, i) => {
   menu.addEventListener("click", () => {
     window.scrollTo({
-      top: sections[i].offsetTop - 50,
+      top: sections[i].offsetTop - 80,
       behavior: "smooth",
     });
   });
