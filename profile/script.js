@@ -6,8 +6,8 @@ const colorTextChangeList = document.querySelectorAll(".colorstext");
 const colorSet = document.querySelector(".color-setting");
 const colorBox = document.querySelector(".color-select-box");
 const colorBtn = document.querySelectorAll(".select-color");
-
-const colorArray = ["3f51b5", "00a73e", "ff9801", "ea1e63"];
+//"ea1e63"
+const colorArray = ["3f51b5", "00a73e", "ff9801", "222"];
 
 colorSet.addEventListener("click", () => {
   colorBox.classList.toggle("active");
@@ -40,8 +40,9 @@ let cel;
 
 const weatherDescription = [
   {
-    Clouds: "구름 많음",
     Clear: "맑음",
+    Clouds: "구름 많음",
+    Haze: "안개",
     Rain: "비 내림",
     Snow: "눈 내림",
   },
@@ -70,11 +71,9 @@ const imageMoveBox = document.querySelector(".profile");
 let profileWidth = document.querySelector(".profile").offsetWidth;
 let titleWidth = document.querySelector(".title").offsetWidth;
 let marginLeft = (window.innerWidth - titleWidth - profileWidth) / 2;
-let imageWidthHalf = (window.innerWidth * 0.16) / 2;
 let globalIndex = 0;
 let last = { x: 0, y: 0 };
 let isThrottled = false;
-console.log(imageWidthHalf, marginLeft);
 
 const activate = (image, x, y) => {
   image.style.left = `${x}px`;
@@ -90,7 +89,7 @@ const handleOnMove = (e) => {
   const lead = images[globalIndex % images.length];
   activate(
     lead,
-    e.clientX - marginLeft - titleWidth - imageWidthHalf,
+    e.clientX - marginLeft - titleWidth,
     e.clientY - imageMoveBox.offsetTop
   );
   if (lead.dataset.index === images.length - 1) {
@@ -118,8 +117,7 @@ const addImageEvent = () => {
 const updateDimensions = () => {
   profileWidth = document.querySelector(".profile").offsetWidth;
   titleWidth = document.querySelector(".title").offsetWidth;
-  marginLeft = (window.innerWidth - homeWidth) / 2;
-  imageWidthHalf = (window.innerWidth * 0.16) / 2;
+  marginLeft = (window.innerWidth - titleWidth - profileWidth) / 2;
 };
 
 window.addEventListener("resize", updateDimensions);
@@ -180,7 +178,7 @@ const goToTop = document.querySelector(".gotoTop");
 navMenu.forEach((menu, i) => {
   menu.addEventListener("click", () => {
     window.scrollTo({
-      top: sections[i].offsetTop - 80,
+      top: sections[i].offsetTop - 60,
       behavior: "smooth",
     });
   });

@@ -13,7 +13,7 @@ header {
   left: 0;
   top: 0;
   width: 100%;
-  height: 5.2vw;
+  height: 100px;
   background: map-get($font-color, primary);
   display: flex;
   justify-content: space-between;
@@ -24,7 +24,7 @@ header {
   .header-left {
     display: flex;
     align-items: center;
-    gap: 20px;
+    justify-content: center;
     .logo {
       font-size: 4.6rem;
       font-family: map-get($font-family, main_en);
@@ -70,6 +70,7 @@ header {
         display: flex;
         flex-direction: column;
         text-align: center;
+        gap: 4px;
         .temp {
           font-size: 2rem;
         }
@@ -154,19 +155,19 @@ header {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 2.6vw;
-  height: 2.6vw;
-  min-width: 36px;
-  min-height: 36px;
+  width: 2.8vw;
+  height: 2.8vw;
+  min-width: 40px;
+  min-height: 40px;
   border-radius: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   background: map-get($font-color, primary);
-  box-shadow: inset 5px -5px 1.5rem rgba(0, 0, 0, 0.2);
+  border: 1px solid #ddd;
   opacity: 0.9;
   color: #fff;
-  font-size: 1.6vw;
+  font-size: 1.8rem;
   cursor: pointer;
   z-index: 9999;
 }
@@ -174,15 +175,15 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 2.6vw;
-  height: 2.6vw;
+  width: 42px;
+  height: 42px;
   background: map-get($font-color, primary);
   border-top-right-radius: 100%;
   border-bottom-right-radius: 100%;
   text-align: center;
   cursor: pointer;
   i {
-    font-size: 1.2vw;
+    font-size: 2.2rem;
     color: #fff;
     animation: spin 2s linear infinite;
   }
@@ -201,8 +202,7 @@ header {
   align-items: center;
   justify-content: flex-start;
   width: 100%;
-  height: auto;
-  margin: 5.2vw auto 0;
+  // margin: 5.2vw auto 0;
 }
 .container {
   width: 100%;
@@ -216,16 +216,15 @@ header {
 }
 .section {
   width: 100%;
-  height: auto;
+  height: 100vh;
   display: flex;
   justify-content: center;
 }
 .section-tit {
-  font-size: 2.5vw;
+  font-size: 4.8rem;
   font-family: map-get($font-family, main_en);
   font-weight: 600;
-  width: 9.4vw;
-  height: 4vw;
+  height: 80px;
   text-align: center;
   position: relative;
   .underbar {
@@ -233,7 +232,7 @@ header {
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 0.2vw;
+    height: 4px;
     background: map-get($font-color, primary);
   }
   .inner {
@@ -242,13 +241,14 @@ header {
     transform: translateX(-50%);
     bottom: -2px;
     width: 50%;
-    height: 0.4vw;
+    height: 8px;
     background: map-get($font-color, primary);
   }
 }
 .section-inner {
   width: 100%;
   height: 100%;
+
   margin-top: 3.1vw;
   padding: 5.2vw;
   ul {
@@ -276,7 +276,7 @@ header {
         border-radius: 100%;
         border-top-left-radius: 0;
         img {
-          width: 2vw;
+          width: 2.8vw;
         }
       }
       .desc {
@@ -292,14 +292,13 @@ header {
 // home
 .home {
   padding: 1vw 0;
-  margin-bottom: 1vw;
-
+  margin-top: 1vw;
   .container {
     width: 100%;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 0;
+    padding-right: 4.8vw;
 
     .title {
       width: 42vw;
@@ -311,7 +310,7 @@ header {
       .hiseul {
         text-align: center;
         span {
-          font-size: 3.2vw;
+          font-size: 7rem;
           font-family: map-get($font-family, main_en);
           font-weight: 900;
           -webkit-text-stroke: 1px #222;
@@ -323,10 +322,9 @@ header {
         }
       }
       p {
-        width: 65%;
-        line-height: 2rem;
+        width: 68%;
         font-family: map-get($font-family, sub_kr);
-        font-size: 1vw;
+        font-size: 2rem;
         font-weight: 500;
         letter-spacing: -1px;
         line-height: 2.4rem;
@@ -345,10 +343,10 @@ header {
           border-radius: 5px;
           padding: 1vw 0;
           gap: 0.5vw;
-          width: 0.8vw;
-          height: 0.6vw;
-          min-width: 16vw;
-          min-height: 14vw;
+          width: 16vw;
+          height: 12vw;
+          min-width: 240px;
+          min-height: 180px;
           position: relative;
           perspective: 400px;
           .card-horizontal,
@@ -384,7 +382,7 @@ header {
 
               p {
                 font-size: 1.6rem;
-                line-height: 1.2vw;
+                line-height: 2rem;
               }
             }
           }
@@ -424,16 +422,17 @@ header {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      width: 32vw;
-      min-width: 26vw;
-      height: 42vw;
+      width: 30vw;
+      height: 40vw;
       padding: 0.9vw;
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
       border-radius: 8px;
       background: #fff;
       overflow: hidden;
       position: relative;
-      .mian-profile {
+      border: 4px solid #222;
+
+      .main-profile {
         width: 90%;
         height: 90%;
         object-fit: cover;
@@ -441,6 +440,7 @@ header {
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
+
         z-index: 0;
       }
       .images {
@@ -451,6 +451,7 @@ header {
         top: 0;
         transition: all 0.3s;
         overflow: hidden;
+
         &::before {
           content: attr(data-iam);
           font-family: map-get($font-family, main_en);
@@ -505,13 +506,13 @@ header {
     position: relative;
     cursor: pointer;
     .ani-dew {
-      width: 50px;
-      height: 50px;
+      width: 2.6vw;
+      height: 2.6vw;
       border-radius: 100%;
       border-top-left-radius: 0;
       background: map-get($font-color, primary);
       position: absolute;
-      bottom: -70px;
+      bottom: -3.6vw;
       left: 50%;
       transform: translateX(-50%) rotate(45deg);
       animation: aniClick 0.8s alternate-reverse infinite;
@@ -539,12 +540,12 @@ header {
     @keyframes aniDew {
       0% {
         transform: translateX(-50%) rotate(45deg);
-        bottom: -70px;
+        bottom: -3.6vw;
         opacity: 1;
       }
       100% {
         transform: translateX(-50%) rotate(45deg);
-        bottom: -600px;
+        bottom: -31.25vw;
         opacity: 0;
       }
     }
@@ -553,22 +554,22 @@ header {
     ul {
       li {
         .skill-content {
-          margin-right: 20px;
+          margin-right: 1vw;
           .skill-box {
-            width: 400px;
-            height: 60px;
-            margin-bottom: 42px;
+            width: 21vw;
+            height: 3.125vw;
+            margin-bottom: 2.2vw;
             padding: 4px 0;
             background: map-get($font-color, primary);
             display: flex;
             align-items: center;
             justify-content: center;
 
-            gap: 16px;
+            gap: 0.8vw;
             h2 {
-              line-height: 60px;
+              line-height: 3.125vw;
               color: #fff;
-              font-size: 18px;
+              font-size: 1.8rem;
             }
           }
 
@@ -578,27 +579,27 @@ header {
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 400px;
+            width: 21vw;
             height: 0;
-            padding: 20px;
+            padding: 1vw;
             background: map-get($font-color, primary-light);
-            margin-top: 28px;
+            margin-top: 1.2vw;
             position: relative;
             transition: all 1s;
             &.active {
               visibility: visible;
               opacity: 1;
-              height: 150px;
+              height: 7.8vw;
             }
             &::before {
               content: "";
-              width: 40px;
-              height: 40px;
+              width: 4.35vw;
+              height: 4.35vw;
               background: map-get($font-color, primary-light);
               position: absolute;
-              left: calc(360px / 2);
+              left: calc(18.75vw / 2);
               transform: rotate(45deg);
-              top: -15px;
+              top: -0.78vw;
               z-index: -1;
             }
             p {
@@ -606,25 +607,25 @@ header {
               align-items: center;
               font-family: map-get($font-family, sub_kr);
               line-height: 1.5;
-              font-size: 18px;
+              font-size: 1.8rem;
             }
           }
         }
         img {
-          width: 46px;
-          height: 46px;
+          width: 2.4vw;
+          height: 2.4vw;
         }
         &:nth-child(3) {
           .jquery {
             background: #fff;
-            width: 36px;
-            height: 36px;
+            width: 1.875vw;
+            height: 1.875vw;
           }
         }
         &:last-child {
           img {
-            width: 38px;
-            height: 38px;
+            width: 2vw;
+            height: 2vw;
           }
         }
       }
@@ -634,6 +635,7 @@ header {
 
 // project
 .project {
+  height: auto;
   .section-inner {
     margin-top: 0;
     position: relative;
@@ -658,7 +660,7 @@ header {
         height: 78%;
         margin: auto;
         background: map-get($font-color, primary-light);
-        border-radius: 20px;
+        border-radius: 1vw;
         display: none;
         justify-content: center;
         align-items: center;
@@ -669,7 +671,7 @@ header {
           border-style: solid;
           border-color: map-get($font-color, primary);
           height: 90%;
-          border-radius: 20px;
+          border-radius: 1vw;
           display: flex;
           justify-content: space-between;
           align-items: center;
@@ -699,24 +701,25 @@ header {
             width: 42%;
             height: 100%;
             background: #fff;
-            padding: 20px 0 0 20px;
+            padding: 1vw 0 0 1vw;
             ul {
               width: 90%;
+              min-width: 0;
               height: 100%;
               display: flex;
               gap: 2vw;
               flex-direction: column;
               align-items: flex-start;
               justify-content: center;
-              padding: 0 20px 50px;
+              padding: 0 1vw 2.4vw;
             }
             .clone-desc li {
               display: flex;
               align-items: flex-start;
               padding: 0;
-              gap: 8px;
+              gap: 0.4vw;
               .tit {
-                font-size: 22px;
+                font-size: 2.2rem;
 
                 i {
                   margin-right: 12px;
@@ -724,40 +727,42 @@ header {
                 }
                 p {
                   display: inline-block;
-                  font-size: 14px;
+                  font-size: 1.4rem;
                 }
               }
               p {
-                margin-left: 30px;
+                margin-left: 1.5vw;
               }
             }
           }
           .modalCloseBtn {
             position: absolute;
             display: inline-block;
-            right: 20px;
-            top: 10px;
+            right: 1vw;
+            top: 0.5vw;
             text-align: center;
             cursor: pointer;
             i {
               font-family: "FontAwesome";
               content: "\f00d";
-              font-size: 48px;
+              font-size: 4.8rem;
               color: map-get($font-color, primary);
             }
           }
           .viewMore {
             display: inline-block;
             position: absolute;
-            right: 20px;
-            bottom: 20px;
+            right: 1vw;
+            bottom: 1vw;
             text-align: center;
-            line-height: 34px;
-            height: 42px;
-            width: 140px;
-            padding: 5px 10px;
+            line-height: 2.3vw;
+            height: 2.4vw;
+            width: 6.4vw;
+            min-width: 68px;
+            min-height: 25px;
+            padding: 0.2vw 0.5vw;
             background: map-get($font-color, primary);
-            border-radius: 24px;
+            border-radius: 28px;
             color: #fff;
           }
         }
@@ -766,6 +771,7 @@ header {
 
     ul {
       gap: 2%;
+      min-width: 980px;
       .modalList {
         width: 40%;
         height: auto;
@@ -1063,20 +1069,306 @@ header {
 
 @media (max-width: 1440px) {
   //common
+  html {
+    font-size: 60%;
+  }
   header {
     padding: 0 1.4vw;
   }
   //home
   .home {
-    // max-width: 100%;
     .container {
       .title {
+        min-width: 500px;
         p {
+          width: 80%;
           font-size: 1.8rem;
         }
         .section-inner {
           li {
             font-size: 1.4rem;
+            min-width: 200px;
+            min-height: 0;
+            .back {
+              p {
+                line-height: 38px;
+              }
+            }
+          }
+        }
+      }
+      .profile {
+        width: 40vw;
+        height: 52vw;
+        padding: 0 5vw;
+      }
+    }
+  }
+  .skill {
+    .section-tit {
+      .ani-dew {
+        width: 3.2vw;
+        height: 3.2vw;
+        bottom: -4.4vw;
+      }
+    }
+    .section-inner {
+      margin: 0;
+      ul {
+        li {
+          padding: 0;
+          .skill-content {
+            .skill-box {
+              width: 36vw;
+              height: 4vw;
+              gap: 1vw;
+              h2 {
+                font-size: 2rem;
+              }
+            }
+
+            .skill-desc {
+              width: 36vw;
+
+              &.active {
+                height: 10vw;
+                padding: 2vw;
+              }
+              &::before {
+                left: 50%;
+                transform: translateX(-50%) rotate(45deg);
+              }
+            }
+          }
+          img {
+            width: 2.8vw;
+            height: 2.8vw;
+          }
+        }
+      }
+    }
+  }
+  .project {
+    .section-inner {
+      .modalback {
+        .modalScreen {
+          .modalScreenInner {
+            .viewMore {
+              span {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1024px) {
+  //common
+  html {
+    font-size: 58%;
+  }
+  header {
+    padding: 0 2vw;
+  }
+  .section {
+    align-items: center;
+  }
+  .section-tit {
+    height: 60px;
+  }
+  //home
+  .home {
+    align-items: normal;
+    .container {
+      padding-top: 50px;
+      padding-right: 0;
+      .title {
+        min-width: 0;
+        width: 50vw;
+        height: 60%;
+        .hiseul {
+          text-align: center;
+          span {
+            font-size: 5.4rem;
+          }
+        }
+        p {
+          width: 84%;
+          font-size: 1.8rem;
+          line-height: 2.6rem;
+          .point {
+            font-size: 2rem;
+          }
+        }
+        .section-inner {
+          margin: 0;
+          margin-top: 1vw;
+          padding: 0;
+          height: 100%;
+          li {
+            gap: 1vw;
+            width: 80%;
+            height: calc(100% / 4);
+            .card-horizontal,
+            .card-vertical {
+              .front,
+              .back {
+                flex-direction: row;
+                gap: 1vw;
+                padding: 2vw;
+
+                .dew {
+                  img {
+                    width: 80%;
+                  }
+                }
+                .desc {
+                  flex-grow: 3;
+                  text-align: left;
+                }
+              }
+              .back {
+                p {
+                  width: 100%;
+                  line-height: 2rem;
+                }
+              }
+            }
+            &:hover .card-horizontal {
+              transform: rotateX(180deg);
+            }
+            .hori {
+              transform: rotateX(180deg);
+            }
+          }
+        }
+      }
+      .profile {
+        width: 50vw;
+        height: 80%;
+        margin: 0 20px;
+      }
+    }
+  }
+  .skill {
+    .section-tit {
+      .ani-dew {
+        display: none;
+      }
+    }
+    .section-inner {
+      ul {
+        gap: 2vw;
+
+        li {
+          .skill-content {
+            margin: 0;
+            .skill-box {
+              width: 40vw;
+            }
+            .skill-desc {
+              width: 40vw;
+              height: 12vw;
+              padding: 2vw;
+              opacity: 1;
+              visibility: visible;
+            }
+          }
+        }
+      }
+    }
+  }
+  .project {
+    height: auto;
+    .section-inner {
+      .modalback {
+        top: 2vw;
+        .modalScreen {
+          width: 90%;
+          .modalScreenInner {
+            .project-text {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              width: 42%;
+              height: 100%;
+              background: #fff;
+              padding: 1vw 0 0 1vw;
+              ul {
+                width: 90%;
+                height: 100%;
+                display: flex;
+                gap: 2vw;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                padding: 0 1vw 2.4vw;
+              }
+              .clone-desc li {
+                display: flex;
+                align-items: flex-start;
+                padding: 0;
+                gap: 0.4vw;
+                .tit {
+                  font-size: 2.2rem;
+
+                  i {
+                    margin-right: 12px;
+                    color: map-get($font-color, primary);
+                  }
+                  p {
+                    display: inline-block;
+                    font-size: 1.4rem;
+                  }
+                }
+                p {
+                  margin-left: 1.5vw;
+                }
+              }
+            }
+            .modalCloseBtn {
+              position: absolute;
+              display: inline-block;
+              right: 1vw;
+              top: 0.5vw;
+              text-align: center;
+              cursor: pointer;
+              i {
+                font-family: "FontAwesome";
+                content: "\f00d";
+                font-size: 4.8rem;
+                color: map-get($font-color, primary);
+              }
+            }
+            .viewMore {
+              display: inline-block;
+              position: absolute;
+              right: 1vw;
+              bottom: 1vw;
+              text-align: center;
+              line-height: 2.4rem;
+              padding: 0.2vw 0.5vw;
+              background: map-get($font-color, primary);
+              border-radius: 2.4rem;
+              color: #fff;
+            }
+          }
+        }
+      }
+
+      ul {
+        min-width: 0;
+        .modalList {
+          width: 100%;
+          height: auto;
+          min-width: 0;
+          padding-top: 30px;
+          margin-bottom: 50px;
+          .dew {
+            width: 4.8rem;
+            height: 4.8rem;
           }
         }
       }
