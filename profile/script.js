@@ -208,6 +208,11 @@ const examModal = document.querySelectorAll(".ex-box-wrap li");
 const modalFull = document.querySelector(".modal-full");
 const modalClose = document.querySelector(" .modal-close-btn ");
 const modalView = document.querySelector("#my-modal iframe");
+const slideBtn = document.querySelectorAll(".slide-button span");
+const slideWidth = document.querySelector(".ex-box").clientWidth;
+const slideWrap = document.querySelector(" .ex-box-wrap ");
+const slideContent = document.querySelectorAll(" .ex-box-wrap.active  li");
+console.log(slideWidth);
 
 examModal.forEach((exam, i) => {
   exam.addEventListener("click", () => {
@@ -221,3 +226,11 @@ modalClose.addEventListener("click", () => {
   modalFull.style.display = "none";
   body.style.overflowY = "auto";
 });
+
+slideBtn[1].addEventListener("click", () => {
+  console.log("ddd");
+  slideWrap.style.left = `-${slideWidth - 24}px`;
+});
+
+// 메뉴 클릭시 active 되면 li 갯수 다시 가져옴 li마지막 index에 도달하면 다시 0으로 재할당
+// 사이즈 줄어들 때 left 값도 같이 줄어들어서 내부가 움직이지 않게 조정 = megastudy 참고
