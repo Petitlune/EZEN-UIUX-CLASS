@@ -35,7 +35,7 @@ header {
   top: 0;
   width: 100%;
   height: 100px;
-  background: #3f51b5;
+  background: #337ab7;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -49,16 +49,16 @@ header .header-left {
   justify-content: center;
 }
 header .header-left .logo {
-  font-size: 4.6rem;
+  font-size: 4rem;
   font-family: "Rajdhani";
-  font-weight: bold;
-  letter-spacing: 0.15rem;
+  font-weight: 500;
+  letter-spacing: -0.15rem;
   color: #fff;
   transition: all 0.3s;
 }
 header .header-left .logo:hover {
-  background: linear-gradient(-45deg, #43c2cd 25%, #e75cd0 25%, #e75cd0 50%, #43c2cd 50%, #43c2cd 75%, #e75cd0 75%, #e75cd0);
-  -webkit-text-stroke: 1px #222;
+  -webkit-text-stroke: 0.1px #fff;
+  background: linear-gradient(-45deg, #337ab7 25%, #be6464 25%, #be6464 50%, #337ab7 50%, #337ab7 75%, #be6464 75%, #be6464 100%);
   -webkit-background-clip: text;
           background-clip: text;
   color: transparent;
@@ -96,7 +96,6 @@ header .header-left .weather div span:last-child {
 header .gnb {
   display: flex;
   gap: 5rem;
-  overflow: hidden;
   height: auto;
   padding: 0 2rem;
   align-items: center;
@@ -104,15 +103,23 @@ header .gnb {
 header .gnb li {
   font-size: 2.6rem;
   font-family: "Rajdhani";
-  font-weight: 500;
+  font-weight: 100;
   cursor: pointer;
-  transition: all 0.3s;
+  position: relative;
 }
-header .gnb li:hover {
-  font-size: 3.8rem;
-  font-weight: 600;
-  -webkit-text-stroke: 1px #222;
-  text-shadow: 5px 5px 0px #43c2cd, 10px 10px 0px #e75cd0, 15px 15px 0px #5f4997;
+header .gnb li::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -0.6rem;
+  width: 0;
+  height: 4px;
+  background: #fff;
+  transform: translateX(-50%);
+  transition: width 0.15s ease-in-out;
+}
+header .gnb li:hover::after {
+  width: 120%;
 }
 header .toggle-btn {
   display: none;
@@ -130,7 +137,7 @@ header .toggle-btn {
   position: fixed;
   left: -120px;
   bottom: 4.2vw;
-  z-index: 999;
+  z-index: 9999;
   display: flex;
   transition: all 0.3s;
 }
@@ -153,16 +160,16 @@ header .toggle-btn {
   cursor: pointer;
 }
 .color-select-box .colorBox .select-color:nth-child(1) {
-  background: #3f51b5;
+  background: #337ab7;
 }
 .color-select-box .colorBox .select-color:nth-child(2) {
-  background: #00a73e;
+  background: #8dc572;
 }
 .color-select-box .colorBox .select-color:nth-child(3) {
-  background: #ff9801;
+  background: #f0ad4e;
 }
 .color-select-box .colorBox .select-color:nth-child(4) {
-  background: #ea1e63;
+  background: #be6464;
 }
 
 .gotoTop {
@@ -177,14 +184,14 @@ header .toggle-btn {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #3f51b5;
+  background: #337ab7;
   border: 1px solid #ddd;
   opacity: 0.9;
   color: #fff;
   font-size: 1.8rem;
   transition: all 0.2s;
   cursor: pointer;
-  z-index: 9999;
+  z-index: 999;
 }
 .gotoTop:hover {
   opacity: 1;
@@ -196,7 +203,7 @@ header .toggle-btn {
   align-items: center;
   width: 42px;
   height: 42px;
-  background: #3f51b5;
+  background: #337ab7;
   border-top-right-radius: 100%;
   border-bottom-right-radius: 100%;
   text-align: center;
@@ -256,7 +263,7 @@ header .toggle-btn {
   bottom: 0;
   width: 100%;
   height: 4px;
-  background: #3f51b5;
+  background: #337ab7;
 }
 .section-tit .inner {
   position: absolute;
@@ -265,7 +272,7 @@ header .toggle-btn {
   bottom: -2px;
   width: 50%;
   height: 8px;
-  background: #3f51b5;
+  background: #337ab7;
 }
 
 .section-inner {
@@ -297,7 +304,7 @@ header .toggle-btn {
   align-items: center;
   width: 4.8vw;
   height: 4.8vw;
-  background: #3f51b5;
+  background: #337ab7;
   border-radius: 100%;
   border-top-left-radius: 0;
 }
@@ -334,14 +341,15 @@ header .toggle-btn {
   text-align: center;
 }
 .home .container .title .hiseul span {
-  font-size: 7rem;
+  font-size: 8rem;
   font-family: "Rajdhani";
   font-weight: 900;
-  -webkit-text-stroke: 1px #222;
+  letter-spacing: -0.2rem;
+  -webkit-text-stroke: 1px #777;
   color: #fff;
 }
 .home .container .title .hiseul span .blue {
-  color: #3f51b5;
+  color: #337ab7;
   -webkit-text-stroke: 1px transparent;
 }
 .home .container .title p {
@@ -356,7 +364,7 @@ header .toggle-btn {
   font-weight: 600;
   letter-spacing: 1px;
   font-size: 1.2vw;
-  color: #3f51b5;
+  color: #337ab7;
 }
 .home .container .title .section-inner {
   margin: 0;
@@ -446,7 +454,7 @@ header .toggle-btn {
   padding: 0.9vw;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-  background: #3f51b5;
+  background: #337ab7;
   overflow: hidden;
   position: relative;
 }
@@ -526,7 +534,7 @@ header .toggle-btn {
   height: 2.6vw;
   border-radius: 100%;
   border-top-left-radius: 0;
-  background: #3f51b5;
+  background: #337ab7;
   position: absolute;
   bottom: -3.6vw;
   left: 50%;
@@ -573,7 +581,7 @@ header .toggle-btn {
   height: 3.125vw;
   margin-bottom: 2.2vw;
   padding: 4px 0;
-  background: #3f51b5;
+  background: #337ab7;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -671,10 +679,10 @@ header .toggle-btn {
 }
 .project .section-inner .modalback .modalScreen .modalScreenInner {
   width: 94%;
-  background: #3f51b5;
+  background: #337ab7;
   border-width: 4px;
   border-style: solid;
-  border-color: #3f51b5;
+  border-color: #337ab7;
   height: 90%;
   border-radius: 1vw;
   display: flex;
@@ -734,7 +742,7 @@ header .toggle-btn {
 }
 .project .section-inner .modalback .modalScreen .modalScreenInner .project-text .clone-desc li .tit i {
   margin-right: 12px;
-  color: #3f51b5;
+  color: #337ab7;
 }
 .project .section-inner .modalback .modalScreen .modalScreenInner .project-text .clone-desc li .tit p {
   display: inline-block;
@@ -755,7 +763,7 @@ header .toggle-btn {
   font-family: "FontAwesome";
   content: "\f00d";
   font-size: 4.8rem;
-  color: #3f51b5;
+  color: #337ab7;
 }
 .project .section-inner .modalback .modalScreen .modalScreenInner .viewMore {
   display: inline-block;
@@ -769,7 +777,7 @@ header .toggle-btn {
   min-width: 68px;
   min-height: 25px;
   padding: 0.2vw 0.5vw;
-  background: #3f51b5;
+  background: #337ab7;
   border-radius: 28px;
   color: #fff;
 }
@@ -813,7 +821,7 @@ header .toggle-btn {
   height: 50px;
   border-radius: 100%;
   border-top-left-radius: 0;
-  background: #3f51b5;
+  background: #337ab7;
   position: absolute;
   top: -35px;
   left: 50%;
@@ -878,7 +886,7 @@ header .toggle-btn {
   width: 140px;
   line-height: 32px;
   padding: 5px 10px;
-  background: #3f51b5;
+  background: #337ab7;
   border-radius: 24px;
   color: #fff;
   cursor: pointer;
@@ -903,6 +911,7 @@ header .toggle-btn {
   height: auto;
   min-height: 476px;
   margin-top: 24px;
+  border: 0.2vw solid #337ab7;
   border-radius: 20px;
   background: #dddddd;
 }
@@ -916,7 +925,7 @@ header .toggle-btn {
   background: rgba(0, 0, 0, 0.5);
   z-index: 9999;
 }
-.example .section-inner .inner-wrap .ex-box .modal-full #my-modal {
+.example .section-inner .inner-wrap .ex-box .modal-full #ex-modal {
   width: 92%;
   height: 92%;
   display: flex;
@@ -927,7 +936,7 @@ header .toggle-btn {
   top: 50%;
   transform: translate(-50%, -50%);
 }
-.example .section-inner .inner-wrap .ex-box .modal-full #my-modal #chat-iframe {
+.example .section-inner .inner-wrap .ex-box .modal-full #ex-modal #chat-iframe {
   width: 100%;
   height: 100%;
   border: none;
@@ -974,9 +983,9 @@ header .toggle-btn {
   top: -100%;
   width: 100%;
   height: 100%;
-  background: #3f51b5;
+  background: #337ab7;
   opacity: 0;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
 }
 .example .section-inner .inner-wrap .ex-box .ex-box-wrap li:hover div {
   display: flex;
@@ -984,12 +993,10 @@ header .toggle-btn {
   align-items: center;
   top: 0;
   left: 0;
-  opacity: 0.9;
-  text-align: left;
-  padding: 0 50px;
+  opacity: 0.8;
 }
 .example .section-inner .inner-wrap .ex-box .ex-box-wrap li:hover div p {
-  width: 340px;
+  width: 56%;
   color: #fff;
 }
 .example .section-inner .inner-wrap .ex-box .ex-box-wrap li img {
@@ -1043,7 +1050,7 @@ header .toggle-btn {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background: #3f51b5;
+  background: #337ab7;
   border-radius: 50px;
   width: 180px;
   height: 60px;
@@ -1059,6 +1066,7 @@ header .toggle-btn {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 .contact .container .section-inner .social a img,
 .contact .container .section-inner .social span img {
@@ -1068,7 +1076,7 @@ header .toggle-btn {
 .contact .container .bottom {
   width: 100%;
   height: 150px;
-  background: #3f51b5;
+  background: #337ab7;
   font-family: "NotoSans";
   font-style: italic;
   font-weight: lighter;
@@ -1084,29 +1092,46 @@ header .toggle-btn {
   header {
     padding: 0 2vw;
   }
+  .home {
+    margin-top: 2vw;
+  }
   .home .container .title {
-    min-width: 500px;
+    min-width: 300px;
+  }
+  .home .container .title .hiseul span {
+    font-size: 4.6rem;
   }
   .home .container .title p {
     width: 80%;
     font-size: 1.8rem;
   }
   .home .container .title .section-inner li {
-    font-size: 1.4rem;
-    min-width: 200px;
+    width: 16vw;
+    height: 10.4vw;
+    font-size: 1.2rem;
+    min-width: 180px;
     min-height: 0;
   }
-  .home .container .title .section-inner li .back p {
-    line-height: 38px;
+  .home .container .title .section-inner li .card-horizontal .back p,
+  .home .container .title .section-inner li .card-vertical .back p {
+    font-size: 1.4rem;
+    line-height: 2rem;
+  }
+  .home .container .title .section-inner li:nth-child(3) .card-horizontal .front .desc,
+  .home .container .title .section-inner li:nth-child(3) .card-vertical .front .desc {
+    width: 12vw;
   }
   .home .container .profile {
-    width: 40vw;
+    width: 32vw;
     height: 74vh;
     padding: 0 5vw;
   }
   .home .container .profile .main-profile {
-    -o-object-position: 20% 32%;
-       object-position: 20% 32%;
+    -o-object-position: 20% 30%;
+       object-position: 20% 30%;
+  }
+  .skill {
+    height: auto;
   }
   .skill .section-tit .ani-dew {
     width: 3.2vw;
@@ -1115,14 +1140,23 @@ header .toggle-btn {
   }
   .skill .section-inner {
     margin: 0;
+    height: auto;
+  }
+  .skill .section-inner ul {
+    margin-top: 2vw;
+    gap: 2.6vw;
   }
   .skill .section-inner ul li {
     padding: 0;
+    margin: 0;
+  }
+  .skill .section-inner ul li .skill-content {
+    height: auto;
+    margin: 0;
   }
   .skill .section-inner ul li .skill-content .skill-box {
     width: 36vw;
-    height: 4vw;
-    gap: 1vw;
+    height: auto;
   }
   .skill .section-inner ul li .skill-content .skill-box h2 {
     font-size: 2rem;
@@ -1154,11 +1188,133 @@ header .toggle-btn {
     padding: 0 2vw;
   }
   header .gnb {
-    gap: 2.4rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100vh;
+    padding-top: 60px;
+    z-index: 9998;
+    transition: all 0.5s;
+  }
+  header .gnb::before {
+    content: "";
+    position: absolute;
+    right: -100%;
+    top: 0;
+    width: 400px;
+    height: 100%;
+    background: #fff;
+    visibility: hidden;
+    transition: all 0.3s;
+  }
+  header .gnb.active {
+    display: flex;
+  }
+  header .gnb.active::before {
+    right: 0;
+    visibility: visible;
   }
   header .gnb li {
-    font-size: 2.4rem;
+    display: block;
+    font-size: 4rem;
     font-weight: 400;
+    width: 320px;
+    height: 50px;
+    color: #337ab7;
+    margin: 10px 20px 10px 0;
+    opacity: 0;
+    position: relative;
+  }
+  header .gnb li::before {
+    content: "";
+    opacity: 0;
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    border-radius: 100%;
+    background: rgba(34, 34, 34, 0.2);
+    bottom: 4px;
+    left: -12px;
+    transition: all 0.3s;
+  }
+  header .gnb li::after {
+    content: "";
+    opacity: 0;
+    border: 2px solid #222;
+    border-left: none;
+    border-bottom: none;
+    width: 12px;
+    height: 12px;
+    left: 80%;
+    top: 50%;
+    bottom: 0;
+    transform: translateY(-50%) rotate(45deg);
+    transition: all 0.3s;
+    background: none;
+  }
+  header .gnb li:hover::before {
+    opacity: 1;
+  }
+  header .gnb li:hover::after {
+    opacity: 1;
+    width: 12px;
+  }
+  header .gnb li.active {
+    opacity: 1;
+  }
+  header .toggle-btn {
+    display: flex;
+    width: 30px;
+    height: 26px;
+    position: relative;
+    cursor: pointer;
+    z-index: 9999;
+  }
+  header .toggle-btn span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    transition: all 0.3s;
+  }
+  header .toggle-btn span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  header .toggle-btn span:last-child {
+    bottom: 0;
+  }
+  header .toggle-btn.active {
+    top: -12px;
+    left: -12px;
+  }
+  header .toggle-btn.active span {
+    height: 2px;
+    background: rgba(34, 34, 34, 0.5);
+    border-radius: 4px;
+  }
+  header .toggle-btn.active span:first-child {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+  }
+  header .toggle-btn.active span:nth-child(2) {
+    opacity: 0;
+  }
+  header .toggle-btn.active span:last-child {
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+  }
+  header .toggle-btn:hover span {
+    background: #222;
   }
   .section {
     align-items: center;
@@ -1293,44 +1449,58 @@ header .toggle-btn {
     height: 50vh;
     min-width: 0;
     position: relative;
+    border: 0.4vw solid #337ab7;
   }
   .example .section-inner .inner-wrap .ex-box .slide-button {
     display: flex;
     width: 100%;
     height: 100%;
   }
-  .example .section-inner .inner-wrap .ex-box .slide-button span {
+  .example .section-inner .inner-wrap .ex-box .slide-button button {
     position: absolute;
     top: 50%;
-    padding: 0 0.6vw;
+    padding: 0 1.6vw;
     transform: translateY(-50%);
+    border: none;
+    background: none;
+    opacity: 0.8;
+    transition: all 0.2s;
     cursor: pointer;
     z-index: 50;
   }
-  .example .section-inner .inner-wrap .ex-box .slide-button span i {
+  .example .section-inner .inner-wrap .ex-box .slide-button button i {
     font-size: 36px;
   }
-  .example .section-inner .inner-wrap .ex-box .slide-button span:last-child {
+  .example .section-inner .inner-wrap .ex-box .slide-button button.active {
+    opacity: 0.4;
+    cursor: initial;
+  }
+  .example .section-inner .inner-wrap .ex-box .slide-button button.active:hover {
+    opacity: 0.4;
+  }
+  .example .section-inner .inner-wrap .ex-box .slide-button button:hover {
+    opacity: 1;
+  }
+  .example .section-inner .inner-wrap .ex-box .slide-button button:last-child {
     right: 0;
   }
   .example .section-inner .inner-wrap .ex-box .ex-box-wrap {
-    padding: 1.8vw;
-    padding-bottom: 2vw;
+    padding-left: 4.6vw;
     justify-content: flex-start;
     flex-wrap: nowrap;
-    width: 5000px;
+    gap: 5vw;
+    width: auto;
     height: 100%;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    border: 1px solid red;
   }
   .example .section-inner .inner-wrap .ex-box .ex-box-wrap li {
+    margin: 4.8vw 0;
     height: 420px;
     width: 80vw;
     min-height: 0;
     min-width: 0;
     max-width: 1024px;
-    margin-left: 2vw;
   }
 }/*# sourceMappingURL=style.css.map */

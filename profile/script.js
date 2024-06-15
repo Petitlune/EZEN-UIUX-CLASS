@@ -6,8 +6,9 @@ const colorTextChangeList = document.querySelectorAll(".colorstext");
 const colorSet = document.querySelector(".color-setting");
 const colorBox = document.querySelector(".color-select-box");
 const colorBtn = document.querySelectorAll(".select-color");
-//"ea1e63"
-const colorArray = ["3f51b5", "00a73e", "ff9801", "222"];
+const exBox = document.querySelectorAll(".ex-box");
+
+const colorArray = ["337ab7", "8dc572", "f0ad4e", "be6464"];
 
 colorSet.addEventListener("click", () => {
   colorBox.classList.toggle("active");
@@ -23,14 +24,18 @@ colorBtn.forEach((btn, i) => {
   btn.addEventListener("click", () => {
     colorChangeList.forEach((item) => {
       item.style.background = `#${colorArray[i]}`;
-      item.style.borderColor = `#${colorArray[i]}`;
     });
+    exBox.forEach((it) => {
+      it.style.borderColor = `#${colorArray[i]}`;
+    });
+
     colorTextChangeList.forEach((item) => {
       item.style.color = `#${colorArray[i]}`;
     });
     colorBox.classList.remove("active");
   });
 });
+
 //weather API
 let weatherTem = document.querySelector(".temp");
 let weatherImg = document.querySelector(".weatherImg");
@@ -154,22 +159,6 @@ modalList.forEach((item, i) => {
   });
 });
 
-// example-section
-const exList = document.querySelectorAll(".ex-menu li span");
-const exContents = document.querySelectorAll(".ex-box-wrap");
-
-exList.forEach((li, i) => {
-  li.addEventListener("click", () => {
-    exList.forEach((li, j) => {
-      li.classList.remove("active");
-      exContents[j].classList.remove("active");
-    });
-
-    li.classList.add("active");
-    exContents[i].classList.add("active");
-  });
-});
-
 //scrollTo event
 const navMenu = document.querySelectorAll(".gnb li");
 const sections = document.querySelectorAll(".section");
@@ -191,6 +180,8 @@ goToTop.addEventListener("click", () => {
   });
 });
 
+// example-section
+
 const iframURL = [
   "https://flex-hompage-petit.web.app",
   "https://grid-hompage-petit.web.app",
@@ -207,12 +198,7 @@ const iframURL = [
 const examModal = document.querySelectorAll(".ex-box-wrap li");
 const modalFull = document.querySelector(".modal-full");
 const modalClose = document.querySelector(" .modal-close-btn ");
-const modalView = document.querySelector("#my-modal iframe");
-const slideBtn = document.querySelectorAll(".slide-button span");
-const slideWidth = document.querySelector(".ex-box").clientWidth;
-const slideWrap = document.querySelector(" .ex-box-wrap ");
-const slideContent = document.querySelectorAll(" .ex-box-wrap.active  li");
-console.log(slideWidth);
+const modalView = document.querySelector("#ex-modal iframe");
 
 examModal.forEach((exam, i) => {
   exam.addEventListener("click", () => {
@@ -227,10 +213,144 @@ modalClose.addEventListener("click", () => {
   body.style.overflowY = "auto";
 });
 
-slideBtn[1].addEventListener("click", () => {
-  console.log("ddd");
-  slideWrap.style.left = `-${slideWidth - 24}px`;
+// 메뉴 클릭시 active 되면 li 갯수 다시 가져옴 li마지막 index에 도달하면 다시 0으로 재할당
+// windeow 사이즈 줄어들 때 left 값도 같이 변경되게끔 width값 재할당
+
+const exList = document.querySelectorAll(".ex-menu li span");
+const exContents = document.querySelectorAll(".ex-box-wrap");
+
+let currentIndex = 0;
+
+exList.forEach((li, i) => {
+  li.addEventListener("click", () => {
+    exList.forEach((li, j) => {
+      li.classList.remove("active");
+      exContents[j].classList.remove("active");
+    });
+
+    li.classList.add("active");
+    exContents[i].classList.add("active");
+    currentIndex = 0;
+    updateSlideWidth();
+    updateButtons();
+  });
 });
 
-// 메뉴 클릭시 active 되면 li 갯수 다시 가져옴 li마지막 index에 도달하면 다시 0으로 재할당
-// 사이즈 줄어들 때 left 값도 같이 줄어들어서 내부가 움직이지 않게 조정 = megastudy 참고
+// 슬라이드 기능
+const slideBtn = document.querySelectorAll(".slide-button button");
+let slideWidth;
+let slideWrap;
+let slideContent;
+
+function updateSlideWidth() {
+  slideWidth = document.querySelector(".ex-box").clientWidth;
+  slideWrap = document.querySelector(".ex-box-wrap.active");
+  slideContent = document.querySelectorAll(".ex-box-wrap.active li");
+  slideMargin = window.innerWidth * 0.038;
+  slideWrap.style.left = "0px";
+}
+
+window.addEventListener("resize", updateSlideWidth);
+
+slideBtn[0].addEventListener("click", () => {
+  currentIndex--;
+  if (currentIndex < 0) {
+    currentIndex = slideContent.length - 1;
+  }
+  slideWrap.style.left = `-${currentIndex * (slideWidth - slideMargin)}px`;
+  updateButtons();
+});
+
+slideBtn[1].addEventListener("click", () => {
+  currentIndex++;
+  if (currentIndex >= slideContent.length) {
+    currentIndex = 0;
+  }
+  slideWrap.style.left = `-${currentIndex * (slideWidth - slideMargin)}px`;
+  updateButtons();
+});
+
+function updateButtons() {
+  if (currentIndex === 0) {
+    slideBtn[0].disabled = true;
+    slideBtn[0].classList.add("active");
+  } else {
+    slideBtn[0].disabled = false;
+    slideBtn[0].classList.remove("active");
+  }
+
+  if (currentIndex === slideContent.length - 1) {
+    slideBtn[1].disabled = true;
+    slideBtn[1].classList.add("active");
+  } else {
+    slideBtn[1].disabled = false;
+    slideBtn[1].classList.remove("active");
+  }
+}
+updateSlideWidth();
+updateButtons();
+
+//email-copy
+
+document.querySelector(".email").addEventListener("click", function () {
+  const email = "kmf112@gmail.com";
+
+  const creatInput = document.createElement("input");
+  creatInput.value = email;
+  document.body.appendChild(creatInput);
+
+  creatInput.select();
+  creatInput.setSelectionRange(0, 99999);
+
+  document.body.removeChild(creatInput);
+
+  alert(`${email} 복사되었습니다.`);
+});
+
+//toggle-btn
+
+const btn = document.querySelector(".toggle-btn");
+const gnb = document.querySelector(".gnb");
+const gnbList = document.querySelectorAll(".gnb li");
+if (window.innerWidth <= 1024) {
+  gnbList.forEach((li) => {
+    li.classList.add("colorstext");
+  });
+}
+
+function addColorstextClass() {
+  colorBtn.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      if (window.innerWidth > 1024) {
+        gnbList.forEach((li) => {
+          li.style.color = "#fff";
+        });
+      }
+    });
+  });
+}
+
+function resizeDoc() {
+  gnbList.forEach((li, i) => {
+    if (window.innerWidth > 1024) {
+      li.style.color = "#fff";
+    } else {
+      li.style.color = "#222";
+    }
+  });
+}
+btn.addEventListener("click", () => {
+  gnb.classList.toggle("active");
+  btn.classList.toggle("active");
+  gnbList.forEach((li) => {
+    li.classList.toggle("active");
+  });
+});
+
+addColorstextClass();
+resizeDoc();
+
+window.addEventListener("resize", () => {
+  addColorstextClass();
+  resizeDoc();
+});
