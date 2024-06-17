@@ -14,47 +14,43 @@ const rightBanner = document.querySelector(".buttons img:last-child");
 
 //nav-bar
 
-const Desktop = () => {
-  if (window.innerWidth > 1024) {
-    menuLists.forEach((list, i) => {
-      list.addEventListener("mouseenter", () => {
-        hiddenMenues[i].classList.add("active");
-        hiddenMenueAll.classList.add("active");
-        menuBtn.classList.add("active");
-      });
-      list.addEventListener("mouseleave", () => {
-        hiddenMenues[i].classList.remove("active");
-        hiddenMenueAll.classList.remove("active");
-        menuBtn.classList.remove("active");
-      });
-    });
+menuLists.forEach((list, i) => {
+  list.addEventListener("mouseenter", () => {
+    hiddenMenues[i].classList.add("active");
+    hiddenMenueAll.classList.add("active");
+    menuBtn.classList.add("active");
+  });
+  list.addEventListener("mouseleave", () => {
+    hiddenMenues[i].classList.remove("active");
+    hiddenMenueAll.classList.remove("active");
+    menuBtn.classList.remove("active");
+  });
+});
 
-    hiddenMenues.forEach((menu, i) => {
-      menu.addEventListener("mouseenter", () => {
-        menuLists[i].classList.add("active");
-        hiddenMenueAll.classList.add("active");
-        menuBtn.classList.add("active");
-      });
-      menu.addEventListener("mouseleave", () => {
-        menuLists[i].classList.remove("active");
-        hiddenMenueAll.classList.remove("active");
-        menuBtn.classList.remove("active");
-      });
-    });
+hiddenMenues.forEach((menu, i) => {
+  menu.addEventListener("mouseenter", () => {
+    menuLists[i].classList.add("active");
+    hiddenMenueAll.classList.add("active");
+    menuBtn.classList.add("active");
+  });
+  menu.addEventListener("mouseleave", () => {
+    menuLists[i].classList.remove("active");
+    hiddenMenueAll.classList.remove("active");
+    menuBtn.classList.remove("active");
+  });
+});
 
-    menuBtn.addEventListener("click", () => {
-      menuBtn.classList.toggle("active");
-      hiddenMenueAll.classList.toggle("active");
-    });
+menuBtn.addEventListener("click", () => {
+  menuBtn.classList.toggle("active");
+  hiddenMenueAll.classList.toggle("active");
+});
 
-    libraryOpen.addEventListener("click", () => {
-      libraryModal.classList.add("active");
-    });
-    libraryClose.addEventListener("click", () => {
-      libraryModal.classList.remove("active");
-    });
-  }
-};
+libraryOpen.addEventListener("click", () => {
+  libraryModal.classList.add("active");
+});
+libraryClose.addEventListener("click", () => {
+  libraryModal.classList.remove("active");
+});
 
 //banner-slide
 const makeClone = bannerBox.cloneNode(true);
@@ -171,52 +167,4 @@ pagers.forEach((pager, index) => {
     currentIndex = index;
     moveSlide();
   });
-});
-
-//tablet-verson
-const nav = document.querySelector(".nav-menu");
-const signLogin = document.querySelector(".sign-log-in");
-
-const mainNav = document.querySelectorAll(".main-nav");
-const navSection = document.querySelectorAll(".sec");
-const responNavBtn = document.querySelector(".fa-x ");
-
-// const responsibleNav = () => {
-//   if (window.innerWidth <= 1024) {
-//     mainNav.forEach((nav, i) => {
-//       nav.addEventListener("click", () => {
-//         mainNav.forEach((it, j) => {
-//           it.classList.remove("active");
-//           navSection[j].classList.remove("active");
-//         });
-//         nav.classList.add("active");
-//         navSection[i].classList.add("active");
-//       });
-//     });
-//     menuBtn.addEventListener("click", () => {
-//       menuBtn.classList.add("active");
-//       nav.classList.add("active");
-//       signLogin.classList.add("active");
-//     });
-//     responNavBtn.addEventListener("click", () => {
-//       menuBtn.classList.remove("active");
-//       nav.classList.remove("active");
-//       signLogin.classList.remove("active");
-//     });
-//   }
-// };
-// responsibleNav();
-
-// window.addEventListener("resize", () => {
-//   if (window.innerWidth <= 1024) {
-//     responsibleNav();
-//   }
-// });
-
-Desktop();
-
-window.addEventListener("resize", () => {
-  if (window.innerWidth > 1024) {
-    Desktop();
-  }
 });

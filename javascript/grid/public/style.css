@@ -12,7 +12,7 @@ header {
   display: grid;
   place-items: center;
   width: 100%;
-  z-index: 100;
+  z-index: 9999;
   position: fixed;
   left: 0;
   top: 0;
@@ -72,7 +72,6 @@ header {
   width: 88%;
   margin: 0 80px;
   height: auto;
-  color: #fff;
   padding: 10px;
 }
 .title {
@@ -110,6 +109,7 @@ header {
   grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
   color: #31343b;
 }
+
 #hotel-name {
   width: 80%;
   height: 40px;
@@ -164,12 +164,26 @@ header {
   display: grid;
 }
 .calendar {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 10px;
+  place-items: center;
   border-right: 1px solid #ed8c48;
   text-align: center;
 }
-.member {
-  padding: 0 20px;
+.calendar input {
+  width: 50%;
+  height: 40px;
+  cursor: pointer;
+  border: none;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 5px 10px;
 }
+.member {
+  padding-right: 40px;
+}
+
 .room {
   display: grid;
   grid-template-areas: "item item" "plus btn";
@@ -179,11 +193,35 @@ header {
   grid-area: item;
   display: grid;
   grid-template-areas: "room adult" ". child";
-  justify-content: space-around;
+  justify-content: space-between;
 }
+.room-item button {
+  width: 24px;
+  height: 24px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.room-item button:hover {
+  background: #ed8c48;
+  color: #fff;
+}
+.room-item li span {
+  display: inline-block;
+  width: 80px;
+  text-align: center;
+}
+
 .room-item li {
   &:first-child {
+    margin-left: 20px;
     grid-area: room;
+    select {
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
   }
   &:nth-child(2) {
     grid-area: adult;
@@ -196,8 +234,20 @@ header {
   grid-area: plus;
   text-align: center;
 }
-.room > button {
+#setting-btn {
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
   grid-area: btn;
+  margin-left: 20px;
+  border: 1px solid transparent;
+  padding: 5px 0;
+  transition: all 0.3s;
+}
+#setting-btn:hover {
+  border: 1px solid #ed8c48;
+  background: #fff;
+  color: #ed8c48;
 }
 /*section-main*/
 .main {
