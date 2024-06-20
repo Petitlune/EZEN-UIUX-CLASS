@@ -23,12 +23,13 @@ const Groom = styled.span`
 const Celebration = styled.div`
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
   gap: 8px;
-
   p {
     color: #777;
     font-weight: 600;
+    max-width: 180px;
   }
   span {
     width: 116px;

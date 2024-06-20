@@ -20,17 +20,17 @@ const Container = styled.div`
   align-items: center;
   justify-content: start;
   position: relative;
-  padding-top: 20px;
+  padding-top: 8px;
 `;
 
 const Subtitle = styled.div`
-  font-size: 13px;
+  font-size: 14px;
   font-family: "Mapo";
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 2px;
   color: rgba(248, 164, 164, 0.7);
-  margin-bottom: 28px;
+  margin-bottom: 20px;
 `;
 const SubtitleKR = styled.h2`
   font-family: "Mapo";

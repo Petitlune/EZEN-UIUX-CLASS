@@ -58,6 +58,8 @@ const MainText = styled.div`
     font-size: 24px;
     font-weight: 600;
     background: #f8f8f8;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
     color: #222;
   }
   p:last-child {
