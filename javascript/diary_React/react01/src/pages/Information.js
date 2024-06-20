@@ -60,9 +60,14 @@ const BankClone = styled.div`
 `;
 const InfoImg = styled.img`
   width: 90%;
-  height: auto;
+  height: 600px;
   display: inline-block;
   margin-bottom: 20px;
+  object-fit: cover;
+  object-position: center;
+  border-top-right-radius: 212px;
+  border-top-left-radius: 212px;
+  border: 4px solid rgba(248, 164, 164, 0.2);
 `;
 const Information = ({ Subtitle, SubtitleKR, DateInfo }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -116,7 +121,7 @@ const Information = ({ Subtitle, SubtitleKR, DateInfo }) => {
             )}
           </InfoInner>
         </Info>
-        <InfoImg src="./img/wedding08.jpg" alt="InfoImage" />
+        <InfoImg src="./img/wedding15.jpg" alt="InfoImage" />
         <Subtitle style={{ fontSize: "24px" }}>THANK YOU !</Subtitle>
       </Container>
     </ThemeProvider>

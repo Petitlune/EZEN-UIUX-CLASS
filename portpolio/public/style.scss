@@ -354,6 +354,7 @@ header {
         margin: 0;
         margin-top: 1vw;
         padding: 0;
+
         li {
           border-radius: 5px;
           padding: 1vw 0;
@@ -1107,46 +1108,37 @@ footer {
   header {
     padding: 0 2vw;
   }
-  //home
   .home {
-    margin-top: 2vw;
     .container {
+      justify-content: space-around;
+      gap: 0;
       .title {
-        min-width: 300px;
+        width: 60vw;
         .hiseul {
           span {
-            font-size: 4.6rem;
+            font-size: 5.2vw;
           }
         }
         p {
-          width: 80%;
+          width: 64%;
           font-size: 1.8rem;
+          .point {
+            font-size: 2rem;
+          }
         }
         .section-inner {
           li {
-            position: relative;
-            width: 100vw;
-            height: 10.4vw;
+            width: 22vw;
+            height: 10.8vw;
             font-size: 1.2rem;
-            min-width: 180px;
+            min-width: 200px;
             min-height: 0;
+
             .card-horizontal,
             .card-vertical {
-              width: 100%;
               .back {
                 p {
-                  font-size: 1.4rem;
-                  line-height: 2rem;
-                }
-              }
-            }
-            &:nth-child(3) {
-              .card-horizontal,
-              .card-vertical {
-                .front {
-                  .desc {
-                    width: 12vw;
-                  }
+                  font-size: 1.2rem;
                 }
               }
             }
@@ -1154,15 +1146,16 @@ footer {
         }
       }
       .profile {
-        width: 32vw;
-        height: 74vh;
-        padding: 0 5vw;
-        .main-profile {
-          object-position: 20% 30%;
+        padding: 0;
+        min-width: 34vw;
+        object-position: 20% 0;
+        span {
+          font-size: 1.2rem;
         }
       }
     }
   }
+
   .skill {
     height: auto;
     .section-tit {
@@ -1440,6 +1433,7 @@ footer {
             gap: 1vw;
             width: 80%;
             height: calc(100% / 4);
+            max-height: 80px;
             .card-horizontal,
             .card-vertical {
               .front,
@@ -1478,6 +1472,12 @@ footer {
         width: 50vw;
         height: 62vw;
         margin: 0 20px;
+        min-height: 500px;
+        .images {
+          &::before {
+            font-size: 28vw;
+          }
+        }
       }
     }
   }
@@ -1503,6 +1503,9 @@ footer {
               padding: 2vw;
               opacity: 1;
               visibility: visible;
+              p {
+                font-size: 1.8vw;
+              }
             }
           }
         }
@@ -1653,6 +1656,9 @@ footer {
             }
             .skill-desc {
               height: 20vw;
+              p {
+                font-size: 2.2vw;
+              }
             }
           }
         }
@@ -1830,6 +1836,9 @@ footer {
         top: 260px;
         height: 100vw;
         margin: 0 auto;
+        img {
+          object-position: 20% 40%;
+        }
         .images {
           &::before {
             font-size: 50vw;

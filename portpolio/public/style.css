@@ -1096,48 +1096,42 @@ footer .bottom {
   header {
     padding: 0 2vw;
   }
-  .home {
-    margin-top: 2vw;
+  .home .container {
+    justify-content: space-around;
+    gap: 0;
   }
   .home .container .title {
-    min-width: 300px;
+    width: 60vw;
   }
   .home .container .title .hiseul span {
-    font-size: 4.6rem;
+    font-size: 5.2vw;
   }
   .home .container .title p {
-    width: 80%;
+    width: 64%;
     font-size: 1.8rem;
   }
-  .home .container .title .section-inner li {
-    position: relative;
-    width: 100vw;
-    height: 10.4vw;
-    font-size: 1.2rem;
-    min-width: 180px;
-    min-height: 0;
+  .home .container .title p .point {
+    font-size: 2rem;
   }
-  .home .container .title .section-inner li .card-horizontal,
-  .home .container .title .section-inner li .card-vertical {
-    width: 100%;
+  .home .container .title .section-inner li {
+    width: 22vw;
+    height: 10.8vw;
+    font-size: 1.2rem;
+    min-width: 200px;
+    min-height: 0;
   }
   .home .container .title .section-inner li .card-horizontal .back p,
   .home .container .title .section-inner li .card-vertical .back p {
-    font-size: 1.4rem;
-    line-height: 2rem;
-  }
-  .home .container .title .section-inner li:nth-child(3) .card-horizontal .front .desc,
-  .home .container .title .section-inner li:nth-child(3) .card-vertical .front .desc {
-    width: 12vw;
+    font-size: 1.2rem;
   }
   .home .container .profile {
-    width: 32vw;
-    height: 74vh;
-    padding: 0 5vw;
+    padding: 0;
+    min-width: 34vw;
+    -o-object-position: 20% 0;
+       object-position: 20% 0;
   }
-  .home .container .profile .main-profile {
-    -o-object-position: 20% 30%;
-       object-position: 20% 30%;
+  .home .container .profile span {
+    font-size: 1.2rem;
   }
   .skill {
     height: auto;
@@ -1385,6 +1379,7 @@ footer .bottom {
     gap: 1vw;
     width: 80%;
     height: 25%;
+    max-height: 80px;
   }
   .home .container .title .section-inner li .card-horizontal .front,
   .home .container .title .section-inner li .card-horizontal .back,
@@ -1422,6 +1417,10 @@ footer .bottom {
     width: 50vw;
     height: 62vw;
     margin: 0 20px;
+    min-height: 500px;
+  }
+  .home .container .profile .images::before {
+    font-size: 28vw;
   }
   .skill .section-tit .ani-dew {
     display: none;
@@ -1441,6 +1440,9 @@ footer .bottom {
     padding: 2vw;
     opacity: 1;
     visibility: visible;
+  }
+  .skill .section-inner ul li .skill-content .skill-desc p {
+    font-size: 1.8vw;
   }
   .project {
     height: auto;
@@ -1561,6 +1563,9 @@ footer .bottom {
   }
   .skill .section-inner ul li .skill-content .skill-desc {
     height: 20vw;
+  }
+  .skill .section-inner ul li .skill-content .skill-desc p {
+    font-size: 2.2vw;
   }
   .project .section-inner .modalback .modalScreen .modalScreenInner .modalCloseBtn i {
     font-size: 3rem;
@@ -1710,6 +1715,10 @@ footer .bottom {
     top: 260px;
     height: 100vw;
     margin: 0 auto;
+  }
+  .home .container .profile img {
+    -o-object-position: 20% 40%;
+       object-position: 20% 40%;
   }
   .home .container .profile .images::before {
     font-size: 50vw;

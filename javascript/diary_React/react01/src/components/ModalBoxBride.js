@@ -82,7 +82,7 @@ const ModalBoxBride = ({ onClose, theme }) => {
             theme={theme}
             title="아버지"
             name="김진선"
-            bank="IBK기업은행 010 7773 3466"
+            bank="IBK기업은행 485 058999 01 017"
           />
         </InnerWrap>
       </ModalInner>

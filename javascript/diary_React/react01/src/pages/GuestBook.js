@@ -24,7 +24,8 @@ const ModalBox = styled.div`
   position: relative;
   width: 90%;
   max-width: 400px;
-  height: 62%;
+  height: 70%;
+  max-height: 480px;
   min-height: 480px;
   background-color: #f8a4a4;
   z-index: 100;
@@ -73,6 +74,13 @@ const GuestBook = ({ initialIndex = 0, onClose }) => {
     "./img/wedding05.jpg",
     "./img/wedding06.jpg",
     "./img/wedding07.jpg",
+    "./img/wedding08.jpg",
+    "./img/wedding09.jpg",
+    "./img/wedding10.jpg",
+    "./img/wedding11.jpg",
+    "./img/wedding12.jpg",
+    "./img/wedding13.jpg",
+    "./img/wedding14.jpg",
   ];
 
   const intervalRef = useRef(null);

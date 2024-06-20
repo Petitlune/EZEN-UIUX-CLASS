@@ -8,6 +8,7 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: 74px;
+  position: relative;
 `;
 
 const HowToGo = ({ Subtitle, DateInfo, SubtitleKR }) => {

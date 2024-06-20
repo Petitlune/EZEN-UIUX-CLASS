@@ -10,7 +10,7 @@ const Container = styled.div`
 
 const SlideWrap = styled.div`
   display: grid;
-  grid-template-rows: repeat(5, 150px);
+  grid-template-rows: repeat(6, 150px);
   grid-template-columns: repeat(3, 1fr);
   margin: 40px 10px 20px;
 `;
@@ -24,28 +24,38 @@ const ImgSlide = styled.img`
 
   &:first-child {
     grid-column: 1 / 4;
+    grid-row: 1/ 3;
+    object-position: 50% 0;
   }
   &:nth-child(2) {
     grid-column: 1 / 2;
-    grid-row: 2 / 4;
+    grid-row: 3/ 5;
+    object-position: 50% 0;
   }
   &:nth-child(3) {
     grid-column: 2 / 4;
-    grid-row: 2 / 3;
-    object-position: center -15px;
+    grid-row: 3 / 4;
+    object-position: center -120px;
   }
   &:nth-child(4) {
     grid-column: 2 / 4;
-    grid-row: 3 / 4;
-    object-position: center -55px;
+    grid-row: 4 / 5;
+    object-position: center -65px;
   }
   &:nth-child(5) {
-    grid-column: 1 / 3;
-    grid-row: 4 / 6;
+    grid-column: 3 /4;
+    grid-row: 5 / 6;
+    object-position: 50% -10px;
   }
   &:nth-child(6) {
-    grid-column: 3 / 4;
-    grid-row: 4 / 6;
+    grid-column: 1 / 3;
+    grid-row: 5 / 7;
+  }
+  &:nth-child(8) {
+    grid-column: 1 / 4;
+    grid-row: 7 / 8;
+    height: 220px;
+    object-position: 50% -90px;
   }
 `;
 const SlideAll = styled.p`
@@ -71,6 +81,8 @@ const PhotoBook = ({ Subtitle, SubtitleKR }) => {
     "./img/wedding05.jpg",
     "./img/wedding06.jpg",
     "./img/wedding07.jpg",
+    "./img/wedding08.jpg",
+    "./img/wedding09.jpg",
   ];
 
   const handleImageClick = (index) => {
